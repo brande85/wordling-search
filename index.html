@@ -273,6 +273,7 @@
         ];
         let selectedCells = [];
         let isMouseDown = false;
+        let selecting = false;
   
         function createEmptyGrid() {
             for (let i = 0; i < gridSize; i++) {
@@ -290,6 +291,15 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
+        }
+
+        function getCellData(el) {
+            return {
+                element: el,
+                letter: el.textContent,
+                row: parseInt(el.dataset.row),
+                col: parseInt(el.dataset.col)
+            };
         }
 
         function tryPlacingWords(wordList, maxWords = 12) {
@@ -437,6 +447,10 @@
                     checkSelectedWord();
                 });
 
+                cell.addEventListener('touchstart', handleTouchStart, { passive: false });
+                cell.addEventListener('touchmove', handleTouchMove, { passive: false });
+                cell.addEventListener('touchend', handleTouchEnd);
+
                 gridDiv.appendChild(cell);
                 cellElements[i][j] = cell;
                 }
@@ -446,6 +460,39 @@
                 isMouseDown = false;
                 checkSelectedWord();
             });
+        }
+
+        function handleTouchStart(e) {
+            e.preventDefault();
+            const target = e.target.closest('.cell');
+            if (target) {
+                selecting = true;
+                selectedCells = [getCellData(target)];
+                highlightCell(target);
+            }
+       }
+
+        function handleTouchMove(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const target = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (target && target.classList.contains('cell') && selecting) {
+                const last = selectedCells[selectedCells.length - 1];
+                const current = getCellData(target);
+                if (last && (last.row !== current.row || last.col !== current.col)) {
+                    selectedCells.push(current);
+                    highlightCell(target);
+                }
+            }
+        }
+
+        function handleTouchEnd(e) {
+            if (selecting) {
+                selecting = false;
+                checkSelectedWord();
+                clearHighlights();
+                selectedCells = [];
+            }
         }
   
         function selectCell(cell) {
