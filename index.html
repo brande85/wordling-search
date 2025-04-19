@@ -463,36 +463,31 @@
         }
 
         function handleTouchStart(e) {
-            e.preventDefault();
-            const target = e.target.closest('.cell');
-            if (target) {
-                selecting = true;
-                selectedCells = [getCellData(target)];
-                highlightCell(target);
-            }
-       }
+          e.preventDefault();
+          const target = e.target.closest('.cell');
+          if (target) {
+            selecting = true;
+            clearSelection(); // 🔥 reset any previous selection
+            selectCell(target);
+          }
+        }
 
         function handleTouchMove(e) {
-            e.preventDefault();
-            const touch = e.touches[0];
-            const target = document.elementFromPoint(touch.clientX, touch.clientY);
-            if (target && target.classList.contains('cell') && selecting) {
-                const last = selectedCells[selectedCells.length - 1];
-                const current = getCellData(target);
-                if (last && (last.row !== current.row || last.col !== current.col)) {
-                    selectedCells.push(current);
-                    highlightCell(target);
-                }
-            }
+          e.preventDefault();
+          const touch = e.touches[0];
+          const target = document.elementFromPoint(touch.clientX, touch.clientY);
+          if (target && target.classList.contains('cell') && selecting) {
+            selectCell(target); // 🔥 Use your core function!
+          }
         }
 
         function handleTouchEnd(e) {
-            if (selecting) {
-                selecting = false;
-                checkSelectedWord();
-                clearHighlights();
-                selectedCells = [];
-            }
+          if (selecting) {
+            selecting = false;
+            checkSelectedWord();
+            clearHighlights();
+            selectedCells = [];
+          }
         }
   
         function selectCell(cell) {
