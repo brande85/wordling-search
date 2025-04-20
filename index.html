@@ -858,9 +858,11 @@
           wordling.id = 'label-wordling';
         
           const labelBox = label.getBoundingClientRect();
-          wordling.style.left = `${labelBox.left + window.scrollX + labelBox.width + 10}px`;
-          wordling.style.top = `${labelBox.top + window.scrollY - 10}px`;
-
+        
+          // 🛠️ Define the offsets before using them
+          const offsetX = labelBox.left + window.scrollX + labelBox.width + 10;
+          const offsetY = labelBox.top + window.scrollY - 10;
+        
           wordling.style.left = `${offsetX}px`;
           wordling.style.top = `${offsetY}px`;
         
@@ -869,9 +871,10 @@
           // Track it
           floatingWordling = wordling;
           floatingWordlingImage = imageFile;
-
+        
+          // 🎉 Confetti!
           confetti({
-            particleCount: 30, // smaller burst
+            particleCount: 30,
             spread: 60,
             startVelocity: 25,
             origin: {
