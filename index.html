@@ -818,6 +818,9 @@
           const labelBox = label.getBoundingClientRect();
           wordling.style.left = `${labelBox.left + window.scrollX + labelBox.width + 10}px`;
           wordling.style.top = `${labelBox.top + window.scrollY - 10}px`;
+
+          wordling.style.left = `${offsetX}px`;
+          wordling.style.top = `${offsetY}px`;
         
           document.body.appendChild(wordling);
         
@@ -908,11 +911,7 @@
         
           const row = document.getElementById('wordling-row');
         
-          if (korokCount % 2 === 0) {
-            row.insertBefore(floatingWordling, row.firstChild);
-          } else {
-            row.appendChild(floatingWordling);
-          }
+          row.appendChild(floatingWordling);
 
             // ✅ Increment the count ONLY when Wordling actually joins
           korokCount++;
