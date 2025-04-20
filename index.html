@@ -447,7 +447,7 @@
                 if (placed.length >= maxWords) break;
 
                 if (placeWord(cleanWord)) {
-                placed.push({ display: originalWord, value: cleanWord });
+                  placed.push({ display: originalWord, value: cleanWord });
                 }
             }
 
@@ -455,7 +455,9 @@
             const allWords = wordList.filter(w => !placed.some(p => p.display === w));
             const hidden = allWords[Math.floor(Math.random() * allWords.length)];
             bonusWord = hidden.replace(/\s+/g, '').toUpperCase();
-            placeWord(bonusWord); // placed but not shown!
+            if (!placeWord(bonusWord)) {
+              bonusWord = ''; // fallback in case the bonus word can't be placed
+            }
 
             return placed;
         }
@@ -503,6 +505,9 @@
             fillEmptyCells();
             renderWordList();
             renderGrid();
+
+            console.log("Placed words:", words.map(w => w.display));
+            console.log("Bonus word:", bonusWord);
         }
   
         function placeWord(word) {
@@ -698,7 +703,9 @@
         function showKorok() {
             korokCount++;
             document.getElementById('korok-count').textContent = korokCount;
-            document.getElementById('hidden-word-value').textContent = bonusWord;
+            if (bonusWord) {
+              document.getElementById('hidden-word-value').textContent = bonusWord;
+            }
 
             const armyRow = document.getElementById('wordling-row');
             const mini = createImageWordling(48, currentPuzzleTheme);
