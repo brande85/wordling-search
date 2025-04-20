@@ -34,7 +34,7 @@
 
     .selected {
       background-color: #fff5b1;
-      border: 2px solid #f4d06f;
+      box-shadow: inset 0 0 4px #f4d06f;
     }
 
     .found {
@@ -188,16 +188,33 @@
       animation: sparkle 0.8s ease-in-out;
     }
 
+    .wordling-pop {
+      position: absolute;
+      width: 40px;
+      height: auto;
+      animation: wordling-pop 1.2s ease-out;
+      z-index: 20;
+      pointer-events: none;
+    }
+    
+    @keyframes wordling-pop {
+      0%   { transform: scale(0.2); opacity: 0; }
+      40%  { transform: scale(1.2); opacity: 1; }
+      80%  { transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.9); }
+    }
+
     @media (max-width: 600px) {
       #grid {
         font-size: 1em;;
         gap: 4px;
+        margin: 0 auto;
       }
 
       #grid-shell {
         display: flex;
         justify-content: flex-start;
-        overflow-x: auto;
+        overflow-x: hidden;
         padding: 8px;
         width: 100%;
         max-width: 100vw;
@@ -744,31 +761,52 @@
             return img;
         }
 
+        function showWordlingPop() {
+          const label = document.getElementById('hidden-word-value');
+          const wordling = document.createElement('img');
+        
+          // Pick a random cozy Wordling
+          const variants = ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'];
+          const chosen = variants[Math.floor(Math.random() * variants.length)];
+        
+          wordling.src = `images/${chosen}`;
+          wordling.classList.add('wordling-pop');
+        
+          // Position near the label (fine-tune as needed)
+          const labelBox = label.getBoundingClientRect();
+          const offsetX = labelBox.left + window.scrollX + labelBox.width + 10;
+          const offsetY = labelBox.top + window.scrollY - 10;
+        
+          wordling.style.left = `${offsetX}px`;
+          wordling.style.top = `${offsetY}px`;
+        
+          document.body.appendChild(wordling);
+        
+          // Remove after animation ends
+          setTimeout(() => wordling.remove(), 1200);
+        }
+
         function showKorok() {
             korokCount++;
             document.getElementById('korok-count').textContent = korokCount;
             if (bonusWord) {
               document.getElementById('hidden-word-value').textContent = bonusWord;
             }
+          showWordlingPop(); // ✨ cuteness activated
 
           const hiddenLabel = document.getElementById('hidden-word-value');
           hiddenLabel.textContent = bonusWord;
-          
-          // 🌟 Trigger sparkle animation
-          hiddenLabel.classList.remove('sparkle'); // reset if already applied
-          void hiddenLabel.offsetWidth; // force reflow
-          hiddenLabel.classList.add('sparkle');
 
-            const armyRow = document.getElementById('wordling-row');
-            const mini = createImageWordling(48, currentPuzzleTheme);
-            mini.classList.add('wordling-row-img');
+          const armyRow = document.getElementById('wordling-row');
+          const mini = createImageWordling(48, currentPuzzleTheme);
+          mini.classList.add('wordling-row-img');
 
-            // Alternate placement: add to start or end
-            if (korokCount % 2 === 0) {
-                armyRow.insertBefore(mini, armyRow.firstChild);
-            } else {
-                armyRow.appendChild(mini);
-            }
+          // Alternate placement: add to start or end
+          if (korokCount % 2 === 0) {
+              armyRow.insertBefore(mini, armyRow.firstChild);
+          } else {
+              armyRow.appendChild(mini);
+          }
         }
   
         function checkSelectedWord() {
