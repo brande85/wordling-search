@@ -533,27 +533,36 @@
             const placed = [];
             const copy = [...wordList];
             shuffle(copy);
-
+        
             for (let originalWord of copy) {
                 const cleanWord = originalWord.replace(/\s+/g, '').toUpperCase();
-
+        
                 if (cleanWord.length > gridSize) continue; // skip overly long words
-
                 if (placed.length >= maxWords) break;
-
+        
                 if (placeWord(cleanWord)) {
-                  placed.push({ display: originalWord, value: cleanWord });
+                    placed.push({ display: originalWord, value: cleanWord });
                 }
             }
-
-            // Add a hidden bonus word!
+        
+            // 🌟 Add a hidden bonus word (guaranteed)!
             const allWords = wordList.filter(w => !placed.some(p => p.display === w));
-            const hidden = allWords[Math.floor(Math.random() * allWords.length)];
-            bonusWord = hidden.replace(/\s+/g, '').toUpperCase();
-            if (!placeWord(bonusWord)) {
-              bonusWord = ''; // fallback in case the bonus word can't be placed
+            bonusWord = ''; // reset before attempting placement
+        
+            for (let i = 0; i < allWords.length; i++) {
+                const candidate = allWords[i].replace(/\s+/g, '').toUpperCase();
+                if (!placed.some(p => p.value === candidate) && placeWord(candidate)) {
+                    bonusWord = candidate;
+                    break;
+                }
             }
-
+        
+            // 🪄 Optional backup: reuse a placed word if nothing else fits
+            if (!bonusWord && placed.length > 0) {
+                const fallback = placed[Math.floor(Math.random() * placed.length)];
+                bonusWord = fallback.value;
+            }
+        
             return placed;
         }
 
