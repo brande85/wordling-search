@@ -557,26 +557,6 @@
             return placed;
         }
 
-        function applyRainbowTitle(text) {
-            const colors = ['#f8b3da', '#b3e5fc', '#d2f8b3', '#ffd59e', '#e0bbf9', '#fcd5ce', '#c7f9cc'];
-            const container = document.getElementById('rainbow-title');
-            container.innerHTML = '';
-
-            for (let i = 0; i < text.length; i++) {
-                const span = document.createElement('span');
-                span.textContent = text[i];
-                span.style.color = colors[i % colors.length];
-                span.style.fontWeight = '700';
-                span.style.fontSize = '1.5em';
-                span.style.marginRight = '1px';
-                span.style.display = 'inline-block';
-                span.style.transform = 'translateY(1px)';
-                container.appendChild(span);
-            }
-        }
-
-        applyRainbowTitle("Wordsearch");
-
         function generatePuzzle() {
             const sizeValue = document.getElementById('size-select').value;
             const listValue = document.getElementById('wordlist-select').value;
