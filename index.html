@@ -579,8 +579,8 @@
             document.getElementById('puzzle-fact').textContent = `${randomFact}`;
 
             document.getElementById('hidden-word-value').textContent = '(still hiding...)';
-            const existing = document.getElementById('label-wordling');
-            if (existing) existing.remove();
+            const oldLabelWordling = document.getElementById('label-wordling');
+            if (oldLabelWordling) oldLabelWordling.remove();
 
             gridSize = parseInt(sizeValue);
 
@@ -786,15 +786,16 @@
             return `hsl(${hue}, 70%, 85%)`; // pastel-like
         }
 
-        function createImageWordling(size = 48, theme = 'fruits') {
+        function createImageWordling(size = 48, theme = 'fruits', returnImageOnly = true) {
             const army = wordlingThemes[theme] || ['wordling1.png'];
             const chosen = army[Math.floor(Math.random() * army.length)];
-
+        
             const img = document.createElement('img');
             img.src = `images/${chosen}`;
             img.alt = 'Wordling';
             img.className = 'wordling-img';
             img.style.width = `${size}px`;
+        
             return returnImageOnly ? img : { img, chosen };
         }
 
@@ -846,6 +847,8 @@
         }
 
         function showKorok() {
+            const existingPop = document.getElementById('label-wordling');
+            if (existingPop) existingPop.remove();
             korokCount++;
             document.getElementById('korok-count').textContent = korokCount;
             if (bonusWord) {
