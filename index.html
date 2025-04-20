@@ -472,10 +472,6 @@
         45: 'gokuling.png',
         50: 'cloudling.png'
       };
-      
-      if (milestoneWordlings[korokCount]) {
-        unlockCosplayWordling(milestoneWordlings[korokCount]);
-      }
 
         const grid = [];
         let gridSize = 10;
@@ -490,6 +486,10 @@
         let selectedCells = [];
         let isMouseDown = false;
         let selecting = false;
+
+        if (milestoneWordlings[korokCount]) {
+          unlockCosplayWordling(milestoneWordlings[korokCount]);
+        }
 
         const gridShell = document.getElementById('grid-shell');
 
