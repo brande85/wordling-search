@@ -486,6 +486,8 @@
         let selectedCells = [];
         let isMouseDown = false;
         let selecting = false;
+        let floatingWordling = null;
+        let floatingWordlingImage = null;
 
         const gridShell = document.getElementById('grid-shell');
 
@@ -579,8 +581,11 @@
             document.getElementById('puzzle-fact').textContent = `${randomFact}`;
 
             document.getElementById('hidden-word-value').textContent = '(still hiding...)';
-            const oldLabelWordling = document.getElementById('label-wordling');
-            if (oldLabelWordling) oldLabelWordling.remove();
+            if (floatingWordling) {
+              floatingWordling.remove();
+              floatingWordling = null;
+              floatingWordlingImage = null;
+            }
 
             gridSize = parseInt(sizeValue);
 
@@ -800,21 +805,25 @@
         }
 
         function showWordlingPop(imageFile) {
+          // Remove any existing pop-up
+          const old = document.getElementById('label-wordling');
+          if (old) old.remove();
+        
           const label = document.getElementById('hidden-word-value');
           const wordling = document.createElement('img');
-        
           wordling.src = `images/${imageFile}`;
           wordling.classList.add('wordling-pop');
           wordling.id = 'label-wordling';
         
           const labelBox = label.getBoundingClientRect();
-          const offsetX = labelBox.left + window.scrollX + labelBox.width + 10;
-          const offsetY = labelBox.top + window.scrollY - 10;
-        
-          wordling.style.left = `${offsetX}px`;
-          wordling.style.top = `${offsetY}px`;
+          wordling.style.left = `${labelBox.left + window.scrollX + labelBox.width + 10}px`;
+          wordling.style.top = `${labelBox.top + window.scrollY - 10}px`;
         
           document.body.appendChild(wordling);
+        
+          // Track it
+          floatingWordling = wordling;
+          floatingWordlingImage = imageFile;
 
           confetti({
             particleCount: 30, // smaller burst
@@ -849,9 +858,6 @@
         function showKorok() {
             const existingPop = document.getElementById('label-wordling');
             if (existingPop) existingPop.remove();
-        
-            korokCount++;
-            document.getElementById('korok-count').textContent = korokCount;
         
             if (bonusWord) {
                 document.getElementById('hidden-word-value').textContent = bonusWord;
@@ -891,18 +897,35 @@
         }
 
         function moveLabelWordlingToRow() {
-          const floating = document.getElementById('label-wordling');
-          if (!floating) return;
+          
+          if (!floatingWordling || !floatingWordlingImage) return;
         
-          const armyRow = document.getElementById('wordling-row');
+          // Clean up the label Wordling
+          floatingWordling.removeAttribute('id');
+          floatingWordling.classList.remove('wordling-pop');
+          floatingWordling.classList.add('wordling-row-img');
+          floatingWordling.removeAttribute('style');
         
-          // Optional: remove transition/position styles
-          floating.classList.remove('wordling-pop');
-          floating.removeAttribute('style');
-          floating.removeAttribute('id');
+          const row = document.getElementById('wordling-row');
         
-          floating.classList.add('wordling-row-img');
-          armyRow.appendChild(floating);
+          if (korokCount % 2 === 0) {
+            row.insertBefore(floatingWordling, row.firstChild);
+          } else {
+            row.appendChild(floatingWordling);
+          }
+
+            // ✅ Increment the count ONLY when Wordling actually joins
+          korokCount++;
+          document.getElementById('korok-count').textContent = korokCount;
+        
+          // ✅ Check for cosplay unlocks too
+          if (milestoneWordlings[korokCount]) {
+            unlockCosplayWordling(milestoneWordlings[korokCount]);
+          }
+        
+          // Clear the reference after moving
+          floatingWordling = null;
+          floatingWordlingImage = null;
         }
         
 
@@ -915,9 +938,6 @@
                 setTimeout(() => {
                     document.getElementById('congrats-overlay').style.display = 'none';
                 }, 1500);
-            }
-            if (milestoneWordlings[korokCount]) {
-              unlockCosplayWordling(milestoneWordlings[korokCount]);
             }
         }
 
