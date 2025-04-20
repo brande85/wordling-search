@@ -81,16 +81,19 @@
     }
 
     #puzzle-fact {
-        margin-top: 20px;
-        padding: 12px;
-        border-radius: 10px;
-        background-color: #fff8e1;
-        color: #5c4033;
-        font-style: normal;
-        font-size: 1em;
-        font-family: 'Coming Soon', cursive;
-        box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
-        border: 2px dashed #e0c080;
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: linear-gradient(to bottom right, #fffdf6, #fdf6e3);
+      color: #5e4a32;
+      font-family: 'Coming Soon', cursive;
+      font-size: 1.05em;
+      font-style: italic;
+      line-height: 1.5;
+      border: 2px dotted #dbc196;
+      box-shadow: 0 2px 6px rgba(180, 160, 100, 0.1);
+      position: relative;
+      transition: transform 0.2s ease;
     }
 
     #congrats-overlay {
@@ -132,11 +135,17 @@
         100% { background-position: 100% }
     }
 
-    #rainbow-title {
-        margin-bottom: 20px;
-        text-align: center;
-        font-family: 'Segoe UI', 'Quicksand', 'Comic Neue', sans-serif;
-        line-height: 1.2;
+    #wordling-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .header-wordling {
+      width: 48px;
+      height: auto;
     }
 
     #wordling-row {
@@ -148,7 +157,7 @@
         margin-top: 20px;
     }
 
-      .wordling-row-img {
+    .wordling-row-img {
         width: 48px;
         height: auto;
         animation: pop-in 0.4s ease;
@@ -330,7 +339,10 @@
 
 <body>
     <div id="wordsearch-app">
-        <h1 id="rainbow-title"></h1>
+        <div id="wordling-header">
+          <img src="images/wordling1.png" alt="Wordling" class="header-wordling">
+          <h1 id="game-title">Wordling Search</h1>
+        </div>
     
         <div id="controls">
             <label for="size-select">Grid Size:</label>
@@ -384,59 +396,59 @@
             fruits: {
                 words: ['APPLE', 'BANANA', 'ORANGE', 'KIWI', 'MANGO', 'GRAPE', 'PEAR', 'MELON', 'CHERRY', 'LEMON'],
                 facts: [
-                    "Bananas are technically berries, but strawberries aren't!",
-                    "Oranges were once considered a luxury item in Europe.",
-                    "Apples float because they're 25% air!",
-                    "Kiwi fruit was originally called the 'Chinese gooseberry.'",
-                    "Grapes explode in the microwave -- please don't try it.",
-                    "Cherries are part of the rose family!",
-                    "Pear trees can live over 100 years."
+                  "🍌 Harvest Wordlings giggle that bananas are berries… but strawberries are just pretending!",
+                  "🍊 Oranges were once so rare in Europe, they were given like treasure during winter festivals.",
+                  "🍎 Apples are 25% air—no wonder they float in cider streams and orchard ponds.",
+                  "🥝 Kiwi was once called the ‘Chinese gooseberry’—but it got a cuter name in New Zealand!",
+                  "🍇 Grapes explode in the microwave… and the Wordlings kindly ask you not to test this.",
+                  "🌹 Cherries bloom with the roses and carry the same perfume in their spring breeze.",
+                  "🍐 Old pear trees have watched over generations—they can live for more than a hundred years!"
                 ]
             },
             animals: {
                 words: ['CAT', 'DOG', 'PANDA', 'KOALA', 'BUNNY', 'FOX', 'FAWN', 'HEDGEHOG', 'OTTER', 'SLOTH'],
                 facts: [
-                    "Otters hold hands while sleeping to stay together.",
-                    "Koalas have unique fingerprints — just like humans!",
-                    "Sloths can hold their breath longer than dolphins.",
-                    "Hedgehogs were once called 'urchins' in Old English.",
-                    "A panda’s diet is 99% bamboo, but they have carnivore teeth.",
-                    "Foxes can make over 40 different vocal sounds.",
-                    "Fawns can stand and walk within minutes of birth."
+                  "🐾 Otter Wordlings hold paws while napping on riverbeds so they don’t drift apart.",
+                  "🐨 Even Koalalings leave behind fingerprints—some say they're nearly human.",
+                  "🦥 Slothlings can hold their breath longer than dolphins, just by doing… nothing.",
+                  "🦔 Hedgehog Wordlings were once called ‘urchins’ in the old forest tongue.",
+                  "🐼 Pandaling eats bamboo like a herbivore, but hides teeth fit for a tiny carnivore.",
+                  "🦊 Foxlings have over 40 different sounds, from giggles to ghostly cries.",
+                  "🦌 A fawn can walk within minutes of birth — some Wordlings think that’s magic."
                 ]
             },
             cozy: {
                 words: ['TEA', 'BLANKET', 'FIREPLACE', 'BOOK', 'CANDLE', 'WINDOW', 'SOCKS', 'COCOA', 'QUILT', 'SLIPPERS'],
                 facts: [
-                    "Candles were once made from animal fat or beeswax.",
-                    "Reading by firelight was considered a luxury before electricity.",
-                    "The oldest known quilt dates back to around 3400 BC.",
-                    "Slippers were invented in China over 5,000 years ago.",
-                    "In the 1800s, tea was locked in a tea caddy with a key.",
-                    "Wool socks have natural antibacterial properties!",
+                  "🕯️ Hearthlings remember when candles were made from beeswax or fat—every flicker hard-earned.",
+                  "📖 Reading by firelight was once a winter treasure, saved for the longest nights.",
+                  "🧵 The oldest known quilt comes from 3400 BC—Hearthlings say it still dreams in patterns.",
+                  "👣 Slippers were invented in ancient China to make footsteps soft and silent indoors.",
+                  "🍵 In the 1800s, tea was so precious it came with a key—locked in its own tiny chest.",
+                  "🧦 Wool socks are naturally cozy *and* fight off foot-odor gremlins — Hearthling tested."
                 ]
             },
             gemstones: {
                 words: ['AGATE', 'ALEXANDRITE', 'AMBER', 'AMETHYST', 'APATITE', 'BERYL', 'CHALCEDONY', 'CITRINE', 'CORUNDUM', 'DIAMOND', 'EMERALD', 'GARNET', 'ONYX', 'OPAL', 'PEARL', 'PERIDOT', 'QUARTZ', 'ROSE QUARTZ', 'RUBY', 'SAPPHIRE', 'TOPAZ', 'TOURMALINE', 'TURQUOISE', 'ZIRCON'],
                 facts: [
-                    "The only 'precious' gemstones are diamond, ruby, sapphire, and emerald.",
-                    "Although amber is considered a gemstone, it's an organic material rather than inorganic.",
-                    "Amber is fossilized tree resin and may contain inclusions of plants or small animals.",
-                    "Amethyst is purple due to the irradiation of iron impurities in its matrix.",
-                    "Apatite is the same mineral that comprises human teeth.",
-                    "Diamond is the hardest pure element.",
-                    "Pure diamond is colorless, but impurities can make a diamond blue, brown, or other colors.",
-                    "Garnet occurs in all colors, but blue garnets are extremely rare.",
-                    "Garnets are not traditionally a precious gem, but a tsavorite garnet can be more expensive than an emerald.",
-                    "Opals may contain anywhere from 3% to 21% water by weight.",
-                    "Opal is amorphous and does not have a crystal structure.",
-                    "Pearls are produced by the tissue of a mollusk.",
-                    "Peridot is the name given to gem-quality olivine.",
-                    "Peridot gets its green color from iron.",
-                    "Translucent gemstone-quality quartz is named by its color, such as amethyst (purple) or citrine (yellow).",
-                    "Pure quartz is also known as rock crystal.",
-                    "Both rubies and sapphires are the same mineral: corundum.",
-                ],
+                  "💎 Gemlings say only four stones are called truly precious: diamond, ruby, sapphire, and emerald.",
+                  "🌿 Amber isn't a stone at all—it's the ancient memory of trees, hardened into golden glass.",
+                  "🧡 Some say you can find tiny creatures or petals frozen in amber’s golden embrace.",
+                  "💜 Amethyst's violet glow comes from whispers of iron and sunlight trapped deep inside.",
+                  "🦷 Wordlings whisper that Apatite is what teeth dream of becoming.",
+                  "💠 Diamond is the hardest truth the earth can speak.",
+                  "🔷 Though diamonds begin pure, a single impurity can turn them blue, brown, or rainbow-touched.",
+                  "🔮 Garnets come in every color—but blue ones are so rare that even Gemlings blink twice.",
+                  "💚 A tsavorite garnet may not be 'precious,' but it shines with the price of royalty.",
+                  "💧 Opals are soft water trapped in stone—sometimes as much as a fifth of their weight!",
+                  "🌈 Opals don't follow crystal rules—they're pure rainbow chaos.",
+                  "🦪 Pearls are made by sea-mollusks when they turn irritation into treasure.",
+                  "🌿 Peridot is what olivine becomes when it gets dressed up for a ball.",
+                  "🍏 Peridot glows green thanks to iron hiding in its heart.",
+                  "🎨 Quartz wears many colors—when it's purple, we call it amethyst; when golden, citrine.",
+                  "🪨 Pure quartz is clear as truth—some call it rock crystal.",
+                  "🔥 Both ruby and sapphire are born from the same mineral, corundum—just dressed in different flames."
+                ]
             }
         };
 
