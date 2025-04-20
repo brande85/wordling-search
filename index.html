@@ -849,27 +849,16 @@
         function showKorok() {
             const existingPop = document.getElementById('label-wordling');
             if (existingPop) existingPop.remove();
+        
             korokCount++;
             document.getElementById('korok-count').textContent = korokCount;
+        
             if (bonusWord) {
-              document.getElementById('hidden-word-value').textContent = bonusWord;
+                document.getElementById('hidden-word-value').textContent = bonusWord;
             }
-
-          const hiddenLabel = document.getElementById('hidden-word-value');
-          hiddenLabel.textContent = bonusWord;
-
-          const armyRow = document.getElementById('wordling-row');
-          const { img: mini, chosen } = createImageWordling(48, currentPuzzleTheme, false);
-          mini.classList.add('wordling-row-img');
-
-          showWordlingPop(chosen); // ✨ cuteness activated
-
-          // Alternate placement: add to start or end
-          if (korokCount % 2 === 0) {
-              armyRow.insertBefore(mini, armyRow.firstChild);
-          } else {
-              armyRow.appendChild(mini);
-          }
+        
+            const { chosen } = createImageWordling(48, currentPuzzleTheme, false);
+            showWordlingPop(chosen); // just shows it — we’ll move it later
         }
   
         function checkSelectedWord() {
@@ -922,7 +911,7 @@
             if (found === words.length) {
                 document.getElementById('congrats-overlay').style.display = 'flex';
                 launchConfetti(); // 🎉 Right here!
-                moveLabelWordlingToRow();
+                moveLabelWordlingToRow(); // 🌟 move the Wordling to the row
                 setTimeout(() => {
                     document.getElementById('congrats-overlay').style.display = 'none';
                 }, 1500);
