@@ -578,6 +578,7 @@
             const randomFact = facts[Math.floor(Math.random() * facts.length)];
             document.getElementById('puzzle-fact').textContent = `${randomFact}`;
 
+            moveLabelWordlingToRow(); // 🌟 move the Wordling to the row
             document.getElementById('hidden-word-value').textContent = '(still hiding...)';
             const oldLabelWordling = document.getElementById('label-wordling');
             if (oldLabelWordling) oldLabelWordling.remove();
@@ -911,7 +912,6 @@
             if (found === words.length) {
                 document.getElementById('congrats-overlay').style.display = 'flex';
                 launchConfetti(); // 🎉 Right here!
-                moveLabelWordlingToRow(); // 🌟 move the Wordling to the row
                 setTimeout(() => {
                     document.getElementById('congrats-overlay').style.display = 'none';
                 }, 1500);
