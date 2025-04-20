@@ -155,6 +155,23 @@
         user-select: none;
     }
 
+    #cosplay-section {
+      margin-top: 20px;
+      text-align: center;
+      background: #f7f7ff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(180, 180, 255, 0.2);
+    }
+    
+    #cosplay-wordling-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 10px;
+    }
+
     #hidden-word {
         text-align: center;
         color: #444;
@@ -351,6 +368,10 @@
         <div id="puzzle-fact"></div>
 
         <div id="wordling-row" style="margin-top: 20px;"></div>
+        <div id="cosplay-section">
+          <h3>🌟 Cosplay Wordlings</h3>
+          <div id="cosplay-wordling-row"></div>
+        </div>
         <div id="korok-stats" style="margin-top: 10px; font-size: 0.9em; color: #4b0082;">
             🌿 Wordlings found: <span id="korok-count">0</span>
         </div>
@@ -426,6 +447,23 @@
             gemstones: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png']
             // add more as you build more puzzles
         };
+
+      const milestoneWordlings = {
+        05: 'pirateling.png',
+        10: 'ninjaling.png',
+        15: 'punchling.png',
+        20: 'cyberling.png',
+        25: 'mechaling.png',
+        30: 'pokeling.png',
+        35: 'dekuling.png',
+        40: 'moonling.png',
+        45: 'gokuling.png',
+        50: 'cloudling.png'
+      };
+      
+      if (milestoneWordlings[korokCount]) {
+        unlockCosplayWordling(milestoneWordlings[korokCount]);
+      }
 
         const grid = [];
         let gridSize = 10;
@@ -790,6 +828,25 @@
               y: offsetY / window.innerHeight
             }
           });
+        }
+
+        function unlockCosplayWordling(imageFile) {
+          const cosplayRow = document.getElementById('cosplay-wordling-row');
+          const cosplayImg = document.createElement('img');
+          cosplayImg.src = `images/${imageFile}`;
+          cosplayImg.classList.add('wordling-row-img'); // same style or give it a sparkle class
+          
+          cosplayRow.appendChild(cosplayImg);
+        
+          // Optional: burst of celebratory confetti
+          confetti({
+            particleCount: 80,
+            spread: 90,
+            origin: { x: 0.5, y: 0.2 }
+          });
+        
+          // Optional: Add message pop-up
+          //alert('🎉 You unlocked a Cosplay Wordling!');
         }
 
         function showKorok() {
