@@ -765,14 +765,13 @@
           const label = document.getElementById('hidden-word-value');
           const wordling = document.createElement('img');
         
-          // Pick a random cozy Wordling
           const variants = ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'];
           const chosen = variants[Math.floor(Math.random() * variants.length)];
         
           wordling.src = `images/${chosen}`;
           wordling.classList.add('wordling-pop');
+          wordling.id = 'label-wordling';
         
-          // Position near the label (fine-tune as needed)
           const labelBox = label.getBoundingClientRect();
           const offsetX = labelBox.left + window.scrollX + labelBox.width + 10;
           const offsetY = labelBox.top + window.scrollY - 10;
@@ -781,9 +780,16 @@
           wordling.style.top = `${offsetY}px`;
         
           document.body.appendChild(wordling);
-        
-          // Remove after animation ends
-          setTimeout(() => wordling.remove(), 1200);
+
+          confetti({
+            particleCount: 30, // smaller burst
+            spread: 60,
+            startVelocity: 25,
+            origin: {
+              x: offsetX / window.innerWidth,
+              y: offsetY / window.innerHeight
+            }
+          });
         }
 
         function showKorok() {
@@ -837,6 +843,21 @@
 
             clearSelection();
         }
+
+        function moveLabelWordlingToRow() {
+          const floating = document.getElementById('label-wordling');
+          if (!floating) return;
+        
+          const armyRow = document.getElementById('wordling-row');
+        
+          // Optional: remove transition/position styles
+          floating.classList.remove('wordling-pop');
+          floating.removeAttribute('style');
+          floating.removeAttribute('id');
+        
+          floating.classList.add('wordling-row-img');
+          armyRow.appendChild(floating);
+        }
         
 
         function checkIfPuzzleComplete() {
@@ -844,6 +865,7 @@
             if (found === words.length) {
                 document.getElementById('congrats-overlay').style.display = 'flex';
                 launchConfetti(); // 🎉 Right here!
+                moveLabelWordlingToRow();
                 setTimeout(() => {
                     document.getElementById('congrats-overlay').style.display = 'none';
                 }, 1500);
