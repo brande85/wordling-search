@@ -33,7 +33,8 @@
     }
 
     .selected {
-      background-color: #add8e6;
+      background-color: #fff5b1;
+      border: 2px solid #f4d06f;
     }
 
     .found {
@@ -158,6 +159,33 @@
         text-align: center;
         color: #444;
         font-size: 1em;
+    }
+
+    @keyframes sparkle {
+      0% {
+        transform: scale(1);
+        text-shadow: none;
+      }
+      25% {
+        transform: scale(1.1);
+        text-shadow: 0 0 6px #fff8dc, 0 0 10px #b3f4d6;
+      }
+      50% {
+        transform: scale(1);
+        text-shadow: none;
+      }
+      75% {
+        transform: scale(1.05);
+        text-shadow: 0 0 4px #fff8dc;
+      }
+      100% {
+        transform: scale(1);
+        text-shadow: none;
+      }
+    }
+    
+    .sparkle {
+      animation: sparkle 0.8s ease-in-out;
     }
 
     @media (max-width: 600px) {
@@ -498,6 +526,8 @@
             const randomFact = facts[Math.floor(Math.random() * facts.length)];
             document.getElementById('puzzle-fact').textContent = `${randomFact}`;
 
+            document.getElementById('hidden-word-value').textContent = '(still hiding...)';
+
             gridSize = parseInt(sizeValue);
 
             selectedCells = [];
@@ -626,7 +656,7 @@
           if (selecting) {
             selecting = false;
             checkSelectedWord();
-            clearHighlights();
+            clearSelection();
             selectedCells = [];
           }
         }
@@ -676,13 +706,23 @@
                 if (rowDiff > 0.2 || colDiff > 0.2) return; // allow slight error
             }
 
-            // Add cell
+            // Save the original background color so we can restore it
+            const previousColor = cell.style.backgroundColor;
+            
             cell.classList.add('selected');
+            cell.dataset.prevColor = previousColor || ''; // store inline color if any
+            cell.style.backgroundColor = ''; // let CSS handle the selected style
             selectedCells.push({ row, col, letter: grid[row][col], element: cell });
         }
         
         function clearSelection() {
-            selectedCells.forEach(c => c.element.classList.remove('selected'));
+            selectedCells.forEach(cell => {
+              cell.element.classList.remove('selected');
+              if (cell.element.dataset.prevColor) {
+                cell.element.style.backgroundColor = cell.element.dataset.prevColor;
+                delete cell.element.dataset.prevColor;
+              }
+            });
             selectedCells = [];
             selectedCells.direction = null; // Reset direction
         }
@@ -710,6 +750,14 @@
             if (bonusWord) {
               document.getElementById('hidden-word-value').textContent = bonusWord;
             }
+
+          const hiddenLabel = document.getElementById('hidden-word-value');
+          hiddenLabel.textContent = bonusWord;
+          
+          // 🌟 Trigger sparkle animation
+          hiddenLabel.classList.remove('sparkle'); // reset if already applied
+          void hiddenLabel.offsetWidth; // force reflow
+          hiddenLabel.classList.add('sparkle');
 
             const armyRow = document.getElementById('wordling-row');
             const mini = createImageWordling(48, currentPuzzleTheme);
