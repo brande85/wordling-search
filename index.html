@@ -358,6 +358,8 @@
                 <option value="animals">🐯 Animals</option>
                 <option value="cozy">🔥 Cozy Words</option>
                 <option value="gemstones">💎 Gemstones</option>
+                <option value="miku">🌟 Hatsune Miku</option>
+                <option value="mikusongs">🎤 Hatsune Miku Songs</option>
             </select>
     
             <button id="new-game-btn" style="margin-left: 10px;">New Puzzle</button>
@@ -449,14 +451,54 @@
                   "🪨 Pure quartz is clear as truth—some call it rock crystal.",
                   "🔥 Both ruby and sapphire are born from the same mineral, corundum—just dressed in different flames."
                 ]
-            }
+            },
+            miku: {
+              words: ['HATSUNE MIKU', 'VOCALOID', 'CRYPTON', 'TWINTAILS', 'VIRTUAL', 'IDOL', 'HOLOGRAM', 'SINGER', 'FIRST SOUND', 'FUTURE', 'SAKI FUJITA', 'KEI GARO', "YAMAHA", "PHONIC", "VOICEBANK", "DANCE", "SPRING ONION", "LEEK", 'PROJECT DIVA", "CHARACTER", "TURQUOISE", "ANDROID", "COMPUTER", "JAPANESE", "SYNTHESIZER", "RHYTHM"],
+              facts: [
+                "🎤 Idol Wordlings say Miku was the very first voice in a new digital songbook—CV-01, the start of it all.",
+                "🌟 Sometimes, you can catch her performing live in light and holograms, like a dream on stage.",
+                "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
+                "💫 'Hatsune Miku' means 'The First Sound of the Future'—a whisper from tomorrow itself.",
+                "🎨 Wordlings say her turquoise glow was chosen before anything else—just the color, and a dream of music.",
+                "🎹 Her shade of turquoise matches the tones of Yamaha’s magical music machines.",
+                "🧤 The glowing sleeve on her arm? It holds echoes of synthesizer lights from long ago.",
+                "🗣️ Miku doesn’t speak like us—she sings in syllables, phonics stitched into melody.",
+                "📅 Pop Idol Wordlings celebrate her birthday on August 31st, when the songs began again.",
+                "🤖 Miku was imagined as a future diva in a world where songs had vanished—but she brought them back.",
+                "🌍 She was the first to bring her voice across oceans with Vocaloid 3’s English library.",
+                "🎧 At first, she wasn’t meant for fans at all—just for pros. But the world had other plans.",
+                "🧅 Thanks to one silly video, Miku’s now forever dancing with spring onions and leeks.",
+                "🎮 Sega Wordlings built her a stage in rhythm—an entire world of beats called Project Diva."
+              ]
+            },
+            mikusongs: {
+              words: ['ABSOLUNOTE', 'ACUTE', 'AGEAGE AGAIN', 'AIKOTOBA', 'ALIEN ALIEN', 'BLACK ROCK SHOOTER', 'CANTARELLA', 'CAT FOOD', 'CATCH THE WAVE', 'CENDRILLON', 'DANCE OF MANY', 'DEAR', 'DECORATOR', 'DEEP SEA GIRL', 'DREAMING LEAF', 'DENPARADIGM', 'DRAMATURGY', 'DOUBLEGANGER', 'ELECTRIC ANGEL', 'ENVY CAT WALK', 'FINDER', 'FROM Y TO Y', 'GHOST RULE', 'GIGANTIC GIRL', 'GIZMO', 'HAND IN HAND', 'HIBIKASE', 'HIBANA', 'HIGH SCHOOL DAYS', 'HOLY STAR', 'INNOCENCE', 'INTERVIEWER', 'JITTERBUG', 'KIMI NI', 'KNIFE', 'KNIGHT OF LIGHT', 'LOVE IS WAR', 'LUCID DREAMING', 'MAGNET', 'MARGINAL', 'MASTER OF PUPPETS', 'METEOR', 'MIRACLE PAINT', 'MOON', 'MOUSOU SKETCH', 'NEKOMIMI SWITCH', 'PINK MOON', 'PINKY SWEAR', 'PO PI PO', 'PROMISE', 'PUZZLE', 'ROLLING GIRL', 'ROMEO AND CINDERELLA', 'SAIHATE', 'SAKURA NO AME', 'SECRET POLICE', 'SENBONZAKURA', 'SOUND', 'SLUMP', 'STAR STORY', 'STARDUSTER', 'STARGAZER', 'STEP FORWARD', 'SUMMER IDOL', 'SWEET DEVIL', 'SYSTEMATIC LOVE', 'TELL YOUR WORLD', 'THE FIRST SOUND', 'THE SECRET GARDEN', 'THE WORLD IS MINE', 'TIME LIMIT', 'TIME MACHINE', 'TORINOKOCITY', 'TRICOLORE AIRLINE', 'UNHAPPY REFRAIN', 'VELVET ARABESQUE', 'WEEKENDER GIRL', 'WOLF GIRL', 'YELLOW', 'YUMEYUME'],
+              facts: [
+                "🎤 Idol Wordlings say Miku was the very first voice in a new digital songbook — CV-01, the start of it all.",
+                "🌟 Sometimes, you can catch her performing live in light and holograms, like a dream on stage.",
+                "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
+                "💫 'Hatsune Miku' means 'The First Sound of the Future' — a whisper from tomorrow itself.",
+                "🎨 Wordlings say her turquoise glow was chosen before anything else — just the color, and a dream of music.",
+                "🎹 Her shade of turquoise matches the tones of Yamaha’s magical music machines.",
+                "🧤 The glowing sleeve on her arm? It holds echoes of synthesizer lights from long ago.",
+                "🗣️ Miku doesn’t speak like us—she sings in syllables, phonics stitched into melody.",
+                "📅 Pop Idol Wordlings celebrate her birthday on August 31st, when the songs began again.",
+                "🤖 Miku was imagined as a future diva in a world where songs had vanished — but she brought them back.",
+                "🌍 She was the first to bring her voice across oceans with Vocaloid 3’s English library.",
+                "🎧 At first, she wasn’t meant for fans at all — just for pros. But the world had other plans.",
+                "🧅 Thanks to one silly video, Miku’s now forever dancing with spring onions and leeks.",
+                "🎮 Sega Wordlings built her a stage in rhythm — an entire world of beats called Project Diva."
+              ]
+            },
         };
 
         const wordlingThemes = {
             fruits: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
             animals: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
             cozy: ['cozy-wordling1.png', 'cozy-wordling2.png'], // reuse is fine!
-            gemstones: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png']
+            gemstones: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png'],
+            miku: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
+            mikusongs: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
             // add more as you build more puzzles
         };
 
