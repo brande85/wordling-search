@@ -793,17 +793,14 @@
             img.alt = 'Wordling';
             img.className = 'wordling-img';
             img.style.width = `${size}px`;
-            return img;
+            return returnImageOnly ? img : { img, chosen };
         }
 
-        function showWordlingPop() {
+        function showWordlingPop(imageFile) {
           const label = document.getElementById('hidden-word-value');
           const wordling = document.createElement('img');
         
-          const variants = ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'];
-          const chosen = variants[Math.floor(Math.random() * variants.length)];
-        
-          wordling.src = `images/${chosen}`;
+          wordling.src = `images/${imageFile}`;
           wordling.classList.add('wordling-pop');
           wordling.id = 'label-wordling';
         
@@ -852,14 +849,15 @@
             if (bonusWord) {
               document.getElementById('hidden-word-value').textContent = bonusWord;
             }
-          showWordlingPop(); // ✨ cuteness activated
 
           const hiddenLabel = document.getElementById('hidden-word-value');
           hiddenLabel.textContent = bonusWord;
 
           const armyRow = document.getElementById('wordling-row');
-          const mini = createImageWordling(48, currentPuzzleTheme);
+          const { img: mini, chosen } = createImageWordling(48, currentPuzzleTheme, false);
           mini.classList.add('wordling-row-img');
+
+          showWordlingPop(chosen); // ✨ cuteness activated
 
           // Alternate placement: add to start or end
           if (korokCount % 2 === 0) {
