@@ -579,6 +579,8 @@
             document.getElementById('puzzle-fact').textContent = `${randomFact}`;
 
             document.getElementById('hidden-word-value').textContent = '(still hiding...)';
+            const existing = document.getElementById('label-wordling');
+            if (existing) existing.remove();
 
             gridSize = parseInt(sizeValue);
 
