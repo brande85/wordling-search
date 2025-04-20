@@ -165,20 +165,24 @@
         font-size: 1.4em;
         gap: 4px;
       }
+      
       .cell {
         width: 32px;
         height: 32px;
       }
+      
       select,
       button {
         font-size: 1.2em;
         padding: 10px 16px;
         border-radius: 8px;
       }
+      
       #wordlist-select, #size-select {
         width: 100%;
         margin-bottom: 10px;
       }
+      
       #wordling-row {
         overflow-x: auto;
         white-space: nowrap;
@@ -193,6 +197,10 @@
       
       #grid {
         font-size: 1em;
+      }
+      
+      #grid-container.zoom-out {
+        transform: scale(0.95);
       }
     
       .cell {
@@ -343,6 +351,9 @@
 
         if (gridSize >= 12) {
           document.querySelectorAll('.cell').forEach(cell => cell.classList.add('big-grid'));
+        }
+        if (gridSize === 12) {
+          document.getElementById('grid-container').classList.add('zoom-out');
         }
   
         function createEmptyGrid() {
