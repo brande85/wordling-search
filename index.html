@@ -104,6 +104,7 @@
       align-items: center;
       padding: 8px;
       flex-wrap: wrap;
+      position: relative;
     }
 
     #game-title img {
@@ -148,6 +149,22 @@
         max-width: none;             /* 💥 Don’t cap the width */
     }
 
+    #interaction-blocker {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 2;
+      display: none;
+    }
+
+    .grid-disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
     @keyframes pop {
         0% { transform: scale(0.6); opacity: 0; }
         100% { transform: scale(1); opacity: 1; }
@@ -173,7 +190,6 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-top: 20px;
     }
 
     .header-wordling {
@@ -421,6 +437,7 @@
               <div id="congrats-overlay" style="display: none;">
                   🌟 Puzzle Complete! 🌟
               </div>
+              <div id="interaction-blocker"></div>
           </div>
         </div>
         
@@ -439,7 +456,7 @@
             🌿 Wordlings found: <span id="korok-count">0</span>
         </div>
     </div>
-
+  
     
 
     <script>
@@ -661,6 +678,9 @@
         }
 
         function generatePuzzle() {
+            document.getElementById('interaction-blocker').style.display = 'none';
+            document.getElementById('grid').classList.remove('grid-disabled'); 
+          
             const sizeValue = document.getElementById('size-select').value;
             const listValue = document.getElementById('wordlist-select').value;
             currentPuzzleTheme = listValue; // store the theme globally
@@ -1035,10 +1055,8 @@
                 document.getElementById('congrats-overlay').style.display = 'flex';
                 launchConfetti(); // 🎉 Right here!
                 moveLabelWordlingToRow(); // 🌟 move the Wordling to the row
-                setTimeout(() => {
-                    document.getElementById('congrats-overlay').style.display = 'none';
-                }, 1500);
-            }
+                document.getElementById('grid').classList.add('grid-disabled');
+                document.getElementById('interaction-blocker').style.display = 'block';
         }
 
         function launchConfetti() {
