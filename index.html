@@ -391,9 +391,12 @@
         
         <div id="puzzle-fact"></div>
 
-        <div id="wordling-row" style="margin-top: 20px;"></div>
+        <div id="wordling-row" style="margin-top: 20px;">
+          <p id="army-empty" class="hint-text">You haven't found any wordlings yet...</p>
+        </div>
         <div id="cosplay-section">
           <h3>🌟 Cosplay Wordlings</h3>
+          <p id="cosplay-hint" class="hint-text">Unlock every 5 wordlings you find!</p>
           <div id="cosplay-wordling-row"></div>
         </div>
         <div id="korok-stats" style="margin-top: 10px; font-size: 0.9em; color: #4b0082;">
@@ -955,6 +958,8 @@
         }
 
         function moveLabelWordlingToRow() {
+          const emptyMsg = document.getElementById('army-empty');
+          if (emptyMsg) emptyMsg.style.display = 'none';
           
           if (!floatingWordling || !floatingWordlingImage) return;
         
