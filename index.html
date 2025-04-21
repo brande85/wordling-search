@@ -7,29 +7,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
 
   <link rel="preload" as="image" href="images/wordling-title.png">
-  <link rel="preload" as="image" href="images/wordling1.png">
-  <link rel="preload" as="image" href="images/wordling2.png">
-  <link rel="preload" as="image" href="images/wordling3.png">
-  <link rel="preload" as="image" href="images/wordling4.png">
-  <link rel="preload" as="image" href="images/cozy-wordling1.png">
-  <link rel="preload" as="image" href="images/cozy-wordling2.png">
-  <link rel="preload" as="image" href="images/gem-wordling1.png">
-  <link rel="preload" as="image" href="images/gem-wordling2.png">
-  <link rel="preload" as="image" href="images/gem-wordling3.png">
-  <link rel="preload" as="image" href="images/gem-wordling4.png">
-  <link rel="preload" as="image" href="images/miku-wordling1.png">
-  <link rel="preload" as="image" href="images/miku-wordling2.png">
-  <link rel="preload" as="image" href="images/miku-wordling3.png">
-  <link rel="preload" as="image" href="images/cloudling.png">
-  <link rel="preload" as="image" href="images/ceciling.png">
-  <link rel="preload" as="image" href="images/dekuling.png">
-  <link rel="preload" as="image" href="images/gokuling.png">
-  <link rel="preload" as="image" href="images/moonling.png">
-  <link rel="preload" as="image" href="images/pokeling.png">
-  <link rel="preload" as="image" href="images/squalling.png">
-  <link rel="preload" as="image" href="images/terraling.png">
-  <link rel="preload" as="image" href="images/warrioroflightling.png">
-  <link rel="preload" as="image" href="images/zidaneling.png">
+  <link rel="prefetch" as="image" href="images/wordling1.png">
+  <link rel="prefetch" as="image" href="images/wordling2.png">
+  <link rel="prefetch" as="image" href="images/wordling3.png">
+  <link rel="prefetch" as="image" href="images/wordling4.png">
+  <link rel="prefetch" as="image" href="images/cozy-wordling1.png">
+  <link rel="prefetch" as="image" href="images/cozy-wordling2.png">
+  <link rel="prefetch" as="image" href="images/gem-wordling1.png">
+  <link rel="prefetch" as="image" href="images/gem-wordling2.png">
+  <link rel="prefetch" as="image" href="images/gem-wordling3.png">
+  <link rel="prefetch" as="image" href="images/gem-wordling4.png">
+  <link rel="prefetch" as="image" href="images/miku-wordling1.png">
+  <link rel="prefetch" as="image" href="images/miku-wordling2.png">
+  <link rel="prefetch" as="image" href="images/miku-wordling3.png">
+  <link rel="prefetch" as="image" href="images/cloudling.png">
+  <link rel="prefetch" as="image" href="images/ceciling.png">
+  <link rel="prefetch" as="image" href="images/dekuling.png">
+  <link rel="prefetch" as="image" href="images/gokuling.png">
+  <link rel="prefetch" as="image" href="images/moonling.png">
+  <link rel="prefetch" as="image" href="images/pokeling.png">
+  <link rel="prefetch" as="image" href="images/squalling.png">
+  <link rel="prefetch" as="image" href="images/terraling.png">
+  <link rel="prefetch" as="image" href="images/warrioroflightling.png">
+  <link rel="prefetch" as="image" href="images/zidaneling.png">
   
   <title>Wordsearch Puzzle</title>
   <style>
@@ -416,7 +416,7 @@
             <label for="wordlist-select" style="margin-left: 10px;">Word List:</label>
             <select id="wordlist-select">
                 <option value="fruits">🍓 Fruits</option>
-                <option value="animals">🐯 Animals</option>
+                <option value="animals">🐰 Domestic Animals</option>
                 <option value="cozy">🔥 Cozy Words</option>
                 <option value="gemstones">💎 Gemstones</option>
                 <option value="miku">🌟 Hatsune Miku</option>
@@ -462,7 +462,7 @@
     <script>
         const wordLists = {
             fruits: {
-                words: ['APPLE', 'BANANA', 'ORANGE', 'KIWI', 'MANGO', 'GRAPE', 'PEAR', 'MELON', 'CHERRY', 'LEMON'],
+                words: ['APPLE', 'BANANA', 'ORANGE', 'KIWI', 'MANGO', 'GRAPE', 'PEAR', 'MELON', 'CHERRY', 'LEMON', 'APRICOT', 'AVOCADO', 'BLACKBERRY', 'BLUEBERRY', 'BOYSENBERRY', 'CITRON', 'COCONUT', 'CRANBERRY', 'CURRANT', 'DATE', 'DRAGONFRUIT', 'DURIAN', 'ELDERBERRY', 'FIG', 'LIME', 'GOOSEBERRY', 'GRAPEFRUIT', 'GUAVA', 'JACKFRUIT', 'PLUM', 'KUMQUAT', 'LYCHEE', 'CANTALOUPE', 'HONEYDEW', 'WATERMELON', 'NECTARINE', 'CLEMENTINE', 'TANGERINE', 'PAPAYA', 'PASSIONFRUIT', 'PEACH', 'PERSIMMON', 'PINEAPPLE', 'POMEGRANATE', 'POMELO', 'QUINCE', 'RASPBERRY', 'STRAWBERRY', 'YUZU'],
                 facts: [
                   "🍌 Harvest Wordlings giggle that bananas are berries… but strawberries are just pretending!",
                   "🍊 Oranges were once so rare in Europe, they were given like treasure during winter festivals.",
@@ -470,19 +470,60 @@
                   "🥝 Kiwi was once called the ‘Chinese gooseberry’—but it got a cuter name in New Zealand!",
                   "🍇 Grapes explode in the microwave… and the Wordlings kindly ask you not to test this.",
                   "🌹 Cherries bloom with the roses and carry the same perfume in their spring breeze.",
-                  "🍐 Old pear trees have watched over generations—they can live for more than a hundred years!"
+                  "🍐 Old pear trees have watched over generations—they can live for more than a hundred years!",
+                  "🍋 In the misty orchards of East Asia, yuzus glow like lemons, but their taste is a whisper of floral lime and morning breeze.",
+                  "🍓 Raspberries are made of many tiny pieces, each holding hands to form the whole — like a fruit that grew from a gathering.",
+                  "🍐 A quince is stubborn and sour until softened by time or fire — a fruit that must be earned, not taken.",
+                  "🍊 Pomelos are the gentle giants of the citrus grove, nearly ten inches wide and heavy with mellow sweetness.",
+                  "🌺 In Armenian stories, pomegranates hold seeds of life, luck, and love — one fruit, many blessings.",
+                  "🌸 Some plum trees cannot bloom alone. Without a nearby friend, their flowers go unanswered and bear no fruit.",
+                  "🍍 Pineapples got their name from explorers who saw pinecones and tasted paradise — and the name stuck like sunlight on skin.",
+                  "🍑 Take the fuzz off a peach and you’re left with a nectarine — just as sweet, just a little smoother.",
+                  "🌶️ The seeds of a papaya carry a peppery surprise, sharp enough to stand in for black peppercorns at any table.",
+                  "🍉 In parts of Japan, watermelons are grown in shapes: hearts for romance, squares for shelves — a fruit made whimsical.",
+                  "🍬 Lychee seeds must be left behind; though the fruit is soft and fragrant, the seed carries danger at its core.",
+                  "🌞 A guava holds five times the sunshine of an orange — bursting with brightness in every bite.",
+                  "⚠️ Grapefruits carry warnings. Their juice can twist the power of medicine, so potions and fruit must be chosen wisely.",
+                  "🌰 A fig’s flower lives inside the fruit — hidden, secret, only seen when the fig is opened like a little lantern.",
+                  "🚫 The durian’s smell is so strong that hotels and trains ask it to stay outside, no matter how sweet its heart may be.",
+                  "🌴 Date trees wear long feather-like fronds and stretch toward desert skies, dreaming of oasis winds.",
+                  "🐉 Dragonfruit earned its name from armor and scales — leathery skin and spikes like something from a myth.",
+                  "🥥 Coconuts are patient voyagers. They float across oceans for up to 110 days, looking for soft sand and new beginnings.",
+                  "🍒 Cranberries are called superfruits — not for flying, but for brimming with little strengths: vitamins, color, and courage."
                 ]
             },
-            animals: {
-                words: ['CAT', 'DOG', 'PANDA', 'KOALA', 'BUNNY', 'FOX', 'FAWN', 'HEDGEHOG', 'OTTER', 'SLOTH'],
+            domesticAnimals: {
+                words: ['ALPACA', 'CAMEL', 'CHICKEN', 'DONKEY', 'GOAT', 'MINK', 'CATTLE', 'CAT', 'DOG', 'FERRET', 'HORSE', 'PIG', 'RABBIT', 'WATER BUFFALO', 'SILVER FOX', 'SHEEP', 'YAK', 'MOUSE', 'RAT', 'HEDGEHOG', 'LLAMA', 'DOVE', 'CANARY', 'COCKATIEL', 'DUCK', 'GOOSE', 'PIGEON', 'TURKEY', 'GUINEAFOWL', 'HONEY BEE', 'SILKMOTH', 'GOLDFISH', 'KOI', 'GUINEA PIG'],
                 facts: [
-                  "🐾 Otter Wordlings hold paws while napping on riverbeds so they don’t drift apart.",
-                  "🐨 Even Koalalings leave behind fingerprints—some say they're nearly human.",
-                  "🦥 Slothlings can hold their breath longer than dolphins, just by doing… nothing.",
-                  "🦔 Hedgehog Wordlings were once called ‘urchins’ in the old forest tongue.",
-                  "🐼 Pandaling eats bamboo like a herbivore, but hides teeth fit for a tiny carnivore.",
-                  "🦊 Foxlings have over 40 different sounds, from giggles to ghostly cries.",
-                  "🦌 A fawn can walk within minutes of birth — some Wordlings think that’s magic."
+                  "🐕 Dogs were the first to walk beside us — a friendship older than any written word.",
+                  "🍞 After so many meals together, dogs can thrive on bread and stew, unlike their wild cousins.",
+                  "🐏 Once, all sheep wore earth tones, but we taught them to grow fleeces white as snow or dark as twilight.",
+                  "🐖 Pigs cannot sweat, so they cool off in puddles and shade — clever comfort-seekers.",
+                  "🐄 The cow’s story is written deep in its genes — one of the first to have a fully-mapped genome.",
+                  "🐈 A cat’s front limbs are bound by floating bones, letting them slip through any place their whiskers fit.",
+                  "🧀 Neolithic farmers kept goats for milk and meat, and their bell calls still echo through the hills.",
+                  "🥚 A hardworking hen can give over 300 eggs in a single turning of the seasons.",
+                  "🐴 Ten donkeys were once buried with a pharaoh, as if honored like noble humans.",
+                  "🦆 Ducklings don’t make their own waterproofing — they borrow their mother’s oil for their fluffy adventures.",
+                  "🐫 Dromedary camels can survive losing more than 30% of their water — and keep walking.",
+                  "🐝 Honeybees dance and scent the air with messages only other bees can read.",
+                  "🐎 Horses nap standing or curled on the ground, choosing comfort or watchfulness as needed.",
+                  "🕸️ Sericulture is the gentle craft of raising silkworms for threads softer than breath.",
+                  "🕊️ Pigeons have lived with humans since Mesopotamia, over five thousand years ago.",
+                  "🪿 During a quiet pandemic patrol, geese once stood watch at a border with Vietnam — wings flared like guards.",
+                  "🐂 Yaks don’t moo — they grunk and squeak, like old boots and hidden horns.",
+                  "🦙 Llamas bring calm to those in pain, quietly visiting hospitals as certified therapy animals.",
+                  "🐑 Alpacas are separated not by sound or stride, but by their wool — some curly, some straight.",
+                  "🍗 Guineafowl can stand in for chicken in a stew, and some say they bring even more flavor.",
+                  "🎯 Ferrets were once sport companions, hunting rabbits through tunnels in a tradition called rabbiting.",
+                  "🎩 White doves flutter through magic acts and ceremonies, bringing softness and illusion together.",
+                  "🐟 Goldfish released into the wild grow bold and large — so much that they become invaders.",
+                  "🐇 Rabbits hopped into human lives when the Romans first invited them indoors.",
+                  "🎏 Koi are the bright-painted variant of humble carp, swimming not for food but for beauty.",
+                  "🐁 A ‘fancy mouse’ is one bred for show — tiny, whiskered, and well-groomed for pageantry.",
+                  "🦦 Some still debate whether domestic mink are truly tamed, or only wearing the mask of calm.",
+                  "🦊 Silver foxes were born from experiments that asked how wild things become our companions.",
+                  "🦔 In ancient Greece, hedgehogs were welcomed inside homes to eat the insects no one else wanted."
                 ]
             },
             cozy: {
@@ -545,12 +586,12 @@
                 "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
                 "💫 'Hatsune Miku' means 'The First Sound of the Future' — a whisper from tomorrow itself.",
                 "🎨 Wordlings say her turquoise glow was chosen before anything else — just the color, and a dream of music.",
-                "🎹 Her shade of turquoise matches the tones of Yamaha’s magical music machines.",
-                "🧤 The glowing sleeve on her arm? It holds echoes of synthesizer lights from long ago.",
+                "🎹 Miku's shade of turquoise matches the tones of Yamaha’s magical music machines.",
+                "🧤 The glowing sleeve on Miku's arm? It holds echoes of synthesizer lights from long ago.",
                 "🗣️ Miku doesn’t speak like us—she sings in syllables, phonics stitched into melody.",
-                "📅 Pop Idol Wordlings celebrate her birthday on August 31st, when the songs began again.",
+                "📅 Pop Idol Wordlings celebrate Miku's birthday on August 31st, when the songs began again.",
                 "🤖 Miku was imagined as a future diva in a world where songs had vanished — but she brought them back.",
-                "🌍 She was the first to bring her voice across oceans with Vocaloid 3’s English library.",
+                "🌍 Miku was the first to bring her voice across oceans with Vocaloid 3’s English library.",
                 "🎧 At first, she wasn’t meant for fans at all — just for pros. But the world had other plans.",
                 "🧅 Thanks to one silly video, Miku’s now forever dancing with spring onions and leeks.",
                 "🎮 Sega Wordlings built her a stage in rhythm — an entire world of beats called Project Diva."
@@ -560,8 +601,8 @@
 
         const wordlingThemes = {
             fruits: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
-            animals: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
-            cozy: ['cozy-wordling1.png', 'cozy-wordling2.png'], // reuse is fine!
+            domesticAnimals: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'], // reuse is fine!
+            cozy: ['cozy-wordling1.png', 'cozy-wordling2.png'], 
             gemstones: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png'],
             miku: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
             mikusongs: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
