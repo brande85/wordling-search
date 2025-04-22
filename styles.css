@@ -22,7 +22,7 @@ body {
   font-weight: bold;
   user-select: none;
   box-sizing: border-box;
-  border: 1px solid #ccc; /* default border in light mode */
+  border: 1px solid transparent; /* default border in light mode */
 }
 
 .selected {
@@ -186,7 +186,7 @@ body {
   margin-top: 20px;
   text-align: center;
   background: #f7f7ff;
-  background-color: #fdfdfd;
+  background-color: #fff8e7;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -201,11 +201,19 @@ body {
   padding-top: 10px;
 }
 
-#korok-stats{
-  margin-top: 10px; 
-  font-size: 0.9em; 
-  color: #4b0082;
+#korok-stats {
+  padding-top: 8px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
 }
+
+#korok-count {
+  padding: 0 6px;
+  font-weight: bold;
+}
+
 
 #hidden-word {
     text-align: center;
@@ -296,7 +304,7 @@ body[data-theme='dark'] #wordsearch-app {
 
 /* Optional: Invert game elements, buttons, cells, etc. */
 [data-theme='dark'] .cell {
-  border: 1px solid #555;
+  border-color: #555;
   background-color: #111; /* grid cell itself */
   color: #fff;
 }
@@ -330,11 +338,11 @@ body[data-theme='dark'] #cosplay-section {
 }
 
 body[data-theme='dark'] #korok-count {
-  color: #90ee90; /* light green, or try #a5ffb1 for pastel */
+  color: #a5ffb1;
 }
 
 body[data-theme='dark'] #korok-stats {
-  color: #cfcfcf; /* ensure the label isn’t dark purple */
+  color: #ccc;
 }
 
 /* Toggle button styling */
