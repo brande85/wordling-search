@@ -21,6 +21,8 @@ body {
   cursor: pointer;
   font-weight: bold;
   user-select: none;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* default border in light mode */
 }
 
 .selected {
@@ -255,6 +257,10 @@ body {
   100% { opacity: 0; transform: scale(0.9); }
 }
 
+body, .cell, #wordsearch-app {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* Default (light) theme */
 body[data-theme='light'] {
   background-color: #fff;
@@ -287,6 +293,22 @@ body[data-theme='dark'] #grid-container {
   background-color: #222; /* match the inside container */
   padding: 10px;
   border-radius: 6px;
+}
+
+body[data-theme='dark'] #hidden-word-value {
+  color: #b0d7ff; /* soft blue or your preferred tone */
+}
+
+body[data-theme='dark'] .hint-text {
+  color: #aaa; /* or a cozy desaturated color */
+}
+
+body[data-theme='dark'] #cosplay-section h3 {
+  color: #fbd38d; /* warm gold tone or your choice */
+}
+
+body[data-theme='dark'] #korok-count {
+  color: #90ee90; /* light green, or try #a5ffb1 for pastel */
 }
 
 /* Toggle button styling */
