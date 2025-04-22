@@ -42,8 +42,6 @@ let floatingWordling = null;
 let floatingWordlingImage = null;
 let unlockedCosplays = [];
 
-const gridShell = document.getElementById('grid-shell');
-
 function createEmptyGrid() {
   for (let i = 0; i < gridSize; i++) {
       grid[i] = [];
@@ -506,6 +504,7 @@ fetch('wordlists.json')
   .then(data => {
     wordLists = data;
 
+    const gridShell = document.getElementById('grid-shell');
     if (gridSize >= 12 && window.innerWidth < 600) {
       gridShell.classList.add('show-scroll');
     } else {
