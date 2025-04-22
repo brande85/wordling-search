@@ -1,35 +1,43 @@
 const wordLists = {
-  fruits: {
-      words: ["APPLE", "BANANA", "ORANGE", "KIWI", "MANGO", "GRAPE", "PEAR", "MELON", "CHERRY", "LEMON", "APRICOT", "AVOCADO", "BLACKBERRY", "BLUEBERRY", "BOYSENBERRY", "CITRON", "COCONUT", "CRANBERRY", "CURRANT", "DATE", "DRAGONFRUIT", "DURIAN", "ELDERBERRY", "FIG", "LIME", "GOOSEBERRY", "GRAPEFRUIT", "GUAVA", "JACKFRUIT", "PLUM", "KUMQUAT", "LYCHEE", "CANTALOUPE", "HONEYDEW", "WATERMELON", "NECTARINE", "CLEMENTINE", "TANGERINE", "PAPAYA", "PASSIONFRUIT", "PEACH", "PERSIMMON", "PINEAPPLE", "POMEGRANATE", "POMELO", "QUINCE", "RASPBERRY", "STRAWBERRY", "YUZU"],
-      facts: [
-        "🍌 Harvest Wordlings giggle that bananas are berries… but strawberries are just pretending!",
-        "🍊 Oranges were once so rare in Europe, they were given like treasure during winter festivals.",
-        "🍎 Apples are 25% air—no wonder they float in cider streams and orchard ponds.",
-        "🥝 Kiwi was once called the ‘Chinese gooseberry’—but it got a cuter name in New Zealand!",
-        "🍇 Grapes explode in the microwave… and the Wordlings kindly ask you not to test this.",
-        "🌹 Cherries bloom with the roses and carry the same perfume in their spring breeze.",
-        "🍐 Old pear trees have watched over generations—they can live for more than a hundred years!",
-        "🍋 In the misty orchards of East Asia, yuzus glow like lemons, but their taste is a whisper of floral lime and morning breeze.",
-        "🍓 Raspberries are made of many tiny pieces, each holding hands to form the whole — like a fruit that grew from a gathering.",
-        "🍐 A quince is stubborn and sour until softened by time or fire — a fruit that must be earned, not taken.",
-        "🍊 Pomelos are the gentle giants of the citrus grove, nearly ten inches wide and heavy with mellow sweetness.",
-        "🌺 In Armenian stories, pomegranates hold seeds of life, luck, and love — one fruit, many blessings.",
-        "🌸 Some plum trees cannot bloom alone. Without a nearby friend, their flowers go unanswered and bear no fruit.",
-        "🍍 Pineapples got their name from explorers who saw pinecones and tasted paradise — and the name stuck like sunlight on skin.",
-        "🍑 Take the fuzz off a peach and you’re left with a nectarine — just as sweet, just a little smoother.",
-        "🌶️ The seeds of a papaya carry a peppery surprise, sharp enough to stand in for black peppercorns at any table.",
-        "🍉 In parts of Japan, watermelons are grown in shapes: hearts for romance, squares for shelves — a fruit made whimsical.",
-        "🍬 Lychee seeds must be left behind; though the fruit is soft and fragrant, the seed carries danger at its core.",
-        "🌞 A guava holds five times the sunshine of an orange — bursting with brightness in every bite.",
-        "⚠️ Grapefruits carry warnings. Their juice can twist the power of medicine, so potions and fruit must be chosen wisely.",
-        "🌰 A fig’s flower lives inside the fruit — hidden, secret, only seen when the fig is opened like a little lantern.",
-        "🚫 The durian’s smell is so strong that hotels and trains ask it to stay outside, no matter how sweet its heart may be.",
-        "🌴 Date trees wear long feather-like fronds and stretch toward desert skies, dreaming of oasis winds.",
-        "🐉 Dragonfruit earned its name from armor and scales — leathery skin and spikes like something from a myth.",
-        "🥥 Coconuts are patient voyagers. They float across oceans for up to 110 days, looking for soft sand and new beginnings.",
-        "🍒 Cranberries are called superfruits — not for flying, but for brimming with little strengths: vitamins, color, and courage."
-      ]
+
+  // ANIMALS  
+
+  cretaceousDinosaurs: {
+    words: ['CRETACEOUS', 'ABELISAURUS', 'ACROCANTHOSAURUS', 'ALBERTOSAURUS', 'AMARGASAURUS', 'ANKYLOSAURUS', 'ARGENTINOSAURUS', 'BARYONYX', 'CARNOTAURUS', 'CHASMOSAURUS', 'DEINONYCHUS', 'EDMONTOSAURUS', 'GALLIMIMUS', 'GIGANOTOSAURUS', 'GORGOSAURUS', 'IGUANODON', 'LEAELLYNASAURA', 'MINMI', 'ORNITHOMIMUS', 'PACHYCEPHALOSAURUS', 'PARASAUROLOPHUS', 'PROTOCERATOPS', 'SPINOSAURUS', 'STEGOCERAS', 'SUCHOMIMUS', 'TARBOSAURUS', 'TRICERATOPS', 'TROODON', 'TYRANNOSAURUS', 'UTAHRAPTOR', 'VELOCIRAPTOR', 'DINOSAUR', 'FOSSIL', 'BONE', 'CLAW', 'TEETH', 'SKULL', 'CARNIVORE', 'HERBIVORE', 'BIPEDAL', 'HORN', 'FRILL', 'CREST', 'PREDATOR', 'RAPTOR'],
+    facts: [
+      "🦴 All we know about Abelisaurus comes from a single skull fragment — a mysterious puzzle with many missing pieces.",
+      "🪖 Acrocanthosaurus had a tall ridge along its back, like a warrior wearing a spiny crest into battle.",
+      "👀 Albertosaurus looked a lot like T-Rex, but its eyes were set on the sides — always watching the world around it.",
+      "🦕 Amargasaurus carried a dramatic double row of spines down its neck and back, like sails catching ancient winds.",
+      "🛡️ Ankylosaurus had a powerful tail club — a living tank armed for defense.",
+      "🌍 Argentinosaurus was one of the largest land animals ever… and we’ve barely found any of it!",
+      "🐊 Baryonyx had a long, crocodile-like snout and loved to fish — a river hunter on two legs.",
+      "🐂 Carnotaurus, the 'meat-eating bull', had two strange horns and ran like a predator with a headpiece.",
+      "🎭 Chasmosaurus had a frill with giant holes — maybe for defense, maybe for showtime.",
+      "🦶 Deinonychus was named for its terrifying claw — a hooked blade on each toe built for attack.",
+      "🦆 Edmontosaurus, one of the 'duck-billed' dinos, roamed wide plains and munched on plants.",
+      "💨 Gallimimus looked like an ostrich and ran like the wind — fast, sleek, and hard to catch.",
+      "📏 Giganotosaurus was even bigger than T-Rex — a towering predator in its own right.",
+      "😨 Gorgosaurus means 'dreadful lizard' — and with teeth like knives, it earned the title.",
+      "🦷 Iguanodon was named after an iguana’s tooth — the second dinosaur ever to get a name.",
+      "❄️ Leaellynasaura was a tiny dino from cold climates, possibly feathered and quick on its feet.",
+      "🏃‍♂️ Minmi was a speedy little tank — armored but agile, with longer legs than most of its kind.",
+      "🦤 Ornithomimus had bird-like feet and a name that means just that — 'bird mimic.'",
+      "🥊 Pachycephalosaurus had a dome-shaped skull built for battle — likely used in headbutting duels to prove who ruled the herd.",
+      "🎺 Parasaurolophus had a long, curved crest with hollow tubes — a dinosaur trumpet built for sound.",
+      "🦜 Protoceratops had a parrot-like beak and a frill to match — small but striking.",
+      "⛵ Spinosaurus had a sail on its back — maybe to soak up sun, maybe just to show off.",
+      "🥚 Stegoceras had a thick dome of bone on its head — perfect for headbutts or prehistoric posing.",
+      "🐊 Suchomimus looked like a crocodile with a sail — a fish hunter with flair.",
+      "👑 Tarbosaurus ruled its land like T-Rex ruled its own — a fearsome apex predator.",
+      "🦏 Triceratops had three bold horns and a giant frill — its name literally means 'three-horned face.'",
+      "🧠 Troodon was small, smart, and sharp — with big eyes and bigger claws.",
+      "🌍 Tyrannosaurus was the king of dinosaurs — towering, toothy, and unforgettable.",
+      "🦶 Utahraptor had a giant claw for hunting — a supersized version of its raptor cousins.",
+      "⚡ Velociraptor was fast, fierce, and clever — a true 'swift plunderer' of the ancient world."
+    ]
   },
+  
   domesticAnimals: {
       words: ["ALPACA", "CAMEL", "CHICKEN", "DONKEY", "GOAT", "MINK", "CATTLE", "CAT", "DOG", "FERRET", "HORSE", "PIG", "RABBIT", "WATER BUFFALO", "SILVER FOX", "SHEEP", "YAK", "MOUSE", "RAT", "HEDGEHOG", "LLAMA", "DOVE", "CANARY", "COCKATIEL", "DUCK", "GOOSE", "PIGEON", "TURKEY", "GUINEAFOWL", "HONEY BEE", "SILKMOTH", "GOLDFISH", "KOI", "GUINEA PIG"],
       facts: [
@@ -64,17 +72,121 @@ const wordLists = {
         "🦔 In ancient Greece, hedgehogs were welcomed inside homes to eat the insects no one else wanted."
       ]
   },
-  cozy: {
-      words: ["TEA", "BLANKET", "FIREPLACE", "BOOK", "CANDLE", "WINDOW", "SOCKS", "COCOA", "QUILT", "SLIPPERS"],
+
+  jurassicDinosaurs: {
+    words: ['JURASSIC', 'ALLOSAURUS', 'APATOSAURUS', 'ARCHAEOPTERYX', 'BRACHIOSAURUS', 'BRONTOSAURUS', 'CAMARASAURUS', 'CAMPTOSAURUS', 'CERATOSAURUS', 'COMPSOGNATHUS', 'DILOPHOSAURUS', 'DIPLODOCUS', 'HUAYANGOSAURUS', 'LESOTHOSAURUS', 'MEGALOSAURUS', 'OZRAPTOR', 'SARCOSAURUS', 'STEGOSAURUS', 'TIANCHISAURUS', 'VULCANODON', 'DINOSAUR', 'FOSSIL', 'BONE', 'CLAW', 'TEETH', 'SKULL', 'CARNIVORE', 'HERBIVORE', 'BIPEDAL', 'HORN', 'CREST', 'PREDATOR', 'SAUROPOD'],
+    facts: [
+      "🌋 At the end of the Triassic, a mass extinction wiped out half of all species — clearing the stage for dinosaurs to rise.",
+      "🦖 During the Jurassic Period, dinosaurs finally ruled the land — towering, thundering, and thriving.",
+      "🍖 Allosaurus was a top predator, strong enough to take on Stegosaurus or even long-necked giants like Diplodocus.",
+      "📏 Apatosaurus stretched up to 75 feet long — one of the biggest land animals to ever walk the Earth.",
+      "🪶 Archaeopteryx looked like a bird with claws — feathered, winged, and caught between two worlds.",
+      "🦒 Brachiosaurus stood tall, with front legs longer than the back — built like a dinosaur giraffe.",
+      "🌀 Brontosaurus was once thought to be a mistake — until science gave it its name back in 2015.",
+      "💨 Camarasaurus had hollow bones and air sacs that made it lighter — and helped it breathe like a ballooning behemoth.",
+      "🌿 Camptosaurus had a clever jaw — grinding up plants with teeth made for chewing, not chomping.",
+      "🦏 Ceratosaurus had a horn on its nose and two more above its eyes — a three-horned hunter on the move.",
+      "🦐 Compsognathus was once the smallest known dinosaur — until even tinier fossils came to light.",
+      "🎭 Dilophosaurus had twin crests on its head — and legs built for speed and ambush.",
+      "🐍 Diplodocus may have used its long tail like a whip — snapping at danger from behind.",
+      "🍃 Huayangosaurus was the smallest known stegosaur — still armored, but compact and low to the ground.",
+      "✂️ Lesothosaurus didn't chew like modern grazers — it chopped plants with a swift bite instead.",
+      "📖 Megalosaurus was named before the word 'dinosaur' even existed — the first of its kind in the fossil record.",
+      "🌏 Ozraptor is one of the oldest dinosaurs ever found in Australia — a fossil from a forgotten land.",
+      "🦴 Sarcosaurus is known only from a hip bone, a vertebra, and part of a leg — a mystery told in fragments.",
+      "🧠 Stegosaurus had a brain the size of a walnut — proof that size isn’t everything.",
+      "🎬 The species name of one Tianchisaurus means 'nedegoapeferima' — a tribute to the stars of *Jurassic Park*.",
+      "🦷 Vulcanodon got its name from teeth found in volcanic rock — but they turned out to be a mix-up from sandstone and another species."
+    ]
+  },
+
+  popularDinosaurs: {
+    words: ['ALLOSAURUS', 'ANKYLOSAURUS', 'APATOSAURUS', 'BRACHIOSAURUS', 'BRONTOSAURUS', 'CARNOTAURUS', 'COMPSOGNATHUS', 'DIPLODOCUS', 'IGUANODON', 'PACHYCEPHALOSAURUS', 'PARASAUROLOPHUS', 'SPINOSAURUS', 'STEGOSAURUS', 'TRICERATOPS', 'TYRANNOSAURUS', 'VELOCIRAPTOR', 'DINOSAUR', 'FOSSIL', 'BONE', 'CLAW', 'TEETH', 'SKULL', 'CARNIVORE', 'HERBIVORE', 'BIPEDAL', 'HORN', 'CREST', 'FRILL', 'PREDATOR', 'SAUROPOD'],
+    facts: [
+      "🍖 Allosaurus was a top predator, strong enough to take on Stegosaurus or even long-necked giants like Diplodocus.",
+      "🛡️ Ankylosaurus had a powerful tail club — a living tank armed for defense.",
+      "📏 Apatosaurus stretched up to 75 feet long — one of the biggest land animals to ever walk the Earth.",
+      "🦒 Brachiosaurus stood tall, with front legs longer than the back — built like a dinosaur giraffe.",
+      "🌀 Brontosaurus was once thought to be a mistake — until science gave it its name back in 2015.",
+      "🐂 Carnotaurus, the 'meat-eating bull', had two strange horns and ran like a predator with a headpiece.",
+      "🦐 Compsognathus was once the smallest known dinosaur — until even tinier fossils came to light.",
+      "🐍 Diplodocus may have used its long tail like a whip — snapping at danger from behind.",
+      "🦷 Iguanodon was named after an iguana’s tooth — the second dinosaur ever to get a name.",
+      "🥊 Pachycephalosaurus had a dome-shaped skull built for battle — likely used in headbutting duels to prove who ruled the herd.",
+      "🎺 Parasaurolophus had a long, curved crest with hollow tubes — a dinosaur trumpet built for sound.",
+      "⛵ Spinosaurus had a sail on its back — maybe to soak up sun, maybe just to show off.",
+      "🧠 Stegosaurus had a brain the size of a walnut — proof that size isn’t everything.",
+      "🦏 Triceratops had three bold horns and a giant frill — its name literally means 'three-horned face.'",
+      "🌍 Tyrannosaurus was the king of dinosaurs — towering, toothy, and unforgettable.",
+      "⚡ Velociraptor was fast, fierce, and clever — a true 'swift plunderer' of the ancient world."
+    ]
+  },
+
+  triassicDinosaurs: {
+    words: ['TRIASSIC', 'ALWALKERIA', 'ASYLOSAURUS', 'CAMPOSAURUS', 'CHINDESAURUS', 'COELOPHYSIS', 'COLORADISAURUS', 'DAEMONOSAURUS', 'EOCURSOR', 'EORAPTOR', 'GOJIRASAURUS', 'HERRERASAURUS', 'LILIENSTERNUS', 'LYCORHINUS', 'MELANOROSAURUS', 'MUSSAURUS', 'PANTYDRACO', 'PISANOSAURUS', 'PLATEOSAURUS', 'RIOJASAURUS', 'SATURNALIA', 'STAURIKOSAURUS', 'THECODONTOSAURUS', 'DINOSAUR', 'FOSSIL', 'BONE', 'CLAW', 'TEETH', 'SKULL', 'CARNIVORE', 'HERBIVORE', 'OMNIVORE', 'BIPEDAL', 'HORN', 'CREST', 'FRILL', 'PREDATOR', 'SAUROPOD', 'THEROPOD', 'HUNTER'],
+    facts: [
+      "🌅 Dinosaurs first appeared in the Triassic — small, nimble, two-legged creatures stepping into a brand-new world.",
+      "🐊 The fiercest hunters in the Triassic weren’t dinosaurs — they were crocodile-like beasts called pseudosuchians.",
+      "🌿 Alwalkeria was a tiny, early dinosaur that likely ate both plants and small prey.",
+      "🦴 Asylosaurus is known from just a few bones — a glimpse of an early sauropod in the making.",
+      "👣 Camposaurus left behind only a few leg bones — but they tell us it ran on two swift feet.",
+      "⚡ Coelophysis was quick and slender — one of the earliest dinosaurs we know in fossil form.",
+      "📏 Coloradisaurus was a miniature version of the giants that would come later — small, but long-necked.",
+      "👀 Daemonosaurus had big eyes, a stubby snout, and teeth that jutted forward — a true Triassic oddball.",
+      "🌱 Eocursor was one of the first plant-eaters in the dinosaur lineage — small, swift, and sharp-eyed.",
+      "⏳ Eoraptor lived at the dawn of the dinosaurs — one of the very first to walk the Earth.",
+      "🦖 Gojirasaurus, named after Godzilla, was a towering predator for its time — fierce and fast.",
+      "🧬 Herrerasaurus was one of the earliest theropods — a link between what was and what would be.",
+      "🏃‍♂️ Liliensternus was built for speed — hunting smaller plant-eaters with agility and precision.",
+      "🐺 Lycorhinus means 'wolf snout' — a misnamed mystery, once thought to be a mammal’s skull.",
+      "🌳 Melanorosaurus was a long-necked herbivore, among the biggest of the Triassic plant-eaters.",
+      "🐭 Despite its name meaning 'mouse lizard', Mussaurus grew into a lumbering ancestor of giants.",
+      "🌀 Pantydraco’s name comes from a Welsh spring — not pants! — and means 'valley dragon'.",
+      "🔄 Pisanosaurus had a jaw that chewed in ways dinosaurs wouldn’t use again for millions of years.",
+      "🧩 Plateosaurus fossils are everywhere in Europe — with over 100 skeletons found so far!",
+      "🧠 Riojasaurus’s first skeleton was missing a skull — it took decades to complete the picture.",
+      "🍂 Saturnalia was one of the first herbivores to take over after earlier creatures vanished mysteriously.",
+      "🧪 Some scientists think Staurikosaurus and Herrerasaurus may have been the same dino in disguise.",
+      "🦷 Thecodontosaurus means 'socket-tooth lizard' — all because the first fossil was just a jawbone."
+    ]
+  },
+  
+  // FOOD
+  
+  fruits: {
+      words: ["APPLE", "BANANA", "ORANGE", "KIWI", "MANGO", "GRAPE", "PEAR", "MELON", "CHERRY", "LEMON", "APRICOT", "AVOCADO", "BLACKBERRY", "BLUEBERRY", "BOYSENBERRY", "CITRON", "COCONUT", "CRANBERRY", "CURRANT", "DATE", "DRAGONFRUIT", "DURIAN", "ELDERBERRY", "FIG", "LIME", "GOOSEBERRY", "GRAPEFRUIT", "GUAVA", "JACKFRUIT", "PLUM", "KUMQUAT", "LYCHEE", "CANTALOUPE", "HONEYDEW", "WATERMELON", "NECTARINE", "CLEMENTINE", "TANGERINE", "PAPAYA", "PASSIONFRUIT", "PEACH", "PERSIMMON", "PINEAPPLE", "POMEGRANATE", "POMELO", "QUINCE", "RASPBERRY", "STRAWBERRY", "YUZU"],
       facts: [
-        "🕯️ Hearthlings remember when candles were made from beeswax or fat—every flicker hard-earned.",
-        "📖 Reading by firelight was once a winter treasure, saved for the longest nights.",
-        "🧵 The oldest known quilt comes from 3400 BC—Hearthlings say it still dreams in patterns.",
-        "👣 Slippers were invented in ancient China to make footsteps soft and silent indoors.",
-        "🍵 In the 1800s, tea was so precious it came with a key—locked in its own tiny chest.",
-        "🧦 Wool socks are naturally cozy *and* fight off foot-odor gremlins — Hearthling tested."
+        "🍌 Harvest Wordlings giggle that bananas are berries… but strawberries are just pretending!",
+        "🍊 Oranges were once so rare in Europe, they were given like treasure during winter festivals.",
+        "🍎 Apples are 25% air—no wonder they float in cider streams and orchard ponds.",
+        "🥝 Kiwi was once called the ‘Chinese gooseberry’—but it got a cuter name in New Zealand!",
+        "🍇 Grapes explode in the microwave… and the Wordlings kindly ask you not to test this.",
+        "🌹 Cherries bloom with the roses and carry the same perfume in their spring breeze.",
+        "🍐 Old pear trees have watched over generations—they can live for more than a hundred years!",
+        "🍋 In the misty orchards of East Asia, yuzus glow like lemons, but their taste is a whisper of floral lime and morning breeze.",
+        "🍓 Raspberries are made of many tiny pieces, each holding hands to form the whole — like a fruit that grew from a gathering.",
+        "🍐 A quince is stubborn and sour until softened by time or fire — a fruit that must be earned, not taken.",
+        "🍊 Pomelos are the gentle giants of the citrus grove, nearly ten inches wide and heavy with mellow sweetness.",
+        "🌺 In Armenian stories, pomegranates hold seeds of life, luck, and love — one fruit, many blessings.",
+        "🌸 Some plum trees cannot bloom alone. Without a nearby friend, their flowers go unanswered and bear no fruit.",
+        "🍍 Pineapples got their name from explorers who saw pinecones and tasted paradise — and the name stuck like sunlight on skin.",
+        "🍑 Take the fuzz off a peach and you’re left with a nectarine — just as sweet, just a little smoother.",
+        "🌶️ The seeds of a papaya carry a peppery surprise, sharp enough to stand in for black peppercorns at any table.",
+        "🍉 In parts of Japan, watermelons are grown in shapes: hearts for romance, squares for shelves — a fruit made whimsical.",
+        "🍬 Lychee seeds must be left behind; though the fruit is soft and fragrant, the seed carries danger at its core.",
+        "🌞 A guava holds five times the sunshine of an orange — bursting with brightness in every bite.",
+        "⚠️ Grapefruits carry warnings. Their juice can twist the power of medicine, so potions and fruit must be chosen wisely.",
+        "🌰 A fig’s flower lives inside the fruit — hidden, secret, only seen when the fig is opened like a little lantern.",
+        "🚫 The durian’s smell is so strong that hotels and trains ask it to stay outside, no matter how sweet its heart may be.",
+        "🌴 Date trees wear long feather-like fronds and stretch toward desert skies, dreaming of oasis winds.",
+        "🐉 Dragonfruit earned its name from armor and scales — leathery skin and spikes like something from a myth.",
+        "🥥 Coconuts are patient voyagers. They float across oceans for up to 110 days, looking for soft sand and new beginnings.",
+        "🍒 Cranberries are called superfruits — not for flying, but for brimming with little strengths: vitamins, color, and courage."
       ]
   },
+
+  // GEOLOGY
+  
   gemstones: {
       words: ["AGATE", "ALEXANDRITE", "AMBER", "AMETHYST", "APATITE", "BERYL", "CHALCEDONY", "CITRINE", "CORUNDUM", "DIAMOND", "EMERALD", "GARNET", "ONYX", "OPAL", "PEARL", "PERIDOT", "QUARTZ", "ROSE QUARTZ", "RUBY", "SAPPHIRE", "TOPAZ", "TOURMALINE", "TURQUOISE", "ZIRCON"],
       facts: [
@@ -97,45 +209,8 @@ const wordLists = {
         "🔥 Both ruby and sapphire are born from the same mineral, corundum—just dressed in different flames."
       ]
   },
-  miku: {
-    words: ["HATSUNE MIKU", "VOCALOID", "CRYPTON", "TWINTAILS", "VIRTUAL", "IDOL", "HOLOGRAM", "SINGER", "FIRST SOUND", "FUTURE", "SAKI FUJITA", "KEI GARO", "YAMAHA", "PHONIC", "VOICEBANK", "DANCE", "SPRING ONION", "LEEK", "PROJECT DIVA", "CHARACTER", "TURQUOISE", "ANDROID", "COMPUTER", "JAPANESE", "SYNTHESIZER", "RHYTHM"],
-    facts: [
-      "🎤 Idol Wordlings say Miku was the very first voice in a new digital songbook—CV-01, the start of it all.",
-      "🌟 Sometimes, you can catch her performing live in light and holograms, like a dream on stage.",
-      "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
-      "💫 'Hatsune Miku' means 'The First Sound of the Future'—a whisper from tomorrow itself.",
-      "🎨 Wordlings say her turquoise glow was chosen before anything else—just the color, and a dream of music.",
-      "🎹 Her shade of turquoise matches the tones of Yamaha’s magical music machines.",
-      "🧤 The glowing sleeve on her arm? It holds echoes of synthesizer lights from long ago.",
-      "🗣️ Miku doesn’t speak like us—she sings in syllables, phonics stitched into melody.",
-      "📅 Pop Idol Wordlings celebrate her birthday on August 31st, when the songs began again.",
-      "🤖 Miku was imagined as a future diva in a world where songs had vanished—but she brought them back.",
-      "🌍 She was the first to bring her voice across oceans with Vocaloid 3’s English library.",
-      "🎧 At first, she wasn’t meant for fans at all—just for pros. But the world had other plans.",
-      "🧅 Thanks to one silly video, Miku’s now forever dancing with spring onions and leeks.",
-      "🎮 Sega Wordlings built her a stage in rhythm—an entire world of beats called Project Diva."
-    ]
-  },
-  mikusongs: {
-    words: ["ABSOLUNOTE", "ACUTE", "AGEAGE AGAIN", "AIKOTOBA", "ALIEN ALIEN", "BLACK ROCK SHOOTER", "CANTARELLA", "CAT FOOD", "CATCH THE WAVE", "CENDRILLON", "DANCE OF MANY", "DEAR", "DECORATOR", "DEEP SEA GIRL", "DREAMING LEAF", "DENPARADIGM", "DRAMATURGY", "DOUBLEGANGER", "ELECTRIC ANGEL", "ENVY CAT WALK", "FINDER", "FROM Y TO Y", "GHOST RULE", "GIGANTIC GIRL", "GIZMO", "HAND IN HAND", "HIBIKASE", "HIBANA", "HIGH SCHOOL DAYS", "HOLY STAR", "INNOCENCE", "INTERVIEWER", "JITTERBUG", "KIMI NI", "KNIFE", "KNIGHT OF LIGHT", "LOVE IS WAR", "LUCID DREAMING", "MAGNET", "MARGINAL", "MASTER OF PUPPETS", "METEOR", "MIRACLE PAINT", "MOON", "MOUSOU SKETCH", "NEKOMIMI SWITCH", "PINK MOON", "PINKY SWEAR", "PO PI PO", "PROMISE", "PUZZLE", "ROLLING GIRL", "ROMEO AND CINDERELLA", "SAIHATE", "SAKURA NO AME", "SECRET POLICE", "SENBONZAKURA", "SOUND", "SLUMP", "STAR STORY", "STARDUSTER", "STARGAZER", "STEP FORWARD", "SUMMER IDOL", "SWEET DEVIL", "SYSTEMATIC LOVE", "TELL YOUR WORLD", "THE FIRST SOUND", "THE SECRET GARDEN", "THE WORLD IS MINE", "TIME LIMIT", "TIME MACHINE", "TORINOKOCITY", "TRICOLORE AIRLINE", "UNHAPPY REFRAIN", "VELVET ARABESQUE", "WEEKENDER GIRL", "WOLF GIRL", "YELLOW", "YUMEYUME"],
-    facts: [
-      "🎤 Idol Wordlings say Miku was the very first voice in a new digital songbook — CV-01, the start of it all.",
-      "🌟 Sometimes, you can catch her performing live in light and holograms, like a dream on stage.",
-      "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
-      "💫 'Hatsune Miku' means 'The First Sound of the Future' — a whisper from tomorrow itself.",
-      "🎨 Wordlings say her turquoise glow was chosen before anything else — just the color, and a dream of music.",
-      "🎹 Miku's shade of turquoise matches the tones of Yamaha’s magical music machines.",
-      "🧤 The glowing sleeve on Miku's arm? It holds echoes of synthesizer lights from long ago.",
-      "🗣️ Miku doesn’t speak like us—she sings in syllables, phonics stitched into melody.",
-      "📅 Pop Idol Wordlings celebrate Miku's birthday on August 31st, when the songs began again.",
-      "🤖 Miku was imagined as a future diva in a world where songs had vanished — but she brought them back.",
-      "🌍 Miku was the first to bring her voice across oceans with Vocaloid 3’s English library.",
-      "🎧 At first, she wasn’t meant for fans at all — just for pros. But the world had other plans.",
-      "🧅 Thanks to one silly video, Miku’s now forever dancing with spring onions and leeks.",
-      "🎮 Sega Wordlings built her a stage in rhythm — an entire world of beats called Project Diva."
-    ]
-  },
-  igneousRocks: {
+
+    igneousRocks: {
     words: ["IGNEOUS", "MOLTEN", "INTRUSIVE", "CRYSTALLIZE", "EXTRUSIVE", "ERUPT", "AMORPHOUS", "BASALT", "DIORITE", "TRAP ROCK", "GABBRO", "GRANITE", "OBSIDIAN", "PERIDOTITE", "PUMICE", "RHYOLITE", "FIRE OPAL", "UNAKITE", "WELDED TUFF", "VOLCANO", "SCORIA", "PEGMATITE", "MAGMA", "DOLERITE", "DIABASE", "DACITE", "INTRUSION", "GLASS", "PLUTONIC", "HYPABYSSAL", "COUNTRY ROCK", "BATHOLITH", "STOCK", "LACCOLITH", "SILL", "DIKE", "PHANERITIC", "APHANITIC", "PORPHYRY"],
     facts: [
         "🌋 Igneous rocks are born from fire — they form when molten magma cools and stills into stone.",
@@ -168,6 +243,7 @@ const wordLists = {
         "🌬️ Pumice is made of bubbles — lava cooled so quickly it kept the air inside, making a rock that floats like a sponge of stone."
     ]
   },
+  
   sedimentaryRocks: {
       words: ["SEDIMENTARY", "SEDIMENT", "CLASTIC", "CHEMICAL", "ORGANIC", "CALICHE", "PUDDINGSTONE", "CHALK", "LIMESTONE", "CHERT", "COAL", "CONGLOMERATE", "COQUINA", "FOSSIL", "DIATOMITE", "DOLOMITE", "FLINT", "ROCK SALT", "SANDSTONE", "SHALE", "SILTSTONE", "CEMENTATION", "DETRITUS", "STRATA", "BEDDING", "SEDIMENTOLOGY", "GRAVEL", "SAND", "MUD", "SILT", "CLAY", "BRECCIA", "MUDROCK", "EVAPORITE", "COMPACTION", "LITHIFICATION", "DIAGENESIS", "LAMINATION", "DUNE", "RIPPLE", "BIOTURBATION", "MATRIX"],
       facts: [
@@ -192,6 +268,7 @@ const wordLists = {
           "🌊 Ripple marks form where water flows — in rivers, on beaches, or in the quiet shifts of tidal flats."
       ]
   },
+  
   metamorphicRocks: {
       words: ["METAMOPRHIC", "FOLIATION", "ANTHRACITE", "GNEISS", "HORNFELS", "LAPIS LAZULI", "MARBLE", "MARIPOSITE", "NOVACULITE", "PHYLLITE", "QUARTZITE", "SCHIST", "SKARN", "SLATE", "SOAPSTONE", "METAMORPHISM", "PROTOLITH", "INDEX MINERAL", "THERMAL", "CATACLASTIC", "HYDROTHERMAL", "IMPACT", "FISSILITY"],
       facts: [
@@ -214,4 +291,61 @@ const wordLists = {
           "🌟 In the Gold Rush days, prospectors learned to follow the glitter in mariposite — a green stone often veined with promise."
       ]
   }
+
+  // MUSIC
+  
+  miku: {
+    words: ["HATSUNE MIKU", "VOCALOID", "CRYPTON", "TWINTAILS", "VIRTUAL", "IDOL", "HOLOGRAM", "SINGER", "FIRST SOUND", "FUTURE", "SAKI FUJITA", "KEI GARO", "YAMAHA", "PHONIC", "VOICEBANK", "DANCE", "SPRING ONION", "LEEK", "PROJECT DIVA", "CHARACTER", "TURQUOISE", "ANDROID", "COMPUTER", "JAPANESE", "SYNTHESIZER", "RHYTHM"],
+    facts: [
+      "🎤 Idol Wordlings say Miku was the very first voice in a new digital songbook—CV-01, the start of it all.",
+      "🌟 Sometimes, you can catch her performing live in light and holograms, like a dream on stage.",
+      "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
+      "💫 'Hatsune Miku' means 'The First Sound of the Future'—a whisper from tomorrow itself.",
+      "🎨 Wordlings say her turquoise glow was chosen before anything else—just the color, and a dream of music.",
+      "🎹 Her shade of turquoise matches the tones of Yamaha’s magical music machines.",
+      "🧤 The glowing sleeve on her arm? It holds echoes of synthesizer lights from long ago.",
+      "🗣️ Miku doesn’t speak like us—she sings in syllables, phonics stitched into melody.",
+      "📅 Pop Idol Wordlings celebrate her birthday on August 31st, when the songs began again.",
+      "🤖 Miku was imagined as a future diva in a world where songs had vanished—but she brought them back.",
+      "🌍 She was the first to bring her voice across oceans with Vocaloid 3’s English library.",
+      "🎧 At first, she wasn’t meant for fans at all—just for pros. But the world had other plans.",
+      "🧅 Thanks to one silly video, Miku’s now forever dancing with spring onions and leeks.",
+      "🎮 Sega Wordlings built her a stage in rhythm—an entire world of beats called Project Diva."
+    ]
+  },
+  
+  mikusongs: {
+    words: ["ABSOLUNOTE", "ACUTE", "AGEAGE AGAIN", "AIKOTOBA", "ALIEN ALIEN", "BLACK ROCK SHOOTER", "CANTARELLA", "CAT FOOD", "CATCH THE WAVE", "CENDRILLON", "DANCE OF MANY", "DEAR", "DECORATOR", "DEEP SEA GIRL", "DREAMING LEAF", "DENPARADIGM", "DRAMATURGY", "DOUBLEGANGER", "ELECTRIC ANGEL", "ENVY CAT WALK", "FINDER", "FROM Y TO Y", "GHOST RULE", "GIGANTIC GIRL", "GIZMO", "HAND IN HAND", "HIBIKASE", "HIBANA", "HIGH SCHOOL DAYS", "HOLY STAR", "INNOCENCE", "INTERVIEWER", "JITTERBUG", "KIMI NI", "KNIFE", "KNIGHT OF LIGHT", "LOVE IS WAR", "LUCID DREAMING", "MAGNET", "MARGINAL", "MASTER OF PUPPETS", "METEOR", "MIRACLE PAINT", "MOON", "MOUSOU SKETCH", "NEKOMIMI SWITCH", "PINK MOON", "PINKY SWEAR", "PO PI PO", "PROMISE", "PUZZLE", "ROLLING GIRL", "ROMEO AND CINDERELLA", "SAIHATE", "SAKURA NO AME", "SECRET POLICE", "SENBONZAKURA", "SOUND", "SLUMP", "STAR STORY", "STARDUSTER", "STARGAZER", "STEP FORWARD", "SUMMER IDOL", "SWEET DEVIL", "SYSTEMATIC LOVE", "TELL YOUR WORLD", "THE FIRST SOUND", "THE SECRET GARDEN", "THE WORLD IS MINE", "TIME LIMIT", "TIME MACHINE", "TORINOKOCITY", "TRICOLORE AIRLINE", "UNHAPPY REFRAIN", "VELVET ARABESQUE", "WEEKENDER GIRL", "WOLF GIRL", "YELLOW", "YUMEYUME"],
+    facts: [
+      "🎤 Idol Wordlings say Miku was the very first voice in a new digital songbook — CV-01, the start of it all.",
+      "🌟 Sometimes, you can catch her performing live in light and holograms, like a dream on stage.",
+      "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
+      "💫 'Hatsune Miku' means 'The First Sound of the Future' — a whisper from tomorrow itself.",
+      "🎨 Wordlings say her turquoise glow was chosen before anything else — just the color, and a dream of music.",
+      "🎹 Miku's shade of turquoise matches the tones of Yamaha’s magical music machines.",
+      "🧤 The glowing sleeve on Miku's arm? It holds echoes of synthesizer lights from long ago.",
+      "🗣️ Miku doesn’t speak like us—she sings in syllables, phonics stitched into melody.",
+      "📅 Pop Idol Wordlings celebrate Miku's birthday on August 31st, when the songs began again.",
+      "🤖 Miku was imagined as a future diva in a world where songs had vanished — but she brought them back.",
+      "🌍 Miku was the first to bring her voice across oceans with Vocaloid 3’s English library.",
+      "🎧 At first, she wasn’t meant for fans at all — just for pros. But the world had other plans.",
+      "🧅 Thanks to one silly video, Miku’s now forever dancing with spring onions and leeks.",
+      "🎮 Sega Wordlings built her a stage in rhythm — an entire world of beats called Project Diva."
+    ]
+  },
+
+  // OTHER
+
+  cozy: {
+      words: ["TEA", "BLANKET", "FIREPLACE", "BOOK", "CANDLE", "WINDOW", "SOCKS", "COCOA", "QUILT", "SLIPPERS"],
+      facts: [
+        "🕯️ Hearthlings remember when candles were made from beeswax or fat—every flicker hard-earned.",
+        "📖 Reading by firelight was once a winter treasure, saved for the longest nights.",
+        "🧵 The oldest known quilt comes from 3400 BC—Hearthlings say it still dreams in patterns.",
+        "👣 Slippers were invented in ancient China to make footsteps soft and silent indoors.",
+        "🍵 In the 1800s, tea was so precious it came with a key—locked in its own tiny chest.",
+        "🧦 Wool socks are naturally cozy *and* fight off foot-odor gremlins — Hearthling tested."
+      ]
+  },
+
 }
