@@ -590,7 +590,7 @@ function toggleSelectionMode() {
   selectionMode = selectionMode === 'drag' ? 'click' : 'drag';
   const modeToggle = document.getElementById('mode-toggle');
   if (modeToggle) {
-    modeToggle.textContent = `🖱️ Select Mode: ${selectionMode === 'drag' ? 'Drag' : 'Click'}`;
+    modeToggle.textContent = `🖱️ ${selectionMode === 'drag' ? 'Drag' : 'Click'}`;
   }
 }
 
@@ -608,22 +608,22 @@ window.addEventListener('DOMContentLoaded', () => {
     modeToggle.addEventListener('click', toggleSelectionMode);
   }
 	
-	const gridShell = document.getElementById('grid-shell');
-	if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
-	gridShell.classList.add('show-scroll');
-	} else if (gridShell) {
-	gridShell.classList.remove('show-scroll');
-	}
-	
-	const gridContainer = document.getElementById('grid-container');
-	if (gridSize === 12 && gridContainer) {
-	gridContainer.classList.add('zoom-out');
-	}
-	
-	const newGameBtn = document.getElementById('new-game-btn');
-	if (newGameBtn) {
-	newGameBtn.addEventListener('click', generatePuzzle);
-	}
+  const gridShell = document.getElementById('grid-shell');
+  if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
+  gridShell.classList.add('show-scroll');
+  } else if (gridShell) {
+  gridShell.classList.remove('show-scroll');
+  }
+  
+  const gridContainer = document.getElementById('grid-container');
+  if (gridSize === 12 && gridContainer) {
+  gridContainer.classList.add('zoom-out');
+  }
+  
+  const newGameBtn = document.getElementById('new-game-btn');
+  if (newGameBtn) {
+  newGameBtn.addEventListener('click', generatePuzzle);
+  }
 
 // ✅ Now it's safe
 generatePuzzle();
