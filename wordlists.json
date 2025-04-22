@@ -1,7 +1,7 @@
 {
-  fruits: {
-      words: ['APPLE', 'BANANA', 'ORANGE', 'KIWI', 'MANGO', 'GRAPE', 'PEAR', 'MELON', 'CHERRY', 'LEMON', 'APRICOT', 'AVOCADO', 'BLACKBERRY', 'BLUEBERRY', 'BOYSENBERRY', 'CITRON', 'COCONUT', 'CRANBERRY', 'CURRANT', 'DATE', 'DRAGONFRUIT', 'DURIAN', 'ELDERBERRY', 'FIG', 'LIME', 'GOOSEBERRY', 'GRAPEFRUIT', 'GUAVA', 'JACKFRUIT', 'PLUM', 'KUMQUAT', 'LYCHEE', 'CANTALOUPE', 'HONEYDEW', 'WATERMELON', 'NECTARINE', 'CLEMENTINE', 'TANGERINE', 'PAPAYA', 'PASSIONFRUIT', 'PEACH', 'PERSIMMON', 'PINEAPPLE', 'POMEGRANATE', 'POMELO', 'QUINCE', 'RASPBERRY', 'STRAWBERRY', 'YUZU'],
-      facts: [
+  "fruits": {
+      "words": ['APPLE', 'BANANA', 'ORANGE', 'KIWI', 'MANGO', 'GRAPE', 'PEAR', 'MELON', 'CHERRY', 'LEMON', 'APRICOT', 'AVOCADO', 'BLACKBERRY', 'BLUEBERRY', 'BOYSENBERRY', 'CITRON', 'COCONUT', 'CRANBERRY', 'CURRANT', 'DATE', 'DRAGONFRUIT', 'DURIAN', 'ELDERBERRY', 'FIG', 'LIME', 'GOOSEBERRY', 'GRAPEFRUIT', 'GUAVA', 'JACKFRUIT', 'PLUM', 'KUMQUAT', 'LYCHEE', 'CANTALOUPE', 'HONEYDEW', 'WATERMELON', 'NECTARINE', 'CLEMENTINE', 'TANGERINE', 'PAPAYA', 'PASSIONFRUIT', 'PEACH', 'PERSIMMON', 'PINEAPPLE', 'POMEGRANATE', 'POMELO', 'QUINCE', 'RASPBERRY', 'STRAWBERRY', 'YUZU'],
+      "facts": [
         "🍌 Harvest Wordlings giggle that bananas are berries… but strawberries are just pretending!",
         "🍊 Oranges were once so rare in Europe, they were given like treasure during winter festivals.",
         "🍎 Apples are 25% air—no wonder they float in cider streams and orchard ponds.",
@@ -30,9 +30,9 @@
         "🍒 Cranberries are called superfruits — not for flying, but for brimming with little strengths: vitamins, color, and courage."
       ]
   },
-  domesticAnimals: {
-      words: ['ALPACA', 'CAMEL', 'CHICKEN', 'DONKEY', 'GOAT', 'MINK', 'CATTLE', 'CAT', 'DOG', 'FERRET', 'HORSE', 'PIG', 'RABBIT', 'WATER BUFFALO', 'SILVER FOX', 'SHEEP', 'YAK', 'MOUSE', 'RAT', 'HEDGEHOG', 'LLAMA', 'DOVE', 'CANARY', 'COCKATIEL', 'DUCK', 'GOOSE', 'PIGEON', 'TURKEY', 'GUINEAFOWL', 'HONEY BEE', 'SILKMOTH', 'GOLDFISH', 'KOI', 'GUINEA PIG'],
-      facts: [
+  "domesticAnimals": {
+      "words": ['ALPACA', 'CAMEL', 'CHICKEN', 'DONKEY', 'GOAT', 'MINK', 'CATTLE', 'CAT', 'DOG', 'FERRET', 'HORSE', 'PIG', 'RABBIT', 'WATER BUFFALO', 'SILVER FOX', 'SHEEP', 'YAK', 'MOUSE', 'RAT', 'HEDGEHOG', 'LLAMA', 'DOVE', 'CANARY', 'COCKATIEL', 'DUCK', 'GOOSE', 'PIGEON', 'TURKEY', 'GUINEAFOWL', 'HONEY BEE', 'SILKMOTH', 'GOLDFISH', 'KOI', 'GUINEA PIG'],
+      "facts": [
         "🐕 Dogs were the first to walk beside us — a friendship older than any written word.",
         "🍞 After so many meals together, dogs can thrive on bread and stew, unlike their wild cousins.",
         "🐏 Once, all sheep wore earth tones, but we taught them to grow fleeces white as snow or dark as twilight.",
@@ -64,9 +64,9 @@
         "🦔 In ancient Greece, hedgehogs were welcomed inside homes to eat the insects no one else wanted."
       ]
   },
-  cozy: {
-      words: ['TEA', 'BLANKET', 'FIREPLACE', 'BOOK', 'CANDLE', 'WINDOW', 'SOCKS', 'COCOA', 'QUILT', 'SLIPPERS'],
-      facts: [
+  "cozy": {
+      "words": ['TEA', 'BLANKET', 'FIREPLACE', 'BOOK', 'CANDLE', 'WINDOW', 'SOCKS', 'COCOA', 'QUILT', 'SLIPPERS'],
+      "facts": [
         "🕯️ Hearthlings remember when candles were made from beeswax or fat—every flicker hard-earned.",
         "📖 Reading by firelight was once a winter treasure, saved for the longest nights.",
         "🧵 The oldest known quilt comes from 3400 BC—Hearthlings say it still dreams in patterns.",
@@ -75,9 +75,9 @@
         "🧦 Wool socks are naturally cozy *and* fight off foot-odor gremlins — Hearthling tested."
       ]
   },
-  gemstones: {
-      words: ['AGATE', 'ALEXANDRITE', 'AMBER', 'AMETHYST', 'APATITE', 'BERYL', 'CHALCEDONY', 'CITRINE', 'CORUNDUM', 'DIAMOND', 'EMERALD', 'GARNET', 'ONYX', 'OPAL', 'PEARL', 'PERIDOT', 'QUARTZ', 'ROSE QUARTZ', 'RUBY', 'SAPPHIRE', 'TOPAZ', 'TOURMALINE', 'TURQUOISE', 'ZIRCON'],
-      facts: [
+  "gemstones": {
+      "words": ['AGATE', 'ALEXANDRITE', 'AMBER', 'AMETHYST', 'APATITE', 'BERYL', 'CHALCEDONY', 'CITRINE', 'CORUNDUM', 'DIAMOND', 'EMERALD', 'GARNET', 'ONYX', 'OPAL', 'PEARL', 'PERIDOT', 'QUARTZ', 'ROSE QUARTZ', 'RUBY', 'SAPPHIRE', 'TOPAZ', 'TOURMALINE', 'TURQUOISE', 'ZIRCON'],
+      "facts": [
         "💎 Gemlings say only four stones are called truly precious: diamond, ruby, sapphire, and emerald.",
         "🌿 Amber isn't a stone at all—it's the ancient memory of trees, hardened into golden glass.",
         "🧡 Some say you can find tiny creatures or petals frozen in amber’s golden embrace.",
@@ -97,9 +97,9 @@
         "🔥 Both ruby and sapphire are born from the same mineral, corundum—just dressed in different flames."
       ]
   },
-  miku: {
-    words: ['HATSUNE MIKU', 'VOCALOID', 'CRYPTON', 'TWINTAILS', 'VIRTUAL', 'IDOL', 'HOLOGRAM', 'SINGER', 'FIRST SOUND', 'FUTURE', 'SAKI FUJITA', 'KEI GARO', 'YAMAHA', 'PHONIC', 'VOICEBANK', 'DANCE', 'SPRING ONION', 'LEEK', 'PROJECT DIVA', 'CHARACTER', 'TURQUOISE', 'ANDROID', 'COMPUTER', 'JAPANESE', 'SYNTHESIZER', 'RHYTHM'],
-    facts: [
+  "miku": {
+    "words": ['HATSUNE MIKU', 'VOCALOID', 'CRYPTON', 'TWINTAILS', 'VIRTUAL', 'IDOL', 'HOLOGRAM', 'SINGER', 'FIRST SOUND', 'FUTURE', 'SAKI FUJITA', 'KEI GARO', 'YAMAHA', 'PHONIC', 'VOICEBANK', 'DANCE', 'SPRING ONION', 'LEEK', 'PROJECT DIVA', 'CHARACTER', 'TURQUOISE', 'ANDROID', 'COMPUTER', 'JAPANESE', 'SYNTHESIZER', 'RHYTHM'],
+    "facts": [
       "🎤 Idol Wordlings say Miku was the very first voice in a new digital songbook—CV-01, the start of it all.",
       "🌟 Sometimes, you can catch her performing live in light and holograms, like a dream on stage.",
       "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
@@ -116,9 +116,9 @@
       "🎮 Sega Wordlings built her a stage in rhythm—an entire world of beats called Project Diva."
     ]
   },
-  mikusongs: {
-    words: ['ABSOLUNOTE', 'ACUTE', 'AGEAGE AGAIN', 'AIKOTOBA', 'ALIEN ALIEN', 'BLACK ROCK SHOOTER', 'CANTARELLA', 'CAT FOOD', 'CATCH THE WAVE', 'CENDRILLON', 'DANCE OF MANY', 'DEAR', 'DECORATOR', 'DEEP SEA GIRL', 'DREAMING LEAF', 'DENPARADIGM', 'DRAMATURGY', 'DOUBLEGANGER', 'ELECTRIC ANGEL', 'ENVY CAT WALK', 'FINDER', 'FROM Y TO Y', 'GHOST RULE', 'GIGANTIC GIRL', 'GIZMO', 'HAND IN HAND', 'HIBIKASE', 'HIBANA', 'HIGH SCHOOL DAYS', 'HOLY STAR', 'INNOCENCE', 'INTERVIEWER', 'JITTERBUG', 'KIMI NI', 'KNIFE', 'KNIGHT OF LIGHT', 'LOVE IS WAR', 'LUCID DREAMING', 'MAGNET', 'MARGINAL', 'MASTER OF PUPPETS', 'METEOR', 'MIRACLE PAINT', 'MOON', 'MOUSOU SKETCH', 'NEKOMIMI SWITCH', 'PINK MOON', 'PINKY SWEAR', 'PO PI PO', 'PROMISE', 'PUZZLE', 'ROLLING GIRL', 'ROMEO AND CINDERELLA', 'SAIHATE', 'SAKURA NO AME', 'SECRET POLICE', 'SENBONZAKURA', 'SOUND', 'SLUMP', 'STAR STORY', 'STARDUSTER', 'STARGAZER', 'STEP FORWARD', 'SUMMER IDOL', 'SWEET DEVIL', 'SYSTEMATIC LOVE', 'TELL YOUR WORLD', 'THE FIRST SOUND', 'THE SECRET GARDEN', 'THE WORLD IS MINE', 'TIME LIMIT', 'TIME MACHINE', 'TORINOKOCITY', 'TRICOLORE AIRLINE', 'UNHAPPY REFRAIN', 'VELVET ARABESQUE', 'WEEKENDER GIRL', 'WOLF GIRL', 'YELLOW', 'YUMEYUME'],
-    facts: [
+  "mikusongs": {
+    "words": ['ABSOLUNOTE', 'ACUTE', 'AGEAGE AGAIN', 'AIKOTOBA', 'ALIEN ALIEN', 'BLACK ROCK SHOOTER', 'CANTARELLA', 'CAT FOOD', 'CATCH THE WAVE', 'CENDRILLON', 'DANCE OF MANY', 'DEAR', 'DECORATOR', 'DEEP SEA GIRL', 'DREAMING LEAF', 'DENPARADIGM', 'DRAMATURGY', 'DOUBLEGANGER', 'ELECTRIC ANGEL', 'ENVY CAT WALK', 'FINDER', 'FROM Y TO Y', 'GHOST RULE', 'GIGANTIC GIRL', 'GIZMO', 'HAND IN HAND', 'HIBIKASE', 'HIBANA', 'HIGH SCHOOL DAYS', 'HOLY STAR', 'INNOCENCE', 'INTERVIEWER', 'JITTERBUG', 'KIMI NI', 'KNIFE', 'KNIGHT OF LIGHT', 'LOVE IS WAR', 'LUCID DREAMING', 'MAGNET', 'MARGINAL', 'MASTER OF PUPPETS', 'METEOR', 'MIRACLE PAINT', 'MOON', 'MOUSOU SKETCH', 'NEKOMIMI SWITCH', 'PINK MOON', 'PINKY SWEAR', 'PO PI PO', 'PROMISE', 'PUZZLE', 'ROLLING GIRL', 'ROMEO AND CINDERELLA', 'SAIHATE', 'SAKURA NO AME', 'SECRET POLICE', 'SENBONZAKURA', 'SOUND', 'SLUMP', 'STAR STORY', 'STARDUSTER', 'STARGAZER', 'STEP FORWARD', 'SUMMER IDOL', 'SWEET DEVIL', 'SYSTEMATIC LOVE', 'TELL YOUR WORLD', 'THE FIRST SOUND', 'THE SECRET GARDEN', 'THE WORLD IS MINE', 'TIME LIMIT', 'TIME MACHINE', 'TORINOKOCITY', 'TRICOLORE AIRLINE', 'UNHAPPY REFRAIN', 'VELVET ARABESQUE', 'WEEKENDER GIRL', 'WOLF GIRL', 'YELLOW', 'YUMEYUME'],
+    "facts": [
       "🎤 Idol Wordlings say Miku was the very first voice in a new digital songbook — CV-01, the start of it all.",
       "🌟 Sometimes, you can catch her performing live in light and holograms, like a dream on stage.",
       "🎙️ Her voice was woven from Saki Fujita’s, like sunlight filtered through a synthesizer.",
@@ -135,9 +135,9 @@
       "🎮 Sega Wordlings built her a stage in rhythm — an entire world of beats called Project Diva."
     ]
   },
-  igneousRocks: {
-    words: ['IGNEOUS', 'MOLTEN', 'INTRUSIVE', 'CRYSTALLIZE', 'EXTRUSIVE', 'ERUPT', 'AMORPHOUS', 'BASALT', 'DIORITE', 'TRAP ROCK', 'GABBRO', 'GRANITE', 'OBSIDIAN', 'PERIDOTITE', 'PUMICE', 'RHYOLITE', 'FIRE OPAL', 'UNAKITE', 'WELDED TUFF', 'VOLCANO', 'SCORIA', 'PEGMATITE', 'MAGMA', 'DOLERITE', 'DIABASE', 'DACITE', 'INTRUSION', 'GLASS', 'PLUTONIC', 'HYPABYSSAL', 'COUNTRY ROCK', 'BATHOLITH', 'STOCK', 'LACCOLITH', 'SILL', 'DIKE', 'PHANERITIC', 'APHANITIC', 'PORPHYRY'],
-    facts: [
+  "igneousRocks": {
+    "words": ['IGNEOUS', 'MOLTEN', 'INTRUSIVE', 'CRYSTALLIZE', 'EXTRUSIVE', 'ERUPT', 'AMORPHOUS', 'BASALT', 'DIORITE', 'TRAP ROCK', 'GABBRO', 'GRANITE', 'OBSIDIAN', 'PERIDOTITE', 'PUMICE', 'RHYOLITE', 'FIRE OPAL', 'UNAKITE', 'WELDED TUFF', 'VOLCANO', 'SCORIA', 'PEGMATITE', 'MAGMA', 'DOLERITE', 'DIABASE', 'DACITE', 'INTRUSION', 'GLASS', 'PLUTONIC', 'HYPABYSSAL', 'COUNTRY ROCK', 'BATHOLITH', 'STOCK', 'LACCOLITH', 'SILL', 'DIKE', 'PHANERITIC', 'APHANITIC', 'PORPHYRY'],
+    "facts": [
         "🌋 Igneous rocks are born from fire — they form when molten magma cools and stills into stone.",
         "🔮 Some igneous rocks form deep beneath the surface, cooling slowly to grow crystals large enough to hold in your hand.",
         "✨ Some igneous rocks erupt onto the land, cooling quickly in the open air and setting their stories in tiny crystal grains.",
@@ -168,9 +168,9 @@
         "🌬️ Pumice is made of bubbles — lava cooled so quickly it kept the air inside, making a rock that floats like a sponge of stone.",
     ]
   },
-  sedimentaryRocks: {
-      words: ['SEDIMENTARY', 'SEDIMENT', 'CLASTIC', 'CHEMICAL', 'ORGANIC', 'CALICHE', 'PUDDINGSTONE', 'CHALK', 'LIMESTONE', 'CHERT', 'COAL', 'CONGLOMERATE', 'COQUINA', 'FOSSIL', 'DIATOMITE', 'DOLOMITE', 'FLINT', 'ROCK SALT', 'SANDSTONE', 'SHALE', 'SILTSTONE', 'CEMENTATION', 'DETRITUS', 'STRATA', 'BEDDING', 'SEDIMENTOLOGY', 'GRAVEL', 'SAND', 'MUD', 'SILT', 'CLAY', 'BRECCIA', 'MUDROCK', 'EVAPORITE', 'COMPACTION', 'LITHIFICATION', 'DIAGENESIS', 'LAMINATION', 'DUNE', 'RIPPLE', 'BIOTURBATION', 'MATRIX'],
-      facts: [
+  "sedimentaryRocks": {
+      "words": ['SEDIMENTARY', 'SEDIMENT', 'CLASTIC', 'CHEMICAL', 'ORGANIC', 'CALICHE', 'PUDDINGSTONE', 'CHALK', 'LIMESTONE', 'CHERT', 'COAL', 'CONGLOMERATE', 'COQUINA', 'FOSSIL', 'DIATOMITE', 'DOLOMITE', 'FLINT', 'ROCK SALT', 'SANDSTONE', 'SHALE', 'SILTSTONE', 'CEMENTATION', 'DETRITUS', 'STRATA', 'BEDDING', 'SEDIMENTOLOGY', 'GRAVEL', 'SAND', 'MUD', 'SILT', 'CLAY', 'BRECCIA', 'MUDROCK', 'EVAPORITE', 'COMPACTION', 'LITHIFICATION', 'DIAGENESIS', 'LAMINATION', 'DUNE', 'RIPPLE', 'BIOTURBATION', 'MATRIX'],
+      "facts": [
           "🌍 Sedimentary rocks are storytellers — made in three ways: from fragments, from minerals, or from once-living things.",
           "🪶 These rocks form slowly as layers of tiny pieces settle and are gently pressed into stone over time.",
           "🪺 Sediments can come from broken stone or living things left behind — bits of yesterday turned into tomorrow.",
@@ -192,9 +192,9 @@
           "🌊 Ripple marks form where water flows — in rivers, on beaches, or in the quiet shifts of tidal flats."
       ]
   },
-  metamorphicRocks: {
-      words: ['METAMOPRHIC', 'FOLIATION', 'ANTHRACITE', 'GNEISS', 'HORNFELS', 'LAPIS LAZULI', 'MARBLE', 'MARIPOSITE', 'NOVACULITE', 'PHYLLITE', 'QUARTZITE', 'SCHIST', 'SKARN', 'SLATE', 'SOAPSTONE', 'METAMORPHISM', 'PROTOLITH', 'INDEX MINERAL', 'THERMAL', 'CATACLASTIC', 'HYDROTHERMAL', 'IMPACT', 'FISSILITY'],
-      facts: [
+  "metamorphicRocks": {
+      "words": ['METAMOPRHIC', 'FOLIATION', 'ANTHRACITE', 'GNEISS', 'HORNFELS', 'LAPIS LAZULI', 'MARBLE', 'MARIPOSITE', 'NOVACULITE', 'PHYLLITE', 'QUARTZITE', 'SCHIST', 'SKARN', 'SLATE', 'SOAPSTONE', 'METAMORPHISM', 'PROTOLITH', 'INDEX MINERAL', 'THERMAL', 'CATACLASTIC', 'HYDROTHERMAL', 'IMPACT', 'FISSILITY'],
+      "facts": [
           "🌀 Metamorphic rocks are born from change — when older stones are transformed by heat, pressure, and time into something entirely new.",
           "📜 The rock before the change is called a protolith — it might be volcanic, sedimentary, or already a stone shaped by change once before.",
           "🌍 Some rocks are changed deep within the Earth, others by the slow press of tectonic plates — all shaped in the hidden chambers beneath our feet.",
