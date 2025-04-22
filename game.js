@@ -527,8 +527,27 @@ function launchConfetti() {
 	});
 }
 
+// 🌙 Theme handling
+function setTheme(mode) {
+  document.body.setAttribute('data-theme', mode);
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (toggleBtn) toggleBtn.textContent = mode === 'dark' ? '🌞' : '🌙';
+}
+
+function toggleTheme() {
+  const current = document.body.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+}
+
 // Run the game
 window.addEventListener('DOMContentLoaded', () => {
+  // 🌓 Auto-detect from system
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(prefersDark ? 'dark' : 'light');
+
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
+	
 	const gridShell = document.getElementById('grid-shell');
 	if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
 	gridShell.classList.add('show-scroll');
