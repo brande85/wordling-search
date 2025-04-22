@@ -44,19 +44,6 @@ let unlockedCosplays = [];
 
 const gridShell = document.getElementById('grid-shell');
 
-if (gridSize >= 12 && window.innerWidth < 600) {
-  gridShell.classList.add('show-scroll');
-} else {
-  gridShell.classList.remove('show-scroll');
-}
-
-if (gridSize >= 12) {
-  document.querySelectorAll('.cell').forEach(cell => cell.classList.add('big-grid'));
-}
-if (gridSize === 12) {
-  document.getElementById('grid-container').classList.add('zoom-out');
-}
-
 function createEmptyGrid() {
   for (let i = 0; i < gridSize; i++) {
       grid[i] = [];
@@ -518,6 +505,20 @@ fetch('wordlists.json')
   .then(response => response.json())
   .then(data => {
     wordLists = data;
-      document.getElementById('new-game-btn').addEventListener('click', generatePuzzle);
-      generatePuzzle(); // initial load
+
+    if (gridSize >= 12 && window.innerWidth < 600) {
+      gridShell.classList.add('show-scroll');
+    } else {
+      gridShell.classList.remove('show-scroll');
+    }
+    
+    if (gridSize >= 12) {
+      document.querySelectorAll('.cell').forEach(cell => cell.classList.add('big-grid'));
+    }
+    if (gridSize === 12) {
+      document.getElementById('grid-container').classList.add('zoom-out');
+    }
+    
+    document.getElementById('new-game-btn').addEventListener('click', generatePuzzle);
+    generatePuzzle(); // initial load
 	});
