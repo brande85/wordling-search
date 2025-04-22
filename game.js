@@ -478,7 +478,6 @@ function moveLabelWordlingToRow() {
   floatingWordlingImage = null;
 }
 
-
 function checkIfPuzzleComplete() {
 	const found = document.querySelectorAll('.found-word').length;
 	if (found === words.length) {
@@ -504,20 +503,19 @@ fetch('wordlists.json')
   .then(data => {
     wordLists = data;
 
+    // ✅ Moved here
     const gridShell = document.getElementById('grid-shell');
-    if (gridSize >= 12 && window.innerWidth < 600) {
+    if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
       gridShell.classList.add('show-scroll');
-    } else {
+    } else if (gridShell) {
       gridShell.classList.remove('show-scroll');
     }
-    
-    if (gridSize >= 12) {
-      document.querySelectorAll('.cell').forEach(cell => cell.classList.add('big-grid'));
+
+    const gridContainer = document.getElementById('grid-container');
+    if (gridSize === 12 && gridContainer) {
+      gridContainer.classList.add('zoom-out');
     }
-    if (gridSize === 12) {
-      document.getElementById('grid-container').classList.add('zoom-out');
-    }
-    
+
     document.getElementById('new-game-btn').addEventListener('click', generatePuzzle);
-    generatePuzzle(); // initial load
-	});
+    generatePuzzle();
+  });
