@@ -114,18 +114,35 @@ function generatePuzzle() {
   const gridElement = document.getElementById('grid');
   if (gridElement) gridElement.classList.remove('grid-disabled');
 
-  const sizeValue = document.getElementById('size-select').value;
-  const listValue = document.getElementById('wordlist-select').value;
-  currentPuzzleTheme = listValue; // store the theme globally
+  const sizeSelect = document.getElementById('size-select');
+  const listSelect = document.getElementById('wordlist-select');
+  if (!sizeSelect || !listSelect) {
+    console.warn("Missing size-select or wordlist-select elements.");
+    return;
+  }
+
+  const sizeValue = sizeSelect.value;
+  const listValue = listSelect.value;
+  currentPuzzleTheme = listValue;
+
   const wordListObj = wordLists[listValue];
+  if (!wordListObj || !wordListObj.words || !wordListObj.facts) {
+    console.warn(`Wordlist for theme '${listValue}' is invalid or incomplete.`);
+    return;
+  }
 
   const wordList = wordListObj.words;
   const facts = wordListObj.facts;
 
-  const randomFact = facts[Math.floor(Math.random() * facts.length)];
-  document.getElementById('puzzle-fact').textContent = `${randomFact}`;
+  const puzzleFact = document.getElementById('puzzle-fact');
+  if (puzzleFact && facts.length > 0) {
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    puzzleFact.textContent = `${randomFact}`;
+  }
 
-  document.getElementById('hidden-word-value').textContent = '(still hiding...)';
+    const hiddenLabel = document.getElementById('hidden-word-value');
+  if (hiddenLabel) hiddenLabel.textContent = '(still hiding...)';
+	
   if (floatingWordling) {
     floatingWordling.remove();
     floatingWordling = null;
