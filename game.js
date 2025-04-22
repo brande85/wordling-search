@@ -26,6 +26,7 @@ const cosplayWordlings = [
 
 const grid = [];
 let gridSize = 10;
+let wordLists = {};
 let words = [];
 let currentPuzzleTheme = 'fruits'; // default
 let bonusWord = ''; // The hidden word
