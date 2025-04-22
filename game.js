@@ -107,8 +107,10 @@ function tryPlacingWords(wordList, maxWords = 12) {
 }
 
 function generatePuzzle() {
-  document.getElementById('congrats-overlay').style.display = 'none';
-  document.getElementById('interaction-blocker').style.display = 'none';
+  const overlay = document.getElementById('congrats-overlay');
+  if (overlay) overlay.style.display = 'none';
+  const blocker = document.getElementById('interaction-blocker');
+  if (blocker) blocker.style.display = 'none';
   document.getElementById('grid').classList.remove('grid-disabled'); 
 
   const sizeValue = document.getElementById('size-select').value;
