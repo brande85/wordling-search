@@ -1,15 +1,24 @@
 console.log("✅ game.js is running");
 
 const wordlingThemes = {
+  // ANIMALS
+  cretaceousDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
+  domesticAnimals: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
+  jurassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
+  popularDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
+  triassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
+  // FOOD
   fruits: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
-  domesticAnimals: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'], // reuse is fine!
-  cozy: ['cozy-wordling1.png', 'cozy-wordling2.png'], 
+  // GEOLOGY
   gemstones: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png'],
+  igneousRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'igneous-wordling.png'],
+  metamorphicRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'metamorphic-wordling.png'],
+  sedimentaryRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'sedimentary-wordling.png'],
+  // MUSIC
   miku: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
   mikusongs: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
-  igneousRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'igneous-wordling.png'],
-  sedimentaryRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'sedimentary-wordling.png'],
-  metamorphicRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'metamorphic-wordling.png']
+  // OTHER
+  cozy: ['cozy-wordling1.png', 'cozy-wordling2.png'], 
   // add more as you build more puzzles
 };
 
