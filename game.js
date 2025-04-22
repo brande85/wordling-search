@@ -51,6 +51,8 @@ let selecting = false;
 let floatingWordling = null;
 let floatingWordlingImage = null;
 let unlockedCosplays = [];
+let selectionMode = 'drag'; // 'drag' or 'click'
+let clickStartCell = null;
 
 function createEmptyGrid() {
   for (let i = 0; i < gridSize; i++) {
@@ -249,6 +251,12 @@ function renderGrid() {
 			checkSelectedWord();
 		});
 
+    cell.addEventListener('click', () => {
+      if (selectionMode === 'click') {
+        handleClickSelection(cell);
+      }
+    });
+
 		cell.addEventListener('touchstart', handleTouchStart, { passive: false });
 		cell.addEventListener('touchmove', handleTouchMove, { passive: false });
 		cell.addEventListener('touchend', handleTouchEnd);
@@ -344,6 +352,45 @@ function selectCell(cell) {
 	cell.dataset.prevColor = previousColor || ''; // store inline color if any
 	cell.style.backgroundColor = ''; // let CSS handle the selected style
 	selectedCells.push({ row, col, letter: grid[row][col], element: cell });
+}
+
+function handleClickSelection(cell) {
+  if (!clickStartCell) {
+    clearSelection();
+    clickStartCell = cell;
+    selectCell(cell);
+    return;
+  }
+
+  const start = {
+    row: parseInt(clickStartCell.dataset.row),
+    col: parseInt(clickStartCell.dataset.col)
+  };
+  const end = {
+    row: parseInt(cell.dataset.row),
+    col: parseInt(cell.dataset.col)
+  };
+
+  const dRow = end.row - start.row;
+  const dCol = end.col - start.col;
+
+  const len = Math.max(Math.abs(dRow), Math.abs(dCol));
+  const dirRow = Math.sign(dRow);
+  const dirCol = Math.sign(dCol);
+
+  clearSelection();
+  for (let i = 0; i <= len; i++) {
+    const r = start.row + dirRow * i;
+    const c = start.col + dirCol * i;
+
+    if (r < 0 || r >= gridSize || c < 0 || c >= gridSize) break;
+
+    const target = cellElements[r][c];
+    selectCell(target);
+  }
+
+  checkSelectedWord();
+  clickStartCell = null;
 }
 
 function clearSelection() {
@@ -539,6 +586,14 @@ function toggleTheme() {
   setTheme(current === 'dark' ? 'light' : 'dark');
 }
 
+function toggleSelectionMode() {
+  selectionMode = selectionMode === 'drag' ? 'click' : 'drag';
+  const modeToggle = document.getElementById('mode-toggle');
+  if (modeToggle) {
+    modeToggle.textContent = `🖱️ Select Mode: ${selectionMode === 'drag' ? 'Drag' : 'Click'}`;
+  }
+}
+
 // Run the game
 window.addEventListener('DOMContentLoaded', () => {
   // 🌓 Auto-detect from system
@@ -547,6 +602,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const toggleBtn = document.getElementById('theme-toggle');
   if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
+
+  const modeToggle = document.getElementById('mode-toggle');
+  if (modeToggle) {
+    modeToggle.addEventListener('click', toggleSelectionMode);
+  }
 	
 	const gridShell = document.getElementById('grid-shell');
 	if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
