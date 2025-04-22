@@ -111,7 +111,8 @@ function generatePuzzle() {
   if (overlay) overlay.style.display = 'none';
   const blocker = document.getElementById('interaction-blocker');
   if (blocker) blocker.style.display = 'none';
-  document.getElementById('grid').classList.remove('grid-disabled'); 
+  const gridElement = document.getElementById('grid');
+  if (gridElement) gridElement.classList.remove('grid-disabled');
 
   const sizeValue = document.getElementById('size-select').value;
   const listValue = document.getElementById('wordlist-select').value;
