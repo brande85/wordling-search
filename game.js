@@ -516,6 +516,9 @@ fetch('wordlists.json')
       gridContainer.classList.add('zoom-out');
     }
 
-    document.getElementById('new-game-btn').addEventListener('click', generatePuzzle);
+    const newGameBtn = document.getElementById('new-game-btn');
+    if (newGameBtn) {
+      newGameBtn.addEventListener('click', generatePuzzle);
+    }
     generatePuzzle();
   });
