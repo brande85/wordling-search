@@ -531,7 +531,7 @@ function launchConfetti() {
 function setTheme(mode) {
   document.body.setAttribute('data-theme', mode);
   const toggleBtn = document.getElementById('theme-toggle');
-  if (toggleBtn) toggleBtn.textContent = mode === 'dark' ? '🌞' : '🌙';
+  if (toggleBtn) toggleBtn.textContent = mode === 'dark' ? '☀️' : '🌙';
 }
 
 function toggleTheme() {
