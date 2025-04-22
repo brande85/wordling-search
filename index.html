@@ -30,6 +30,9 @@
   <link rel="prefetch" as="image" href="images/terraling.png">
   <link rel="prefetch" as="image" href="images/warrioroflightling.png">
   <link rel="prefetch" as="image" href="images/zidaneling.png">
+  <link rel="prefetch" as="image" href="images/igneous-wordling.png">
+  <link rel="prefetch" as="image" href="images/sedimentary-wordling.png">
+  <link rel="prefetch" as="image" href="images/metamorphic-wordling.png">
   
   <title>Wordsearch Puzzle</title>
   <style>
@@ -415,12 +418,20 @@
     
             <label for="wordlist-select" style="margin-left: 10px;">Word List:</label>
             <select id="wordlist-select">
-                <option value="fruits">🍓 Fruits</option>
-                <option value="domesticAnimals">🐰 Domestic Animals</option>
-                <option value="cozy">🔥 Cozy Words</option>
-                <option value="gemstones">💎 Gemstones</option>
-                <option value="miku">🌟 Hatsune Miku</option>
-                <option value="mikusongs">🎤 Hatsune Miku Songs</option>
+                <optgroup label="🐾 Animals">
+                  <option value="domesticAnimals">🐰 Domestic Animals</option>
+                <optgroup label="🍎 Food">
+                  <option value="fruits">🍓 Fruits</option>
+                <optgroup label="🌍 Geology">
+                  <option value="gemstones">💎 Gemstones</option>
+                  <option value="igneousRocks">🌋 Igneous Rocks</option>
+                  <option value="metamorphicRocks">🪨 Metamorphic Rocks</option>
+                  <option value="sedimentaryRocks">⌛ Sedimentary Rocks</option>
+                <optgroup label="🎵 Music">
+                  <option value="miku">🌟 Hatsune Miku</option>
+                  <option value="mikusongs">🎤 Hatsune Miku Songs</option>
+                <optgroup label="📜 Other">
+                  <option value="cozy">🔥 Cozy Words</option>
             </select>
     
             <button id="new-game-btn" style="margin-left: 10px;">New Puzzle</button>
@@ -597,6 +608,87 @@
                 "🎮 Sega Wordlings built her a stage in rhythm — an entire world of beats called Project Diva."
               ]
             },
+            igneousRocks: {
+              words: ['IGNEOUS', 'MOLTEN', 'INTRUSIVE', 'CRYSTALLIZE', 'EXTRUSIVE', 'ERUPT', 'AMORPHOUS', 'BASALT', 'DIORITE', 'TRAP ROCK', 'GABBRO', 'GRANITE', 'OBSIDIAN', 'PERIDOTITE', 'PUMICE', 'RHYOLITE', 'FIRE OPAL', 'UNAKITE', 'WELDED TUFF', 'VOLCANO', 'SCORIA', 'PEGMATITE', 'MAGMA', 'DOLERITE', 'DIABASE', 'DACITE', 'INTRUSION', 'GLASS', 'PLUTONIC', 'HYPABYSSAL', 'COUNTRY ROCK', 'BATHOLITH', 'STOCK', 'LACCOLITH', 'SILL', 'DIKE', 'PHANERITIC', 'APHANITIC', 'PORPHYRY'],
+              facts: [
+                  "🌋 Igneous rocks are born from fire — they form when molten magma cools and stills into stone.",
+                  "🔮 Some igneous rocks form deep beneath the surface, cooling slowly to grow crystals large enough to hold in your hand.",
+                  "✨ Some igneous rocks erupt onto the land, cooling quickly in the open air and setting their stories in tiny crystal grains.",
+                  "🪞 When lava cools too fast to crystalize, it turns into volcanic glass — smooth, dark, and mirror-like.",
+                  "🚧 'Trap rock' is a builder’s name for dark igneous stones used to make roads and sturdy paths.",
+                  "🌍 About 15% of the Earth’s land is built from igneous stone — quiet reminders of once-molten origins.",
+                  "🔦 Some of these rocks hide riches: veins of tin, tungsten, and other treasured minerals.",
+                  "🧱 Most igneous rocks are born deep in the Earth as intrusions — hidden until the land rises or wears away.",
+                  "🗻 These intrusions press into the Earth’s crust, wrapped in older rock like secrets waiting to be uncovered.",
+                  "🏔️ The hearts of great mountain ranges are often made of ancient intrusive stone, weathered but enduring.",
+                  "🌑 When formed deep and long ago, they’re called plutonic — named for the god of the underworld.",
+                  "🖤 More than 90% of all volcanic rock is basalt — black and ancient, like cooled midnight.",
+                  "🪨 Some basalt cools into long, neat columns — like stone honeycombs in places like Giant’s Causeway.",
+                  "🔥 Magma rises through the Earth because it’s lighter than the rock around it — like a bubble seeking sky.",
+                  "🔍 In some fine-grained rocks, the crystals are so small they must be studied under a microscope to be known.",
+                  "🪵 The rock that surrounds an intrusion is called country rock — it keeps the heat in so magma cools slowly.",
+                  "📏 A vast intrusion is called a batholith if it’s enormous, or a stock if it’s merely large.",
+                  "🏔️ A laccolith forms a stone dome beneath the surface, fed by a narrow crack called a dike.",
+                  "📚 A sill slides in flat between layers of older stone — like a secret page tucked into a book.",
+                  "🌘 Hypabyssal rocks form near the surface, fine-grained and quick to settle into solidness.",
+                  "🔎 If the crystals are large enough to see without aid, the texture is called phaneritic. If not, it’s aphantic — hidden from plain sight.",
+                  "🪄 When large crystals appear in a finer background, the result is a porphyry — like gemstones in velvet.",
+                  "⚖️ Igneous rocks are named by their chemistry — how much silica they hold shapes their destiny.",
+                  "🪐 Basalt isn’t just found on Earth — it paves the plains of Venus and darkens the stones of Mars.",
+                  "🧱 Granite is strong, massive, and unyielding — perfect for walls, counters, and ancient monuments.",
+                  "🖤 Obsidian breaks into razor edges, sharp and beautiful — once used to make tools, blades, and quiet weapons.",
+                  "❄️ Snowflake obsidian forms when tiny white crystals of cristobalite bloom inside volcanic glass — frozen petals in midnight stone.",
+                  "🌬️ Pumice is made of bubbles — lava cooled so quickly it kept the air inside, making a rock that floats like a sponge of stone.",
+              ]
+          },
+      
+          sedimentaryRocks: {
+              words: ['SEDIMENTARY', 'SEDIMENT', 'CLASTIC', 'CHEMICAL', 'ORGANIC', 'CALICHE', 'PUDDINGSTONE', 'CHALK', 'LIMESTONE', 'CHERT', 'COAL', 'CONGLOMERATE', 'COQUINA', 'FOSSIL', 'DIATOMITE', 'DOLOMITE', 'FLINT', 'ROCK SALT', 'SANDSTONE', 'SHALE', 'SILTSTONE', 'CEMENTATION', 'DETRITUS', 'STRATA', 'BEDDING', 'SEDIMENTOLOGY', 'GRAVEL', 'SAND', 'MUD', 'SILT', 'CLAY', 'BRECCIA', 'MUDROCK', 'EVAPORITE', 'COMPACTION', 'LITHIFICATION', 'DIAGENESIS', 'LAMINATION', 'DUNE', 'RIPPLE', 'BIOTURBATION', 'MATRIX'],
+              facts: [
+                  "🌍 Sedimentary rocks are storytellers — made in three ways: from fragments, from minerals, or from once-living things.",
+                  "🪶 These rocks form slowly as layers of tiny pieces settle and are gently pressed into stone over time.",
+                  "🪺 Sediments can come from broken stone or living things left behind — bits of yesterday turned into tomorrow.",
+                  "🍃 Geological debris is born from weathered cliffs and crumbled mountains, carried by wind, water, or time.",
+                  "📚 Sedimentary rock covers most of the land we walk on, though it's only a thin crust atop the deeper Earth.",
+                  "📖 These rocks stack in layers called strata — soft pages in the ancient book of the world.",
+                  "🛸 Even Mars, dusty and distant, holds sedimentary rocks — proof that water once moved across its face.",
+                  "🌱 From coal to drinking water, sedimentary rocks are quiet holders of treasures we rely on every day.",
+                  "🧩 Clastic rocks are built from puzzle pieces of older stones, pressed and glued together by pressure and patience.",
+                  "🌾 Loose sediments are named by size — gravel clatters, sand sighs, and mud smooths into stillness.",
+                  "🐚 Many limestones are made from the bones of ocean life — coral, mollusks, and tiny drifting creatures.",
+                  "🌲 Coal is ancient vegetation, transformed by time and pressure into a rock that still remembers leaves and light.",
+                  "🔬 Chert forms from the skeletons of microscopic ocean folk — radiolaria and diatoms, hidden but enduring.",
+                  "🌀 Diagenesis is the slow magic of change beneath the surface — transformation without a single breath of air.",
+                  "🌊 Coquina is made entirely of broken shells, and can only be born where the waves never rest.",
+                  "🦴 Fossils are most often found in sedimentary stone — each one a memory cradled in ancient silt.",
+                  "⏳ A fossil’s best chance comes in places where sediment settles quickly and few bacteria sleep.",
+                  "🐾 Footprints, burrows, and other marks left behind are called trace fossils — echoes of movement and life.",
+                  "🌊 Ripple marks form where water flows — in rivers, on beaches, or in the quiet shifts of tidal flats."
+              ]
+          },
+          
+          metamorphicRocks: {
+              words: ['METAMOPRHIC', 'FOLIATION', 'ANTHRACITE', 'GNEISS', 'HORNFELS', 'LAPIS LAZULI', 'MARBLE', 'MARIPOSITE', 'NOVACULITE', 'PHYLLITE', 'QUARTZITE', 'SCHIST', 'SKARN', 'SLATE', 'SOAPSTONE', 'METAMORPHISM', 'PROTOLITH', 'INDEX MINERAL', 'THERMAL', 'CATACLASTIC', 'HYDROTHERMAL', 'IMPACT', 'FISSILITY'],
+              facts: [
+                  "🌀 Metamorphic rocks are born from change — when older stones are transformed by heat, pressure, and time into something entirely new.",
+                  "📜 The rock before the change is called a protolith — it might be volcanic, sedimentary, or already a stone shaped by change once before.",
+                  "🌍 Some rocks are changed deep within the Earth, others by the slow press of tectonic plates — all shaped in the hidden chambers beneath our feet.",
+                  "💎 Certain minerals, called index minerals, act like timekeepers — revealing how hot and how deep a rock’s transformation truly went.",
+                  "🔍 Metamorphic rocks often sparkle with larger crystals than they began with — time and pressure coaxed them to grow.",
+                  "📚 Many metamorphic stones wear stripes or layers called foliation — a record of stress folded into every line.",
+                  "🔲 We name these rocks by their texture and how clearly their layers show — some whisper their history, while others shout.",
+                  "🔥 When magma creeps too close, it can bake nearby stone — creating a rim of changed rock through contact metamorphism.",
+                  "⏳ Some of Earth’s oldest stones are metamorphic — like the Acasta Gneiss in Canada, which remembers the world over 4 billion years ago.",
+                  "🪵 Slate breaks in smooth, even sheets — a gift of structure that made it perfect for roofs, tiles, and chalkboard days.",
+                  "🎨 Marble begins as limestone or dolomite, but metamorphosis polishes it into sculpture-ready stone, luminous and strong.",
+                  "⚠️ Schist has pronounced lines of weakness — beautiful, yes, but tricky for those building upon it.",
+                  "🪓 Quartzite began as sandstone — but time’s pressure turned it so tough that early humans shaped tools from its unyielding surface.",
+                  "⚡ Slate, being a fine insulator, once guarded the earliest electric switchboards — keeping sparks at bay with quiet grace.",
+                  "🔥 Soapstone, soft and smooth, was carved by Native Americans into bowls, pipes, and ornaments thousands of years ago.",
+                  "⛏️ Soapstone was one of the first stones humans quarried — rising close to the surface, asking only to be shaped.",
+                  "🌟 In the Gold Rush days, prospectors learned to follow the glitter in mariposite — a green stone often veined with promise."
+              ]
+          },
         };
 
         const wordlingThemes = {
@@ -606,6 +698,9 @@
             gemstones: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png'],
             miku: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
             mikusongs: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
+            igneousRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'igneous-wordling.png'],
+            sedimentaryRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'sedimentary-wordling.png'],
+            metamorphicRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'metamorphic-wordling.png']
             // add more as you build more puzzles
         };
 
