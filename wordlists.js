@@ -290,7 +290,7 @@ const wordLists = {
           "⛏️ Soapstone was one of the first stones humans quarried — rising close to the surface, asking only to be shaped.",
           "🌟 In the Gold Rush days, prospectors learned to follow the glitter in mariposite — a green stone often veined with promise."
       ]
-  }
+  },
 
   // MUSIC
   
