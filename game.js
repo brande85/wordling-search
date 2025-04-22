@@ -1,3 +1,5 @@
+console.log("✅ game.js is running");
+
 const wordlingThemes = {
   fruits: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
   domesticAnimals: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'], // reuse is fine!
