@@ -282,46 +282,37 @@ body, .cell, #wordsearch-app {
   padding-top: 0;
 }
 
-/* Make the dropdown compact again */
+/* Reset Choices.js visual styles */
 .choices {
-  width: auto;
-  font-size: 1rem;
-  max-width: 240px;
+  all: unset;
   display: inline-block;
-  margin: 0 !important;
-  line-height: 1.2;
-  height: auto !important;
-  vertical-align: left;
+  width: auto;
 }
 
-/* Shrink the box input area */
-.choices__inner {
-  padding: 4px 6px !important;
-  border-radius: 6px;
-  background-color: white;
-  color: black;
-  border:  1px solid #aaa;
-  min-height: 30px !important;
-  font-size: 0.95em;
-  line-height: 1.1;
+.choices__inner,
+.choices__list--single,
+.choices__item {
+  all: unset;
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
 }
 
-.choices__list--single {
-  padding: 0 !important;
-}
-
-/* Hide the default itemSelectText label */
-.choices__item--selectable::after {
-  display: none;
-}
-
-.choices__list--dropdown {
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-.choices[data-type*='select-one'] .choices__inner {
-  height: auto;
+/* Make sure the select behaves like a real one */
+.choices[data-type="select-one"] select {
+  display: inline-block;
+  font-size: inherit;
+  appearance: auto;
+  background: white;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
   border-radius: 4px;
 }
 
@@ -352,10 +343,11 @@ body[data-theme='dark'] #wordsearch-app {
   color: #fff;
 }
 
-/* Adjust dark mode style */
-body[data-theme='dark'] .choices__inner {
-  border: 1px solid #555;
-  background-color: #1e1e1e;
+/* Dark mode override */
+body[data-theme="dark"] .choices[data-type="select-one"] select {
+  background: #1e1e1e;
+  color: #eee;
+  border-color: #444;
 }
 
 /* Make the grid container (outside the grid) match */
