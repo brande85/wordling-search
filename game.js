@@ -669,6 +669,14 @@ if (wordlistSelect) {
     newGameBtn.addEventListener('click', generatePuzzle);
   }
 
+  document.getElementById('open-gallery').addEventListener('click', () => {
+    document.getElementById('wordling-gallery').classList.remove('hidden');
+    renderGallery(); // Ensure gallery is updated each time
+  });
+  document.getElementById('close-gallery').addEventListener('click', () => {
+    document.getElementById('wordling-gallery').classList.add('hidden');
+  });
+
   // ✅ Run the game at startup
   generatePuzzle();
 });
