@@ -37,6 +37,8 @@ const cosplayWordlings = [
   'zidaneling.png',
 ];
 
+const foundWordlings = new Set(); // Tracks which Wordlings you've found
+
 const grid = [];
 let gridSize = 10;
 let words = [];
@@ -547,6 +549,9 @@ function moveLabelWordlingToRow() {
 
   row.appendChild(floatingWordling);
 
+	foundWordlings.add('cozybun'); // Example name, match your Wordling IDs
+  renderGallery();
+
     // ✅ Increment the count ONLY when Wordling actually joins
   korokCount++;
   document.getElementById('korok-count').textContent = korokCount;
@@ -598,6 +603,32 @@ function toggleSelectionMode() {
   if (modeToggle) {
     modeToggle.textContent = `🖱️ ${selectionMode === 'drag' ? 'Drag' : 'Click'}`;
   }
+}
+
+const wordlings = [
+  { id: 'cozybun', name: 'Cozybun', img: 'images/cozybun.png' },
+  { id: 'geode', name: 'Geode', img: 'images/geode.png' },
+  { id: 'sparkle', name: 'Sparkle', img: 'images/sparkle.png' },
+];
+
+function renderGallery() {
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+
+  wordlings.forEach(w => {
+    const card = document.createElement('div');
+    card.classList.add('wordling-card');
+    if (foundWordlings.has(w.id)) {
+      card.classList.add('unlocked');
+    }
+
+    card.innerHTML = `
+      <img src="${w.img}" alt="${w.name}">
+      <div>${foundWordlings.has(w.id) ? w.name : '???'}</div>
+    `;
+    grid.appendChild(card);
+  });
 }
 
 // Run the game
