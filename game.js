@@ -22,7 +22,7 @@ const wordlings = [
   { id: 'dance-miku', name: 'Dancing Miku', img: 'images/miku-wordling2.png'},
   { id: 'pose-miku', name: 'Posing Miku', img: 'images/miku-wordling3.png'},
   { id: 'sailor-moon', name: 'Sailor Moon', img: 'images/moonling.png'},
-  { id: 'pokemon', name: 'Ash', img: 'images/pokeling.img' },
+  { id: 'pokemon', name: 'Ash', img: 'images/pokeling.png' },
   { id: 'sedimentary', name: 'Sedrick', img: 'images/sedimentary-wordling.png' },
   { id: 'astronaut', name: 'Astronaut', img: 'images/space-wordling1.png' },
   { id: 'star', name: 'Star', img: 'images/space-wordling2.png' },
