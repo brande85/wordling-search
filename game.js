@@ -708,6 +708,14 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('wordling-gallery').classList.remove('hidden');
     renderGallery(); // Ensure gallery is updated each time
   });
+
+  const galleryModal = document.getElementById('wordling-gallery');
+
+  galleryModal.addEventListener('click', (e) => {
+    if (e.target === galleryModal) {
+      galleryModal.classList.add('hidden');
+    }
+  });
 	
   document.getElementById('close-gallery').addEventListener('click', () => {
     document.getElementById('wordling-gallery').classList.add('hidden');
