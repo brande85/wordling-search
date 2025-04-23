@@ -306,6 +306,11 @@ body, .cell, #wordsearch-app {
   display: none;
 }
 
+.choices__list--dropdown {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
 /* Default (light) theme */
 body[data-theme='light'] {
   background-color: #fff;
