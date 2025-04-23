@@ -614,15 +614,25 @@ window.addEventListener('DOMContentLoaded', () => {
     modeToggle.addEventListener('click', toggleSelectionMode);
   }
 
-  const wordlistSelect = document.getElementById('wordlist-select');
-  if (wordlistSelect) {
-    const choices = new Choices(wordlistSelect, {
-      searchEnabled: true,
-      shouldSort: false,
-      itemSelectText: '',
-      searchPlaceholderValue: 'Search wordlists...',
-    });
-
+	const wordlistSelect = document.getElementById('wordlist-select');
+	if (wordlistSelect) {
+	  const choices = new Choices(wordlistSelect, {
+	    searchEnabled: true,
+	    shouldSort: false,
+	    itemSelectText: '',
+	    searchPlaceholderValue: 'Search wordlists...',
+	    classNames: {
+	      containerOuter: 'choices',
+	      containerInner: 'choices__inner',
+	      input: 'choices__input',
+	      listDropdown: 'choices__list--dropdown',
+	      listSingle: 'choices__list--single',
+	      itemChoice: 'choices__item--choice',
+	      item: 'choices__item',
+	      placeholder: 'choices__placeholder',
+	    }
+	  });
+    
     wordlistSelect.addEventListener('change', () => {
       generatePuzzle();
     });
