@@ -288,17 +288,26 @@ body, .cell, #wordsearch-app {
   font-size: 1rem;
   max-width: 240px;
   display: inline-block;
-  margin-left: 10px;
-  vertical-align: middle;
+  margin: 0 !important;
+  line-height: 1.2;
+  height: auto !important;
+  vertical-align: left;
 }
 
 /* Shrink the box input area */
 .choices__inner {
-  padding: 5px 8px;
+  padding: 4px 6px !important;
   border-radius: 6px;
   background-color: white;
-  border: 1px solid #ccc;
-  min-height: unset;
+  color: black;
+  border:  1px solid #aaa;
+  min-height: 30px !important;
+  font-size: 0.95em;
+  line-height: 1.1;
+}
+
+.choices__list--single {
+  padding: 0 !important;
 }
 
 /* Hide the default itemSelectText label */
@@ -309,6 +318,11 @@ body, .cell, #wordsearch-app {
 .choices__list--dropdown {
   max-height: 200px;
   overflow-y: auto;
+}
+
+.choices[data-type*='select-one'] .choices__inner {
+  height: auto;
+  border-radius: 4px;
 }
 
 /* Default (light) theme */
@@ -340,9 +354,8 @@ body[data-theme='dark'] #wordsearch-app {
 
 /* Adjust dark mode style */
 body[data-theme='dark'] .choices__inner {
+  border: 1px solid #555;
   background-color: #1e1e1e;
-  border: 1px solid #444;
-  color: #eee;
 }
 
 /* Make the grid container (outside the grid) match */
