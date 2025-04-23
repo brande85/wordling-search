@@ -615,8 +615,22 @@ window.addEventListener('DOMContentLoaded', () => {
     new Choices(wordlistSelect, {
       searchEnabled: true,
       shouldSort: false,
-      searchPlaceholderValue: 'Search Word Lists...',
-      itemSelectText: '',
+      itemSelectText: '', // removes weird label text
+      classNames: {
+        containerOuter: '',
+        containerInner: '',
+        input: '',
+        inputCloned: '',
+        list: '',
+        listItems: '',
+        listSingle: '',
+        listDropdown: '',
+        item: '',
+        itemSelectable: '',
+        itemDisabled: '',
+        itemChoice: '',
+        placeholder: '',
+      }
     });
   }
 	
