@@ -56,8 +56,10 @@ body {
 #controls {
   display: flex;
   align-items: center;
+  justify-content: center;  /* ✅ This centers the row horizontally */
   gap: 10px;
   flex-wrap: wrap;
+  text-align: center;
   margin-bottom: 10px;
 }
 
