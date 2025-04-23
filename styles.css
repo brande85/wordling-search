@@ -282,6 +282,30 @@ body, .cell, #wordsearch-app {
   padding-top: 0;
 }
 
+/* Make the dropdown compact again */
+.choices {
+  width: auto;
+  font-size: 1rem;
+  max-width: 240px;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* Shrink the box input area */
+.choices__inner {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-height: unset;
+}
+
+/* Hide the default itemSelectText label */
+.choices__item--selectable::after {
+  display: none;
+}
+
 /* Default (light) theme */
 body[data-theme='light'] {
   background-color: #fff;
@@ -307,6 +331,13 @@ body[data-theme='dark'] #wordsearch-app {
   border-color: #555;
   background-color: #111; /* grid cell itself */
   color: #fff;
+}
+
+/* Adjust dark mode style */
+body[data-theme='dark'] .choices__inner {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  color: #eee;
 }
 
 /* Make the grid container (outside the grid) match */
