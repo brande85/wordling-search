@@ -315,7 +315,7 @@ body, .cell, #wordsearch-app {
 
 #gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* ✅ Force 3 columns */
   gap: 12px;
   justify-items: center;
   margin-bottom: 20px;
@@ -354,6 +354,16 @@ body, .cell, #wordsearch-app {
   margin-bottom: 10px;
   font-size: 1.1rem;
   text-align: center;
+}
+
+#close-gallery {
+  margin-top: 20px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  background: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
 
 /* Default (light) theme */
@@ -426,6 +436,12 @@ body[data-theme='dark'] .modal-content {
 
 body[data-theme="dark"] .divider {
   border-color: #444;
+}
+
+body[data-theme="dark"] #close-gallery {
+  background: #2a2a2a;
+  border-color: #555;
+  color: #fff;
 }
 
 /* Toggle button styling */
