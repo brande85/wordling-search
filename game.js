@@ -1,5 +1,43 @@
 console.log("✅ game.js is running");
 
+const wordlings = [
+  { id: 'cecil', name: 'Cecil', img: 'ceciling.png' },
+  { id: 'cloud', name: 'Cloud', img: 'cloudling.png' },
+  { id: 'scarf', name: 'Scarf', img: 'cozy-wordling1.png' },
+  { id: 'coffee', name: 'Coffee', img: 'cozy-wordling2.png' },
+  { id: 'cyber', name: 'Cyber', img: 'cyberling.png' },
+  { id: 'link', name: 'Link', img: 'dekuling.png' },
+  { id: 'trex', name: 'T-Rex', img: 'dinosaur-wordling1.png' },
+  { id: 'trixie', name: 'Trixie', img: 'dinosaur-wordling2.png'},
+  { id: 'bronty', name: 'Bronty', img: 'dinosaur-wordling3.png'},
+  { id: 'pterry', name: 'Pterry', img: 'dinosaur-wordling4.png'},
+  { id: 'amethyst', name: 'Amethyst', img: 'gem-wordling1.png'},
+  { id: 'peridot', name: 'Peridot', img: 'gem-wordling2.png'},
+  { id: 'emerald', name: 'Emerald', img: 'gem-wordling3.png'},
+  { id: 'sapphire', name: 'Sapphire', img: 'gem-wordling4.png'},
+  { id: 'goku', name: 'Goku', img: 'gokuling.png'},
+  { id: 'igneous', name: 'Iggy', img: 'igneous-wordling.png'},
+  { id: 'metamorphic', name: 'Morph', img: 'metamorphic-wordling.png'},
+  { id: 'perform-miku', name: 'Performing Miku', img: 'miku-wordling1.png'},
+  { id: 'dance-miku', name: 'Dancing Miku', img: 'miku-wordling2.png'},
+  { id: 'pose-miku', name: 'Posing Miku', img: 'miku-wordling3.png'},
+  { id: 'sailor-moon', name: 'Sailor Moon', img: 'moonling.png'},
+  { id: 'pokemon', name: 'Ash', img: 'pokeling.img' },
+  { id: 'sedimentary', name: 'Sedrick', img: 'sedimentary-wordling.png' },
+  { id: 'astronaut', name: 'Astronaut', img: 'space-wordling1.png' },
+  { id: 'star', name: 'Star', img: 'space-wordling2.png' },
+  { id: 'alien', name: 'Alien', img: 'space-wordling3.png' },
+  { id: 'jupiter', name: 'Jupiter', img: 'space-wordling4.png' },
+  { id: 'squall', name: 'Squall', img: 'squalling.png' },
+  { id: 'terra', name: 'Terra', img: 'terraling.png' },
+  { id: 'warrior-of-light', name: 'Warrior of Light', img: 'warrioroflightling.png' },
+  { id: 'staff', name: 'Staff', img: 'wordling1.png' },
+  { id: 'stick', name: 'Stick', img: 'wordling2.png' },
+  { id: 'leaf', name: 'Leaf', img: 'wordling3.png' },
+  { id: 'flower-crown', name: 'Flower Crown', img: 'wordling4.png' },
+  { id: 'zidane', name: 'Zidane', img: 'zidaneling.png' },
+]
+
 const wordlingThemes = {
   // ANIMALS
   cretaceousDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
@@ -549,7 +587,7 @@ function moveLabelWordlingToRow() {
 
   row.appendChild(floatingWordling);
 
-	foundWordlings.add('cozybun'); // Example name, match your Wordling IDs
+	foundWordlings.add(`images/${floatingWordlingImage}`);
   renderGallery();
 
     // ✅ Increment the count ONLY when Wordling actually joins
@@ -619,15 +657,16 @@ function renderGallery() {
   wordlings.forEach(w => {
     const card = document.createElement('div');
     card.classList.add('wordling-card');
-    if (foundWordlings.has(w.id)) {
+    if (foundWordlings.has(w.img)) {
       card.classList.add('unlocked');
     }
-
+  
     card.innerHTML = `
       <img src="${w.img}" alt="${w.name}">
-      <div>${foundWordlings.has(w.id) ? w.name : '???'}</div>
+      <div>${foundWordlings.has(w.img) ? w.name : '???'}</div>
     `;
     grid.appendChild(card);
+  });
   });
 }
 
