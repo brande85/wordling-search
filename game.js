@@ -644,4 +644,4 @@ if (wordlistSelect) {
   wordlistSelect.addEventListener('change', () => {
     generatePuzzle();
   });
-});
+};
