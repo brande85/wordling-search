@@ -313,7 +313,7 @@ body, .cell, #wordsearch-app {
   overflow-y: auto;
 }
 
-#gallery-grid {
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* ✅ Force 3 columns */
   gap: 12px;
