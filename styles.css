@@ -315,10 +315,10 @@ body, .cell, #wordsearch-app {
 
 #gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 12px;
-  margin-top: 10px;
   justify-items: center;
+  margin-bottom: 20px;
 }
 
 .wordling-card {
@@ -329,8 +329,8 @@ body, .cell, #wordsearch-app {
 }
 
 .wordling-card img {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   filter: grayscale(100%);
 }
@@ -341,6 +341,19 @@ body, .cell, #wordsearch-app {
 
 .wordling-card.unlocked img {
   filter: none;
+}
+
+/* Divider and section heading */
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0 10px;
+}
+
+.cosplay-heading {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 /* Default (light) theme */
@@ -409,6 +422,10 @@ body[data-theme='dark'] #korok-stats {
 body[data-theme='dark'] .modal-content {
   background: #1e1e1e;
   color: #eee;
+}
+
+body[data-theme="dark"] .divider {
+  border-color: #444;
 }
 
 /* Toggle button styling */
