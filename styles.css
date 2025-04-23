@@ -1,4 +1,4 @@
-body {
+ body {
   font-family: sans-serif;
   text-align: center;
   padding: 20px;
@@ -435,10 +435,10 @@ body[data-theme='dark'] .modal-content {
   #grid-shell {
     display: flex;
     justify-content: flex-start;
-    overflow-x: hidden;
-    padding: 8px;
+    overflow-x: auto;
+    padding: 1rem 0;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     scrollbar-width: thin;
     scrollbar-color: #b5e0ca #f3f3f3; /* pastel green on soft background */
     box-sizing: border-box;
@@ -476,11 +476,12 @@ body[data-theme='dark'] .modal-content {
   }
   
   #grid-container {
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     padding: 8px;
     flex-wrap: wrap;
+    white-space: nowrap;
   }
   
   .cell {
