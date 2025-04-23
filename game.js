@@ -526,8 +526,10 @@ function unlockCosplayWordling() {
 
   document.getElementById('cosplay-section').appendChild(cosplayImg);
 
-  // Optional: Add message pop-up
-  //alert('🎉 You unlocked a Cosplay Wordling!');
+   // ✅ Also unlock for gallery
+  const fullPath = `images/${chosen}`;
+  foundWordlings.add(fullPath); // or use mapped ID if using Option 2 from earlier
+  renderGallery();
 }
 
 function showKorok() {
