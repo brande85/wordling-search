@@ -290,14 +290,21 @@ body, .cell, #wordsearch-app {
 }
 
 .choices__list--dropdown {
-  position: absolute;
+  position: absolute !important;
+  top: 100%;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  background-color: var(--dropdown-bg, white);
+  background-color: white;
   border: 1px solid #ccc;
   border-radius: 4px;
-  max-height: 200px;
+  max-height: 250px;
   overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  display: none; /* <-- IMPORTANT: default state is hidden */
+}
+
+.choices.is-open .choices__list--dropdown {
+  display: block;
 }
 
 .choices__inner,
