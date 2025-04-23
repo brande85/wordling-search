@@ -684,13 +684,6 @@ window.addEventListener('DOMContentLoaded', () => {
     modeToggle.addEventListener('click', toggleSelectionMode);
   }
 
-const wordlistSelect = document.getElementById('wordlist-select');
-if (wordlistSelect) {
-  wordlistSelect.addEventListener('change', () => {
-    generatePuzzle();
-  });
-}
-
   const gridShell = document.getElementById('grid-shell');
   if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
     gridShell.classList.add('show-scroll');
@@ -712,6 +705,7 @@ if (wordlistSelect) {
     document.getElementById('wordling-gallery').classList.remove('hidden');
     renderGallery(); // Ensure gallery is updated each time
   });
+	
   document.getElementById('close-gallery').addEventListener('click', () => {
     document.getElementById('wordling-gallery').classList.add('hidden');
   });
