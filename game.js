@@ -85,6 +85,7 @@ const cosplayWordlings = [
 	'angronling.png',
 	'celestineling.png',
 	'fulgrimling.png',
+  'cliveling.png',
 ];
 
 const foundWordlings = new Set(); // Tracks which Wordlings you've found
