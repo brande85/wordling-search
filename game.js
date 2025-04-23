@@ -643,12 +643,6 @@ function toggleSelectionMode() {
   }
 }
 
-const wordlings = [
-  { id: 'cozybun', name: 'Cozybun', img: 'images/cozybun.png' },
-  { id: 'geode', name: 'Geode', img: 'images/geode.png' },
-  { id: 'sparkle', name: 'Sparkle', img: 'images/sparkle.png' },
-];
-
 function renderGallery() {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
