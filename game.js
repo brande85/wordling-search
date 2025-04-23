@@ -7,6 +7,8 @@ const wordlingThemes = {
   jurassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   popularDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   triassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
+  // ASTRONOMY
+	space: ['space-wordling1.png', 'space-wordling2.png', 'space-wordling3.png', 'space-wordling4.png'],
   // FOOD
   fruits: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
   // GEOLOGY
