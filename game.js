@@ -609,6 +609,16 @@ window.addEventListener('DOMContentLoaded', () => {
   if (modeToggle) {
     modeToggle.addEventListener('click', toggleSelectionMode);
   }
+
+  const wordlistSelect = document.getElementById('wordlist-select');
+  if (wordlistSelect) {
+    new Choices(wordlistSelect, {
+      searchEnabled: true,
+      shouldSort: false,
+      searchPlaceholderValue: 'Search Word Lists...',
+      itemSelectText: '',
+    });
+  }
 	
   const gridShell = document.getElementById('grid-shell');
   if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
