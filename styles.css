@@ -257,6 +257,15 @@ body {
   animation: sparkle 0.8s ease-in-out;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
 .wordling-pop {
   position: absolute;
   width: 40px;
