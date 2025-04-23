@@ -651,16 +651,15 @@ function renderGallery() {
   wordlings.forEach(w => {
     const card = document.createElement('div');
     card.classList.add('wordling-card');
-    if (foundWordlings.has(w.img)) {
-      card.classList.add('unlocked');
-    }
+	    if (foundWordlings.has(w.img)) {
+	      card.classList.add('unlocked');
+	    }
   
     card.innerHTML = `
       <img src="${w.img}" alt="${w.name}">
       <div>${foundWordlings.has(w.img) ? w.name : '???'}</div>
     `;
     grid.appendChild(card);
-  });
   });
 }
 
