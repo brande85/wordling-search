@@ -615,33 +615,36 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const wordlistSelect = document.getElementById('wordlist-select');
-if (wordlistSelect) {
-  const choices = new Choices(wordlistSelect, {
-    searchEnabled: true,
-    shouldSort: false,
-    itemSelectText: '',
-    searchPlaceholderValue: 'Search wordlists...',
-  });
-	
-  const gridShell = document.getElementById('grid-shell');
-  if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
-  gridShell.classList.add('show-scroll');
-  } else if (gridShell) {
-  gridShell.classList.remove('show-scroll');
-  }
-  
-  const gridContainer = document.getElementById('grid-container');
-  if (gridSize === 12 && gridContainer) {
-  gridContainer.classList.add('zoom-out');
-  }
-  
-  const newGameBtn = document.getElementById('new-game-btn');
-  if (newGameBtn) {
-  newGameBtn.addEventListener('click', generatePuzzle);
+  if (wordlistSelect) {
+    const choices = new Choices(wordlistSelect, {
+      searchEnabled: true,
+      shouldSort: false,
+      itemSelectText: '',
+      searchPlaceholderValue: 'Search wordlists...',
+    });
+
+    wordlistSelect.addEventListener('change', () => {
+      generatePuzzle();
+    });
   }
 
-// ✅ Now it's safe
-  wordlistSelect.addEventListener('change', () => {
-    generatePuzzle();
-  });
-};
+  const gridShell = document.getElementById('grid-shell');
+  if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
+    gridShell.classList.add('show-scroll');
+  } else if (gridShell) {
+    gridShell.classList.remove('show-scroll');
+  }
+
+  const gridContainer = document.getElementById('grid-container');
+  if (gridSize === 12 && gridContainer) {
+    gridContainer.classList.add('zoom-out');
+  }
+
+  const newGameBtn = document.getElementById('new-game-btn');
+  if (newGameBtn) {
+    newGameBtn.addEventListener('click', generatePuzzle);
+  }
+
+  // ✅ Run the game at startup
+  generatePuzzle();
+});
