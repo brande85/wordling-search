@@ -257,15 +257,6 @@ body {
   animation: sparkle 0.8s ease-in-out;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-}
-
 .wordling-pop {
   position: absolute;
   width: 40px;
@@ -289,71 +280,6 @@ body, .cell, #wordsearch-app {
 #settings {
   margin-top: 0;
   padding-top: 0;
-}
-
-/* Reset Choices.js visual styles */
-.choices {
-  all: unset;
-  display: inline-block;
-  width: auto;
-}
-
-.choices__list--dropdown {
-  position: absolute !important;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  max-height: 250px;
-  overflow-y: auto;
-  display: none; /* <-- IMPORTANT: default state is hidden */
-}
-
-.choices.is-open .choices__list--dropdown {
-  display: block;
-}
-
-.choices__list--dropdown .choices__item {
-  display: block;
-  padding: 6px 10px;
-  line-height: 1.4;
-}
-
-.choices__item--disabled {
-  font-weight: bold;
-  font-size: 1em;
-  color: #999;
-  padding: 8px 10px 4px;
-}
-
-.choices__inner,
-.choices__list--single,
-.choices__item {
-  all: unset;
-  display: inline;
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  background: inherit;
-  border: none;
-  padding: 0;
-  margin: 0;
-  line-height: inherit;
-}
-
-/* Make sure the select behaves like a real one */
-.choices[data-type="select-one"] select {
-  display: inline-block;
-  font-size: inherit;
-  appearance: auto;
-  background: white;
-  color: #000;
-  border: 1px solid #ccc;
-  padding: 4px 8px;
-  border-radius: 4px;
 }
 
 /* Default (light) theme */
@@ -381,19 +307,6 @@ body[data-theme='dark'] #wordsearch-app {
   border-color: #555;
   background-color: #111; /* grid cell itself */
   color: #fff;
-}
-
-/* Dark mode override */
-body[data-theme="dark"] .choices[data-type="select-one"] select {
-  background: #1e1e1e;
-  color: #eee;
-  border-color: #444;
-}
-
-body[data-theme="dark"] .choices__list--dropdown {
-  background-color: #1e1e1e;
-  border: 1px solid #444;
-  color: #eee;
 }
 
 /* Make the grid container (outside the grid) match */
