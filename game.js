@@ -30,7 +30,7 @@ const wordlings = [
   { id: 'jupiter', name: 'Jupiter', img: 'images/space-wordling4.png' },
   { id: 'squall', name: 'Cosplay Squall', img: 'images/squalling.png', isCosplay: true },
   { id: 'terra', name: 'Cosplay Terra', img: 'images/terraling.png', isCosplay: true },
-  { id: 'warrior-of-light', name: 'Cosplay Warrior of Light', img: 'images/warrioroflightling.png', isCosplay: true },
+  { id: 'warrior-of-light', name: 'Cosplay Warrior', img: 'images/warrioroflightling.png', isCosplay: true },
   { id: 'staff', name: 'Staff', img: 'images/wordling1.png' },
   { id: 'stick', name: 'Stick', img: 'images/wordling2.png' },
   { id: 'leaf', name: 'Leaf', img: 'images/wordling3.png' },
