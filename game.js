@@ -1,12 +1,12 @@
 console.log("✅ game.js is running");
 
 const wordlings = [
-  { id: 'cecil', name: 'Cosplay Cecil', img: 'images/ceciling.png' },
-  { id: 'cloud', name: 'Cosplay Cloud', img: 'images/cloudling.png' },
+  { id: 'cecil', name: 'Cosplay Cecil', img: 'images/ceciling.png', isCosplay: true },
+  { id: 'cloud', name: 'Cosplay Cloud', img: 'images/cloudling.png', isCosplay: true },
   { id: 'scarf', name: 'Scarf', img: 'images/cozy-wordling1.png' },
   { id: 'coffee', name: 'Coffee', img: 'images/cozy-wordling2.png' },
   { id: 'cyber', name: 'Cyber', img: 'images/cyberling.png' },
-  { id: 'link', name: 'Cosplay Link', img: 'images/dekuling.png' },
+  { id: 'link', name: 'Cosplay Link', img: 'images/dekuling.png', isCosplay: true },
   { id: 'trex', name: 'T-Rex', img: 'images/dinosaur-wordling1.png' },
   { id: 'trixie', name: 'Trixie', img: 'images/dinosaur-wordling2.png'},
   { id: 'bronty', name: 'Bronty', img: 'images/dinosaur-wordling3.png'},
@@ -15,27 +15,27 @@ const wordlings = [
   { id: 'peridot', name: 'Peridot', img: 'images/gem-wordling2.png'},
   { id: 'emerald', name: 'Emerald', img: 'images/gem-wordling3.png'},
   { id: 'sapphire', name: 'Sapphire', img: 'images/gem-wordling4.png'},
-  { id: 'goku', name: 'Cosplay Goku', img: 'images/gokuling.png'},
+  { id: 'goku', name: 'Cosplay Goku', img: 'images/gokuling.png', isCosplay: true },
   { id: 'igneous', name: 'Iggy', img: 'images/igneous-wordling.png'},
   { id: 'metamorphic', name: 'Morph', img: 'images/metamorphic-wordling.png'},
   { id: 'perform-miku', name: 'Performing Miku', img: 'images/miku-wordling1.png'},
   { id: 'dance-miku', name: 'Dancing Miku', img: 'images/miku-wordling2.png'},
   { id: 'pose-miku', name: 'Posing Miku', img: 'images/miku-wordling3.png'},
-  { id: 'sailor-moon', name: 'Cosplay Sailor Moon', img: 'images/moonling.png'},
-  { id: 'pokemon', name: 'Cosplay Ash', img: 'images/pokeling.png' },
+  { id: 'sailor-moon', name: 'Cosplay Sailor Moon', img: 'images/moonling.png', isCosplay: true },
+  { id: 'pokemon', name: 'Cosplay Ash', img: 'images/pokeling.png', isCosplay: true },
   { id: 'sedimentary', name: 'Sedrick', img: 'images/sedimentary-wordling.png' },
   { id: 'astronaut', name: 'Astronaut', img: 'images/space-wordling1.png' },
   { id: 'star', name: 'Star', img: 'images/space-wordling2.png' },
   { id: 'alien', name: 'Alien', img: 'images/space-wordling3.png' },
   { id: 'jupiter', name: 'Jupiter', img: 'images/space-wordling4.png' },
-  { id: 'squall', name: 'Cosplay Squall', img: 'images/squalling.png' },
-  { id: 'terra', name: 'Cosplay Terra', img: 'images/terraling.png' },
-  { id: 'warrior-of-light', name: 'Cosplay Warrior of Light', img: 'images/warrioroflightling.png' },
+  { id: 'squall', name: 'Cosplay Squall', img: 'images/squalling.png', isCosplay: true },
+  { id: 'terra', name: 'Cosplay Terra', img: 'images/terraling.png', isCosplay: true },
+  { id: 'warrior-of-light', name: 'Cosplay Warrior of Light', img: 'images/warrioroflightling.png', isCosplay: true },
   { id: 'staff', name: 'Staff', img: 'images/wordling1.png' },
   { id: 'stick', name: 'Stick', img: 'images/wordling2.png' },
   { id: 'leaf', name: 'Leaf', img: 'images/wordling3.png' },
   { id: 'flower-crown', name: 'Flower Crown', img: 'images/wordling4.png' },
-  { id: 'zidane', name: 'Cosplay Zidane', img: 'images/zidaneling.png' },
+  { id: 'zidane', name: 'Cosplay Zidane', img: 'images/zidaneling.png', isCosplay: true },
 ]
 
 const wordlingThemes = {
@@ -647,21 +647,29 @@ function toggleSelectionMode() {
 
 function renderGallery() {
   const grid = document.getElementById('gallery-grid');
-  if (!grid) return;
+  const cosplayGrid = document.getElementById('cosplay-gallery');
+  if (!grid || !cosplayGrid) return;
+
   grid.innerHTML = '';
+  cosplayGrid.innerHTML = '';
 
   wordlings.forEach(w => {
     const card = document.createElement('div');
     card.classList.add('wordling-card');
-	    if (foundWordlings.has(w.img)) {
-	      card.classList.add('unlocked');
-	    }
-  
+    if (foundWordlings.has(w.img) || foundWordlings.has(w.id)) {
+      card.classList.add('unlocked');
+    }
+
     card.innerHTML = `
       <img src="${w.img}" alt="${w.name}">
-      <div>${foundWordlings.has(w.img) ? w.name : '???'}</div>
+      <div>${foundWordlings.has(w.img) || foundWordlings.has(w.id) ? w.name : '???'}</div>
     `;
-    grid.appendChild(card);
+
+    if (w.isCosplay) {
+      cosplayGrid.appendChild(card);
+    } else {
+      grid.appendChild(card);
+    }
   });
 }
 
