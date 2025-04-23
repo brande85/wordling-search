@@ -121,6 +121,10 @@ function tryPlacingWords(wordList, maxWords = 12) {
 }
 
 function generatePuzzle() {
+  console.log("🧩 generatePuzzle() was called!");
+  console.log("Selected wordlist:", listValue);
+  console.log("Available keys in wordLists:", Object.keys(wordLists));
+  
   const overlay = document.getElementById('congrats-overlay');
   if (overlay) overlay.style.display = 'none';
   const blocker = document.getElementById('interaction-blocker');
@@ -611,28 +615,13 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const wordlistSelect = document.getElementById('wordlist-select');
-  if (wordlistSelect) {
-    new Choices(wordlistSelect, {
-      searchEnabled: true,
-      shouldSort: false,
-      itemSelectText: '', // removes weird label text
-      classNames: {
-        containerOuter: '',
-        containerInner: '',
-        input: '',
-        inputCloned: '',
-        list: '',
-        listItems: '',
-        listSingle: '',
-        listDropdown: '',
-        item: '',
-        itemSelectable: '',
-        itemDisabled: '',
-        itemChoice: '',
-        placeholder: '',
-      }
-    });
-  }
+if (wordlistSelect) {
+  const choices = new Choices(wordlistSelect, {
+    searchEnabled: true,
+    shouldSort: false,
+    itemSelectText: '',
+    searchPlaceholderValue: 'Search wordlists...',
+  });
 	
   const gridShell = document.getElementById('grid-shell');
   if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
@@ -652,5 +641,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 // ✅ Now it's safe
-generatePuzzle();
+  wordlistSelect.addEventListener('change', () => {
+    generatePuzzle();
+  });
 });
