@@ -122,8 +122,6 @@ function tryPlacingWords(wordList, maxWords = 12) {
 
 function generatePuzzle() {
   console.log("🧩 generatePuzzle() was called!");
-  console.log("Selected wordlist:", listValue);
-  console.log("Available keys in wordLists:", Object.keys(wordLists));
   
   const overlay = document.getElementById('congrats-overlay');
   if (overlay) overlay.style.display = 'none';
@@ -141,6 +139,8 @@ function generatePuzzle() {
 
   const sizeValue = sizeSelect.value;
   const listValue = listSelect.value;
+  console.log("Selected wordlist:", listValue);
+  console.log("Available keys in wordLists:", Object.keys(wordLists));
   currentPuzzleTheme = listValue;
 
   const wordListObj = wordLists[listValue];
