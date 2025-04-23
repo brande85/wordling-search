@@ -289,6 +289,17 @@ body, .cell, #wordsearch-app {
   width: auto;
 }
 
+.choices__list--dropdown {
+  position: absolute;
+  z-index: 1000;
+  background-color: var(--dropdown-bg, white);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
 .choices__inner,
 .choices__list--single,
 .choices__item {
@@ -348,6 +359,12 @@ body[data-theme="dark"] .choices[data-type="select-one"] select {
   background: #1e1e1e;
   color: #eee;
   border-color: #444;
+}
+
+body[data-theme="dark"] .choices__list--dropdown {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  color: #eee;
 }
 
 /* Make the grid container (outside the grid) match */
