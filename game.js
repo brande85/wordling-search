@@ -136,7 +136,7 @@ let selecting = false;
 let floatingWordling = null;
 let floatingWordlingImage = null;
 let unlockedCosplays = [];
-let selectionMode = 'drag'; // 'drag' or 'click'
+const selectionMode = 'click';
 let clickStartCell = null;
 const shouldAvoidClumping = gridSize >= 10;
 
@@ -357,10 +357,7 @@ function renderGrid() {
 			checkSelectedWord();
 		});
 
-    cell.addEventListener('click', () => {
-      if (selectionMode === 'click') {
-        handleClickSelection(cell);
-      }
+    cell.addEventListener('click', handleCellClick);
     });
 
 		cell.addEventListener('touchstart', handleTouchStart, { passive: false });
@@ -762,14 +759,6 @@ function toggleTheme() {
   setTheme(current === 'dark' ? 'light' : 'dark');
 }
 
-function toggleSelectionMode() {
-  selectionMode = selectionMode === 'drag' ? 'click' : 'drag';
-  const modeToggle = document.getElementById('mode-toggle');
-  if (modeToggle) {
-    modeToggle.textContent = `🖱️ ${selectionMode === 'drag' ? 'Drag' : 'Click'}`;
-  }
-}
-
 function updateProgressBar() {
   const total = wordlings.filter(w => !w.isHidden).length; // excludes hidden/milestone Wordlings
   const found = [...foundWordlings].filter(id =>
@@ -822,11 +811,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const toggleBtn = document.getElementById('theme-toggle');
   if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
-
-  const modeToggle = document.getElementById('mode-toggle');
-  if (modeToggle) {
-    modeToggle.addEventListener('click', toggleSelectionMode);
-  }
 
   const gridShell = document.getElementById('grid-shell');
   if (gridShell && gridSize >= 12 && window.innerWidth < 600) {
