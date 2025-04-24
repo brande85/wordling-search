@@ -588,6 +588,7 @@ function unlockCosplayWordling() {
   const fullPath = `images/${chosen}`;
   foundWordlings.add(fullPath); // or use mapped ID if using Option 2 from earlier
   renderGallery();
+  updateProgressBar();
 }
 
 function showKorok() {
@@ -649,6 +650,7 @@ function moveLabelWordlingToRow() {
 
 	foundWordlings.add(`images/${floatingWordlingImage}`);
   renderGallery();
+  updateProgressBar();
 
     // ✅ Increment the count ONLY when Wordling actually joins
   korokCount++;
@@ -657,6 +659,7 @@ function moveLabelWordlingToRow() {
   // ✅ Check for cosplay unlocks too
   if (korokCount % 5 === 0) {
     unlockCosplayWordling();
+    updateProgressBar();
   }
 
   // Clear the reference after moving
@@ -701,6 +704,19 @@ function toggleSelectionMode() {
   if (modeToggle) {
     modeToggle.textContent = `🖱️ ${selectionMode === 'drag' ? 'Drag' : 'Click'}`;
   }
+}
+
+function updateProgressBar() {
+  const total = wordlings.filter(w => !w.isHidden).length; // excludes hidden/milestone Wordlings
+  const found = [...foundWordlings].filter(id =>
+    wordlings.some(w => w.id === id && !w.isHidden)
+  ).length;
+
+  const percent = Math.round((found / total) * 100);
+
+  document.getElementById('progress-count').textContent = found;
+  document.getElementById('progress-total').textContent = total;
+  document.getElementById('progress-fill').style.width = `${percent}%`;
 }
 
 function renderGallery() {
@@ -765,6 +781,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.getElementById('open-gallery').addEventListener('click', () => {
     document.getElementById('wordling-gallery').classList.remove('hidden');
     renderGallery(); // Ensure gallery is updated each time
+    updateProgressBar();
   });
 
   const galleryModal = document.getElementById('wordling-gallery');
