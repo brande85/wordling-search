@@ -339,7 +339,44 @@ const wordLists = {
       "👑 The #1 princess in the whole wide world, so that's how you'll treat me, got it? -- World Is Mine",
     ]
   },
+  // POP CULTURE
 
+  warhammerfortyksetting: {
+    words: ['GRIM', 'DARKNESS', 'FUTURE', 'WAR', 'FACTION', 'EMPIRE', 'BATTLE', 'WORLD', 'HUMANITY', 'ALONE', 'HERETIC', 'MUTANT', 'ALIEN', 'IMPERIUM', 'GALAXY', 'SPACE MARINE', 'DANGER', 'CAMPAIGN', 'BRUTALITY', 'TEMPLAR', 'EMPEROR', 'DIVINITY', 'OATH', 'PURGATION', 'VENGEANCE', 'QUASH', 'BLOOD ANGEL', 'LOYALTY', 'CRUSADE', 'CURSE', 'AFFLICTION', 'DARK ANGEL', 'DEFENDER', 'DOUR', 'SECRETS', 'MERCILESS', 'DEATHWATCH', 'SPECIALIST', 'VETERAN', 'WARRIOR', 'CHAPTER', 'XENOS', 'GREY KNIGHT', 'DAEMON', 'WARP', 'MALEFIC', 'PSYCHIC', 'SPACE WOLVES', 'FEROCIOUS', 'DAUNTLESS', 'TENACIOUS', 'DEFY', 'ADEPTA SORORITAS', 'FAITH', 'CHAINBLADE', 'FIREFIGHT', 'SCREAMS', 'ADEPTAS CUSTODES', 'SUPER SOLDIER', 'MIGHT', 'EXEMPLAR', 'THRONEWORLD', 'ADEPTUS MECHANICUS', 'RELIC', 'CYBORG', 'MACHINE CULT', 'TECH PRIEST', 'OMNISSIAH', 'ASTRA MILITARUM', 'VIOLENCE', 'INFANTRY', 'TANK', 'SHIELD', 'CRUSH', 'CHAOS', 'SUPERHUMAN', 'DARK GODS', 'HERETIC ASTARTES', 'EYE OF TERROR', 'MAELSTROM', 'GREAT RIFT', 'STRONGHOLD', 'BLOODLUST', 'DEATH GUARD', 'TRAITOR', 'NURGLE', 'DISEASE', 'DESPAIR', 'PLAGUEFATHER', 'INFECTION', 'PLAGUE', 'THOUSAND SONS', 'TZEENTCH', 'MAGIC', 'ELDRITCH', 'WORLD EATERS', 'KHORNE', 'BLOOD', 'BERSERK', 'SLAUGHTER', 'SKULL' 'RUINOUS POWERS', 'NIGHTMARE', 'AELDARI', 'CRAFTWORLD', 'NOMAD', 'DRUKHARI', 'ANGUISH', 'SUFFERING', 'RAID', 'TYRANID', 'VOID', 'FLEET', 'HIVE MIND', 'SWARM', 'CULT', 'GENESTEALER', 'ALIEN', 'SABOTAGE', 'ZEALOTRY', 'SCOURGE', 'VOTANN', 'NECRON', 'ANDROID', 'LEGION', 'STASIS TOMB', 'OVERLORD', 'ORK', 'WARBAND', 'HORDE', 'MAYHEM', 'TAU', 'GREATER GOOD', 'BATTLESUIT'],
+    facts: [
+      "🪖 'In the grim darkness of the far future, there is only war.'",
+      "🚀 'In the 41st Millenium, warring factions from ancient civilizations and upstart empires fight endless battles across innumerable worlds.'"
+      "👽 'Humanity stands alone, beset on all sides by the heretic, the mutant, and the alien.'",
+      "⚔️ 'There is no mercy.  There is no respite.  Prepare yourself for battle.'",
+      "🧪 'Technology and science offer no hope, and there is no peace between the stars.'",
+      "🙏 'Enlightenment is replaced by superstition, understanding by rhetoric, rote, and blind prayer.  War is all that remains.'",
+      "🪖 'There is no combat theatre in which the Space Marines cannot excel, no foe they cannot overcome, and no danger they fear to face.'",
+      "⚔️ 'Every battle-brother of the Black Templars belives in the Emperor's divinity, and is sworn to oaths of purgation and vengeance.'",
+      "🩸 'The Blood Angels are amongst the most noble and honorable of Space Marines, with a history of steadfast loyalty to the Imperium that stretches back to the Great Crusade.",
+      "🧱 'Staunch defenders of the Imperium, the dour and brooding brotherhood of the Dark Angels is merciless in attack and stubborn in defence.'",
+      "💀 'The Deathwatch is a specialist gathering of Space Marines, veteran warriors drawn from every Chapter and united in a single purpose.'",
+      "🌌 'Whenever daemons break through the veil of reality, wherever the powers of the warp manifest in the form of malefic entities or abhorrent possessions, the Grey Knights strike.'",
+      "🐺 'Ferocious warriors from the death world of Fenris, the Space Wolves are dauntless, tenacious, and possess an insatiable hunger for battle.'",
+      "🔥 'The Adeptas Sororitas are warriors of unyielding faith. They purge their enemies from the field with roaring fire and howling chainblade, displaying their zealous devotion to the God-Emperor and the Imperial Cult.'",
+      "⚔️ 'The Adeptas Custodes were the first and greatest of the super-soldiers engineered by the Emperor.'",
+      "⚙️ 'The Adeptas Mechanicus prize knowledge above all things, and will shed oceans of blood and oil in their endless crusade to acquire lost lore and ancient relics.'",
+      "🔨 'The Astra Militarum are a blunt instrument of violence, wrought on a galactic scale. Massed infantry and rumbling tanks serve as both a living shield for the Emperor’s realm, and an unstoppable sledgehammer with which to crush its foes.'",
+      "😈 'They are the Imperium’s fallen heroes, superhuman warriors who sold their souls for the promise of power gifted from the Dark Gods. They are the Heretic Astartes – the Chaos Space Marines.'",
+      "🪰 'The Death Guard are the Traitor Legion most favoured by Nurgle, the Chaos God of disease and despair.'",
+      "🪄 'The Thousand Sons are a Traitor Legion of mad Sorcerers sworn to the service of Tzeentch, the Chaos God of magic and change.'",
+      "💀 'The World Eaters lay into their enemies with gore-encrusted chainblades, screaming praise to Khorne, the Chaos God of blood and hate.'", 
+      "😈 'No foe of the Imperium is more malignant, nor more terrible, than the daemons of Chaos, the numberless foot soldiers of the Ruinous Powers.'", 
+      "🚀 'Once rulers of a galactic empire, the Aeldari are now a splintered people with only fragments of their former power.'",
+      "🗡️ 'The Drukhari are a sadistic reaver-civilisation of murderous Aeldari who feed off the anguish and suffering of their victims.'",
+      "☄️ 'The Tyranids have invaded the galaxy from beyond the intergalactic void, their hive fleets slithering like tendrils into every sector and system.'",
+      "🧪 'The Genestealer Cults gather far from the prying eyes of the Imperium’s harsh authorities, secret worshippers mutated by Tyranid infection.'",
+      "🪓 'The Leagues of Votann are expert miners, pragmatic traders, and resilient warriors, wielding advanced technologies lost to the Imperium.'",
+      "🤖 'After aeons of hibernation, the deathless android legions of the Necrons rise across the galaxy.'",
+      "💪 'Tough, brutal, and impossibly numerous, the Orks are one of the most dangerous species in the galaxy.'",
+      "🤝 'Dynamic and supremely confident, the T’au have established a powerful empire of countless species working toward the philosophy of the Greater Good.'",
+    ]
+  },
+  
   // SPACE
 
   space: {
