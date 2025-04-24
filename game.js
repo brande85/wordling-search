@@ -8,7 +8,7 @@ const wordlings = [
 	{ id: 'angron', name: 'Cosplay Angron', img: 'images/angronling.png', isCosplay: true },
 	{ id: 'pokemon', name: 'Cosplay Ash', img: 'images/pokeling.png', isCosplay: true },
 	{ id: 'astronaut', name: 'Astronaut', img: 'images/space-wordling1.png' },
-	// { id: 'sister-of-battle', name: 'Battle Sister', img: 'images/warhammer-40k-wordling2.png' },
+	{ id: 'sister-of-battle', name: 'Battle Sister', img: 'images/warhammer-40k-wordling2.png' },
 	// { id: 'black-mage', name: 'Black Mage', img: 'images/fantasy-wordling1.png' },
 	// { id: 'boxer', name: 'Boxer', img: 'images/punchling.png'},
 	{ id: 'bronty', name: 'Bronty', img: 'images/dinosaur-wordling3.png'},
@@ -52,7 +52,7 @@ const wordlings = [
 	{ id: 'scarf', name: 'Scarf', img: 'images/cozy-wordling1.png' },
 	{ id: 'sedimentary', name: 'Sedrick', img: 'images/sedimentary-wordling.png' },
 	{ id: 'sheep', name: 'Sheep', img: 'images/tame-animal-wordling2.png' },
-	// { id: 'space-marine', name: 'Space Soldier', img: 'images/warhammer-40k-wordling1.png' },
+	{ id: 'space-marine', name: 'Space Soldier', img: 'images/warhammer-40k-wordling1.png' },
 	{ id: 'squall', name: 'Cosplay Squall', img: 'images/squalling.png', isCosplay: true },
 	{ id: 'staff', name: 'Staff', img: 'images/wordling1.png' },
 	{ id: 'star', name: 'Star', img: 'images/space-wordling2.png' },
@@ -61,7 +61,7 @@ const wordlings = [
   { id: 'trixie', name: 'Trixie', img: 'images/dinosaur-wordling2.png' },
 	// { id: 'trumpet', name: 'Trumpet', img: 'images/music-wordling2.png' },
   { id: 'warrior-of-light', name: 'Cosplay Warrior', img: 'images/warrioroflightling.png', isCosplay: true },
-	// { id: 'tau-mech', name: 'Xeno Mech', img: 'images/warhammer-40k-wordling3.png' },
+	{ id: 'tau-mech', name: 'Xeno Mech', img: 'images/warhammer-40k-wordling3.png' },
 	{ id: 'zelda', name: 'Cosplay Zelda', img: 'images/zelda-wordling.png', isCosplay: true},
   { id: 'zidane', name: 'Cosplay Zidane', img: 'images/zidaneling.png', isCosplay: true },
 ]
@@ -85,6 +85,8 @@ const wordlingThemes = {
   // MUSIC
   miku: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
   mikusongs: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
+  // POP CULTURE
+  warhammerfortyksetting: ['warhammer-40k-wordling1.png', 'warhammer-40k-wordling2.png', 'warhammer-40k-wordling3.png'],
   // OTHER
   cozy: ['cozy-wordling1.png', 'cozy-wordling2.png'], 
   // add more as you build more puzzles
