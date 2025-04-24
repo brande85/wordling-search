@@ -576,6 +576,8 @@ function addSpecialWordlingToPage(imagePath, alt = 'Special Wordling') {
   const specialSection = document.getElementById('special-section');
   if (!specialSection) return;
 
+  if ([...specialSection.children].some(img => img.src.includes(imagePath))) return; // already added
+
   const wordlingImg = document.createElement('img');
   wordlingImg.src = imagePath;
   wordlingImg.alt = alt;
@@ -617,6 +619,8 @@ function checkMilestoneUnlocks() {
 
   if (totalUnlocked >= 5 && !foundWordlings.has('milestone5')) {
     foundWordlings.add('milestone5');
+    const sprout = wordlings.find(w => w.id === 'milestone5');
+    if (sprout) addSpecialWordlingToPage(sprout.img, 'Milestone Wordling');
     showMilestonePopup('🎉 You unlocked the Sprout Wordling!');
   }
 
