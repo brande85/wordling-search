@@ -15,7 +15,7 @@ const wordlings = [
 	{ id: 'cat', name: 'Cat', img: 'images/tame-animal-wordling4.png'},
 	{ id: 'cecil', name: 'Cosplay Cecil', img: 'images/ceciling.png', isCosplay: true },
 	{ id: 'celestine', name: 'Cosplay Celestine', img: 'images/celestineling.png', isCosplay: true },
-	// id: 'clarinet', name: 'Clarinet', img: 'images/music-wordling1.png'},
+	// { id: 'clarinet', name: 'Clarinet', img: 'images/music-wordling1.png'},
 	{ id: 'clive', name: 'Cosplay Clive', img: 'images/cliveling.png', isCosplay: true },
   { id: 'cloud', name: 'Cosplay Cloud', img: 'images/cloudling.png', isCosplay: true },
   { id: 'coffee', name: 'Coffee', img: 'images/cozy-wordling2.png' },
