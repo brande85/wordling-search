@@ -53,7 +53,7 @@ const wordlings = [
 	{ id: 'sedimentary', name: 'Sedrick', img: 'images/sedimentary-wordling.png' },
 	{ id: 'sheep', name: 'Sheep', img: 'images/tame-animal-wordling2.png' },
 	{ id: 'space-marine', name: 'Space Soldier', img: 'images/warhammer-40k-wordling1.png' },
-  { id: 'milestone5', name: 'Sprout', img: 'images/milestones/milestone5.png', isMilestone: true },
+  
 	{ id: 'squall', name: 'Cosplay Squall', img: 'images/squalling.png', isCosplay: true },
 	{ id: 'staff', name: 'Staff', img: 'images/wordling1.png' },
 	{ id: 'star', name: 'Star', img: 'images/space-wordling2.png' },
@@ -65,6 +65,7 @@ const wordlings = [
 	{ id: 'tau-mech', name: 'Xeno Mech', img: 'images/warhammer-40k-wordling3.png' },
 	{ id: 'zelda', name: 'Cosplay Zelda', img: 'images/zelda-wordling.png', isCosplay: true},
   { id: 'zidane', name: 'Cosplay Zidane', img: 'images/zidaneling.png', isCosplay: true },
+  { id: 'milestone5', name: 'Sprout', img: 'images/milestones/milestone5.png', isMilestone: true },
 ]
 
 const wordlingThemes = {
@@ -770,28 +771,31 @@ function updateProgressBar() {
 
 function renderGallery() {
   const grid = document.getElementById('gallery-grid');
-  const cosplayGrid = document.getElementById('cosplay-gallery');
-  if (!grid || !cosplayGrid) return;
+  const specialGrid = document.getElementById('special-gallery');
+  if (!grid || !specialGrid) return;
 
   grid.innerHTML = '';
-  cosplayGrid.innerHTML = '';
+  specialGrid.innerHTML = '';
 
   wordlings.forEach(w => {
+    const found = foundWordlings.has(w.id);
     const card = document.createElement('div');
     card.classList.add('wordling-card');
-    if (foundWordlings.has(w.id)) {
-      card.classList.add('unlocked');
-    }
+    if (found) card.classList.add('unlocked');
+
+    const tag = w.isMilestone ? 'Milestone' :
+                w.isCosplay ? 'Cosplay' : null;
 
     card.innerHTML = `
       <img src="${w.img}" alt="${w.name}">
-      <div>${foundWordlings.has(w.id) ? w.name : '???'}</div>
+      <div>${found ? w.name : '???'}</div>
+      ${tag ? `<div class="wordling-tag">${tag}</div>` : ''}
     `;
 
-    if (w.isCosplay) {
-      cosplayGrid.appendChild(card);
+    if (tag) {
+      specialGrid.appendChild(card); // Cosplay or Milestone
     } else {
-      grid.appendChild(card);
+      grid.appendChild(card); // Regular Wordling
     }
   });
 }
