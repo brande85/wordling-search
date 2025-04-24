@@ -572,29 +572,39 @@ function showWordlingPop(imageFile) {
   });
 }
 
+function addSpecialWordlingToPage(imagePath, alt = 'Special Wordling') {
+  const specialSection = document.getElementById('special-section');
+  if (!specialSection) return;
+
+  const wordlingImg = document.createElement('img');
+  wordlingImg.src = imagePath;
+  wordlingImg.alt = alt;
+  wordlingImg.className = 'wordling-img';
+  wordlingImg.style.height = '64px';
+  wordlingImg.style.margin = '4px';
+
+  specialSection.appendChild(wordlingImg);
+}
+
 function unlockCosplayWordling() {
   const emptyMsg = document.getElementById('cosplay-empty');
   if (emptyMsg) emptyMsg.style.display = 'none';
-  
+
   const available = cosplayWordlings.filter(w => !unlockedCosplays.includes(w));
-  if (available.length === 0) return; // all unlocked
+  if (available.length === 0) return; // All cosplay Wordlings unlocked
 
   const chosen = available[Math.floor(Math.random() * available.length)];
   unlockedCosplays.push(chosen);
 
-  const cosplayImg = document.createElement('img');
-  cosplayImg.src = `images/${chosen}`;
-  cosplayImg.alt = 'Cosplay Wordling';
-  cosplayImg.className = 'wordling-img';
-  cosplayImg.style.height = '64px';
-  cosplayImg.style.margin = '4px';
-
-  document.getElementById('cosplay-section').appendChild(cosplayImg);
-
-   // ✅ Also unlock for gallery
-  const fullPath = `images/${chosen}`; 
+  const fullPath = `images/${chosen}`;
   const id = getWordlingIdFromImagePath(fullPath);
+
+  // ✅ Add to found set (so it shows in gallery + progress)
   if (id) foundWordlings.add(id);
+
+  // ✅ Add to the visible special Wordlings section
+  addSpecialWordlingToPage(fullPath, 'Cosplay Wordling');
+
   renderGallery();
   updateProgressBar();
   checkMilestoneUnlocks();
