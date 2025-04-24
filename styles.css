@@ -588,6 +588,8 @@ body[data-theme="dark"] .wordling-tag {
     padding: 8px;
     flex-wrap: wrap;
     white-space: nowrap;
+    transform: scale(0.85);
+    transform-origin: top center;
   }
   
   .cell {
