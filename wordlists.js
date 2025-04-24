@@ -380,7 +380,7 @@ const wordLists = {
   // SPACE
 
   space: {
-    words: ['SPACE', 'VACUUM', 'VOID', 'KARMAN LINE', 'LIGHT YEARS', 'BIG BANG', 'GALAXY', 'TELESCOPE', 'UNIVERSE', 'DUST', 'PROBE', 'PLANET', 'ASTEROID', 'SOLAR WIND', 'COSMIC RAYS', 'RADIATION', 'DARK MATTER', 'DARK ENERGY', 'BLACK HOLES', 'STAR', 'GRAVITY', 'SINGULARITY', 'SUPERGIANT', 'WHITE DWARF', 'SUPERNOVA', 'NEUTRON STAR', 'PULSAR STAR', 'SPACECRAFT', 'CELESTIAL', 'ORBIT', 'PROTOPLANET', 'COMET', 'SOLAR SYSTEM', 'QUASAR'],
+    words: ['SPACE', 'VACUUM', 'VOID', 'KARMAN LINE', 'LIGHT YEAR', 'BIG BANG', 'GALAXY', 'TELESCOPE', 'UNIVERSE', 'DUST', 'PROBE', 'PLANET', 'ASTEROID', 'SOLAR WIND', 'COSMIC RAY', 'RADIATION', 'DARK MATTER', 'DARK ENERGY', 'BLACK HOLE', 'STAR', 'GRAVITY', 'SINGULARITY', 'SUPERGIANT', 'WHITE DWARF', 'SUPERNOVA', 'NEUTRON STAR', 'PULSAR STAR', 'SPACECRAFT', 'CELESTIAL', 'ORBIT', 'PROTOPLANET', 'COMET', 'SOLAR SYSTEM', 'QUASAR'],
     facts: [
       "🌌 Space is nearly a perfect vacuum — silent, empty, and full of mystery.",
       "🔇 Sound can't travel in space — there's nothing close enough to carry a whisper between the stars.",
