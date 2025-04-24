@@ -65,7 +65,7 @@ const wordlings = [
 	{ id: 'tau-mech', name: 'Xeno Mech', img: 'images/warhammer-40k-wordling3.png' },
 	{ id: 'zelda', name: 'Cosplay Zelda', img: 'images/zelda-wordling.png', isCosplay: true},
   { id: 'zidane', name: 'Cosplay Zidane', img: 'images/zidaneling.png', isCosplay: true },
-  { id: 'milestone5', name: 'Sprout', img: 'images/milestones/milestone5.png', isMilestone: true },
+  { id: 'milestone5', name: 'Sprout', img: 'images/milestone5.png', isMilestone: true },
 ]
 
 const wordlingThemes = {
