@@ -570,10 +570,13 @@ function showWordlingPop(imageFile) {
 }
 
 function addSpecialWordlingToPage(imagePath, alt = 'Special Wordling') {
-  const specialSection = document.getElementById('special-section');
+  const emptyMsg = document.getElementById('special-empty');
+  if (emptyMsg) emptyMsg.style.display = 'none';
+  
+  const specialSection = document.getElementById('special-wordling-row'); // ✅ this is the correct target
   if (!specialSection) return;
 
-  if ([...specialSection.children].some(img => img.src.includes(imagePath))) return; // already added
+  if ([...specialSection.children].some(img => img.src.includes(imagePath))) return;
 
   const wordlingImg = document.createElement('img');
   wordlingImg.src = imagePath;
@@ -615,11 +618,13 @@ function checkMilestoneUnlocks() {
   ).length;
 
   if (totalUnlocked >= 5 && !foundWordlings.has('milestone5')) {
-    foundWordlings.add('milestone5');
-    const sprout = wordlings.find(w => w.id === 'milestone5');
-    if (sprout) addSpecialWordlingToPage(sprout.img, 'Milestone Wordling');
-    showMilestonePopup('🎉 You unlocked the Sprout Wordling!');
-  }
+  foundWordlings.add('milestone5');
+
+  const sprout = wordlings.find(w => w.id === 'milestone5');
+  if (sprout) addSpecialWordlingToPage(sprout.img, 'Milestone Wordling');
+
+  showMilestonePopup('🎉 You unlocked the Sprout Wordling!');
+}
 
   // if (totalUnlocked >= 10 && !foundWordlings.has('milestone_10')) {
   //  foundWordlings.add('milestone_10');
