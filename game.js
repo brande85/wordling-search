@@ -291,7 +291,8 @@ function placeWord(word) {
       const c = col + dir[1] * i;
 
       if (
-        r < 0 || r >= gridSize || c < 0 || c >= gridSize ||
+        r < 0 || r >= gridSize ||
+        c < 0 || c >= gridSize ||
         (grid[r][c] && grid[r][c] !== word[i])
       ) {
         fits = false;
@@ -301,20 +302,17 @@ function placeWord(word) {
       path.push({ r, c });
     }
 
-    // ✅ Only check clumping on the starting letter
-    if (fits && shouldAvoidClumping && isTooClose(path[0].r, path[0].c)) {
-      fits = false;
-    }
-
     if (fits) {
-      for (const coord of path) {
-        grid[coord.r][coord.c] = word[path.indexOf(coord)];
-        placedCoords.add(`${coord.r},${coord.c}`);
+      for (let i = 0; i < word.length; i++) {
+        const r = row + dir[0] * i;
+        const c = col + dir[1] * i;
+        grid[r][c] = word[i];
       }
       return true;
     }
   }
 
+  console.warn(`❌ Failed to place word: ${word}`);
   return false;
 }
 
