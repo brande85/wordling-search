@@ -136,7 +136,6 @@ let selecting = false;
 let floatingWordling = null;
 let floatingWordlingImage = null;
 let unlockedCosplays = [];
-const selectionMode = 'click';
 let clickStartCell = null;
 const shouldAvoidClumping = gridSize >= 10;
 
@@ -357,8 +356,9 @@ function renderGrid() {
 			checkSelectedWord();
 		});
 
-    cell.addEventListener('click', handleCellClick);
-    });
+                cell.addEventListener('click', () => {
+                  handleClickSelection(cell);
+                });
 
 		cell.addEventListener('touchstart', handleTouchStart, { passive: false });
 		cell.addEventListener('touchmove', handleTouchMove, { passive: false });
