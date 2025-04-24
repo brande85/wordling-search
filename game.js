@@ -136,6 +136,7 @@ let floatingWordlingImage = null;
 let unlockedCosplays = [];
 let selectionMode = 'drag'; // 'drag' or 'click'
 let clickStartCell = null;
+const shouldAvoidClumping = gridSize >= 10;
 
 function createEmptyGrid() {
   for (let i = 0; i < gridSize; i++) {
@@ -291,7 +292,7 @@ function placeWord(word) {
       if (
         r < 0 || r >= gridSize || c < 0 || c >= gridSize ||
         (grid[r][c] && grid[r][c] !== word[i]) ||
-        isTooClose(r, c)
+        (shouldAvoidClumping && isTooClose(r, c))
       ) {
         fits = false;
         break;
