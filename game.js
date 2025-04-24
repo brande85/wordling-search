@@ -265,25 +265,19 @@ function generatePuzzle() {
   console.log("Bonus word:", bonusWord);
 }
 
-const placedCoords = new Set();
-
-function isTooClose(x, y) {
-  for (let dx = -1; dx <= 1; dx++) {
-    for (let dy = -1; dy <= 1; dy++) {
-      const check = `${x + dx},${y + dy}`;
-      if (placedCoords.has(check)) return true;
-    }
-  }
-  return false;
-}
-
 function placeWord(word) {
+  const directions = [
+    [0, 1],   // right
+    [1, 0],   // down
+    [1, 1],   // diagonal down-right
+    [-1, 1]   // diagonal up-right
+  ];
+
   for (let attempts = 0; attempts < 100; attempts++) {
-    const dir = weightedDirections[Math.floor(Math.random() * weightedDirections.length)];
+    const dir = directions[Math.floor(Math.random() * directions.length)];
     const row = Math.floor(Math.random() * gridSize);
     const col = Math.floor(Math.random() * gridSize);
 
-    const path = [];
     let fits = true;
 
     for (let i = 0; i < word.length; i++) {
@@ -298,8 +292,6 @@ function placeWord(word) {
         fits = false;
         break;
       }
-
-      path.push({ r, c });
     }
 
     if (fits) {
@@ -311,6 +303,10 @@ function placeWord(word) {
       return true;
     }
   }
+
+  console.warn(`❌ Failed to place word: ${word}`);
+  return false;
+}
 
   console.warn(`❌ Failed to place word: ${word}`);
   return false;
