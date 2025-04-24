@@ -528,6 +528,11 @@ function createImageWordling(size = 48, theme = 'fruits', returnImageOnly = true
 	return returnImageOnly ? img : { img, chosen };
 }
 
+function getWordlingIdFromImagePath(imagePath) {
+  const match = wordlings.find(w => w.img === imagePath);
+  return match ? match.id : null;
+}
+
 function showWordlingPop(imageFile) {
   // Remove any existing pop-up
   const old = document.getElementById('label-wordling');
@@ -586,8 +591,9 @@ function unlockCosplayWordling() {
   document.getElementById('cosplay-section').appendChild(cosplayImg);
 
    // ✅ Also unlock for gallery
-  const fullPath = `images/${chosen}`;
-  foundWordlings.add(fullPath); // or use mapped ID if using Option 2 from earlier
+  const fullPath = `images/${chosen}`; 
+  const id = getWordlingIdFromImagePath(fullPath);
+  if (id) foundWordlings.add(id);
   renderGallery();
   updateProgressBar();
   checkMilestoneUnlocks();
@@ -688,7 +694,9 @@ function moveLabelWordlingToRow() {
 
   row.appendChild(floatingWordling);
 
-	foundWordlings.add(`images/${floatingWordlingImage}`);
+  const imagePath = `images/${floatingWordlingImage}`;
+  const id = getWordlingIdFromImagePath(imagePath);
+  if (id) foundWordlings.add(id);
   renderGallery();
   updateProgressBar();
 
@@ -771,7 +779,7 @@ function renderGallery() {
   wordlings.forEach(w => {
     const card = document.createElement('div');
     card.classList.add('wordling-card');
-    if (foundWordlings.has(w.img) || foundWordlings.has(w.id)) {
+    if (foundWordlings.has(w.id)) {
       card.classList.add('unlocked');
     }
 
