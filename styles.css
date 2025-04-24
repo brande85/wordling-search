@@ -395,6 +395,25 @@ body, .cell, #wordsearch-app {
   cursor: pointer;
 }
 
+.milestone-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffe680;
+  color: #222;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.fade-out {
+  opacity: 0;
+}
+
 /* Default (light) theme */
 body[data-theme='light'] {
   background-color: #fff;
@@ -479,6 +498,11 @@ body[data-theme="dark"] #progress-bar {
 
 body[data-theme="dark"] #progress-fill {
   background-color: #87e890;
+}
+
+body[data-theme="dark"] .milestone-popup {
+  background: #444;
+  color: #fff;
 }
 
 /* Toggle button styling */
