@@ -120,8 +120,11 @@ let currentPuzzleTheme = 'fruits'; // default
 let bonusWord = ''; // The hidden word
 let korokCount = 0;
 const cellElements = [];
-const directions = [
-    [0, 1], [1, 0], [1, 1], [-1, 1]
+const weightedDirections = [
+  [0, 1], [0, 1],     // horizontal
+  [1, 0], [1, 0],     // vertical
+  [1, 1], [1, 1], [1, 1], // diagonal
+  [-1, 1], [-1, 1], [-1, 1] // reverse diagonal
 ];
 let selectedCells = [];
 let isMouseDown = false;
@@ -259,30 +262,50 @@ function generatePuzzle() {
   console.log("Bonus word:", bonusWord);
 }
 
+const placedCoords = new Set();
+
+function isTooClose(x, y) {
+  for (let dx = -1; dx <= 1; dx++) {
+    for (let dy = -1; dy <= 1; dy++) {
+      const check = `${x + dx},${y + dy}`;
+      if (placedCoords.has(check)) return true;
+    }
+  }
+  return false;
+}
+
 function placeWord(word) {
   for (let attempts = 0; attempts < 100; attempts++) {
-      const dir = directions[Math.floor(Math.random() * directions.length)];
-      const row = Math.floor(Math.random() * gridSize);
-      const col = Math.floor(Math.random() * gridSize);
+    const dir = weightedDirections[Math.floor(Math.random() * weightedDirections.length)];
+    const row = Math.floor(Math.random() * gridSize);
+    const col = Math.floor(Math.random() * gridSize);
 
-      let fits = true;
-      for (let i = 0; i < word.length; i++) {
+    const path = [];
+
+    let fits = true;
+    for (let i = 0; i < word.length; i++) {
       const r = row + dir[0] * i;
       const c = col + dir[1] * i;
-      if (r < 0 || r >= gridSize || c < 0 || c >= gridSize || (grid[r][c] && grid[r][c] !== word[i])) {
-          fits = false;
-          break;
+      if (
+        r < 0 || r >= gridSize || c < 0 || c >= gridSize ||
+        (grid[r][c] && grid[r][c] !== word[i]) ||
+        isTooClose(r, c)
+      ) {
+        fits = false;
+        break;
       }
-      }
+      path.push({ r, c });
+    }
 
-      if (fits) {
+    if (fits) {
       for (let i = 0; i < word.length; i++) {
-          const r = row + dir[0] * i;
-          const c = col + dir[1] * i;
-          grid[r][c] = word[i];
+        const r = row + dir[0] * i;
+        const c = col + dir[1] * i;
+        grid[r][c] = word[i];
+        placedCoords.add(`${r},${c}`);
       }
       return true;
-      }
+    }
   }
   return false;
 }
