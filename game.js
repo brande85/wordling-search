@@ -53,6 +53,7 @@ const wordlings = [
 	{ id: 'sedimentary', name: 'Sedrick', img: 'images/sedimentary-wordling.png' },
 	{ id: 'sheep', name: 'Sheep', img: 'images/tame-animal-wordling2.png' },
 	{ id: 'space-marine', name: 'Space Soldier', img: 'images/warhammer-40k-wordling1.png' },
+  { id: 'milestone5', name: 'Sprout', img: 'images/milestones/milestone5.png', isMilestone: true },
 	{ id: 'squall', name: 'Cosplay Squall', img: 'images/squalling.png', isCosplay: true },
 	{ id: 'staff', name: 'Staff', img: 'images/wordling1.png' },
 	{ id: 'star', name: 'Star', img: 'images/space-wordling2.png' },
@@ -589,6 +590,45 @@ function unlockCosplayWordling() {
   foundWordlings.add(fullPath); // or use mapped ID if using Option 2 from earlier
   renderGallery();
   updateProgressBar();
+  checkMilestoneUnlocks();
+}
+
+function checkMilestoneUnlocks() {
+  const totalUnlocked = [...foundWordlings].filter(id =>
+    wordlings.some(w => w.id === id && !w.isHidden)
+  ).length;
+
+  if (totalUnlocked >= 5 && !foundWordlings.has('milestone5')) {
+    foundWordlings.add('milestone5');
+    showMilestonePopup('🎉 You unlocked the Sprout Wordling!');
+  }
+
+  // if (totalUnlocked >= 10 && !foundWordlings.has('milestone_10')) {
+  //  foundWordlings.add('milestone_10');
+  //  showMilestonePopup('✨ You unlocked the Seeker Wordling!');
+  // }
+
+  //if (totalUnlocked >= 25 && !foundWordlings.has('milestone_25')) {
+  //  foundWordlings.add('milestone_25');
+  //  showMilestonePopup('🌟 You unlocked the Trailblazer Wordling!');
+  // }
+
+  // Optionally update UI after unlock
+  updateProgressBar();
+  renderGallery();
+}
+
+function showMilestonePopup(message) {
+  const popup = document.createElement('div');
+  popup.className = 'milestone-popup';
+  popup.textContent = message;
+
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    popup.classList.add('fade-out');
+    setTimeout(() => popup.remove(), 1000);
+  }, 2000);
 }
 
 function showKorok() {
@@ -660,6 +700,7 @@ function moveLabelWordlingToRow() {
   if (korokCount % 5 === 0) {
     unlockCosplayWordling();
     updateProgressBar();
+    checkMilestoneUnlocks();
   }
 
   // Clear the reference after moving
