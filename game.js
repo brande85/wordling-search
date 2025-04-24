@@ -785,7 +785,7 @@ function renderGallery() {
 
     card.innerHTML = `
       <img src="${w.img}" alt="${w.name}">
-      <div>${foundWordlings.has(w.img) || foundWordlings.has(w.id) ? w.name : '???'}</div>
+      <div>${foundWordlings.has(w.id) ? w.name : '???'}</div>
     `;
 
     if (w.isCosplay) {
