@@ -62,7 +62,7 @@ const wordlings = [
 	// { id: 'trumpet', name: 'Trumpet', img: 'images/music-wordling2.png' },
   { id: 'warrior-of-light', name: 'Cosplay Warrior', img: 'images/warrioroflightling.png', isCosplay: true },
 	// { id: 'tau-mech', name: 'Xeno Mech', img: 'images/warhammer-40k-wordling3.png' },
-	{ id: 'zelda', name: 'Cosplay Zelda', img: 'images/zelda-wordling.png, isCosplay: true},
+	{ id: 'zelda', name: 'Cosplay Zelda', img: 'images/zelda-wordling.png', isCosplay: true},
   { id: 'zidane', name: 'Cosplay Zidane', img: 'images/zidaneling.png', isCosplay: true },
 ]
 
