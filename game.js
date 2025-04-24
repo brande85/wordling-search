@@ -183,6 +183,7 @@ function tryPlacingWords(wordList, maxWords = 12) {
   
   // 🌟 Add a hidden bonus word (guaranteed)!
   const allWords = wordList.filter(w => !placed.some(p => p.display === w));
+  shuffle(allWords);
   bonusWord = ''; // reset before attempting placement
   
   for (let i = 0; i < allWords.length; i++) {
