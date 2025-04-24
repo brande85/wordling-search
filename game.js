@@ -3,7 +3,7 @@ console.log("✅ game.js is running");
 const wordlings = [
 	{ id: 'abaddon', name: 'Cosplay Abaddon', img: 'images/abbadonling.png', isCosplay: true },
 	{ id: 'alien', name: 'Alien', img: 'images/space-wordling3.png' },
-	{ id: 'alpaca', name: 'Alpaca', img: 'tame-animal-wordling1.png' }, 
+	{ id: 'alpaca', name: 'Alpaca', img: 'images/tame-animal-wordling1.png' }, 
 	{ id: 'amethyst', name: 'Amethyst', img: 'images/gem-wordling1.png'},
 	{ id: 'angron', name: 'Cosplay Angron', img: 'images/angronling.png', isCosplay: true },
 	{ id: 'pokemon', name: 'Cosplay Ash', img: 'images/pokeling.png', isCosplay: true },
@@ -22,7 +22,7 @@ const wordlings = [
 	{ id: 'corgi', name: 'Corgi', img: 'images/tame-animal-wordling3.png' },
   // { id: 'cyber', name: 'Cyber', img: 'images/cyberling.png' },
 	{ id: 'dance-miku', name: 'Dancing Idol', img: 'images/miku-wordling2.png'},
-	{ id: 'deku', name: 'Cosplay Deku', img: 'hero-academia-wordling.png', isCosplay: true },
+	{ id: 'deku', name: 'Cosplay Deku', img: 'images/hero-academia-wordling.png', isCosplay: true },
 	{ id: 'emerald', name: 'Emerald', img: 'images/gem-wordling3.png'},
 	{ id: 'flower-crown', name: 'Flower Crown', img: 'images/wordling4.png' },
 	{ id: 'fulgrim', name: 'Cosplay Fulgrim', img: 'images/fulgrimling.png' },
@@ -284,32 +284,37 @@ function placeWord(word) {
     const col = Math.floor(Math.random() * gridSize);
 
     const path = [];
-
     let fits = true;
+
     for (let i = 0; i < word.length; i++) {
       const r = row + dir[0] * i;
       const c = col + dir[1] * i;
+
       if (
         r < 0 || r >= gridSize || c < 0 || c >= gridSize ||
-        (grid[r][c] && grid[r][c] !== word[i]) ||
-        (shouldAvoidClumping && isTooClose(r, c))
+        (grid[r][c] && grid[r][c] !== word[i])
       ) {
         fits = false;
         break;
       }
+
       path.push({ r, c });
     }
 
+    // ✅ Only check clumping on the starting letter
+    if (fits && shouldAvoidClumping && isTooClose(path[0].r, path[0].c)) {
+      fits = false;
+    }
+
     if (fits) {
-      for (let i = 0; i < word.length; i++) {
-        const r = row + dir[0] * i;
-        const c = col + dir[1] * i;
-        grid[r][c] = word[i];
-        placedCoords.add(`${r},${c}`);
+      for (const coord of path) {
+        grid[coord.r][coord.c] = word[path.indexOf(coord)];
+        placedCoords.add(`${coord.r},${coord.c}`);
       }
       return true;
     }
   }
+
   return false;
 }
 
