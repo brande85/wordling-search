@@ -308,10 +308,6 @@ function placeWord(word) {
   return false;
 }
 
-  console.warn(`❌ Failed to place word: ${word}`);
-  return false;
-}
-
 function fillEmptyCells() {
 	const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	for (let i = 0; i < gridSize; i++) {
