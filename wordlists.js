@@ -84,7 +84,7 @@ const wordLists = {
       "🎭 Wattled cranes are named for the dangling skin under their chins — a fancy flourish of feathers.",
       "💞 In many cultures, storks represent lifelong love — they often choose one mate for life."
     ]
-  }
+  },
 
     // ASTROLOGY
 
