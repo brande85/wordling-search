@@ -88,7 +88,7 @@ const wordlingThemes = {
   // ASTRONOMY
 	space: ['space-wordling1.png', 'space-wordling2.png', 'space-wordling3.png', 'space-wordling4.png'],
   // CURRENT EVENTS
-  march2025: ['wordling5.png', 'current-events-wordling1.png', 'space-wordling5.png', 'wild-animal-wordling6.png', 'punchling.png'],
+  march2025: ['wordling5.png', 'current-events-wordling1.png', 'space-wordling5.png', 'wild-animal-wordling6.png', 'punchling.png', 'space-wordling1.png'],
   // FOOD
   fruits: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
   // GEOLOGY
