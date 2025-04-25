@@ -66,6 +66,10 @@ const wordlings = [
 	{ id: 'zelda', name: 'Cosplay Zelda', img: 'images/zelda-wordling.png', isCosplay: true},
   { id: 'zidane', name: 'Cosplay Zidane', img: 'images/zidaneling.png', isCosplay: true },
   { id: 'milestone5', name: 'Sprout', img: 'images/milestone5.png', isMilestone: true },
+  { id: 'milestone10', name: 'Seeker', img: 'images/milestone10.png', isMilestone: true },
+  { id: 'milestone25', name: 'Trailblazer', img: 'images/milestone25.png', isMilestone: true },
+  { id: 'milestone50', name: 'Warden', img: 'images/milestone50.png', isMilestone: true },
+  { id: 'milestone-all', name: 'Luminary', img: 'images/milestone-all.png', isMilestone: true },
 ]
 
 const wordlingThemes = {
@@ -613,6 +617,7 @@ function unlockCosplayWordling() {
 }
 
 function checkMilestoneUnlocks() {
+  const totalStandard = wordlings.filter(w => !w.isMilestone).length;
   const totalUnlocked = [...foundWordlings].filter(id =>
     wordlings.some(w => w.id === id && !w.isHidden)
   ).length;
@@ -621,20 +626,38 @@ function checkMilestoneUnlocks() {
   foundWordlings.add('milestone5');
 
   const sprout = wordlings.find(w => w.id === 'milestone5');
-  if (sprout) addSpecialWordlingToPage(sprout.img, 'Milestone Wordling');
+    if (sprout) addSpecialWordlingToPage(sprout.img, 'Milestone Wordling');
 
-  showMilestonePopup('🎉 You unlocked the Sprout Wordling!');
-}
+    showMilestonePopup('🎉 You unlocked the Sprout Wordling!');
+  }
 
-  // if (totalUnlocked >= 10 && !foundWordlings.has('milestone_10')) {
-  //  foundWordlings.add('milestone_10');
-  //  showMilestonePopup('✨ You unlocked the Seeker Wordling!');
-  // }
+  if (totalUnlocked >= 10 && !foundWordlings.has('milestone10')) {
+    foundWordlings.add('milestone10');
+    const seeker = wordlings.find(w => w.id === 'milestone10');
+    if (seeker) addSpecialWordlingToPage(seeker.img, 'Milestone Wordling');
+    showMilestonePopup('✨ You unlocked the Seeker Wordling!');
+   }
 
-  //if (totalUnlocked >= 25 && !foundWordlings.has('milestone_25')) {
-  //  foundWordlings.add('milestone_25');
-  //  showMilestonePopup('🌟 You unlocked the Trailblazer Wordling!');
-  // }
+  if (totalUnlocked >= 25 && !foundWordlings.has('milestone25')) {
+    foundWordlings.add('milestone25');
+    const trailblazer = wordlings.find(w => w.id === 'milestone25');
+    if (trailblazer) addSpecialWordlingToPage(trailblazer.img, 'Milestone Wordling');
+    showMilestonePopup('🌟 You unlocked the Trailblazer Wordling!');
+  }
+
+  if (totalUnlocked >= 50 && !foundWordlings.has('milestone50')) {
+    foundWordlings.add('milestone50');
+    const warden = wordlings.find(w => w.id === 'milestone50');
+    if (warden) addSpecialWordlingToPage(warden.img, 'Milestone Wordling');
+    showMilestonePopup('🛡️ You unlocked the Warden Wordling!');
+  }
+
+  if (totalUnlocked >= totalStandard && !foundWordlings.has('milestone-all')) {
+    foundWordlings.add('milestone-all');
+    const luminary = wordlings.find(w => w.id === 'milestone-all');
+    if (luminary) addSpecialWordlingToPage(luminary.img, 'Milestone Wordling');
+    showMilestonePopup('🌠 You unlocked the Luminary Wordling!');
+  }
 
   // Optionally update UI after unlock
   updateProgressBar();
