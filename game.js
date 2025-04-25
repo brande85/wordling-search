@@ -10,7 +10,7 @@ const wordlings = [
 	{ id: 'astronaut', name: 'Astronaut', img: 'images/space-wordling1.png' },
 	{ id: 'sister-of-battle', name: 'Battle Sister', img: 'images/warhammer-40k-wordling2.png' },
 	// { id: 'black-mage', name: 'Black Mage', img: 'images/fantasy-wordling1.png' },
-	// { id: 'boxer', name: 'Boxer', img: 'images/punchling.png'},
+	{ id: 'boxer', name: 'Boxer', img: 'images/punchling.png'},
   { id: 'butterfly', name: 'Butterfly', img: 'images/wordling5.png'},
 	{ id: 'bronty', name: 'Bronty', img: 'images/dinosaur-wordling3.png'},
 	{ id: 'cat', name: 'Cat', img: 'images/tame-animal-wordling4.png'},
