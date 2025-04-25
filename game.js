@@ -40,7 +40,7 @@ const wordlings = [
 	{ id: 'metamorphic', name: 'Morph', bio: 'Transforms mistakes into masterpieces.', img: 'images/metamorphic-wordling.png' },
   { id: 'moon', name: 'Moon', bio: 'Gently watches over your night puzzles.', img: 'images/space-wordling5.png' },
 	// { id: 'ninja', name: 'Ninja', img: 'images/ninjaling.png' },
-  { id: 'news', name: 'Newsie', bio: 'Always up to date with the latest words and trends.', img: 'current-events-wordling1.png' },
+  { id: 'news', name: 'Newsie', bio: 'Always up to date with the latest words and trends.', img: 'images/current-events-wordling1.png' },
 	{ id: 'knuckles', name: 'Our Lord', bio: "Do you know de wey?", img: 'images/knuckling.png', isCosplay: true },
 	// { id: 'panda', name: 'Panda', bio: 'A little shy, a little mischievous, but always cheering you on.', img: 'images/wild-animal-wordling2.png' },
 	// { id: 'penguin', name: 'Penguin', img: 'images/wild-animal-wordling3.png' },
