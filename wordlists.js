@@ -123,6 +123,28 @@ const wordLists = {
       // www.space.come/24870-what-is-space.html
     ]
   },
+  // CURRENT EVENTS
+
+  march2025: {
+    words: ['POLAR BEAR', 'PLUNGE', 'FIREFLY', 'AEROSPACE', 'BLUE GHOST', 'NASA', 'MOON', 'MARE CRISIUM', 'REGOLITH', 'PAYLOAD', 'TARIFF', 'MEXICO', 'CANADA', 'IMPORT', 'BIOSCIENCE', 'GENETICS', 'WOOLLY MICE', 'BUTTERFLIES', 'SCIENCE', 'SPECIES', 'DECLINE', 'TRAIN', 'GARE DU NORD', 'RAILWAY', 'FRANCE', 'PARIS', 'ORDINANCE', 'WORLD WAR II', 'EXPLOSIVES', 'STOCKS', 'NASDAQ', 'RECESSION', 'FEAR', 'GREAT LAKES', 'SHIPWRECK', 'SUPERIOR', 'FREIGHTER', 'SPHEREX', 'GALAXY', 'COLOR', 'SURVEY', 'ECLIPSE', 'HEMISPHERE', 'ASTRONAUT', 'SPACEX', 'CAPSULE', 'SPACE STATION', 'TRAFFIC', 'TESLA', 'CYBERTRUCK', 'PANEL', 'ADHESIVE', 'OLYMPICS', 'BOXING', 'SIGNAL', 'TRUMP', 'CABINET', 'YEMEN', 'JOURNALIST', 'MONGOLIA', 'DINOSAUR'],
+    facts: [
+      "🥶 March 1: A group of winter swimmers in Most, Czechia, set a new world record for the largest polar bear plunge with 2,461 participants.",
+      "🌕 March 2: Firefly Aerospace successfully lands the Blue Ghost Mission 1 on the Moon as part of NASA's Commercial Lunar Payload Services program, delivering payloads to Mare Crisium with instruments to study lunar regoliths and the interactions between solar wind and Earth's magnetic field.",
+      "🌍 March 4: U.S. President Donald Trump's 25% tariffs on Mexican and Canadian imports to the United States take effect, while an existing 10% tariff on all Chinese imports rises to 20% amid an ongoing trade war.",
+      "🐭 March 4: Scientists from Colossal Bioscience create a new form of genetically modified woolly mice.",
+      "🦋 March 5: According to a report in the academic journal 'Science', the population of the 554 recorded species of butterflies in the US have declied by 22% since 2000.",
+      "🚂 March 6: All trains running through the Gare du Nord railway station in Paris, France, including Eurostar trains from London and Brussels, are canceled due to the discovery of a World War II-era unexploded ordnance containing 200 kg (440 lb) of explosives near the rail tracks near the station.",
+      "📉 March 10: U.S. stocks experience a relatively steep drop as the Nasdaq Composite falls 4% and the S&P 500 falls 2.7%. Economists attribute the drop to recent all-time highs, recession fears, and concerns about a potential U.S. government shutdown and the tariffs imposed by the Trump administration."
+      "⚓ March 10: The Great Lakes Shipwreck Historical Society announce the discovery of the wreckage of the SS Western Reserve that sank in Lake Superior in 1892. It was the first steel plate lake freighter to operate on the Great Lakes.",
+      "🛰️ March 11: NASA launches the SPHEREx near-infrared space observatory; the SPHEREx mission will perform a survey of and map approximately 450 million galaxies across the sky in color.",
+      "🌑 March 14: A total lunar eclipse occurs in the morning hours across the Western Hemisphere at night",
+      "🚀 March 18: Astronauts Sunita Williams and Barry Wilmore return to Earth aboard the SpaceX Crew-9 Dragon 2 capsule after nine months on the International Space Station (ISS).",
+      "🛻 March 20: The U.S. National Highway Traffic Safety Administration orders a product recall of 46,000 Tesla Cybertrucks, nearly all active Cybertrucks on the roads, due to an issue with an exterior panel that can detach while driving due to an ineffective structural adhesive.",
+      "🥊 March 20: The International Olympic Committee votes unanimously to include boxing in the 2028 Summer Olympics.",
+      "📞 March 24: A Signal group chat containing many of President Trump's cabinet, discussing several topics including potential strikes in Yemen, is discovered after journalist Jeffrey Goldberg is accidentally added to it.",
+      "🦖 March 26: Scientists discover Mongolian dinosaur Duonychus tsogtbaatari.",
+    ]
+  },
   
   // FOOD
   
