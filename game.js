@@ -11,6 +11,7 @@ const wordlings = [
 	{ id: 'sister-of-battle', name: 'Battle Sister', img: 'images/warhammer-40k-wordling2.png' },
 	// { id: 'black-mage', name: 'Black Mage', img: 'images/fantasy-wordling1.png' },
 	// { id: 'boxer', name: 'Boxer', img: 'images/punchling.png'},
+  { id: 'butterfly', name: 'Butterfly', img: 'images/wordling5.png'},
 	{ id: 'bronty', name: 'Bronty', img: 'images/dinosaur-wordling3.png'},
 	{ id: 'cat', name: 'Cat', img: 'images/tame-animal-wordling4.png'},
 	{ id: 'cecil', name: 'Cosplay Cecil', img: 'images/ceciling.png', isCosplay: true },
@@ -33,16 +34,20 @@ const wordlings = [
 	// { id: 'knight', name: 'Knight', img: 'images/fantasy-wordling2.png' }, 
 	{ id: 'leaf', name: 'Leaf', img: 'images/wordling3.png' },
   { id: 'link', name: 'Cosplay Link', img: 'images/dekuling.png', isCosplay: true },
+  { id: 'lion', name: 'Lion', img: 'images/wild-animal-wordling5.png'},
 	// { id: 'mecha', name: 'Mecha', img: 'images/mechaling.png'}
 	// { id: 'mermaid', name: 'Mermaid', img: 'images/mermaid-wordling.png' }
 	{ id: 'metamorphic', name: 'Morph', img: 'images/metamorphic-wordling.png' },
+  { id: 'moon', name: 'Moon', img: 'images/space-wordling5.png' },
 	// { id: 'ninja', name: 'Ninja', img: 'images/ninjaling.png' },
+  { id: 'news', name: 'Newsie', img: 'current-events-wordling1.png' },
 	{ id: 'knuckles', name: 'Our Lord', img: 'images/knuckling.png', isCosplay: true },
 	// { id: 'panda', name: 'Panda', img: 'images/wild-animal-wordling2.png' },
 	// { id: 'penguin', name: 'Penguin', img: 'images/wild-animal-wordling3.png' },
 	{ id: 'perform-miku', name: 'Performing Idol', img: 'images/miku-wordling1.png' },
 	{ id: 'peridot', name: 'Peridot', img: 'images/gem-wordling2.png' },
 	 // { id: 'pirate', name: 'Pirate', img: 'pirateling.png' },
+  { id: 'polar-bear', name" 'Polar Bear', img: 'images/wild-animal-wordling6.png' },
 	{ id: 'pose-miku', name: 'Posing Idol', img: 'images/miku-wordling3.png' },
 	{ id: 'pterry', name: 'Pterry', img: 'images/dinosaur-wordling4.png' },
 	{ id: 'red-panda', name: 'Red Panda', img: 'images/wild-animal-wordling1.png' },
@@ -58,6 +63,7 @@ const wordlings = [
 	{ id: 'star', name: 'Star', img: 'images/space-wordling2.png' },
 	{ id: 'stick', name: 'Stick', img: 'images/wordling2.png' },
 	{ id: 'terra', name: 'Cosplay Terra', img: 'images/terraling.png', isCosplay: true },
+  { id: 'tiger', name" 'Tiger', img: 'images/wild-animal-wordling4.png'},
   { id: 'trixie', name: 'Trixie', img: 'images/dinosaur-wordling2.png' },
 	// { id: 'trumpet', name: 'Trumpet', img: 'images/music-wordling2.png' },
   { id: 'warrior-of-light', name: 'Cosplay Warrior', img: 'images/warrioroflightling.png', isCosplay: true },
@@ -75,12 +81,14 @@ const wordlingThemes = {
   // ANIMALS
   cretaceousDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   domesticAnimals: ['tame-animal-wordling1.png', 'tame-animal-wordling2.png', 'tame-animal-wordling3.png', 'tame-animal-wordling4.png'],
-	zooAnimals: ['tame-animal-wordling1.png', 'wild-animal-wordling1.png', 'tame-animal-wordling2.png'],
+	zooAnimals: ['tame-animal-wordling1.png', 'wild-animal-wordling1.png', 'tame-animal-wordling2.png', 'wild-animal-wordling4.png', 'wild-animal-wordling5.png'],
   jurassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   popularDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   triassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   // ASTRONOMY
 	space: ['space-wordling1.png', 'space-wordling2.png', 'space-wordling3.png', 'space-wordling4.png'],
+  // CURRENT EVENTS
+  march2025: ['wordling5.png', 'current-events-wordling1.png', 'space-wordling5.png', 'wild-animal-wordling6.png', 'punchling.png'],
   // FOOD
   fruits: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
   // GEOLOGY
