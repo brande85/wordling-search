@@ -358,9 +358,10 @@ body, .cell, #wordsearch-app {
 }
 
 .wordling-card img {
-  width: 64px;
-  height: 64px;
+  width: 120px;   /* Bigger! */
+  height: 120px;
   object-fit: contain;
+  margin-bottom: 12px;
   filter: grayscale(100%);
 }
 
