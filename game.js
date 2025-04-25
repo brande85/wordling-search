@@ -47,7 +47,7 @@ const wordlings = [
 	{ id: 'perform-miku', name: 'Performing Idol', img: 'images/miku-wordling1.png' },
 	{ id: 'peridot', name: 'Peridot', img: 'images/gem-wordling2.png' },
 	 // { id: 'pirate', name: 'Pirate', img: 'pirateling.png' },
-  { id: 'polar-bear', name" 'Polar Bear', img: 'images/wild-animal-wordling6.png' },
+  { id: 'polar-bear', name: 'Polar Bear', img: 'images/wild-animal-wordling6.png' },
 	{ id: 'pose-miku', name: 'Posing Idol', img: 'images/miku-wordling3.png' },
 	{ id: 'pterry', name: 'Pterry', img: 'images/dinosaur-wordling4.png' },
 	{ id: 'red-panda', name: 'Red Panda', img: 'images/wild-animal-wordling1.png' },
