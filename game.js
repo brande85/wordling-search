@@ -719,6 +719,8 @@ function checkSelectedWord() {
 }
 
 function moveLabelWordlingToRow() {
+  if (!floatingWordling || !floatingWordlingImage) return;
+	
   const emptyMsg = document.getElementById('army-empty');
   if (emptyMsg) emptyMsg.style.display = 'none';
   
