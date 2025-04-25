@@ -63,7 +63,7 @@ const wordlings = [
 	{ id: 'star', name: 'Star', img: 'images/space-wordling2.png' },
 	{ id: 'stick', name: 'Stick', img: 'images/wordling2.png' },
 	{ id: 'terra', name: 'Cosplay Terra', img: 'images/terraling.png', isCosplay: true },
-  { id: 'tiger', name" 'Tiger', img: 'images/wild-animal-wordling4.png'},
+  { id: 'tiger', name: 'Tiger', img: 'images/wild-animal-wordling4.png'},
   { id: 'trixie', name: 'Trixie', img: 'images/dinosaur-wordling2.png' },
 	// { id: 'trumpet', name: 'Trumpet', img: 'images/music-wordling2.png' },
   { id: 'warrior-of-light', name: 'Cosplay Warrior', img: 'images/warrioroflightling.png', isCosplay: true },
