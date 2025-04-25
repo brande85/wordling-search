@@ -587,8 +587,9 @@ function addSpecialWordlingToPage(imagePath, alt = 'Special Wordling') {
   
   const specialSection = document.getElementById('special-wordling-row'); // ✅ this is the correct target
   if (!specialSection) return;
-
-  if ([...specialSection.children].some(img => img.src.includes(imagePath))) return;
+	
+  // ✅ Check only <img> elements
+  if ([...specialSection.querySelectorAll('img')].some(img => img.src.includes(imagePath))) return;
 
   const wordlingImg = document.createElement('img');
   wordlingImg.src = imagePath;
