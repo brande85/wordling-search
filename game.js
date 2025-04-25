@@ -75,7 +75,7 @@ const wordlingThemes = {
   // ANIMALS
   cretaceousDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   domesticAnimals: ['tame-animal-wordling1.png', 'tame-animal-wordling2.png', 'tame-animal-wordling3.png', 'tame-animal-wordling4.png'],
-	zooAnimals: ['tame-animal-wordling1.png', 'images/wild-animal-wordling1.png', 'images/tame-animal-wordling2.png'],
+	zooAnimals: ['tame-animal-wordling1.png', 'wild-animal-wordling1.png', 'tame-animal-wordling2.png'],
   jurassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   popularDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
   triassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
