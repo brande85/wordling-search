@@ -619,8 +619,8 @@ function unlockCosplayWordling() {
 function checkMilestoneUnlocks() {
   const totalStandard = wordlings.filter(w => !w.isMilestone).length;
   const totalUnlocked = [...foundWordlings].filter(id =>
-    wordlings.some(w => w.id === id && !w.isHidden)
-  ).length;
+    wordlings.some(w => w.id === id && !w.isMilestone)
+	).length;
 
   if (totalUnlocked >= 5 && !foundWordlings.has('milestone5')) {
   foundWordlings.add('milestone5');
