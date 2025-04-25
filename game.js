@@ -70,11 +70,11 @@ const wordlings = [
 	{ id: 'tau-mech', name: 'Xeno Mech', img: 'images/warhammer-40k-wordling3.png' },
 	{ id: 'zelda', name: 'Cosplay Zelda', img: 'images/zelda-wordling.png', isCosplay: true},
   { id: 'zidane', name: 'Cosplay Zidane', img: 'images/zidaneling.png', isCosplay: true },
-  { id: 'milestone5', name: 'Sprout', img: 'images/milestone5.png', isMilestone: true },
-  { id: 'milestone10', name: 'Seeker', img: 'images/milestone10.png', isMilestone: true },
-  { id: 'milestone25', name: 'Trailblazer', img: 'images/milestone25.png', isMilestone: true },
-  { id: 'milestone50', name: 'Warden', img: 'images/milestone50.png', isMilestone: true },
-  { id: 'milestone-all', name: 'Luminary', img: 'images/milestone-all.png', isMilestone: true },
+  { id: 'milestone5', name: 'Sprout', bio: 'Congrats on finding 5 unique wordlings!', img: 'images/milestone5.png', isMilestone: true },
+  { id: 'milestone10', name: 'Seeker', bio: 'Congrats on finding 10 unique wordlings!', img: 'images/milestone10.png', isMilestone: true },
+  { id: 'milestone25', name: 'Trailblazer', bio: 'Congrats on finding 25 unique wordlings!', img: 'images/milestone25.png', isMilestone: true },
+  { id: 'milestone50', name: 'Warden', bio: 'Congrats on finding 50 unique wordlings!', img: 'images/milestone50.png', isMilestone: true },
+  { id: 'milestone-all', name: 'Luminary',bio: 'You caught them all! Way to go!', img: 'images/milestone-all.png', isMilestone: true },
 ]
 
 const wordlingThemes = {
@@ -839,8 +839,35 @@ function renderGallery() {
     } else {
       grid.appendChild(card); // Regular Wordling
     }
+
+    if (found) {
+      card.addEventListener('click', () => {
+        showWordlingBio(w);
+      });
+    }
   });
 }
+
+function showWordlingBio(wordling) {
+  const modal = document.getElementById('bio-modal');
+  const img = document.getElementById('bio-img');
+  const name = document.getElementById('bio-name');
+  const text = document.getElementById('bio-text');
+
+  img.src = wordling.img;
+  name.textContent = wordling.name;
+  text.textContent = wordling.bio || 'A mysterious Wordling without a story yet...';
+
+  modal.classList.remove('hidden');
+  modal.style.display = 'flex';
+}
+
+// Close button
+document.getElementById('bio-close').addEventListener('click', () => {
+  const modal = document.getElementById('bio-modal');
+  modal.classList.add('hidden');
+  modal.style.display = 'none';
+});
 
 // Run the game
 window.addEventListener('DOMContentLoaded', () => {
