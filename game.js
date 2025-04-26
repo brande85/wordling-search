@@ -372,6 +372,16 @@ function renderGrid() {
                   handleClickSelection(cell);
                 });
 
+    cell.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  handleTouchClickStart(e);
+}, { passive: false });
+
+cell.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  handleTouchClickEnd(e);
+}, { passive: false });
+
 		cell.addEventListener('touchstart', handleTouchStart, { passive: false });
 		cell.addEventListener('touchmove', handleTouchMove, { passive: false });
 		cell.addEventListener('touchend', handleTouchEnd);
@@ -506,6 +516,58 @@ function handleClickSelection(cell) {
 
   checkSelectedWord();
   clickStartCell = null;
+}
+
+function handleTouchClickStart(e) {
+  if (!clickStartCell) {
+    const target = document.elementFromPoint(
+      e.touches[0].clientX,
+      e.touches[0].clientY
+    );
+    if (target && target.classList.contains('cell')) {
+      clearSelection();
+      clickStartCell = target;
+      selectCell(target);
+    }
+  }
+}
+
+function handleTouchClickEnd(e) {
+  if (clickStartCell) {
+    const target = document.elementFromPoint(
+      e.changedTouches[0].clientX,
+      e.changedTouches[0].clientY
+    );
+    if (target && target.classList.contains('cell')) {
+      const start = {
+        row: parseInt(clickStartCell.dataset.row),
+        col: parseInt(clickStartCell.dataset.col)
+      };
+      const end = {
+        row: parseInt(target.dataset.row),
+        col: parseInt(target.dataset.col)
+      };
+
+      const dRow = end.row - start.row;
+      const dCol = end.col - start.col;
+
+      const len = Math.max(Math.abs(dRow), Math.abs(dCol));
+      const dirRow = Math.sign(dRow);
+      const dirCol = Math.sign(dCol);
+
+      clearSelection();
+      for (let i = 0; i <= len; i++) {
+        const r = start.row + dirRow * i;
+        const c = start.col + dirCol * i;
+        if (r < 0 || r >= gridSize || c < 0 || c >= gridSize) break;
+        const cell = cellElements[r][c];
+        selectCell(cell);
+      }
+
+      checkSelectedWord();
+    }
+    clickStartCell = null;
+  }
 }
 
 function clearSelection() {
