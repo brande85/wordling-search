@@ -398,14 +398,16 @@ cell.addEventListener('touchend', (e) => {
 }
 
 function handleTouchStart(e) {
-  e.preventDefault();
-  const target = e.target.closest('.cell');
-  if (target) {
-    selecting = true;
-    clearSelection(); // 🔥 reset any previous selection
+  if (!clickMode) return;
+  const target = e.target;
+
+  if (target && target.classList.contains('cell')) {
+    clearSelection();
+    clickStartCell = target;
     selectCell(target);
   }
 }
+
 
 function handleTouchMove(e) {
   e.preventDefault();
@@ -417,12 +419,38 @@ function handleTouchMove(e) {
 }
 
 function handleTouchEnd(e) {
-  if (selecting) {
-    selecting = false;
-    checkSelectedWord();
+  if (!clickMode || !clickStartCell) return;
+  const target = e.target;
+
+  if (target && target.classList.contains('cell')) {
+    const start = {
+      row: parseInt(clickStartCell.dataset.row),
+      col: parseInt(clickStartCell.dataset.col)
+    };
+    const end = {
+      row: parseInt(target.dataset.row),
+      col: parseInt(target.dataset.col)
+    };
+
+    const dRow = end.row - start.row;
+    const dCol = end.col - start.col;
+
+    const len = Math.max(Math.abs(dRow), Math.abs(dCol));
+    const dirRow = Math.sign(dRow);
+    const dirCol = Math.sign(dCol);
+
     clearSelection();
-    selectedCells = [];
+    for (let i = 0; i <= len; i++) {
+      const r = start.row + dirRow * i;
+      const c = start.col + dirCol * i;
+      if (r < 0 || r >= gridSize || c < 0 || c >= gridSize) break;
+      const cell = cellElements[r][c];
+      selectCell(cell);
+    }
+
+    checkSelectedWord();
   }
+  clickStartCell = null;
 }
 
 function selectCell(cell) {
