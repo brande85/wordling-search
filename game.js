@@ -931,10 +931,12 @@ function renderGallery() {
     const tag = w.isMilestone ? 'Milestone' :
                 w.isCosplay ? 'Cosplay' : null;
 
+    const tagHTML = tag ? `<div class="wordling-tag">${tag}</div>` : '';
+
     card.innerHTML = `
       <img src="${w.img}" alt="${w.name}">
       <div>${found ? w.name : '???'}</div>
-      ${tag ? `<div class="wordling-tag">${tag}</div>` : ''}
+      ${tagHTML}
     `;
 
     if (tag) {
@@ -953,16 +955,15 @@ function renderGallery() {
     }
   });
 
-  // Now render themes as their own sections
   const sortedThemes = Object.keys(themeGroups).sort();
 
   sortedThemes.forEach(theme => {
     const header = document.createElement('h3');
     header.className = 'theme-header';
-    header.textContent = `${theme}`;
+    header.textContent = theme;
 
     const row = document.createElement('div');
-    row.className = 'gallery-grid';
+    row.className = 'gallery-grid'; // Matches the rest of the gallery layout
 
     themeGroups[theme].forEach(({ card }) => {
       row.appendChild(card);
@@ -970,7 +971,7 @@ function renderGallery() {
 
     themeSection.appendChild(header);
     themeSection.appendChild(row);
-  }
+  });
 }
 
 function showWordlingBio(wordling) {
