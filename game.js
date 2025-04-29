@@ -131,6 +131,7 @@ let floatingWordlingImage = null;
 let unlockedCosplays = [];
 let clickStartCell = null;
 const shouldAvoidClumping = gridSize >= 10;
+let currentListKey = '';
 
 function createEmptyGrid() {
   for (let i = 0; i < gridSize; i++) {
@@ -216,6 +217,7 @@ function generatePuzzle() {
 
   const sizeValue = sizeSelect.value;
   const listValue = listSelect.value;
+  currentListKey = listValue
   console.log("Selected wordlist:", listValue);
   console.log("Available keys in wordLists:", Object.keys(wordLists));
   currentPuzzleTheme = listValue;
