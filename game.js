@@ -6,7 +6,7 @@ const wordlings = [
 	{ id: 'alpaca', name: 'Alpaca', bio: 'Soft, stubborn, and quietly brilliant at hidden words.', img: 'images/tame-animal-wordling1.png' }, 
 	{ id: 'amethyst', name: 'Amethyst', bio: 'Keeps your thoughts calm and your crossword sharp.', img: 'images/gem-wordling1.png'},
 	{ id: 'angron', name: 'Cosplay Angron', bio: 'Fueled by rage, but still spells meticulously.', img: 'images/angronling.png', isCosplay: true },
-	{ id: 'pokemon', name: 'Cosplay Ash', bio: 'Wants to be the very best — like no Wordling ever was.', img: 'images/pokeling.png', isCosplay: true },
+	{ id: 'ash-ketchum', name: 'Cosplay Ash', bio: 'Wants to be the very best — like no Wordling ever was.', img: 'images/pokeling.png', isCosplay: true },
 	{ id: 'astronaut', name: 'Astronaut', bio: 'A brave explorer of alphabetic galaxies.', img: 'images/space-wordling1.png' },
 	{ id: 'sister-of-battle', name: 'Battle Sister', bio: 'Sings battle hymns while solving every word grid.', img: 'images/warhammer-40k-wordling2.png' },
 	// { id: 'black-mage', name: 'Black Mage', img: 'images/fantasy-wordling1.png' },
@@ -106,26 +106,7 @@ const wordlingThemes = {
   // add more as you build more puzzles
 };
 
-const cosplayWordlings = [
-  'pokeling.png',
-  'dekuling.png',
-  'moonling.png',
-  'gokuling.png',
-  'cloudling.png',
-  'ceciling.png',
-  'squalling.png',
-  'terraling.png',
-  'warrioroflightling.png',
-  'zidaneling.png',
-	'abbadonling.png',
-	'angronling.png',
-	'celestineling.png',
-	'fulgrimling.png',
-  'cliveling.png',
-	'hero-academia-wordling.png',
-	'knuckling.png',
-	'zelda-wordling.png'
-];
+const cosplayWordlings = ['abaddon', 'angron', 'ash-ketchum', 'cecil', 'celestine', 'clive', 'cloud', 'deku', 'fulgrim', 'goku', 'link', 'knuckles', 'sailor-moon', 'squall', 'terra', 'warrior-of-light', 'zelda', 'zidane']
 
 const foundWordlings = new Set(); // Tracks which Wordlings you've found
 
@@ -616,16 +597,19 @@ function getRandomPastel() {
 }
 
 function createImageWordling(size = 48, theme = 'fruits', returnImageOnly = true) {
-	const army = wordlingThemes[theme] || ['wordling1.png'];
-	const chosen = army[Math.floor(Math.random() * army.length)];
+	const army = wordLists[theme]?.wordlings || ['staff'];
+  const chosenId = army[Math.floor(Math.random() * army.length)];
+  const wordling = wordlings.find(w => w.id === chosenId);
 
-	const img = document.createElement('img');
-	img.src = `images/${chosen}`;
-	img.alt = 'Wordling';
-	img.className = 'wordling-img';
-	img.style.width = `${size}px`;
-
-	return returnImageOnly ? img : { img, chosen };
+  if (!wordling) return null; // fallback safe
+  
+  const img = document.createElement('img');
+  img.src = wordling.img;
+  img.alt = wordling.name;
+  img.className = 'wordling-img';
+  img.style.width = `${size}px`;
+  
+  return returnImageOnly ? img : { img, chosenId };
 }
 
 function getWordlingIdFromImagePath(imagePath) {
@@ -639,25 +623,25 @@ function showWordlingPop(imageFile) {
   if (old) old.remove();
 
   const label = document.getElementById('hidden-word-value');
+  const wordlingData = wordlings.find(w => w.id === wordlingId);
+  if (!wordlingData) return;
+  
   const wordling = document.createElement('img');
-  wordling.src = `images/${imageFile}`;
+  wordling.src = wordlingData.img;
   wordling.classList.add('wordling-pop');
   wordling.id = 'label-wordling';
-
+  
   const labelBox = label.getBoundingClientRect();
-
-  // 🛠️ Define the offsets before using them
   const offsetX = labelBox.left + window.scrollX + labelBox.width + 10;
   const offsetY = labelBox.top + window.scrollY - 10;
-
+  
   wordling.style.left = `${offsetX}px`;
   wordling.style.top = `${offsetY}px`;
-
+  
   document.body.appendChild(wordling);
-
-  // Track it
+  
   floatingWordling = wordling;
-  floatingWordlingImage = imageFile;
+  floatingWordlingImage = wordlingId; // 💥 Store the ID instead of image name now!
 
   // 🎉 Confetti!
   confetti({
@@ -698,21 +682,18 @@ function unlockCosplayWordling() {
   const available = cosplayWordlings.filter(w => !unlockedCosplays.includes(w));
   if (available.length === 0) return; // All cosplay Wordlings unlocked
 
-  const chosen = available[Math.floor(Math.random() * available.length)];
-  unlockedCosplays.push(chosen);
+  const chosenId = available[Math.floor(Math.random() * available.length)];
+  unlockedCosplays.push(chosenId);
 
-  const fullPath = `images/${chosen}`;
-  const id = getWordlingIdFromImagePath(fullPath);
+  const cosplayWordling = wordlings.find(w => w.id === chosenId);
+  if (cosplayWordling) {
+    foundWordlings.add(cosplayWordling.id);
+    addSpecialWordlingToPage(cosplayWordling.img, cosplayWordling.name);
+  }
 
-  // ✅ Add to found set (so it shows in gallery + progress)
-  if (id) foundWordlings.add(id);
-
-  // ✅ Add to the visible special Wordlings section
-  addSpecialWordlingToPage(fullPath, 'Cosplay Wordling');
-
-  renderGallery();
-  updateProgressBar();
-  checkMilestoneUnlocks();
+renderGallery();
+updateProgressBar();
+checkMilestoneUnlocks();
 }
 
 function checkMilestoneUnlocks() {
@@ -835,9 +816,9 @@ function moveLabelWordlingToRow() {
 
   row.appendChild(floatingWordling);
 
-  const imagePath = `images/${floatingWordlingImage}`;
-  const id = getWordlingIdFromImagePath(imagePath);
-  if (id) foundWordlings.add(id);
+  if (floatingWordlingImage) {
+    foundWordlings.add(floatingWordlingImage);
+  }
   renderGallery();
   updateProgressBar();
 
