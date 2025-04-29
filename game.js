@@ -962,7 +962,7 @@ function renderGallery() {
     header.textContent = `${theme}`;
 
     const row = document.createElement('div');
-    row.className = 'wordling-theme-row';
+    row.className = 'gallery-grid';
 
     themeGroups[theme].forEach(({ card }) => {
       row.appendChild(card);
