@@ -260,6 +260,8 @@ function generatePuzzle() {
 
   console.log("Placed words:", words.map(w => w.display));
   console.log("Bonus word:", bonusWord);
+
+  showCollectionBanner(); // ✅ Display banner as soon as a puzzle is loaded
 }
 
 function placeWord(word) {
