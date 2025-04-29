@@ -2,25 +2,25 @@ console.log("✅ game.js is running");
 
 const wordlings = [
 	{ id: 'abaddon', name: 'Cosplay Abaddon', bio: 'Marches across the stars, leaving typo-free battlefields behind.', img: 'images/abbadonling.png', isCosplay: true },
-	{ id: 'alien', name: 'Alien', bio: 'Communicates only in anagrams. Very polite.', img: 'images/space-wordling3.png' },
-	{ id: 'alpaca', name: 'Alpaca', bio: 'Soft, stubborn, and quietly brilliant at hidden words.', img: 'images/tame-animal-wordling1.png' }, 
+	{ id: 'alien', name: 'Alien', bio: 'Communicates only in anagrams. Very polite.', img: 'images/space-wordling3.png', theme: 'Space' },
+	{ id: 'alpaca', name: 'Alpaca', bio: 'Soft, stubborn, and quietly brilliant at hidden words.', img: 'images/tame-animal-wordling1.png', theme: 'Animals' }, 
 	{ id: 'amethyst', name: 'Amethyst', bio: 'Keeps your thoughts calm and your crossword sharp.', img: 'images/gem-wordling1.png'},
 	{ id: 'angron', name: 'Cosplay Angron', bio: 'Fueled by rage, but still spells meticulously.', img: 'images/angronling.png', isCosplay: true },
 	{ id: 'ash-ketchum', name: 'Cosplay Ash', bio: 'Wants to be the very best — like no Wordling ever was.', img: 'images/pokeling.png', isCosplay: true },
-	{ id: 'astronaut', name: 'Astronaut', bio: 'A brave explorer of alphabetic galaxies.', img: 'images/space-wordling1.png' },
+	{ id: 'astronaut', name: 'Astronaut', bio: 'A brave explorer of alphabetic galaxies.', img: 'images/space-wordling1.png', theme: 'Space' },
 	{ id: 'sister-of-battle', name: 'Battle Sister', bio: 'Sings battle hymns while solving every word grid.', img: 'images/warhammer-40k-wordling2.png' },
 	// { id: 'black-mage', name: 'Black Mage', img: 'images/fantasy-wordling1.png' },
 	{ id: 'boxer', name: 'Boxer', bio: 'Tough on the outside, soft for victory hugs. Loves punching out tough puzzles.', img: 'images/punchling.png'},
-  { id: 'butterfly', name: 'Butterfly', bio: 'Always in motion, this Wordling dances between dreams.', img: 'images/wordling5.png'},
-	{ id: 'brontosaurus', name: 'Bronty', bio: 'Moves slow, thinks deep, and loves long words.', img: 'images/dinosaur-wordling3.png'},
-	{ id: 'cat', name: 'Cat', bio: 'Purrs when you find a word. Meows when you miss one.', img: 'images/tame-animal-wordling4.png'},
+  { id: 'butterfly', name: 'Butterfly', bio: 'Always in motion, this Wordling dances between dreams.', img: 'images/wordling5.png' },
+	{ id: 'brontosaurus', name: 'Bronty', bio: 'Moves slow, thinks deep, and loves long words.', img: 'images/dinosaur-wordling3.png', theme: 'Animals'},
+	{ id: 'cat', name: 'Cat', bio: 'Purrs when you find a word. Meows when you miss one.', img: 'images/tame-animal-wordling4.png', theme: 'Animals'},
 	{ id: 'cecil', name: 'Cosplay Cecil', bio: 'Once cloaked in shadow, Cecil now shines with courage and calm.', img: 'images/ceciling.png', isCosplay: true },
 	{ id: 'celestine', name: 'Cosplay Celestine', bio: 'Glows with the faith of countless finished wordsearches.', img: 'images/celestineling.png', isCosplay: true },
 	// { id: 'clarinet', name: 'Clarinet', img: 'images/music-wordling1.png'},
 	{ id: 'clive', name: 'Cosplay Clive', bio: 'A fierce heart hidden behind quiet resolve. Loves dramatic words.', img: 'images/cliveling.png', isCosplay: true },
   { id: 'cloud', name: 'Cosplay Cloud', bio: 'Carries a very large word sword. Silent, but brooding.', img: 'images/cloudling.png', isCosplay: true },
   { id: 'coffee', name: 'Coffee', bio: 'Wakes up early, stirs the fog, and smells like home.', img: 'images/cozy-wordling2.png' },
-	{ id: 'corgi', name: 'Corgi', bio: 'Short legs. Big dreams. Endless enthusiasm for new puzzles.', img: 'images/tame-animal-wordling3.png' },
+	{ id: 'corgi', name: 'Corgi', bio: 'Short legs. Big dreams. Endless enthusiasm for new puzzles.', img: 'images/tame-animal-wordling3.png', theme: 'Animals' },
   // { id: 'cyber', name: 'Cyber', img: 'images/cyberling.png' },
 	{ id: 'dance-miku', name: 'Dancing Idol', bio: 'Spins and twirls every time you find a hidden word.', img: 'images/miku-wordling2.png'},
 	{ id: 'deku', name: 'Cosplay Deku', bio: 'Never gives up, even against the longest hidden words.', img: 'images/hero-academia-wordling.png', isCosplay: true },
@@ -29,16 +29,16 @@ const wordlings = [
 	{ id: 'fulgrim', name: 'Cosplay Fulgrim', bio: 'Exquisitely stylish. Only the fanciest, most elaborate words will do.', img: 'images/fulgrimling.png' },
 	{ id: 'goku', name: 'Cosplay Goku', bio: 'Always ready to power up — especially when finding tricky words.', img: 'images/gokuling.png', isCosplay: true },
 	{ id: 'igneous', name: 'Iggy', bio: 'Solid, dependable, and full of volcanic vocabulary.', img: 'images/igneous-wordling.png' },
-	{ id: 'jupiter', name: 'Jupiter', bio: 'Large, bold, and always orbiting the center of attention.', img: 'images/space-wordling4.png' },
+	{ id: 'jupiter', name: 'Jupiter', bio: 'Large, bold, and always orbiting the center of attention.', img: 'images/space-wordling4.png', theme: 'Space' },
 	// { id: 'king', name: 'King', img: 'images/royaling.png' },
 	// { id: 'knight', name: 'Knight', img: 'images/fantasy-wordling2.png' }, 
 	{ id: 'leaf', name: 'Leaf', bio: 'Drifts from puzzle to puzzle, whispering secrets on the wind.', img: 'images/wordling3.png' },
   { id: 'link', name: 'Cosplay Link', bio: 'Breaks pots to find hidden letters and bonus words.', img: 'images/dekuling.png', isCosplay: true },
-  { id: 'lion', name: 'Lion', bio: 'Roars in triumph when you solve a tough grid.', img: 'images/wild-animal-wordling5.png'},
+  { id: 'lion', name: 'Lion', bio: 'Roars in triumph when you solve a tough grid.', img: 'images/wild-animal-wordling5.png', theme: 'Animals'},
 	// { id: 'mecha', name: 'Mecha', img: 'images/mechaling.png'}
 	// { id: 'mermaid', name: 'Mermaid', img: 'images/mermaid-wordling.png' }
 	{ id: 'metamorphic', name: 'Morph', bio: 'Transforms mistakes into masterpieces.', img: 'images/metamorphic-wordling.png' },
-  { id: 'moon', name: 'Moon', bio: 'Gently watches over your night puzzles.', img: 'images/space-wordling5.png' },
+  { id: 'moon', name: 'Moon', bio: 'Gently watches over your night puzzles.', img: 'images/space-wordling5.png', theme: 'Space' },
 	// { id: 'ninja', name: 'Ninja', img: 'images/ninjaling.png' },
   { id: 'news', name: 'Newsie', bio: 'Always up to date with the latest words and trends.', img: 'images/current-events-wordling1.png' },
 	{ id: 'knuckles', name: 'Our Lord', bio: "Do you know de wey?", img: 'images/knuckling.png', isCosplay: true },
@@ -47,24 +47,24 @@ const wordlings = [
 	{ id: 'perform-miku', name: 'Performing Idol', bio: 'Brings energy and sparkle to every search.', img: 'images/miku-wordling1.png' },
 	{ id: 'peridot', name: 'Peridot', bio: 'Bright, curious, and full of energy. Likes sparkly words.', img: 'images/gem-wordling2.png' },
 	 // { id: 'pirate', name: 'Pirate', img: 'pirateling.png' },
-  { id: 'polar-bear', name: 'Polar Bear', bio: 'Cool under pressure, even when vowels run scarce.', img: 'images/wild-animal-wordling6.png' },
+  { id: 'polar-bear', name: 'Polar Bear', bio: 'Cool under pressure, even when vowels run scarce.', img: 'images/wild-animal-wordling6.png', theme: 'Animals' },
 	{ id: 'pose-miku', name: 'Posing Idol', bio: 'Strikes a perfect pose — and a perfect word score.', img: 'images/miku-wordling3.png' },
-	{ id: 'pterodactyl', name: 'Pterry', bio: 'Glides above the puzzle grid, spotting patterns from the sky.', img: 'images/dinosaur-wordling4.png' },
-	{ id: 'red-panda', name: 'Red Panda', bio: 'A little shy, a little mischievous, but always cheering you on.', img: 'images/wild-animal-wordling1.png' },
-  { id: 't-rex', name: 'Rex', bio: 'Can’t reach the keyboard, but has a big heart.', img: 'images/dinosaur-wordling1.png' },
+	{ id: 'pterodactyl', name: 'Pterry', bio: 'Glides above the puzzle grid, spotting patterns from the sky.', img: 'images/dinosaur-wordling4.png', theme: 'Animals' },
+	{ id: 'red-panda', name: 'Red Panda', bio: 'A little shy, a little mischievous, but always cheering you on.', img: 'images/wild-animal-wordling1.png', theme: 'Animals' },
+  { id: 't-rex', name: 'Rex', bio: 'Can’t reach the keyboard, but has a big heart.', img: 'images/dinosaur-wordling1.png', theme: 'Animals' },
 	{ id: 'sailor-moon', name: 'Cosplay Sailor Moon', bio: 'Fights for love, justice, and beautifully arranged anagrams.', img: 'images/moonling.png', isCosplay: true },
 	{ id: 'sapphire', name: 'Sapphire', bio: 'Dreams of oceans, stars, and rare vocabulary.', img: 'images/gem-wordling4.png' },
 	{ id: 'scarf', name: 'Scarf', bio: 'Snuggles close when the words get chilly.', img: 'images/cozy-wordling1.png' },
 	{ id: 'sedimentary', name: 'Sedrick', bio: 'Patiently layers letters until a word forms.', img: 'images/sedimentary-wordling.png' },
-	{ id: 'sheep', name: 'Sheep', bio: 'Loves napping between puzzles... and during puzzles.', img: 'images/tame-animal-wordling2.png' },
+	{ id: 'sheep', name: 'Sheep', bio: 'Loves napping between puzzles... and during puzzles.', img: 'images/tame-animal-wordling2.png', theme: 'Animals' },
 	{ id: 'space-marine', name: 'Space Soldier', bio: 'Disciplined, determined, and ever-vigilant for stray vowels.', img: 'images/warhammer-40k-wordling1.png' },
 	{ id: 'squall', name: 'Cosplay Squall', bio: 'Prefers short words, long puzzles, and deep sighs.', img: 'images/squalling.png', isCosplay: true },
 	{ id: 'staff', name: 'Staff', bio: 'Old as language itself, Staff once knew every word.', img: 'images/wordling1.png' },
-	{ id: 'star', name: 'Star', bio: 'Twinkles when you find especially clever words.', img:'images/space-wordling2.png' },
+	{ id: 'star', name: 'Star', bio: 'Twinkles when you find especially clever words.', img:'images/space-wordling2.png', theme: 'Space' },
 	{ id: 'stick', name: 'Stick', bio: 'Loyal companion of Leaf. Slightly bendy. Unreasonably proud.', img: 'images/wordling2.png' },
 	{ id: 'terra', name: 'Cosplay Terra', bio: 'Born from magic and memory, Terra searches for lost syllables.', img: 'images/terraling.png', isCosplay: true },
-  { id: 'tiger', name: 'Tiger', bio: 'Stalks crosswords with silent strength and sharp instinct.', img: 'images/wild-animal-wordling4.png'},
-  { id: 'triceratops', name: 'Trixie', bio: 'Mischievous but loyal. Favorite word: “triumph.”', img: 'images/dinosaur-wordling2.png' },
+  { id: 'tiger', name: 'Tiger', bio: 'Stalks crosswords with silent strength and sharp instinct.', img: 'images/wild-animal-wordling4.png', theme: 'Animals'},
+  { id: 'triceratops', name: 'Trixie', bio: 'Mischievous but loyal. Favorite word: “triumph.”', img: 'images/dinosaur-wordling2.png', theme: 'Animals' },
 	// { id: 'trumpet', name: 'Trumpet', img: 'images/music-wordling2.png' },
   { id: 'warrior-of-light', name: 'Cosplay Warrior', bio: 'A beacon in the crossword night, ever seeking the next challenge.', img: 'images/warrioroflightling.png', isCosplay: true },
 	{ id: 'tau-mech', name: 'Xeno Mech', bio: 'Calculates every letter placement with precise efficiency.', img: 'images/warhammer-40k-wordling3.png' },
@@ -913,10 +913,14 @@ function updateProgressBar() {
 function renderGallery() {
   const grid = document.getElementById('gallery-grid');
   const specialGrid = document.getElementById('special-gallery');
-  if (!grid || !specialGrid) return;
+  const themeSection = document.getElementById('theme-gallery');
+  if (!grid || !specialGrid || !themeSection) return;
 
   grid.innerHTML = '';
   specialGrid.innerHTML = '';
+  themeSection.innerHTML = '';
+
+  const themeGroups = {};
 
   wordlings.forEach(w => {
     const found = foundWordlings.has(w.id);
@@ -934,9 +938,12 @@ function renderGallery() {
     `;
 
     if (tag) {
-      specialGrid.appendChild(card); // Cosplay or Milestone
+      specialGrid.appendChild(card);
+    } else if (w.theme) {
+      if (!themeGroups[w.theme]) themeGroups[w.theme] = [];
+      themeGroups[w.theme].push({ card, found });
     } else {
-      grid.appendChild(card); // Regular Wordling
+      grid.appendChild(card);
     }
 
     if (found) {
@@ -945,6 +952,23 @@ function renderGallery() {
       });
     }
   });
+
+  // Now render themes as their own sections
+  for (const theme in themeGroups) {
+    const header = document.createElement('h3');
+    header.className = 'theme-header';
+    header.textContent = `📚 ${theme}`;
+
+    const row = document.createElement('div');
+    row.className = 'wordling-theme-row';
+
+    themeGroups[theme].forEach(({ card }) => {
+      row.appendChild(card);
+    });
+
+    themeSection.appendChild(header);
+    themeSection.appendChild(row);
+  }
 }
 
 function showWordlingBio(wordling) {
