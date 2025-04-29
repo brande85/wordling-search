@@ -34,7 +34,8 @@ const wordLists = {
         "🦦 Some still debate whether domestic mink are truly tamed, or only wearing the mask of calm.",
         "🦊 Silver foxes were born from experiments that asked how wild things become our companions.",
         "🦔 In ancient Greece, hedgehogs were welcomed inside homes to eat the insects no one else wanted."
-      ]
+      ],
+    wordlings: ['alpaca', 'cat', 'corgi', 'sheep']
   },
 
   zooAnimals: {
@@ -83,7 +84,8 @@ const wordLists = {
       "🏊‍♂️ Sumatran tigers are strong swimmers — their webbed toes help them glide through jungle rivers.",
       "🎭 Wattled cranes are named for the dangling skin under their chins — a fancy flourish of feathers.",
       "💞 In many cultures, storks represent lifelong love — they often choose one mate for life."
-    ]
+    ],
+    wordlings: ['alpaca', 'lion', 'red-panda', 'sheep', 'tiger']
   },
 
     // ASTROLOGY
@@ -121,7 +123,8 @@ const wordLists = {
       "📻 A neutron star that pulses light across space is called a pulsar — like a lighthouse in the dark.",
       "✨ When a black hole is active and glowing, it's called a quasar — one of the brightest beacons in the cosmos."
       // www.space.come/24870-what-is-space.html
-    ]
+    ],
+    wordlings:  ['alien', 'astronaut', 'jupiter', 'star']
   },
   // CURRENT EVENTS
 
@@ -143,7 +146,8 @@ const wordLists = {
       "🥊 March 20: The International Olympic Committee votes unanimously to include boxing in the 2028 Summer Olympics.",
       "📞 March 24: A Signal group chat containing many of President Trump's cabinet, discussing several topics including potential strikes in Yemen, is discovered after journalist Jeffrey Goldberg is accidentally added to it.",
       "🦖 March 26: Scientists discover Mongolian dinosaur Duonychus tsogtbaatari.",
-    ]
+    ],
+    wordlings: ['news', 'butterfly', 'moon', 'polar-bear', 'boxer', 'astronaut']
   },
   
   // FOOD
@@ -177,7 +181,8 @@ const wordLists = {
         "🐉 Dragonfruit earned its name from armor and scales — leathery skin and spikes like something from a myth.",
         "🥥 Coconuts are patient voyagers. They float across oceans for up to 110 days, looking for soft sand and new beginnings.",
         "🍒 Cranberries are called superfruits — not for flying, but for brimming with little strengths: vitamins, color, and courage."
-      ]
+      ],
+    wordlings: ['staff', 'stick', 'leaf', 'flower-crown']
   },
 
   // GEOLOGY
@@ -202,7 +207,8 @@ const wordLists = {
         "🎨 Quartz wears many colors—when it's purple, we call it amethyst; when golden, citrine.",
         "🪨 Pure quartz is clear as truth—some call it rock crystal.",
         "🔥 Both ruby and sapphire are born from the same mineral, corundum—just dressed in different flames."
-      ]
+      ],
+    wordlings: ['amethyst', 'emerald', 'peridot', 'sapphire']
   },
 
     igneousRocks: {
@@ -236,7 +242,8 @@ const wordLists = {
         "🖤 Obsidian breaks into razor edges, sharp and beautiful — once used to make tools, blades, and quiet weapons.",
         "❄️ Snowflake obsidian forms when tiny white crystals of cristobalite bloom inside volcanic glass — frozen petals in midnight stone.",
         "🌬️ Pumice is made of bubbles — lava cooled so quickly it kept the air inside, making a rock that floats like a sponge of stone."
-    ]
+    ],
+      wordlings: ['amethyst', 'emerald', 'peridot', 'sapphire', 'igneous']
   },
   
   sedimentaryRocks: {
@@ -261,7 +268,8 @@ const wordLists = {
           "⏳ A fossil’s best chance comes in places where sediment settles quickly and few bacteria sleep.",
           "🐾 Footprints, burrows, and other marks left behind are called trace fossils — echoes of movement and life.",
           "🌊 Ripple marks form where water flows — in rivers, on beaches, or in the quiet shifts of tidal flats."
-      ]
+      ],
+    wordlings: ['amethyst', 'emerald', 'peridot', 'sapphire', 'sedimentary']
   },
   
   metamorphicRocks: {
@@ -284,7 +292,8 @@ const wordLists = {
           "🔥 Soapstone, soft and smooth, was carved by Native Americans into bowls, pipes, and ornaments thousands of years ago.",
           "⛏️ Soapstone was one of the first stones humans quarried — rising close to the surface, asking only to be shaped.",
           "🌟 In the Gold Rush days, prospectors learned to follow the glitter in mariposite — a green stone often veined with promise."
-      ]
+      ],
+    wordlings: ['amethyst', 'emerald', 'peridot', 'sapphire', 'metamorphic']
   },
 
   // MUSIC
@@ -306,7 +315,8 @@ const wordLists = {
       "🎧 At first, she wasn’t meant for fans at all—just for pros. But the world had other plans.",
       "🧅 Thanks to one silly video, Miku’s now forever dancing with spring onions and leeks.",
       "🎮 Sega Wordlings built her a stage in rhythm—an entire world of beats called Project Diva."
-    ]
+    ],
+    wordlings: ['dance-miku', 'perform-miku', 'pose-miku']
   },
   
   mikusongs: {
@@ -332,7 +342,8 @@ const wordLists = {
       "❤️ 'SYSTEMATIC LOVE' Rusty error comes to my heart and gets stuck. -- Systematic Love",
       "💫 Nodes of feeling form a link, echoing to the faraway distance. -- Tell Your World",
       "👑 The #1 princess in the whole wide world, so that's how you'll treat me, got it? -- World Is Mine",
-    ]
+    ],
+    wordlings: ['dance-miku', 'perform-miku', 'pose-miku']
   },
 
   // OTHER
@@ -346,7 +357,8 @@ const wordLists = {
         "👣 Slippers were invented in ancient China to make footsteps soft and silent indoors.",
         "🍵 In the 1800s, tea was so precious it came with a key—locked in its own tiny chest.",
         "🧦 Wool socks are naturally cozy *and* fight off foot-odor gremlins — Hearthling tested."
-      ]
+      ],
+    wordlings: ['cozy', 'scarf']
   },
 
   // PALEONTOLOGY
@@ -384,7 +396,8 @@ const wordLists = {
       "🌍 Tyrannosaurus was the king of dinosaurs — towering, toothy, and unforgettable.",
       "🦶 Utahraptor had a giant claw for hunting — a supersized version of its raptor cousins.",
       "⚡ Velociraptor was fast, fierce, and clever — a true 'swift plunderer' of the ancient world."
-    ]
+    ],
+    wordlings: ['brontosaurus', 'pterodactyl', 'triceratops', 't-rex']
   },
 
   jurassicDinosaurs: {
@@ -411,7 +424,8 @@ const wordLists = {
       "🧠 Stegosaurus had a brain the size of a walnut — proof that size isn’t everything.",
       "🎬 The species name of one Tianchisaurus means 'nedegoapeferima' — a tribute to the stars of *Jurassic Park*.",
       "🦷 Vulcanodon got its name from teeth found in volcanic rock — but they turned out to be a mix-up from sandstone and another species."
-    ]
+    ],
+    wordlings: ['brontosaurus', 'pterodactyl', 'triceratops', 't-rex']
   },
 
   popularDinosaurs: {
@@ -433,7 +447,8 @@ const wordLists = {
       "🦏 Triceratops had three bold horns and a giant frill — its name literally means 'three-horned face.'",
       "🌍 Tyrannosaurus was the king of dinosaurs — towering, toothy, and unforgettable.",
       "⚡ Velociraptor was fast, fierce, and clever — a true 'swift plunderer' of the ancient world."
-    ]
+    ],
+    wordlings: ['brontosaurus', 'pterodactyl', 'triceratops', 't-rex']
   },
 
   triassicDinosaurs: {
@@ -462,7 +477,8 @@ const wordLists = {
       "🍂 Saturnalia was one of the first herbivores to take over after earlier creatures vanished mysteriously.",
       "🧪 Some scientists think Staurikosaurus and Herrerasaurus may have been the same dino in disguise.",
       "🦷 Thecodontosaurus means 'socket-tooth lizard' — all because the first fossil was just a jawbone."
-    ]
+    ],
+    wordlings: ['brontosaurus', 'pterodactyl', 'triceratops', 't-rex']
   },
   
   // POP CULTURE
@@ -500,7 +516,8 @@ const wordLists = {
       "🤖 'After aeons of hibernation, the deathless android legions of the Necrons rise across the galaxy.'",
       "💪 'Tough, brutal, and impossibly numerous, the Orks are one of the most dangerous species in the galaxy.'",
       "🤝 'Dynamic and supremely confident, the T’au have established a powerful empire of countless species working toward the philosophy of the Greater Good.'",
-    ]
+    ],
+    wordlings: ['space-marine', 'sister-of-battle', 'tau-mech']
   },
 
 }
