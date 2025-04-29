@@ -596,54 +596,50 @@ function getRandomPastel() {
 	return `hsl(${hue}, 70%, 85%)`; // pastel-like
 }
 
-function createImageWordling(size = 48, theme = 'fruits', returnImageOnly = true) {
-	const army = wordLists[theme]?.wordlings || ['staff'];
+function createImageWordling(size, theme, returnImageOnly = false) {
+  const army = wordLists[theme]?.wordlings || ['staff'];
   const chosenId = army[Math.floor(Math.random() * army.length)];
   const wordling = wordlings.find(w => w.id === chosenId);
 
-  if (!wordling) return null; // fallback safe
-  
+  if (!wordling) return null; // fallback safe!
+
   const img = document.createElement('img');
   img.src = wordling.img;
   img.alt = wordling.name;
   img.className = 'wordling-img';
   img.style.width = `${size}px`;
-  
-  return returnImageOnly ? img : { img, chosenId };
+
+  return returnImageOnly ? img : { img, chosenId }; // 🛠 Return BOTH if needed
 }
 
-function getWordlingIdFromImagePath(imagePath) {
-  const match = wordlings.find(w => w.img === imagePath);
-  return match ? match.id : null;
-}
+function showWordlingPop(wordlingId) {
+  const wordlingData = wordlings.find(w => w.id === wordlingId);
+  if (!wordlingData) return;
 
-function showWordlingPop(imageFile) {
+  const label = document.getElementById('hidden-word-value');
+  if (!label) return;
+
   // Remove any existing pop-up
   const old = document.getElementById('label-wordling');
   if (old) old.remove();
 
-  const label = document.getElementById('hidden-word-value');
-  const wordlingData = wordlings.find(w => w.id === wordlingId);
-  if (!wordlingData) return;
-  
   const wordling = document.createElement('img');
   wordling.src = wordlingData.img;
   wordling.classList.add('wordling-pop');
   wordling.id = 'label-wordling';
-  
+
   const labelBox = label.getBoundingClientRect();
   const offsetX = labelBox.left + window.scrollX + labelBox.width + 10;
   const offsetY = labelBox.top + window.scrollY - 10;
-  
+
   wordling.style.left = `${offsetX}px`;
   wordling.style.top = `${offsetY}px`;
-  
-  document.body.appendChild(wordling);
-  
-  floatingWordling = wordling;
-  floatingWordlingImage = wordlingId; // 💥 Store the ID instead of image name now!
 
-  // 🎉 Confetti!
+  document.body.appendChild(wordling);
+
+  floatingWordling = wordling;
+  floatingWordlingImage = wordlingId; // 🛠 Save the ID directly now!
+
   confetti({
     particleCount: 30,
     spread: 60,
@@ -757,45 +753,42 @@ function showMilestonePopup(message) {
   }, 2000);
 }
 
-function showKorok() {
-	const existingPop = document.getElementById('label-wordling');
-	if (existingPop) existingPop.remove();
-
-	if (bonusWord) {
-			document.getElementById('hidden-word-value').textContent = bonusWord;
-	}
-
-	const { chosen } = createImageWordling(48, currentPuzzleTheme, false);
-	showWordlingPop(chosen); // just shows it — we’ll move it later
+function showKorok(wordlingId) {
+  if (!wordlingId) return;
+  showWordlingPop(wordlingId);
 }
 
 function checkSelectedWord() {
-	if (selectedCells.length === 0) return;
-	const word = selectedCells.map(c => c.letter).join('');
-	const reversed = word.split('').reverse().join('');
+  if (selectedCells.length === 0) return;
+  
+  const word = selectedCells.map(c => c.letter).join('');
+  const reversed = word.split('').reverse().join('');
 
-	const match = words.find(w => w.value === word || w.value === reversed);
-	const isBonus = word === bonusWord || reversed === bonusWord;
+  const match = words.find(w => w.value === word || w.value === reversed);
+  const isBonus = word === bonusWord || reversed === bonusWord;
 
-	if (match || isBonus) {
-		const pastel = getRandomPastel();
-		selectedCells.forEach(c => {
-			c.element.style.backgroundColor = pastel;
-			c.element.classList.add('found');
-		});
+  if (match || isBonus) {
+    const pastel = getRandomPastel();
+    selectedCells.forEach(c => {
+      c.element.style.backgroundColor = pastel;
+      c.element.classList.add('found');
+    });
 
-		if (match) {
-				document.getElementById(`word-${match.value}`).classList.add('found-word');
-		}
+    if (match) {
+      document.getElementById(`word-${match.value}`).classList.add('found-word');
+    }
 
-		if (isBonus) {
-				showKorok();
-		}
+    if (isBonus) {
+      const reward = createImageWordling(64, currentListKey); // 🛠️ generate reward
+      if (reward) {
+        showKorok(reward.chosenId); // 🛠️ pass the Wordling ID to showKorok!
+      }
+    }
 
-		checkIfPuzzleComplete();
-	}
-
-	clearSelection();
+    checkIfPuzzleComplete();
+  }
+  
+  clearSelection();
 }
 
 function moveLabelWordlingToRow() {
