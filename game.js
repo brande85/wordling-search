@@ -863,9 +863,40 @@ function checkIfPuzzleComplete() {
 		document.getElementById('congrats-overlay').style.display = 'flex';
 		launchConfetti(); // 🎉 Right here!
 		moveLabelWordlingToRow(); // 🌟 move the Wordling to the row
+    showCollectionBanner();
 		document.getElementById('grid').classList.add('grid-disabled');
 		document.getElementById('interaction-blocker').style.display = 'block';
 	}
+}
+
+function showCollectionBanner() {
+  const banner = document.getElementById('collection-banner');
+  if (!banner) return;
+
+  const wordlistSelect = document.getElementById('wordlist-select');
+  if (!wordlistSelect) return;
+  
+  const selectedValue = wordlistSelect.value;
+  const currentWordlist = wordLists[selectedValue];
+
+  if (!currentWordlist || !currentWordlist.wordlings) {
+    banner.style.display = 'none';
+    return;
+  }
+
+  const themeWordlings = currentWordlist.wordlings;
+  const unlockedCount = themeWordlings.filter(id => foundWordlings.has(id)).length;
+
+  if (unlockedCount === themeWordlings.length) {
+    banner.textContent = `✅ You've found all Wordlings for this puzzle!`;
+    banner.classList.add('sparkle'); // optional extra flair
+  } else {
+    const remaining = themeWordlings.length - unlockedCount;
+    banner.textContent = `🌟 ${remaining} Wordlings still hiding in this theme!`;
+    banner.classList.remove('sparkle');
+  }
+
+  banner.style.display = 'block';
 }
 
 function launchConfetti() {
