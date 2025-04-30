@@ -262,6 +262,7 @@ function generatePuzzle() {
   console.log("Bonus word:", bonusWord);
 
   showCollectionBanner(); // ✅ Display banner as soon as a puzzle is loaded
+	updateProgressBar();
 }
 
 function placeWord(word) {
