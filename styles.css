@@ -478,6 +478,31 @@ body, .cell, #wordsearch-app {
   display: none;
 }
 
+/* REWARD THEMES */
+.theme-animals {
+  background: url('images/bg-animals.jpg') center center / cover no-repeat;
+  background-color: #fef8f1; /* fallback color */
+}
+
+.theme-animals-font {
+  font-family: "Comic Sans MS", cursive;
+  color: #5b3827;
+}
+
+.theme-space {
+  background: url('images/bg-space.jpg') center center / cover no-repeat;
+  background-color: #0b1b2b;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+.theme-space-font {
+  font-family: 'Orbitron', sans-serif;
+  color: #9ff3ff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 4px #00ffff44;
+}
+
 /* Default (light) theme */
 body[data-theme='light'] {
   background-color: #fff;
