@@ -113,7 +113,7 @@ const themeRewards = {
     fontClass: 'theme-animals-font'
   },
   '🚀 Space': {
-    titleImage: 'images/wordling-title.png',
+    titleImage: 'images/title-space.png',
     backgroundClass: 'theme-space',
     fontClass: 'theme-space-font'
   }
