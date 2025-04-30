@@ -106,6 +106,19 @@ const wordlingThemes = {
   // add more as you build more puzzles
 };
 
+const themeRewards = {
+  '🐾 Animals': {
+    titleImage: 'images/wordling-title.png',
+    backgroundClass: 'theme-animals',
+    fontClass: 'theme-animals-font'
+  },
+  '🚀 Space': {
+    titleImage: 'images/wordling-title.png',
+    backgroundClass: 'theme-space',
+    fontClass: 'theme-space-font'
+  }
+};
+
 const cosplayWordlings = ['abaddon', 'angron', 'ash-ketchum', 'cecil', 'celestine', 'clive', 'cloud', 'deku', 'fulgrim', 'goku', 'link', 'knuckles', 'sailor-moon', 'squall', 'terra', 'warrior-of-light', 'zelda', 'zidane']
 
 const foundWordlings = new Set(); // Tracks which Wordlings you've found
@@ -132,6 +145,8 @@ let unlockedCosplays = [];
 let clickStartCell = null;
 const shouldAvoidClumping = gridSize >= 10;
 let currentListKey = '';
+let unlockedThemes = new Set();
+let activeTheme = null; // No active theme at first
 
 function createEmptyGrid() {
   for (let i = 0; i < gridSize; i++) {
@@ -995,6 +1010,55 @@ document.getElementById('bio-close').addEventListener('click', () => {
   modal.classList.add('hidden');
   modal.style.display = 'none';
 });
+
+function updateThemePicker() {
+  const picker = document.getElementById('theme-picker');
+  const options = document.getElementById('theme-options');
+  
+  options.innerHTML = '';
+
+  if (unlockedThemes.size > 0) {
+    picker.style.display = 'block';
+  } else {
+    picker.style.display = 'none';
+  }
+
+  unlockedThemes.forEach(themeName => {
+    const reward = themeRewards[themeName];
+    if (!reward) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'theme-choice-btn';
+    btn.innerHTML = `<img src="${reward.titleImage}" alt="${themeName}" style="height: 50px;">`;
+
+    btn.addEventListener('click', () => {
+      activeTheme = themeName;
+      applyActiveTheme();
+    });
+
+    options.appendChild(btn);
+  });
+}
+
+function applyActiveTheme() {
+  const container = document.getElementById('grid-container');
+  container.className = ''; // Clear old theme
+
+  const allLetters = document.querySelectorAll('.grid-letter');
+  allLetters.forEach(l => {
+    l.className = 'grid-letter'; // Reset fonts
+  });
+
+  if (activeTheme) {
+    const reward = themeRewards[activeTheme];
+    if (reward) {
+      container.classList.add(reward.backgroundClass);
+      allLetters.forEach(l => {
+        l.classList.add(reward.fontClass);
+      });
+    }
+  }
+}
 
 // Run the game
 window.addEventListener('DOMContentLoaded', () => {
