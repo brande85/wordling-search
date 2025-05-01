@@ -80,20 +80,22 @@
 
 /* Grid on right now, centered */
 #grid-column {
-  flex: 0 0 400px;
+  flex: 0 0 auto;
+  min-width: 400px;
   display: flex;
   justify-content: center;
 }
 
 #grid-container {
-  display: inline-block; /* center within grid-column */
-  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 /* Info panel on left */
 #info-column {
   flex: 1;
-  min-width: 300px;
+  min-width: 400px;
 }
 
 #controls {
