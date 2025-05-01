@@ -280,6 +280,7 @@ function generatePuzzle() {
 
   showCollectionBanner(); // ✅ Display banner as soon as a puzzle is loaded
 	updateProgressBar();
+  applyActiveTheme();
 }
 
 function placeWord(word) {
@@ -1047,22 +1048,19 @@ function renderThemePreview() {
 }
 
 function applyActiveTheme() {
+	console.log('Applying theme:', activeTheme);
+
   const container = document.getElementById('grid-container');
-  container.className = ''; // Clear old theme
+  container.className = ''; // Clear previous background classes
 
   const allLetters = document.querySelectorAll('.grid-letter');
-  allLetters.forEach(l => {
-    l.className = 'grid-letter'; // Reset fonts
-  });
+  allLetters.forEach(l => l.className = 'grid-letter'); // Reset fonts
 
-  if (activeTheme) {
+  if (activeTheme && themeRewards[activeTheme]) {
     const reward = themeRewards[activeTheme];
-    if (reward) {
-      container.classList.add(reward.backgroundClass);
-      allLetters.forEach(l => {
-        l.classList.add(reward.fontClass);
-      });
-    }
+    container.classList.add(reward.backgroundClass);
+
+    allLetters.forEach(l => l.classList.add(reward.fontClass));
   }
 }
 
