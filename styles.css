@@ -422,6 +422,35 @@ body, .cell, #wordsearch-app {
   letter-spacing: 0.5px;
 }
 
+#theme-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+#theme-title-image {
+  height: 64px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background: white;
+}
+
+#theme-label {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.theme-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
 /* Toggle button styling */
 #theme-toggle {
   font-size: 1.2em;
