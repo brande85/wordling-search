@@ -59,7 +59,6 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  min-height: 100vh; /* ensures it grows to full screen height */
   max-width: 1100px;
   margin: 20px auto;
   padding: 20px;
