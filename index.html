@@ -25,35 +25,6 @@
     
   <body>
     <div id="main-layout">
-       <div id="grid-column">
-
-          <!-- ========================== -->
-          <!-- 📜 WORD LIST & HIDDEN WORD -->
-          <!-- ========================== -->
-          <div id="word-list"></div>
-          <div id="hidden-word" style="margin-top: 10px; font-style: italic;">
-              <strong>Hidden Word:</strong> <span id="hidden-word-value">(still hiding...)</span>
-          </div>
-
-          <!-- =================== -->
-          <!-- 🔡 PUZZLE GRID AREA -->
-          <!-- =================== -->
-          <div id="grid-shell">
-            <div id="grid-container" style="position: relative; display: inline-block;">
-                <div id="grid"></div>
-                <div id="congrats-overlay" style="display: none;">
-                    🌟 Puzzle Complete! 🌟
-                </div>
-                <div id="interaction-blocker"></div>
-            </div>
-          </div>
-
-        <!-- ============================= -->
-        <!-- 🧩 WORDLING COLLECTION BANNER -->
-        <!-- ============================= -->
-        <div id="collection-banner" class="hint-text" style="display: none; margin-top: 10px;"></div>
-      </div>
-  
       <div id="info-column">
 
         <!-- ===================== -->
@@ -215,7 +186,38 @@
           </div>
         </div>
         
-     </div>
+      </div>
+
+      <div id="grid-column">
+
+          <!-- ========================== -->
+          <!-- 📜 WORD LIST & HIDDEN WORD -->
+          <!-- ========================== -->
+          <div id="word-list"></div>
+          <div id="hidden-word" style="margin-top: 10px; font-style: italic;">
+              <strong>Hidden Word:</strong> <span id="hidden-word-value">(still hiding...)</span>
+          </div>
+
+          <!-- =================== -->
+          <!-- 🔡 PUZZLE GRID AREA -->
+          <!-- =================== -->
+          <div id="grid-shell">
+            <div id="grid-container" style="position: relative; display: inline-block;">
+                <div id="grid"></div>
+                <div id="congrats-overlay" style="display: none;">
+                    🌟 Puzzle Complete! 🌟
+                </div>
+                <div id="interaction-blocker"></div>
+            </div>
+          </div>
+
+        <!-- ============================= -->
+        <!-- 🧩 WORDLING COLLECTION BANNER -->
+        <!-- ============================= -->
+        <div id="collection-banner" class="hint-text" style="display: none; margin-top: 10px;"></div>
+      </div>
+        
+    </div>
     
   </body>
 </html>
