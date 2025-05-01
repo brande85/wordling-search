@@ -1,4 +1,15 @@
+// ======================
+// ✅ INIT CHECK
+// ======================
+
 console.log("✅ game.js is running");
+
+// ======================
+// 🌟 WORDLING DATA
+// ======================
+
+// -- 🧚‍♀️ Full Wordling List
+console.log("📦 Loading wordlings...");
 
 const wordlings = [
 	{ id: 'abaddon', name: 'Cosplay Abaddon', bio: 'Marches across the stars, leaving typo-free battlefields behind.', img: 'images/abbadonling.png', isCosplay: true },
@@ -77,35 +88,14 @@ const wordlings = [
   { id: 'milestone-all', name: 'Luminary',bio: 'You caught them all! Way to go!', img: 'images/milestone-all.png', isMilestone: true },
 ]
 
-const wordlingThemes = {
-  // ANIMALS
-  cretaceousDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
-  domesticAnimals: ['tame-animal-wordling1.png', 'tame-animal-wordling2.png', 'tame-animal-wordling3.png', 'tame-animal-wordling4.png'],
-	zooAnimals: ['tame-animal-wordling1.png', 'wild-animal-wordling1.png', 'tame-animal-wordling2.png', 'wild-animal-wordling4.png', 'wild-animal-wordling5.png'],
-  jurassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
-  popularDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
-  triassicDinosaurs: ['dinosaur-wordling1.png', 'dinosaur-wordling2.png', 'dinosaur-wordling3.png', 'dinosaur-wordling4.png'],
-  // ASTRONOMY
-	space: ['space-wordling1.png', 'space-wordling2.png', 'space-wordling3.png', 'space-wordling4.png'],
-  // CURRENT EVENTS
-  march2025: ['wordling5.png', 'current-events-wordling1.png', 'space-wordling5.png', 'wild-animal-wordling6.png', 'punchling.png', 'space-wordling1.png'],
-  // FOOD
-  fruits: ['wordling1.png', 'wordling2.png', 'wordling3.png', 'wordling4.png'],
-  // GEOLOGY
-  gemstones: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png'],
-  igneousRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'igneous-wordling.png'],
-  metamorphicRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'metamorphic-wordling.png'],
-  sedimentaryRocks: ['gem-wordling1.png', 'gem-wordling2.png', 'gem-wordling3.png', 'gem-wordling4.png', 'sedimentary-wordling.png'],
-  // MUSIC
-  miku: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
-  mikusongs: ['miku-wordling1.png', 'miku-wordling2.png', 'miku-wordling3.png'],
-  // POP CULTURE
-  warhammerfortyksetting: ['warhammer-40k-wordling1.png', 'warhammer-40k-wordling2.png', 'warhammer-40k-wordling3.png'],
-  // OTHER
-  cozy: ['cozy-wordling1.png', 'cozy-wordling2.png'], 
-  // add more as you build more puzzles
-};
+console.log(`📦 ${wordlings.length} wordlings loaded.`);
 
+// -- 🖼️ Wordling Theme Collections
+// -- 🗂️ [Removed] Legacy wordlingThemes no longer needed
+// console.log("🗂️ wordlingThemes removed — using embedded themes and wordLists instead.");
+
+// -- 🎁 Theme Reward Styling
+console.log("🎁 Setting up theme reward settings...");
 const themeRewards = {
   '🐾 Animals': {
     titleImage: 'images/title-animals2.png',
@@ -119,48 +109,68 @@ const themeRewards = {
   }
 };
 
+// -- ✨ Cosplay Wordlings
+// console.log("✨ Loading cosplay wordling list...")
 const cosplayWordlings = ['abaddon', 'angron', 'ash-ketchum', 'cecil', 'celestine', 'clive', 'cloud', 'deku', 'fulgrim', 'goku', 'link', 'knuckles', 'sailor-moon', 'squall', 'terra', 'warrior-of-light', 'zelda', 'zidane']
+// console.log(`✨ ${cosplayWordlings.length} cosplay wordlings ready.`);
 
-const foundWordlings = new Set(); // Tracks which Wordlings you've found
+// ======================
+// 🧠 GAME STATE
+// ======================
 
+// -- 🔡 Puzzle Grid & Word Tracking
 const grid = [];
 let gridSize = 10;
 let words = [];
-let currentPuzzleTheme = 'fruits'; // default
 let bonusWord = ''; // The hidden word
-let korokCount = 0;
-const cellElements = [];
-const weightedDirections = [
-  [0, 1], [0, 1],     // horizontal
-  [1, 0], [1, 0],     // vertical
-  [1, 1], [1, 1], [1, 1], // diagonal
-  [-1, 1], [-1, 1], [-1, 1] // reverse diagonal
-];
+let currentListKey = '';
+let currentPuzzleTheme = 'fruits'; // default
+
+// -- 🔍 Selection Handling
 let selectedCells = [];
+selectedCells.direction = null;
 let isMouseDown = false;
 let selecting = false;
-let floatingWordling = null;
-let floatingWordlingImage = null;
-let unlockedCosplays = [];
 let clickStartCell = null;
-const shouldAvoidClumping = gridSize >= 10;
-let currentListKey = '';
-let unlockedThemes = new Set();
+
+// -- 🧩 DOM Cell References
+const cellElements = []; // 2D array storing <div> elements for each cell
+
+// -- 🎯 Directional Bias (heavily favors diagonals)
+const weightedDirections = [
+  [0, 1], [0, 1],     // ← horizontal
+  [1, 0], [1, 0],     // ↑ vertical
+  [1, 1], [1, 1], [1, 1], // ↘ diagonal
+  [-1, 1], [-1, 1], [-1, 1] // ↗ reverse diagonal
+];
+
+// -- 🎨 Theme Progression
 let activeTheme = null; // No active theme at first
 let themeOrder = ['Default']; // Will include unlocked theme names like 'Space'
 let currentThemeIndex = 0;
+let unlockedThemes = new Set();
 
-function createEmptyGrid() {
-  for (let i = 0; i < gridSize; i++) {
-      grid[i] = [];
-      cellElements[i] = [];
-      for (let j = 0; j < gridSize; j++) {
-      grid[i][j] = '';
-      cellElements[i][j] = null;
-      }
-  }
-}
+// -- 🌿 Wordling Unlocks
+const foundWordlings = new Set(); // Tracks which Wordlings you've found
+let unlockedCosplays = [];
+let korokCount = 0;
 
+// -- ✨ Wordling Pop-up
+let floatingWordling = null;
+let floatingWordlingImage = null;
+
+// ======================
+// 📦 UTILITY FUNCTIONS
+// ======================
+// These helper functions support core logic or enhance visuals.
+// They don’t manage game state directly but are used across multiple systems.
+//
+// Includes:
+// - Array shuffling (shuffle)
+// - DOM parsing (getCellData)
+// - Visual helpers (getRandomPastel)
+
+// -- 🔀 Shuffle an array using Fisher-Yates
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -168,6 +178,7 @@ function shuffle(array) {
   }
 }
 
+// -- 🧱 Extract data from a grid cell DOM element
 function getCellData(el) {
   return {
       element: el,
@@ -177,112 +188,48 @@ function getCellData(el) {
   };
 }
 
-function tryPlacingWords(wordList, maxWords = 12) {
-  const placed = [];
-  const copy = [...wordList];
-  shuffle(copy);
-  
-  for (let originalWord of copy) {
-    const cleanWord = originalWord.replace(/\s+/g, '').toUpperCase();
+// -- 🎉 VISUAL EFFECTS
 
-    if (cleanWord.length > gridSize) continue; // skip overly long words
-    if (placed.length >= maxWords) break;
-
-    if (placeWord(cleanWord)) {
-        placed.push({ display: originalWord, value: cleanWord });
-    }
-  }
-  
-  // 🌟 Add a hidden bonus word (guaranteed)!
-  const allWords = wordList.filter(w => !placed.some(p => p.display === w));
-  shuffle(allWords);
-  bonusWord = ''; // reset before attempting placement
-  
-  for (let i = 0; i < allWords.length; i++) {
-    const candidate = allWords[i].replace(/\s+/g, '').toUpperCase();
-    if (!placed.some(p => p.value === candidate) && placeWord(candidate)) {
-        bonusWord = candidate;
-        break;
-    }
-  }
-  
-  // 🪄 Optional backup: reuse a placed word if nothing else fits
-  if (!bonusWord && placed.length > 0) {
-      const fallback = placed[Math.floor(Math.random() * placed.length)];
-      bonusWord = fallback.value;
-  }
-  
-  return placed;
+// -- 🎨 Generate a soft pastel color
+function getRandomPastel() {
+	const hue = Math.floor(Math.random() * 360);
+	return `hsl(${hue}, 70%, 85%)`; // pastel-like
 }
 
-function generatePuzzle() {
-  console.log("🧩 generatePuzzle() was called!");
-  
-  const overlay = document.getElementById('congrats-overlay');
-  if (overlay) overlay.style.display = 'none';
-  const blocker = document.getElementById('interaction-blocker');
-  if (blocker) blocker.style.display = 'none';
-  const gridElement = document.getElementById('grid');
-  if (gridElement) gridElement.classList.remove('grid-disabled');
-
-  const sizeSelect = document.getElementById('size-select');
-  const listSelect = document.getElementById('wordlist-select');
-  if (!sizeSelect || !listSelect) {
-    console.warn("Missing size-select or wordlist-select elements.");
-    return;
-  }
-
-  const sizeValue = sizeSelect.value;
-  const listValue = listSelect.value;
-  currentListKey = listValue
-  console.log("Selected wordlist:", listValue);
-  console.log("Available keys in wordLists:", Object.keys(wordLists));
-  currentPuzzleTheme = listValue;
-
-  const wordListObj = wordLists[listValue];
-  if (!wordListObj || !wordListObj.words || !wordListObj.facts) {
-    console.warn(`Wordlist for theme '${listValue}' is invalid or incomplete.`);
-    return;
-  }
-
-  const wordList = wordListObj.words;
-  const facts = wordListObj.facts;
-
-  const puzzleFact = document.getElementById('puzzle-fact');
-  if (puzzleFact && facts.length > 0) {
-    const randomFact = facts[Math.floor(Math.random() * facts.length)];
-    puzzleFact.textContent = `${randomFact}`;
-  }
-
-    const hiddenLabel = document.getElementById('hidden-word-value');
-  if (hiddenLabel) hiddenLabel.textContent = '(still hiding...)';
-	
-  if (floatingWordling) {
-    floatingWordling.remove();
-    floatingWordling = null;
-    floatingWordlingImage = null;
-  }
-
-  gridSize = parseInt(sizeValue);
-
-  selectedCells = [];
-  selectedCells.direction = null;
-
-  createEmptyGrid();
-  const maxWords = Math.floor(gridSize * 0.8); // scale with grid size
-  words = tryPlacingWords(wordList, maxWords);
-  fillEmptyCells();
-  renderWordList();
-  renderGrid();
-
-  console.log("Placed words:", words.map(w => w.display));
-  console.log("Bonus word:", bonusWord);
-
-  showCollectionBanner(); // ✅ Display banner as soon as a puzzle is loaded
-	updateProgressBar();
-  applyActiveTheme();
+// Triggers a burst of confetti on the screen (used for celebrations!)
+function launchConfetti() {
+	confetti({
+			particleCount: 100,
+			spread: 70,
+			origin: { x: 0.5, y: 0.5 }
+	});
 }
 
+// ======================
+// 🔠 GRID FUNCTIONS
+// ======================
+// These functions handle the creation, population, and rendering of the puzzle grid.
+// They control where letters go, how the grid is displayed, and how the word list appears.
+//
+// Includes:
+// - Grid creation and reset (createEmptyGrid, fillGrid, fillEmptyCells)
+// - Word placement logic (placeWord)
+// - UI rendering (renderGrid, renderWordList)
+
+// -- 📐 Create empty grid and DOM cell holders
+function createEmptyGrid() {
+  for (let i = 0; i < gridSize; i++) {
+      grid[i] = [];
+      cellElements[i] = [];
+      for (let j = 0; j < gridSize; j++) {
+      grid[i][j] = '';
+      cellElements[i][j] = null;
+      }
+  }
+  console.log("📐 Grid initialized:", gridSize + "×" + gridSize);
+}
+
+// Attempts to place a single word in the grid (direction, position, fit)
 function placeWord(word) {
   const directions = [
     [0, 1],   // right
@@ -322,10 +269,55 @@ function placeWord(word) {
     }
   }
 
-  console.warn(`❌ Failed to place word: ${word}`);
+  // console.warn(`❌ Failed to place word: ${word}`);
   return false;
 }
 
+// -- 🧪 Try placing words in the grid
+function tryPlacingWords(wordList, maxWords = Math.min(Math.floor((gridSize * gridSize) / 8), 20) {
+  console.log(`📏 Grid: ${gridSize}×${gridSize} → Max words: ${maxWords}`);
+  
+  const placed = [];
+  const copy = [...wordList];
+  shuffle(copy);
+  
+  for (let originalWord of copy) {
+    const cleanWord = originalWord.replace(/\s+/g, '').toUpperCase();
+
+    if (cleanWord.length > gridSize) continue; // skip overly long words
+    if (placed.length >= maxWords) break;
+
+    if (placeWord(cleanWord)) {
+        placed.push({ display: originalWord, value: cleanWord });
+    }
+  }
+  
+  // 🌟 Hidden Bonus Word
+  const allWords = wordList.filter(w => !placed.some(p => p.display === w));
+  shuffle(allWords);
+  bonusWord = ''; // reset before attempting placement
+  
+  for (let i = 0; i < allWords.length; i++) {
+    const candidate = allWords[i].replace(/\s+/g, '').toUpperCase();
+    if (!placed.some(p => p.value === candidate) && placeWord(candidate)) {
+        bonusWord = candidate;
+        break;
+    }
+  }
+  
+  // 🪄 Fallback: reuse a placed word
+  if (!bonusWord && placed.length > 0) {
+      const fallback = placed[Math.floor(Math.random() * placed.length)];
+      bonusWord = fallback.value;
+  }
+
+  console.log("🧩 Words placed:", placed.map(w => w.value));
+  console.log("⭐ Bonus word:", bonusWord);
+  
+  return placed;
+}
+
+// Randomly fills all empty grid cells with letters
 function fillEmptyCells() {
 	const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	for (let i = 0; i < gridSize; i++) {
@@ -337,12 +329,7 @@ function fillEmptyCells() {
 	}
 }
 
-function renderWordList() {
-	const listDiv = document.getElementById('word-list');
-	listDiv.innerHTML = '<strong>Find these words:</strong><br>' +
-			words.map(w => `<span id="word-${w.value}">${w.display}</span>`).join(', ');
-}
-
+// Renders the current grid onto the screen with event-ready cells
 function renderGrid() {
 	const gridDiv = document.getElementById('grid');
 	gridDiv.innerHTML = '';
@@ -350,48 +337,48 @@ function renderGrid() {
 
 	for (let i = 0; i < gridSize; i++) {
 		for (let j = 0; j < gridSize; j++) {
-		const cell = document.createElement('div');
-		cell.textContent = grid[i][j];
-		cell.className = 'cell';
-		cell.dataset.row = i;
-		cell.dataset.col = j;
-
-		cell.addEventListener('mousedown', (e) => {
-			e.preventDefault();
-			isMouseDown = true;
-			clearSelection();
-			selectCell(cell);
-		});
-
-		cell.addEventListener('mouseenter', () => {
-			if (isMouseDown) selectCell(cell);
-		});
-
-		cell.addEventListener('mouseup', () => {
-			isMouseDown = false;
-			checkSelectedWord();
-		});
-
-                cell.addEventListener('click', () => {
-                  handleClickSelection(cell);
-                });
-
-    cell.addEventListener('touchstart', (e) => {
-  e.preventDefault();
-  handleTouchClickStart(e);
-}, { passive: false });
-
-cell.addEventListener('touchend', (e) => {
-  e.preventDefault();
-  handleTouchClickEnd(e);
-}, { passive: false });
-
-		cell.addEventListener('touchstart', handleTouchStart, { passive: false });
-		cell.addEventListener('touchmove', handleTouchMove, { passive: false });
-		cell.addEventListener('touchend', handleTouchEnd);
-
-		gridDiv.appendChild(cell);
-		cellElements[i][j] = cell;
+  		const cell = document.createElement('div');
+  		cell.textContent = grid[i][j];
+  		cell.className = 'cell';
+  		cell.dataset.row = i;
+  		cell.dataset.col = j;
+  
+  		cell.addEventListener('mousedown', (e) => {
+  			e.preventDefault();
+  			isMouseDown = true;
+  			clearSelection();
+  			selectCell(cell);
+  		});
+  
+  		cell.addEventListener('mouseenter', () => {
+  			if (isMouseDown) selectCell(cell);
+  		});
+  
+  		cell.addEventListener('mouseup', () => {
+  			isMouseDown = false;
+  			checkSelectedWord();
+  		});
+  
+      cell.addEventListener('click', () => {
+        handleClickSelection(cell);
+      });
+  
+      cell.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        handleTouchClickStart(e);
+      }, { passive: false });
+  
+      cell.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        handleTouchClickEnd(e);
+      }, { passive: false });
+  
+  		cell.addEventListener('touchstart', handleTouchStart, { passive: false });
+  		cell.addEventListener('touchmove', handleTouchMove, { passive: false });
+  		cell.addEventListener('touchend', handleTouchEnd);
+  
+  		gridDiv.appendChild(cell);
+  		cellElements[i][j] = cell;
 		}
 	}
 
@@ -401,60 +388,95 @@ cell.addEventListener('touchend', (e) => {
 	});
 }
 
-function handleTouchStart(e) {
-  if (!clickMode) return;
-  const target = e.target;
-
-  if (target && target.classList.contains('cell')) {
-    clearSelection();
-    clickStartCell = target;
-    selectCell(target);
-  }
+  // Updates the word list display panel with words to find
+  function renderWordList() {
+	const listDiv = document.getElementById('word-list');
+	listDiv.innerHTML = '<strong>Find these words:</strong><br>' +
+			words.map(w => `<span id="word-${w.value}">${w.display}</span>`).join(', ');
 }
 
+// ======================
+// 🎮 GAMEPLAY HANDLING
+// ======================
+// These functions manage how players interact with the grid.
+// They track selections, handle mouse/touch events, and check for valid word matches.
+//
+// Includes:
+// - Selection tracking (selectCell, clearSelection)
+// - Mouse and touch input (handleClickSelection, handleTouchStart, etc.)
+// - Interaction setup and puzzle flow (generatePuzzle, setupInteraction)
 
-function handleTouchMove(e) {
-  e.preventDefault();
-  const touch = e.touches[0];
-  const target = document.elementFromPoint(touch.clientX, touch.clientY);
-  if (target && target.classList.contains('cell') && selecting) {
-    selectCell(target); // 🔥 Use your core function!
+// -- 🧩 Generate a new puzzle grid
+function generatePuzzle() {
+  console.log("🧩 generatePuzzle() was called!");
+  
+  const overlay = document.getElementById('congrats-overlay');
+  if (overlay) overlay.style.display = 'none';
+  
+  const blocker = document.getElementById('interaction-blocker');
+  if (blocker) blocker.style.display = 'none';
+  
+  const gridElement = document.getElementById('grid');
+  if (gridElement) gridElement.classList.remove('grid-disabled');
+
+  const sizeSelect = document.getElementById('size-select');
+  const listSelect = document.getElementById('wordlist-select');
+  if (!sizeSelect || !listSelect) {
+    console.warn("Missing size-select or wordlist-select elements.");
+    return;
   }
-}
 
-function handleTouchEnd(e) {
-  if (!clickMode || !clickStartCell) return;
-  const target = e.target;
+  const sizeValue = sizeSelect.value;
+  const listValue = listSelect.value;
+  currentListKey = listValue
+  currentPuzzleTheme = listValue;
+  gridSize = parseInt(sizeValue);
+  selectedCells = [];
+  selectedCells.direction = null;
 
-  if (target && target.classList.contains('cell')) {
-    const start = {
-      row: parseInt(clickStartCell.dataset.row),
-      col: parseInt(clickStartCell.dataset.col)
-    };
-    const end = {
-      row: parseInt(target.dataset.row),
-      col: parseInt(target.dataset.col)
-    };
+  console.log("🎛️ Selected list:", listValue, "| Grid size:", gridSize);
 
-    const dRow = end.row - start.row;
-    const dCol = end.col - start.col;
-
-    const len = Math.max(Math.abs(dRow), Math.abs(dCol));
-    const dirRow = Math.sign(dRow);
-    const dirCol = Math.sign(dCol);
-
-    clearSelection();
-    for (let i = 0; i <= len; i++) {
-      const r = start.row + dirRow * i;
-      const c = start.col + dirCol * i;
-      if (r < 0 || r >= gridSize || c < 0 || c >= gridSize) break;
-      const cell = cellElements[r][c];
-      selectCell(cell);
-    }
-
-    checkSelectedWord();
+  const wordListObj = wordLists[listValue];
+  if (!wordListObj || !wordListObj.words || !wordListObj.facts) {
+    console.warn(`Wordlist for theme '${listValue}' is invalid or incomplete.`);
+    return;
   }
-  clickStartCell = null;
+
+  const wordList = wordListObj.words;
+  const facts = wordListObj.facts;
+
+  // 🌟 Show random fun fact
+  const puzzleFact = document.getElementById('puzzle-fact');
+  if (puzzleFact && facts.length > 0) {
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    puzzleFact.textContent = `${randomFact}`;
+  }
+
+  // 🫥 Reset the hidden word label
+  const hiddenLabel = document.getElementById('hidden-word-value');
+  if (hiddenLabel) hiddenLabel.textContent = '(still hiding...)';
+
+  // 🧱 Reset floating Wordling
+  if (floatingWordling) {
+    floatingWordling.remove();
+    floatingWordling = null;
+    floatingWordlingImage = null;
+  }
+
+  // 🧱 Build and fill grid
+  createEmptyGrid();
+  words = tryPlacingWords(wordList, maxWords);
+  fillEmptyCells();
+  renderWordList();
+  renderGrid();
+
+  console.log("Placed words:", words.map(w => w.display));
+  console.log("Bonus word:", bonusWord);
+  
+  // 🪧 Collection banner & progress
+  showCollectionBanner(); // ✅ Display collection progress
+	updateProgressBar();    // ✅ Refresh bar visuals
+  applyActiveTheme();     // 🎨 Apply current theme visuals
 }
 
 function selectCell(cell) {
@@ -511,6 +533,67 @@ function selectCell(cell) {
 	selectedCells.push({ row, col, letter: grid[row][col], element: cell });
 }
 
+// Clears all currently selected cells (visual + tracking)
+function clearSelection() {
+	selectedCells.forEach(cell => {
+		cell.element.classList.remove('selected');
+		if (cell.element.dataset.prevColor) {
+			cell.element.style.backgroundColor = cell.element.dataset.prevColor;
+			delete cell.element.dataset.prevColor;
+		}
+	});
+	selectedCells = [];
+	selectedCells.direction = null; // Reset direction
+}
+
+// Checks if the current selection matches a placed or bonus word
+function checkSelectedWord() {
+  if (selectedCells.length === 0) return;
+  
+  const word = selectedCells.map(c => c.letter).join('');
+  const reversed = word.split('').reverse().join('');
+
+  const match = words.find(w => w.value === word || w.value === reversed);
+  const isBonus = word === bonusWord || reversed === bonusWord;
+
+  if (match || isBonus) {
+    const pastel = getRandomPastel();
+    selectedCells.forEach(c => {
+      c.element.style.backgroundColor = pastel;
+      c.element.classList.add('found');
+    });
+
+    if (match) {
+      document.getElementById(`word-${match.value}`).classList.add('found-word');
+    }
+
+    if (isBonus) {
+      const reward = createImageWordling(64, currentListKey); // 🛠️ generate reward
+      if (reward) {
+        showKorok(reward.chosenId); // 🛠️ pass the Wordling ID to showKorok!
+      }
+    }
+
+    checkIfPuzzleComplete();
+  }
+  
+  clearSelection();
+}
+
+// Checks if all placed words have been found and ends the puzzle
+function checkIfPuzzleComplete() {
+	const found = document.querySelectorAll('.found-word').length;
+	if (found === words.length) {
+		document.getElementById('congrats-overlay').style.display = 'flex';
+		launchConfetti(); // 🎉 Right here!
+		moveLabelWordlingToRow(); // 🌟 move the Wordling to the row
+    showCollectionBanner();
+		document.getElementById('grid').classList.add('grid-disabled');
+		document.getElementById('interaction-blocker').style.display = 'block';
+	}
+}
+
+// Triggered when clicking/tapping a word — checks and resolves match
 function handleClickSelection(cell) {
   if (!clickStartCell) {
     clearSelection();
@@ -550,6 +633,65 @@ function handleClickSelection(cell) {
   clickStartCell = null;
 }
 
+// Touch event: begins drag/select gesture
+function handleTouchStart(e) {
+  if (!clickMode) return;
+  const target = e.target;
+
+  if (target && target.classList.contains('cell')) {
+    clearSelection();
+    clickStartCell = target;
+    selectCell(target);
+  }
+}
+
+// Touch event: continues drag/select gesture across grid
+function handleTouchMove(e) {
+  e.preventDefault();
+  const touch = e.touches[0];
+  const target = document.elementFromPoint(touch.clientX, touch.clientY);
+  if (target && target.classList.contains('cell') && selecting) {
+    selectCell(target); // 🔥 Use your core function!
+  }
+}
+
+// Touch event: ends drag gesture and checks selection
+function handleTouchEnd(e) {
+  if (!clickMode || !clickStartCell) return;
+  const target = e.target;
+
+  if (target && target.classList.contains('cell')) {
+    const start = {
+      row: parseInt(clickStartCell.dataset.row),
+      col: parseInt(clickStartCell.dataset.col)
+    };
+    const end = {
+      row: parseInt(target.dataset.row),
+      col: parseInt(target.dataset.col)
+    };
+
+    const dRow = end.row - start.row;
+    const dCol = end.col - start.col;
+
+    const len = Math.max(Math.abs(dRow), Math.abs(dCol));
+    const dirRow = Math.sign(dRow);
+    const dirCol = Math.sign(dCol);
+
+    clearSelection();
+    for (let i = 0; i <= len; i++) {
+      const r = start.row + dirRow * i;
+      const c = start.col + dirCol * i;
+      if (r < 0 || r >= gridSize || c < 0 || c >= gridSize) break;
+      const cell = cellElements[r][c];
+      selectCell(cell);
+    }
+
+    checkSelectedWord();
+  }
+  clickStartCell = null;
+}
+
+// Optional: used for quick tap/touch selection start
 function handleTouchClickStart(e) {
   if (!clickStartCell) {
     const target = document.elementFromPoint(
@@ -564,6 +706,7 @@ function handleTouchClickStart(e) {
   }
 }
 
+// Optional: used for quick tap/touch selection end
 function handleTouchClickEnd(e) {
   if (clickStartCell) {
     const target = document.elementFromPoint(
@@ -602,23 +745,13 @@ function handleTouchClickEnd(e) {
   }
 }
 
-function clearSelection() {
-	selectedCells.forEach(cell => {
-		cell.element.classList.remove('selected');
-		if (cell.element.dataset.prevColor) {
-			cell.element.style.backgroundColor = cell.element.dataset.prevColor;
-			delete cell.element.dataset.prevColor;
-		}
-	});
-	selectedCells = [];
-	selectedCells.direction = null; // Reset direction
-}
+// ======================
+// 🌿 WORDLING UNLOCKS
+// ======================
+// Handles all reward logic and visual updates when players discover Wordlings.
+// Includes floating popups, milestone rewards, cosplay unlocks, and updating the gallery.
 
-function getRandomPastel() {
-	const hue = Math.floor(Math.random() * 360);
-	return `hsl(${hue}, 70%, 85%)`; // pastel-like
-}
-
+// Randomly selects a Wordling image from the current theme for bonus rewards
 function createImageWordling(size, theme, returnImageOnly = false) {
   const army = wordLists[theme]?.wordlings || ['staff'];
   const chosenId = army[Math.floor(Math.random() * army.length)];
@@ -635,6 +768,7 @@ function createImageWordling(size, theme, returnImageOnly = false) {
   return returnImageOnly ? img : { img, chosenId }; // 🛠 Return BOTH if needed
 }
 
+// Creates a floating image popup for a discovered Wordling
 function showWordlingPop(wordlingId) {
   const wordlingData = wordlings.find(w => w.id === wordlingId);
   if (!wordlingData) return;
@@ -674,6 +808,55 @@ function showWordlingPop(wordlingId) {
   });
 }
 
+// Wrapper for showWordlingPop — allows Koroks/bonus Wordlings to be passed by ID
+function showKorok(wordlingId) {
+  if (!wordlingId) return;
+  showWordlingPop(wordlingId);
+}
+
+// Transfers the floating Wordling to the collection row after puzzle complete
+function moveLabelWordlingToRow() {
+  if (!floatingWordling || !floatingWordlingImage) return;
+	
+  const emptyMsg = document.getElementById('army-empty');
+  if (emptyMsg) emptyMsg.style.display = 'none';
+  
+  if (!floatingWordling || !floatingWordlingImage) return;
+
+  // Clean up the label Wordling
+  floatingWordling.removeAttribute('id');
+  floatingWordling.classList.remove('wordling-pop');
+  floatingWordling.classList.add('wordling-row-img');
+  floatingWordling.removeAttribute('style');
+
+  const row = document.getElementById('wordling-row');
+
+  row.appendChild(floatingWordling);
+
+  if (floatingWordlingImage) {
+    foundWordlings.add(floatingWordlingImage);
+  }
+  renderGallery();
+  updateProgressBar();
+
+    // ✅ Increment the count ONLY when Wordling actually joins
+  korokCount++;
+  document.getElementById('korok-count').textContent = korokCount;
+
+  // ✅ Check for cosplay unlocks too
+  if (korokCount % 5 === 0) {
+    unlockCosplayWordling();
+    updateProgressBar();
+    checkMilestoneUnlocks();
+  }
+	checkThemeUnlocks();
+
+  // Clear the reference after moving
+  floatingWordling = null;
+  floatingWordlingImage = null;
+}
+
+// Appends a Wordling image to the special collection row
 function addSpecialWordlingToPage(imagePath, alt = 'Special Wordling') {
   const emptyMsg = document.getElementById('special-empty');
   if (emptyMsg) emptyMsg.style.display = 'none';
@@ -694,6 +877,7 @@ function addSpecialWordlingToPage(imagePath, alt = 'Special Wordling') {
   specialSection.appendChild(wordlingImg);
 }
 
+// Randomly unlocks a new cosplay Wordling after collecting enough others
 function unlockCosplayWordling() {
   const emptyMsg = document.getElementById('cosplay-empty');
   if (emptyMsg) emptyMsg.style.display = 'none';
@@ -716,6 +900,7 @@ checkMilestoneUnlocks();
 checkThemeUnlocks();
 }
 
+// Checks how many Wordlings the player has found and unlocks milestone rewards
 function checkMilestoneUnlocks() {
   const totalStandard = wordlings.filter(w => !w.isMilestone).length;
 
@@ -767,6 +952,7 @@ function checkMilestoneUnlocks() {
   renderGallery();
 }
 
+// Shows a popup message for milestone unlocks
 function showMilestonePopup(message) {
   const popup = document.createElement('div');
   popup.className = 'milestone-popup';
@@ -780,160 +966,18 @@ function showMilestonePopup(message) {
   }, 2000);
 }
 
-function showKorok(wordlingId) {
-  if (!wordlingId) return;
-  showWordlingPop(wordlingId);
-}
+// ======================
+// 🖼️ GALLERY / MODALS
+// ======================
+// Controls the display and interactivity of the Wordling gallery and bio modal.
+// Handles filtering, unlocking, and modal toggling for collected Wordlings.
+//
+// Includes:
+// - renderGallery()
+// - showWordlingBio()
+// - bio-close event listener
 
-function checkSelectedWord() {
-  if (selectedCells.length === 0) return;
-  
-  const word = selectedCells.map(c => c.letter).join('');
-  const reversed = word.split('').reverse().join('');
-
-  const match = words.find(w => w.value === word || w.value === reversed);
-  const isBonus = word === bonusWord || reversed === bonusWord;
-
-  if (match || isBonus) {
-    const pastel = getRandomPastel();
-    selectedCells.forEach(c => {
-      c.element.style.backgroundColor = pastel;
-      c.element.classList.add('found');
-    });
-
-    if (match) {
-      document.getElementById(`word-${match.value}`).classList.add('found-word');
-    }
-
-    if (isBonus) {
-      const reward = createImageWordling(64, currentListKey); // 🛠️ generate reward
-      if (reward) {
-        showKorok(reward.chosenId); // 🛠️ pass the Wordling ID to showKorok!
-      }
-    }
-
-    checkIfPuzzleComplete();
-  }
-  
-  clearSelection();
-}
-
-function moveLabelWordlingToRow() {
-  if (!floatingWordling || !floatingWordlingImage) return;
-	
-  const emptyMsg = document.getElementById('army-empty');
-  if (emptyMsg) emptyMsg.style.display = 'none';
-  
-  if (!floatingWordling || !floatingWordlingImage) return;
-
-  // Clean up the label Wordling
-  floatingWordling.removeAttribute('id');
-  floatingWordling.classList.remove('wordling-pop');
-  floatingWordling.classList.add('wordling-row-img');
-  floatingWordling.removeAttribute('style');
-
-  const row = document.getElementById('wordling-row');
-
-  row.appendChild(floatingWordling);
-
-  if (floatingWordlingImage) {
-    foundWordlings.add(floatingWordlingImage);
-  }
-  renderGallery();
-  updateProgressBar();
-
-    // ✅ Increment the count ONLY when Wordling actually joins
-  korokCount++;
-  document.getElementById('korok-count').textContent = korokCount;
-
-  // ✅ Check for cosplay unlocks too
-  if (korokCount % 5 === 0) {
-    unlockCosplayWordling();
-    updateProgressBar();
-    checkMilestoneUnlocks();
-  }
-	checkThemeUnlocks();
-
-  // Clear the reference after moving
-  floatingWordling = null;
-  floatingWordlingImage = null;
-}
-
-function checkIfPuzzleComplete() {
-	const found = document.querySelectorAll('.found-word').length;
-	if (found === words.length) {
-		document.getElementById('congrats-overlay').style.display = 'flex';
-		launchConfetti(); // 🎉 Right here!
-		moveLabelWordlingToRow(); // 🌟 move the Wordling to the row
-    showCollectionBanner();
-		document.getElementById('grid').classList.add('grid-disabled');
-		document.getElementById('interaction-blocker').style.display = 'block';
-	}
-}
-
-function showCollectionBanner() {
-  const banner = document.getElementById('collection-banner');
-  if (!banner) return;
-
-  const wordlistSelect = document.getElementById('wordlist-select');
-  if (!wordlistSelect) return;
-  
-  const selectedValue = wordlistSelect.value;
-  const currentWordlist = wordLists[selectedValue];
-
-  if (!currentWordlist || !currentWordlist.wordlings) {
-    banner.style.display = 'none';
-    return;
-  }
-
-  const themeWordlings = currentWordlist.wordlings;
-  const unlockedCount = themeWordlings.filter(id => foundWordlings.has(id)).length;
-
-  if (unlockedCount === themeWordlings.length) {
-    banner.textContent = `✅ You've found all Wordlings for this puzzle!`;
-    banner.classList.add('sparkle'); // optional extra flair
-  } else {
-    const remaining = themeWordlings.length - unlockedCount;
-    banner.textContent = `🌟 ${remaining} Wordlings still hiding in this theme!`;
-    banner.classList.remove('sparkle');
-  }
-
-  banner.style.display = 'block';
-}
-
-function launchConfetti() {
-	confetti({
-			particleCount: 100,
-			spread: 70,
-			origin: { x: 0.5, y: 0.5 }
-	});
-}
-
-// 🌙 Theme handling
-function setTheme(mode) {
-  document.body.setAttribute('data-theme', mode);
-  const toggleBtn = document.getElementById('theme-toggle');
-  if (toggleBtn) toggleBtn.textContent = mode === 'dark' ? '☀️' : '🌙';
-}
-
-function toggleTheme() {
-  const current = document.body.getAttribute('data-theme');
-  setTheme(current === 'dark' ? 'light' : 'dark');
-}
-
-function updateProgressBar() {
-  const total = wordlings.filter(w => !w.isHidden).length; // excludes hidden/milestone Wordlings
-  const found = [...foundWordlings].filter(id =>
-    wordlings.some(w => w.id === id && !w.isHidden)
-  ).length;
-
-  const percent = Math.round((found / total) * 100);
-
-  document.getElementById('progress-count').textContent = found;
-  document.getElementById('progress-total').textContent = total;
-  document.getElementById('progress-fill').style.width = `${percent}%`;
-}
-
+// Builds the full Wordling gallery, including standard, themed, and special Wordlings
 function renderGallery() {
   const grid = document.getElementById('gallery-grid');
   const specialGrid = document.getElementById('special-gallery');
@@ -998,6 +1042,7 @@ function renderGallery() {
   });
 }
 
+// Shows the modal with a Wordling's image, name, and bio
 function showWordlingBio(wordling) {
   const modal = document.getElementById('bio-modal');
   const img = document.getElementById('bio-img');
@@ -1012,13 +1057,99 @@ function showWordlingBio(wordling) {
   modal.style.display = 'flex';
 }
 
-// Close button
+// Closes the Wordling bio modal when the close button is clicked
 document.getElementById('bio-close').addEventListener('click', () => {
   const modal = document.getElementById('bio-modal');
   modal.classList.add('hidden');
   modal.style.display = 'none';
 });
 
+// ======================
+// 📈 PROGRESS TRACKING
+// ======================
+// Tracks the player's collection progress, milestone status, and theme unlocks.
+// Updates the progress bar, banner messages, and unlock notifications.
+//
+// Includes:
+// - updateProgressBar()
+// - showCollectionBanner()
+// - checkThemeUnlocks()
+
+// Updates the main progress bar to reflect total Wordlings found
+function updateProgressBar() {
+  const total = wordlings.filter(w => !w.isHidden).length; // excludes hidden/milestone Wordlings
+  const found = [...foundWordlings].filter(id =>
+    wordlings.some(w => w.id === id && !w.isHidden)
+  ).length;
+
+  const percent = Math.round((found / total) * 100);
+
+  document.getElementById('progress-count').textContent = found;
+  document.getElementById('progress-total').textContent = total;
+  document.getElementById('progress-fill').style.width = `${percent}%`;
+}
+
+// Displays a banner showing how many Wordlings have been found for the current theme
+function showCollectionBanner() {
+  const banner = document.getElementById('collection-banner');
+  if (!banner) return;
+
+  const wordlistSelect = document.getElementById('wordlist-select');
+  if (!wordlistSelect) return;
+  
+  const selectedValue = wordlistSelect.value;
+  const currentWordlist = wordLists[selectedValue];
+
+  if (!currentWordlist || !currentWordlist.wordlings) {
+    banner.style.display = 'none';
+    return;
+  }
+
+  const themeWordlings = currentWordlist.wordlings;
+  const unlockedCount = themeWordlings.filter(id => foundWordlings.has(id)).length;
+
+  if (unlockedCount === themeWordlings.length) {
+    banner.textContent = `✅ You've found all Wordlings for this puzzle!`;
+    banner.classList.add('sparkle'); // optional extra flair
+  } else {
+    const remaining = themeWordlings.length - unlockedCount;
+    banner.textContent = `🌟 ${remaining} Wordlings still hiding in this theme!`;
+    banner.classList.remove('sparkle');
+  }
+
+  banner.style.display = 'block';
+}
+
+// Unlocks new themes once all Wordlings from that theme are found
+function checkThemeUnlocks() {
+  const themes = new Set(wordlings.filter(w => w.theme).map(w => w.theme));
+
+  for (let theme of themes) {
+    const themedWordlings = wordlings.filter(w => w.theme === theme);
+    const allFound = themedWordlings.every(w => foundWordlings.has(w.id));
+
+    if (allFound && !unlockedThemes.has(theme)) {
+      unlockedThemes.add(theme);
+      showMilestonePopup(`🎉 Theme Unlocked: ${theme}`);
+      updateThemePicker();
+    }
+  }
+}
+
+// ======================
+// 🌈 THEME PICKER
+// ======================
+// Handles theme selection, preview rendering, and applying unlocked visual themes.
+// Themes are unlocked by collecting all Wordlings in a category.
+//
+// Includes:
+// - updateThemePicker()
+// - renderThemePreview()
+// - applyActiveTheme()
+// - setTheme()
+// - toggleTheme()
+
+// Shows and updates the theme picker UI based on unlocked themes
 function updateThemePicker() {
   const picker = document.getElementById('theme-picker');
   picker.style.display = 'block'; // Always show
@@ -1028,6 +1159,7 @@ function updateThemePicker() {
   renderThemePreview();
 }
 
+// Renders the current theme preview (image + label)
 function renderThemePreview() {
   const current = themeOrder[currentThemeIndex];
   const image = document.getElementById('theme-title-image');
@@ -1047,6 +1179,7 @@ function renderThemePreview() {
   applyActiveTheme();
 }
 
+// Applies the active theme's visual styling to the grid
 function applyActiveTheme() {
 	console.log('Applying theme:', activeTheme);
 
@@ -1064,22 +1197,34 @@ function applyActiveTheme() {
   }
 }
 
-function checkThemeUnlocks() {
-  const themes = new Set(wordlings.filter(w => w.theme).map(w => w.theme));
-
-  for (let theme of themes) {
-    const themedWordlings = wordlings.filter(w => w.theme === theme);
-    const allFound = themedWordlings.every(w => foundWordlings.has(w.id));
-
-    if (allFound && !unlockedThemes.has(theme)) {
-      unlockedThemes.add(theme);
-      showMilestonePopup(`🎉 Theme Unlocked: ${theme}`);
-      updateThemePicker();
-    }
-  }
+// 🌙 Sets the global light/dark mode
+function setTheme(mode) {
+  document.body.setAttribute('data-theme', mode);
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (toggleBtn) toggleBtn.textContent = mode === 'dark' ? '☀️' : '🌙';
 }
 
-// Run the game
+// Toggles between light and dark mode
+function toggleTheme() {
+  const current = document.body.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+// ======================
+// 🚀 GAME INITIALIZATION & EVENT LISTENERS
+// ======================
+// Sets up the game when the page loads and connects UI buttons to their handlers.
+// This is where everything gets wired together and launched.
+//
+// Includes:
+// - DOMContentLoaded event
+// - Theme toggle setup
+// - New game button
+// - Gallery open/close
+// - Theme picker arrows
+// - Grid layout adjustments
+
+// 🏁 Launch the game when the DOM is ready
 window.addEventListener('DOMContentLoaded', () => {
   // 🌓 Auto-detect from system
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
