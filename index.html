@@ -10,53 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
 
   <link rel="preload" as="image" href="images/wordling-title.png">
-  <link rel="prefetch" as="image" href="images/wordling1.png">
-  <link rel="prefetch" as="image" href="images/wordling2.png">
-  <link rel="prefetch" as="image" href="images/wordling3.png">
-  <link rel="prefetch" as="image" href="images/wordling4.png">
-  <link rel="prefetch" as="image" href="images/cozy-wordling1.png">
-  <link rel="prefetch" as="image" href="images/cozy-wordling2.png">
-  <link rel="prefetch" as="image" href="images/gem-wordling1.png">
-  <link rel="prefetch" as="image" href="images/gem-wordling2.png">
-  <link rel="prefetch" as="image" href="images/gem-wordling3.png">
-  <link rel="prefetch" as="image" href="images/gem-wordling4.png">
-  <link rel="prefetch" as="image" href="images/miku-wordling1.png">
-  <link rel="prefetch" as="image" href="images/miku-wordling2.png">
-  <link rel="prefetch" as="image" href="images/miku-wordling3.png">
-  <link rel="prefetch" as="image" href="images/cloudling.png">
-  <link rel="prefetch" as="image" href="images/ceciling.png">
-  <link rel="prefetch" as="image" href="images/dekuling.png">
-  <link rel="prefetch" as="image" href="images/gokuling.png">
-  <link rel="prefetch" as="image" href="images/moonling.png">
-  <link rel="prefetch" as="image" href="images/pokeling.png">
-  <link rel="prefetch" as="image" href="images/squalling.png">
-  <link rel="prefetch" as="image" href="images/terraling.png">
-  <link rel="prefetch" as="image" href="images/warrioroflightling.png">
-  <link rel="prefetch" as="image" href="images/zidaneling.png">
-  <link rel="prefetch" as="image" href="images/igneous-wordling.png">
-  <link rel="prefetch" as="image" href="images/sedimentary-wordling.png">
-  <link rel="prefetch" as="image" href="images/metamorphic-wordling.png">
-  <link rel="prefetch" as="image" href="images/dinosaur-wordling1.png">
-  <link rel="prefetch" as="image" href="images/dinosaur-wordling2.png">
-  <link rel="prefetch" as="image" href="images/dinosaur-wordling3.png">
-  <link rel="prefetch" as="image" href="images/dinosaur-wordling4.png">
-  <link rel="prefetch" as="image" href="images/space-wordling1.png">
-  <link rel="prefetch" as="image" href="images/space-wordling2.png">
-  <link rel="prefetch" as="image" href="images/space-wordling3.png">
-  <link rel="prefetch" as="image" href="images/space-wordling4.png">
-  <link rel="prefetch" as="image" href="images/abbadonling.png">
-  <link rel="prefetch" as="image" href="images/angronling.png">
-  <link rel="prefetch" as="image" href="images/celestineling.png">
-  <link rel="prefetch" as="image" href="images/fulgrimling.png">
-  <link rel="prefetch" as="image" href="images/hero-academia-wordling.png">
-  <link rel="prefetch" as="image" href="images/knuckling.png">
-  <link rel="prefetch" as="image" href="images/tame-animal-wordling1.png">
-  <link rel="prefetch" as="image" href="images/tame-animal-wordling2.png">
-  <link rel="prefetch" as="image" href="images/tame-animal-wordling3.png">
-  <link rel="prefetch" as="image" href="images/tame-animal-wordling4.png">
-  <link rel="prefetch" as="image" href="images/warhammer-40k-wordling1.png">
-  <link rel="prefetch" as="image" href="images/warhammer-40k-wordling2.png">
-  <link rel="prefetch" as="image" href="images/warhammer-40k-wordling3.png">
   
   <title>Wordsearch Puzzle</title>
 </head>
@@ -64,151 +17,160 @@
 <body>
     <div id="wordsearch-app">
 
-        <div id="settings" style="text-align: right; margin: 10px;">
-          <button id="theme-toggle" title="Toggle light/dark mode">🌙</button>
-        </div>
-      
-        <div id="wordling-header">
-          <div id="game-title">
-            <img src="images/wordling-title.png" alt="Wordling Search Logo" />
-          </div>
-        </div>
-    
-        <div id="controls">
-            <label for="size-select">Grid Size:</label>
-            <select id="size-select">
-                <option value="8">8×8</option>
-                <option value="10" selected>10×10</option>
-                <option value="12">12×12</option>
-                <option value="16">16x16</option>
-            </select>
+      <div id="main-layout">
+        <div id="game-column">
 
-          <div id="wordlist-wrapper" style="position: relative;">
-            <label for="wordlist-select" style="margin-left: 10px;">Word List:</label>
-            <select id="wordlist-select">
-                <optgroup label="🐾 Animals">
-                  <option value="domesticAnimals">🐰 Domestic Animals</option>
-                  <option value="zooAnimals">🐯 Zoo Animals</option>
-                </optgroup>
-                <optgroup label="🚀 Astronomy">
-                  <option value="space">⭐ Space</option>
-                </optgroup>
-                <optgroup label="🌍 Current Events">
-                  <option value="march2025">📅 March 2025</option>
-                </optgroup>
-                <optgroup label="🍎 Food">
-                  <option value="fruits">🍓 Fruits</option>
-                </optgroup>
-                <optgroup label="🪨 Geology">
-                  <option value="gemstones">💎 Gemstones</option>
-                  <option value="igneousRocks">🌋 Igneous Rocks</option>
-                  <option value="metamorphicRocks">🪨 Metamorphic Rocks</option>
-                  <option value="sedimentaryRocks">⌛ Sedimentary Rocks</option>
-                </optgroup>
-                <optgroup label="🎵 Music">
-                  <option value="miku">🌟 Hatsune Miku</option>
-                  <option value="mikusongs">🎤 Hatsune Miku Songs</option>
-                </optgroup>
-                <optgroup label="📜 Other">
-                  <option value="cozy">🔥 Cozy Words</option>
-                </optgroup>
-                <optgroup label="🦴 Paleontology">
-                  <option value="cretaceousDinosaurs">🦖 Cretaceous Dinosaurs</option>
-                  <option value="jurassicDinosaurs">🦕 Jurassic Dinosaurs</option>
-                  <option value="popularDinosaurs">✨ Popular Dinosaurs</option>
-                  <option value="triassicDinosaurs">🦴 Triassic Dinosaurs</option>
-                </optgroup>
-                <optgroup label="📺 Pop Culture">
-                  <option value="warhammerfortyksetting">⚔️ Warhammer 40k</option>
-                </optgroup>
-            </select>
+          <div id="word-list"></div>
+          <div id="hidden-word" style="margin-top: 10px; font-style: italic;">
+              <strong>Hidden Word:</strong> <span id="hidden-word-value">(still hiding...)</span>
           </div>
-    
-          <button id="new-game-btn" style="margin-left: 10px;">New Puzzle</button>
-        </div>
-    
-        <div id="word-list"></div>
-        <div id="hidden-word" style="margin-top: 10px; font-style: italic;">
-            <strong>Hidden Word:</strong> <span id="hidden-word-value">(still hiding...)</span>
+
+          <div id="grid-shell">
+            <div id="grid-container" style="position: relative; display: inline-block;">
+                <div id="grid"></div>
+                <div id="congrats-overlay" style="display: none;">
+                    🌟 Puzzle Complete! 🌟
+                </div>
+                <div id="interaction-blocker"></div>
+            </div>
+          </div>
+
+          <div id="collection-banner" class="hint-text" style="display: none; margin-top: 10px;"></div>
+
         </div>
 
-        <div id="grid-shell">
-          <div id="grid-container" style="position: relative; display: inline-block;">
-              <div id="grid"></div>
-              <div id="congrats-overlay" style="display: none;">
-                  🌟 Puzzle Complete! 🌟
-              </div>
-              <div id="interaction-blocker"></div>
-          </div>
-        </div>
-
-        <div id="collection-banner" class="hint-text" style="display: none; margin-top: 10px;"></div>
+         <div id="sidebar-column">
         
-        <div id="puzzle-fact"></div>
-
-        <div id="wordling-row" style="margin-top: 20px;">
-          <p id="army-empty" class="hint-text">You haven't found any wordlings yet...</p>
-        </div>
+            <div id="settings" style="text-align: right; margin: 10px;">
+              <button id="theme-toggle" title="Toggle light/dark mode">🌙</button>
+            </div>
+        
+            <div id="wordling-header">
+              <div id="game-title">
+                <img src="images/wordling-title.png" alt="Wordling Search Logo" />
+              </div>
+            </div>
       
-        <div id="special-section">
-          <h3>✨ Special Wordlings ✨</h3>
-          <div id="special-wordling-row">
-            <p id="special-empty" class="hint-text">Find 5 wordlings to unlock a Cosplay wordling!</p>
+            <div id="controls">
+                <label for="size-select">Grid Size:</label>
+                <select id="size-select">
+                    <option value="8">8×8</option>
+                    <option value="10" selected>10×10</option>
+                    <option value="12">12×12</option>
+                    <option value="16">16x16</option>
+                </select>
+  
+              <div id="wordlist-wrapper" style="position: relative;">
+                <label for="wordlist-select" style="margin-left: 10px;">Word List:</label>
+                <select id="wordlist-select">
+                    <optgroup label="🐾 Animals">
+                      <option value="domesticAnimals">🐰 Domestic Animals</option>
+                      <option value="zooAnimals">🐯 Zoo Animals</option>
+                    </optgroup>
+                    <optgroup label="🚀 Astronomy">
+                      <option value="space">⭐ Space</option>
+                    </optgroup>
+                    <optgroup label="🌍 Current Events">
+                      <option value="march2025">📅 March 2025</option>
+                    </optgroup>
+                    <optgroup label="🍎 Food">
+                      <option value="fruits">🍓 Fruits</option>
+                    </optgroup>
+                    <optgroup label="🪨 Geology">
+                      <option value="gemstones">💎 Gemstones</option>
+                      <option value="igneousRocks">🌋 Igneous Rocks</option>
+                      <option value="metamorphicRocks">🪨 Metamorphic Rocks</option>
+                      <option value="sedimentaryRocks">⌛ Sedimentary Rocks</option>
+                    </optgroup>
+                    <optgroup label="🎵 Music">
+                      <option value="miku">🌟 Hatsune Miku</option>
+                      <option value="mikusongs">🎤 Hatsune Miku Songs</option>
+                    </optgroup>
+                    <optgroup label="📜 Other">
+                      <option value="cozy">🔥 Cozy Words</option>
+                    </optgroup>
+                    <optgroup label="🦴 Paleontology">
+                      <option value="cretaceousDinosaurs">🦖 Cretaceous Dinosaurs</option>
+                      <option value="jurassicDinosaurs">🦕 Jurassic Dinosaurs</option>
+                      <option value="popularDinosaurs">✨ Popular Dinosaurs</option>
+                      <option value="triassicDinosaurs">🦴 Triassic Dinosaurs</option>
+                    </optgroup>
+                    <optgroup label="📺 Pop Culture">
+                      <option value="warhammerfortyksetting">⚔️ Warhammer 40k</option>
+                    </optgroup>
+                </select>
+              </div>
+      
+              <button id="new-game-btn" style="margin-left: 10px;">New Puzzle</button>
+            </div>
+          
+          <div id="puzzle-fact"></div>
+  
+          <div id="wordling-row" style="margin-top: 20px;">
+            <p id="army-empty" class="hint-text">You haven't found any wordlings yet...</p>
+          </div>
+        
+          <div id="special-section">
+            <h3>✨ Special Wordlings ✨</h3>
+            <div id="special-wordling-row">
+              <p id="special-empty" class="hint-text">Find 5 wordlings to unlock a Cosplay wordling!</p>
+            </div>
+          </div>
+        
+          <div id="korok-stats">
+              🌿 Wordlings found: <span id="korok-count">0</span>
+              <button id="open-gallery" title="View Wordlings">📖</button>
+          </div>
+  
+        <div id="wordling-gallery" class="modal hidden">
+          <div class="modal-content">
+            <h2>🌿 Wordling Gallery</h2>
+            <div id="gallery-grid" class="gallery-grid"></div>
+        
+            <hr class="divider">
+  
+            <div id="theme-gallery"></div>
+  
+            <hr class="divider">
+        
+            <h3 class="cosplay-heading">✨ Special Wordlings ✨</h3>
+            <div id="special-gallery" class="gallery-grid"></div>
+        
+            <button id="close-gallery">Close</button>
           </div>
         </div>
-      
-        <div id="korok-stats">
-            🌿 Wordlings found: <span id="korok-count">0</span>
-            <button id="open-gallery" title="View Wordlings">📖</button>
-        </div>
-
-      <div id="wordling-gallery" class="modal hidden">
-        <div class="modal-content">
-          <h2>🌿 Wordling Gallery</h2>
-          <div id="gallery-grid" class="gallery-grid"></div>
-      
-          <hr class="divider">
-
-          <div id="theme-gallery"></div>
-
-          <hr class="divider">
-      
-          <h3 class="cosplay-heading">✨ Special Wordlings ✨</h3>
-          <div id="special-gallery" class="gallery-grid"></div>
-      
-          <button id="close-gallery">Close</button>
-        </div>
-      </div>
-
-      <div id="bio-modal" class="hidden">
-        <div id="bio-content">
-          <img id="bio-img" src="" alt="Wordling Image">
-          <h3 id="bio-name"></h3>
-          <p id="bio-text"></p>
-          <button id="bio-close">Close</button>
-        </div>
-      </div>
-
-      <div id="progress-container">
-        <div id="progress-label">Unique Wordlings Found: <span id="progress-count">0</span> / <span id="progress-total">0</span></div>
-        <div id="progress-bar">
-          <div id="progress-fill"></div>
-        </div>
-      </div>
-
-      <div id="theme-picker" style="display: none;">
-        <h3>Choose Your Theme</h3>
-        <div id="theme-carousel">
-          <button id="theme-left" class="theme-arrow">←</button>
-          <div id="theme-display">
-            <img id="theme-title-image" src="" alt="Theme Preview">
-            <div id="theme-label">Default</div>
+  
+        <div id="bio-modal" class="hidden">
+          <div id="bio-content">
+            <img id="bio-img" src="" alt="Wordling Image">
+            <h3 id="bio-name"></h3>
+            <p id="bio-text"></p>
+            <button id="bio-close">Close</button>
           </div>
-          <button id="theme-right" class="theme-arrow">→</button>
         </div>
-      </div>
-      
+  
+        <div id="progress-container">
+          <div id="progress-label">Unique Wordlings Found: <span id="progress-count">0</span> / <span id="progress-total">0</span></div>
+          <div id="progress-bar">
+            <div id="progress-fill"></div>
+          </div>
+        </div>
+  
+        <div id="theme-picker" style="display: none;">
+          <h3>Choose Your Theme</h3>
+          <div id="theme-carousel">
+            <button id="theme-left" class="theme-arrow">←</button>
+            <div id="theme-display">
+              <img id="theme-title-image" src="" alt="Theme Preview">
+              <div id="theme-label">Default</div>
+            </div>
+            <button id="theme-right" class="theme-arrow">→</button>
+          </div>
+        </div>
+     </div>
     </div>
+      
+  </div>
   
   </body>
 </html>
