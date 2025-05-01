@@ -73,16 +73,16 @@
   display: flex;
   flex-direction: row;
   gap: 40px;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: nowrap; /* prevent wrap on large screens */
 }
 
 /* Grid on right now, centered */
 #grid-column {
-  flex-shrink: 0;
-  flex-grow: 0;
-  text-align: center;
+  flex: 0 0 400px;
+  display: flex;
+  justify-content: center;
 }
 
 #grid-container {
@@ -92,8 +92,8 @@
 
 /* Info panel on left */
 #info-column {
-  max-width: 500px;
-  flex-grow: 1;
+  flex: 1;
+  min-width: 300px;
 }
 
 #controls {
