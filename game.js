@@ -1017,25 +1017,36 @@ function updateThemePicker() {
   
   options.innerHTML = '';
 
-  if (unlockedThemes.size > 0) {
-    picker.style.display = 'block';
-  } else {
-    picker.style.display = 'none';
-  }
+  picker.style.display = 'block'; // Always show the picker
 
-  unlockedThemes.forEach(themeName => {
+  const defaultBtn = document.createElement('button');
+  defaultBtn.className = 'theme-choice-btn';
+  defaultBtn.innerHTML = `<span>Default</span>`;
+  defaultBtn.addEventListener('click', () => {
+    activeTheme = null;
+    applyActiveTheme();
+  });
+  options.appendChild(defaultBtn);
+
+  Object.keys(themeRewards).forEach(themeName => {
     const reward = themeRewards[themeName];
     if (!reward) return;
-
+  
     const btn = document.createElement('button');
     btn.className = 'theme-choice-btn';
     btn.innerHTML = `<img src="${reward.titleImage}" alt="${themeName}" style="height: 50px;">`;
-
-    btn.addEventListener('click', () => {
-      activeTheme = themeName;
-      applyActiveTheme();
-    });
-
+  
+    if (unlockedThemes.has(themeName)) {
+      btn.addEventListener('click', () => {
+        activeTheme = themeName;
+        applyActiveTheme();
+      });
+    } else {
+      btn.disabled = true;
+      btn.title = 'Unlock all Wordlings in this theme to use this!';
+      btn.classList.add('locked-theme');
+    }
+  
     options.appendChild(btn);
   });
 }
