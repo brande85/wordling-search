@@ -64,18 +64,11 @@
 
 #grid-column {
   flex-shrink: 0;
-  max-width: 100%;
-}
-
-#grid-container {
-  width: auto;
-  margin: 0 auto;
 }
 
 #info-column {
+  max-width: 500px;
   flex: 1;
-  min-width: 300px;
-  max-width: 600px;
 }
 
 #controls {
@@ -663,13 +656,9 @@ body[data-theme="dark"] #bio-content {
     align-items: center;
   }
 
-  #grid-column,
-  #info-column {
+  #info-column,
+  #grid-column {
     width: 100%;
-  }
-
-  #grid-container {
-    transform: scale(0.9); /* optional */
   }
 }
 
