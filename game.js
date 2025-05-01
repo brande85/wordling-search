@@ -147,6 +147,8 @@ const shouldAvoidClumping = gridSize >= 10;
 let currentListKey = '';
 let unlockedThemes = new Set();
 let activeTheme = null; // No active theme at first
+let themeOrder = ['Default']; // Will include unlocked theme names like 'Space'
+let currentThemeIndex = 0;
 
 function createEmptyGrid() {
   for (let i = 0; i < gridSize; i++) {
@@ -1016,42 +1018,30 @@ document.getElementById('bio-close').addEventListener('click', () => {
 
 function updateThemePicker() {
   const picker = document.getElementById('theme-picker');
-  const options = document.getElementById('theme-options');
-  
-  options.innerHTML = '';
+  picker.style.display = 'block'; // Always show
 
-  picker.style.display = 'block'; // Always show the picker
+  themeOrder = ['Default', ...Object.keys(themeRewards).filter(t => unlockedThemes.has(t))];
+  currentThemeIndex = Math.max(0, themeOrder.indexOf(activeTheme || 'Default'));
+  renderThemePreview();
+}
 
-  const defaultBtn = document.createElement('button');
-  defaultBtn.className = 'theme-choice-btn';
-  defaultBtn.innerHTML = `<span>Default</span>`;
-  defaultBtn.addEventListener('click', () => {
+function renderThemePreview() {
+  const current = themeOrder[currentThemeIndex];
+  const image = document.getElementById('theme-title-image');
+  const label = document.getElementById('theme-label');
+
+  if (current === 'Default') {
+    image.src = 'images/wordling-title.png'; // Create or use a default title image
+    label.textContent = 'Default';
     activeTheme = null;
-    applyActiveTheme();
-  });
-  options.appendChild(defaultBtn);
+  } else {
+    const reward = themeRewards[current];
+    image.src = reward.titleImage;
+    label.textContent = current;
+    activeTheme = current;
+  }
 
-  Object.keys(themeRewards).forEach(themeName => {
-    const reward = themeRewards[themeName];
-    if (!reward) return;
-  
-    const btn = document.createElement('button');
-    btn.className = 'theme-choice-btn';
-    btn.innerHTML = `<img src="${reward.titleImage}" alt="${themeName}" style="height: 50px;">`;
-  
-    if (unlockedThemes.has(themeName)) {
-      btn.addEventListener('click', () => {
-        activeTheme = themeName;
-        applyActiveTheme();
-      });
-    } else {
-      btn.disabled = true;
-      btn.title = 'Unlock all Wordlings in this theme to use this!';
-      btn.classList.add('locked-theme');
-    }
-  
-    options.appendChild(btn);
-  });
+  applyActiveTheme();
 }
 
 function applyActiveTheme() {
@@ -1128,6 +1118,16 @@ window.addEventListener('DOMContentLoaded', () => {
       galleryModal.classList.add('hidden');
     }
   });
+
+  document.getElementById('theme-left').addEventListener('click', () => {
+  currentThemeIndex = (currentThemeIndex - 1 + themeOrder.length) % themeOrder.length;
+  renderThemePreview();
+});
+
+document.getElementById('theme-right').addEventListener('click', () => {
+  currentThemeIndex = (currentThemeIndex + 1) % themeOrder.length;
+  renderThemePreview();
+});
 	
   document.getElementById('close-gallery').addEventListener('click', () => {
     document.getElementById('wordling-gallery').classList.add('hidden');
