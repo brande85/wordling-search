@@ -710,6 +710,7 @@ function unlockCosplayWordling() {
 renderGallery();
 updateProgressBar();
 checkMilestoneUnlocks();
+checkThemeUnlocks();
 }
 
 function checkMilestoneUnlocks() {
@@ -756,6 +757,7 @@ function checkMilestoneUnlocks() {
   }
 
   // Optionally update UI after unlock
+	checkThemeUnlocks();
   updateProgressBar();
   renderGallery();
 }
@@ -845,6 +847,7 @@ function moveLabelWordlingToRow() {
     updateProgressBar();
     checkMilestoneUnlocks();
   }
+	checkThemeUnlocks();
 
   // Clear the reference after moving
   floatingWordling = null;
@@ -1067,6 +1070,21 @@ function applyActiveTheme() {
       allLetters.forEach(l => {
         l.classList.add(reward.fontClass);
       });
+    }
+  }
+}
+
+function checkThemeUnlocks() {
+  const themes = new Set(wordlings.filter(w => w.theme).map(w => w.theme));
+
+  for (let theme of themes) {
+    const themedWordlings = wordlings.filter(w => w.theme === theme);
+    const allFound = themedWordlings.every(w => foundWordlings.has(w.id));
+
+    if (allFound && !unlockedThemes.has(theme)) {
+      unlockedThemes.add(theme);
+      showMilestonePopup(`🎉 Theme Unlocked: ${theme}`);
+      updateThemePicker();
     }
   }
 }
