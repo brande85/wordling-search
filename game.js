@@ -108,7 +108,7 @@ const wordlingThemes = {
 
 const themeRewards = {
   '🐾 Animals': {
-    titleImage: 'images/wordling-title.png',
+    titleImage: 'images/title-animals2.png',
     backgroundClass: 'theme-animals',
     fontClass: 'theme-animals-font'
   },
@@ -1117,4 +1117,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // ✅ Run the game at startup
   generatePuzzle();
+	updateThemePicker();
 });
