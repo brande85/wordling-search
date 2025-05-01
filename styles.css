@@ -55,6 +55,11 @@
 
 /* Outer centered app box */
 #app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-height: 100vh; /* ensures it grows to full screen height */
   max-width: 1100px;
   margin: 20px auto;
   padding: 20px;
@@ -63,29 +68,29 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-#main-layout > div:not(:last-child) {
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  padding-right: 20px;
-}
-
 /* Side-by-side main layout */
 #main-layout {
   display: flex;
   flex-direction: row;
   gap: 40px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch; /* <- Let both columns stretch equally */
   flex-wrap: nowrap; /* prevent wrap on large screens */
+}
+
+#main-layout > div:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding-right: 20px;
 }
 
 /* Grid on right now, centered */
 #grid-column {
-  flex: 0 0 auto;
+  flex: 1;
   min-width: 400px;
   display: flex;
   flex-direction: column;  /* ✅ force vertical stacking */
   align-items: center;     /* ✅ center the contents horizontally */
-  justify-content: center;
+  justify-content: center; /* ✅ THIS centers vertically */
 }
 
 #grid-container {
