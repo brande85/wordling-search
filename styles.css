@@ -1,57 +1,28 @@
- body {
+/* ============================ */
+/* 🎨 BASE STYLES & THEME SETUP */
+/* ============================ */
+body {
   font-family: sans-serif;
   text-align: center;
   padding: 20px;
 }
 
-#grid {
-  display: grid;
-  grid-gap: 2px;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.cell {
-  width: 30px;
-  height: 30px;
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Toggle button styling */
+#theme-toggle {
+  font-size: 1.2em;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  font-weight: bold;
-  user-select: none;
-  box-sizing: border-box;
-  border: 1px solid transparent; /* default border in light mode */
+  transition: transform 0.2s;
 }
 
-.selected {
-  background-color: #fff5b1;
-  box-shadow: inset 0 0 4px #f4d06f;
+#theme-toggle:hover {
+  transform: scale(1.1);
 }
 
-.found {
-  background-color: #90ee90;
-}
-
-#word-list {
-  margin-bottom: 10px;
-}
-
-.found-word {
-  text-decoration: line-through;
-  color: gray;
-}
-
-#wordsearch-app {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 4px solid #ccc;
-    border-radius: 16px;
-    background-color: #fafafa;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+/* ==================== */
+/* 📱 LAYOUT CONTAINERS */
+/* ==================== */
 
 /* Outer centered app box */
 #app-container {
@@ -82,6 +53,12 @@
   padding-right: 20px;
 }
 
+/* Info panel on left */
+#info-column {
+  flex: 1;
+  min-width: 400px;
+}
+
 /* Grid on right now, centered */
 #grid-column {
   flex: 1;
@@ -92,16 +69,14 @@
   justify-content: center; /* ✅ THIS centers vertically */
 }
 
-#grid-container {
-  width: auto;
-  max-width: 100%;
-  overflow-x: auto;
-}
-
-/* Info panel on left */
-#info-column {
-  flex: 1;
-  min-width: 400px;
+#wordsearch-app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 4px solid #ccc;
+    border-radius: 16px;
+    background-color: #fafafa;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 #controls {
@@ -112,6 +87,71 @@
   flex-wrap: wrap;
   text-align: center;
   margin-bottom: 10px;
+}
+
+#settings {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#game-title img {
+  height: 200px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#wordsearch-app h1 {
+    font-family: 'Segoe UI', 'Quicksand', 'Comic Neue', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ab84d8; /* soft purple */
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ====================== */
+/* 🔡 GRID & CELL STYLING */
+/* ====================== */
+#grid {
+  display: grid;
+  grid-gap: 2px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.grid-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  box-sizing: border-box;
+  border: 1px solid transparent; /* default border in light mode */
+}
+
+.selected {
+  background-color: #fff5b1;
+  box-shadow: inset 0 0 4px #f4d06f;
+}
+
+.found {
+  background-color: #90ee90;
+}
+
+.found-word {
+  text-decoration: line-through;
+  color: gray;
 }
 
 #grid-shell {
@@ -129,29 +169,9 @@
   padding: 8px;
   flex-wrap: wrap;
   position: relative;
-}
-
-#game-title img {
-  height: 200px;
   width: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-#puzzle-fact {
-  margin-top: 20px;
-  padding: 14px 16px;
-  border-radius: 12px;
-  background: linear-gradient(to bottom right, #fffdf6, #fdf6e3);
-  color: #5e4a32;
-  font-family: 'Coming Soon', cursive;
-  font-size: 1.05em;
-  font-style: italic;
-  line-height: 1.5;
-  border: 2px dotted #dbc196;
-  box-shadow: 0 2px 6px rgba(180, 160, 100, 0.1);
-  position: relative;
-  transition: transform 0.2s ease;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 #congrats-overlay {
@@ -184,30 +204,39 @@
   display: none;
 }
 
-.grid-disabled {
-  opacity: 0.5;
-  pointer-events: none;
+/* ================================== */
+/* 📋 WORD LIST, FACTS, & HIDDEN WORD */
+/* ================================== */
+
+#word-list {
+  margin-bottom: 10px;
 }
 
-@keyframes pop {
-    0% { transform: scale(0.6); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+#puzzle-fact {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom right, #fffdf6, #fdf6e3);
+  color: #5e4a32;
+  font-family: 'Coming Soon', cursive;
+  font-size: 1.05em;
+  font-style: italic;
+  line-height: 1.5;
+  border: 2px dotted #dbc196;
+  box-shadow: 0 2px 6px rgba(180, 160, 100, 0.1);
+  position: relative;
+  transition: transform 0.2s ease;
 }
 
-#wordsearch-app h1 {
-    font-family: 'Segoe UI', 'Quicksand', 'Comic Neue', sans-serif;
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #ab84d8; /* soft purple */
-    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
-    margin-bottom: 20px;
+#hidden-word {
     text-align: center;
+    color: #444;
+    font-size: 1em;
 }
 
-@keyframes shine {
-    0% { background-position: 0% }
-    100% { background-position: 100% }
-}
+/* ================= */
+/* 🌿 WORDLING ROWS  */
+/* ================= */
 
 #wordling-header {
   display: flex;
@@ -272,13 +301,6 @@
   font-weight: bold;
 }
 
-
-#hidden-word {
-    text-align: center;
-    color: #444;
-    font-size: 1em;
-}
-
 .hint-text {
   font-family: 'Coming Soon', cursive;
   font-size: 0.9em;
@@ -288,86 +310,9 @@
   opacity: 0.8;
 }
 
-@keyframes sparkle {
-  0% {
-    transform: scale(1);
-    text-shadow: none;
-  }
-  25% {
-    transform: scale(1.1);
-    text-shadow: 0 0 6px #fff8dc, 0 0 10px #b3f4d6;
-  }
-  50% {
-    transform: scale(1);
-    text-shadow: none;
-  }
-  75% {
-    transform: scale(1.05);
-    text-shadow: 0 0 4px #fff8dc;
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: none;
-  }
-}
-
-.sparkle {
-  animation: sparkle 0.8s ease-in-out;
-}
-
-.wordling-pop {
-  position: absolute;
-  width: 40px;
-  height: auto;
-  animation: wordling-pop 1.2s ease-out;
-  z-index: 20;
-  pointer-events: none;
-}
-
-@keyframes wordling-pop {
-  0%   { transform: scale(0.2); opacity: 0; }
-  40%  { transform: scale(1.2); opacity: 1; }
-  80%  { transform: scale(1); }
-  100% { opacity: 0; transform: scale(0.9); }
-}
-
-body, .cell, #wordsearch-app {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#settings {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-#progress-container {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-#progress-label {
-  margin-bottom: 4px;
-}
-
-#progress-bar {
-  width: 80%;
-  max-width: 400px;
-  height: 16px;
-  background-color: #ddd;
-  border-radius: 8px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}
-
-#progress-fill {
-  height: 100%;
-  background-color: #4CAF50;
-  width: 0%;
-  transition: width 0.4s ease;
-  border-radius: 8px 0 0 8px;
-}
+/* ======================== */
+/* 🖼️ GALLERY & BIO MODALS  */
+/* ======================== */
 
 /* Modal styling */
 .modal {
@@ -446,73 +391,12 @@ body, .cell, #wordsearch-app {
   cursor: pointer;
 }
 
-.milestone-popup {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ffe680;
-  color: #222;
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-weight: bold;
-  z-index: 1000;
-  transition: opacity 0.5s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.fade-out {
-  opacity: 0;
-}
-
 .wordling-tag {
   font-size: 0.7rem;
   color: #888;
   margin-top: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-#theme-carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-#theme-title-image {
-  height: 64px;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  background: white;
-}
-
-#theme-label {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 4px;
-}
-
-.theme-arrow {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Toggle button styling */
-#theme-toggle {
-  font-size: 1.2em;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-#theme-toggle:hover {
-  transform: scale(1.1);
 }
 
 #bio-modal {
@@ -554,8 +438,70 @@ body, .cell, #wordsearch-app {
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
+/* ===================== */
+/* 📊 PROGRESS TRACKING  */
+/* ===================== */
+
+#progress-container {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#progress-label {
+  margin-bottom: 4px;
+}
+
+#progress-bar {
+  width: 80%;
+  max-width: 400px;
+  height: 16px;
+  background-color: #ddd;
+  border-radius: 8px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+#progress-fill {
+  height: 100%;
+  background-color: #4CAF50;
+  width: 0%;
+  transition: width 0.4s ease;
+  border-radius: 8px 0 0 8px;
+}
+
+/* ================ */
+/* 🎨 THEME PICKER  */
+/* ================ */
+
+#theme-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+#theme-title-image {
+  height: 64px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background: white;
+}
+
+#theme-label {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.theme-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* REWARD THEMES */
@@ -582,6 +528,94 @@ body, .cell, #wordsearch-app {
   letter-spacing: 1px;
   text-shadow: 0 0 4px #00ffff44;
 }
+
+/* =============================== */
+/* 🎭 VISUAL EFFECTS & ANIMATIONS  */
+/* =============================== */
+
+@keyframes pop {
+    0% { transform: scale(0.6); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shine {
+    0% { background-position: 0% }
+    100% { background-position: 100% }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  25% {
+    transform: scale(1.1);
+    text-shadow: 0 0 6px #fff8dc, 0 0 10px #b3f4d6;
+  }
+  50% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  75% {
+    transform: scale(1.05);
+    text-shadow: 0 0 4px #fff8dc;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+}
+
+.sparkle {
+  animation: sparkle 0.8s ease-in-out;
+}
+
+.wordling-pop {
+  position: absolute;
+  width: 40px;
+  height: auto;
+  animation: wordling-pop 1.2s ease-out;
+  z-index: 20;
+  pointer-events: none;
+}
+
+@keyframes wordling-pop {
+  0%   { transform: scale(0.2); opacity: 0; }
+  40%  { transform: scale(1.2); opacity: 1; }
+  80%  { transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+body, .cell, #wordsearch-app {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.milestone-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffe680;
+  color: #222;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ============================== */
+/* 🌗 LIGHT/DARK THEME OVERRIDES  */
+/* ============================== */
 
 /* Default (light) theme */
 body[data-theme='light'] {
@@ -682,6 +716,10 @@ body[data-theme="dark"] #bio-content {
   background: #222;
   color: #eee;
 }
+
+/* ================= */
+/* 📱 MEDIA QUERIES  */
+/* ================= */
 
 /* Mobile stacking */
 @media (max-width: 768px) {
