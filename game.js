@@ -274,7 +274,7 @@ function placeWord(word) {
 }
 
 // -- 🧪 Try placing words in the grid
-function tryPlacingWords(wordList, maxWords = Math.min(Math.floor((gridSize * gridSize) / 8), 20) {
+function tryPlacingWords(wordList, maxWords = Math.min(Math.floor((gridSize * gridSize) / 8), 20)) {
   console.log(`📏 Grid: ${gridSize}×${gridSize} → Max words: ${maxWords}`);
   
   const placed = [];
