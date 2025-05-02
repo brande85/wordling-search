@@ -570,7 +570,7 @@ body, .cell, #wordsearch-app {
 }
 
 .theme-space {
-  background: url('images/bg-space.jpg') center center / cover no-repeat;
+  background: url('images/bg-space.png') center center / cover no-repeat;
   background-color: #0b1b2b;
 }
 
