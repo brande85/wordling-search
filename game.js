@@ -164,11 +164,7 @@ let floatingWordlingImage = null;
 // ======================
 // These helper functions support core logic or enhance visuals.
 // They don’t manage game state directly but are used across multiple systems.
-//
-// Includes:
-// - Array shuffling (shuffle)
-// - DOM parsing (getCellData)
-// - Visual helpers (getRandomPastel)
+
 
 // -- 🔀 Shuffle an array using Fisher-Yates
 function shuffle(array) {
@@ -210,11 +206,7 @@ function launchConfetti() {
 // ======================
 // These functions handle the creation, population, and rendering of the puzzle grid.
 // They control where letters go, how the grid is displayed, and how the word list appears.
-//
-// Includes:
-// - Grid creation and reset (createEmptyGrid, fillGrid, fillEmptyCells)
-// - Word placement logic (placeWord)
-// - UI rendering (renderGrid, renderWordList)
+
 
 // -- 📐 Create empty grid and DOM cell holders
 function createEmptyGrid() {
@@ -400,11 +392,7 @@ function renderGrid() {
 // ======================
 // These functions manage how players interact with the grid.
 // They track selections, handle mouse/touch events, and check for valid word matches.
-//
-// Includes:
-// - Selection tracking (selectCell, clearSelection)
-// - Mouse and touch input (handleClickSelection, handleTouchStart, etc.)
-// - Interaction setup and puzzle flow (generatePuzzle, setupInteraction)
+
 
 // -- 🧩 Generate a new puzzle grid
 function generatePuzzle() {
@@ -971,11 +959,7 @@ function showMilestonePopup(message) {
 // ======================
 // Controls the display and interactivity of the Wordling gallery and bio modal.
 // Handles filtering, unlocking, and modal toggling for collected Wordlings.
-//
-// Includes:
-// - renderGallery()
-// - showWordlingBio()
-// - bio-close event listener
+
 
 // Builds the full Wordling gallery, including standard, themed, and special Wordlings
 function renderGallery() {
@@ -1069,11 +1053,6 @@ document.getElementById('bio-close').addEventListener('click', () => {
 // ======================
 // Tracks the player's collection progress, milestone status, and theme unlocks.
 // Updates the progress bar, banner messages, and unlock notifications.
-//
-// Includes:
-// - updateProgressBar()
-// - showCollectionBanner()
-// - checkThemeUnlocks()
 
 // Updates the main progress bar to reflect total Wordlings found
 function updateProgressBar() {
@@ -1141,13 +1120,6 @@ function checkThemeUnlocks() {
 // ======================
 // Handles theme selection, preview rendering, and applying unlocked visual themes.
 // Themes are unlocked by collecting all Wordlings in a category.
-//
-// Includes:
-// - updateThemePicker()
-// - renderThemePreview()
-// - applyActiveTheme()
-// - setTheme()
-// - toggleTheme()
 
 // Shows and updates the theme picker UI based on unlocked themes
 function updateThemePicker() {
@@ -1215,14 +1187,6 @@ function toggleTheme() {
 // ======================
 // Sets up the game when the page loads and connects UI buttons to their handlers.
 // This is where everything gets wired together and launched.
-//
-// Includes:
-// - DOMContentLoaded event
-// - Theme toggle setup
-// - New game button
-// - Gallery open/close
-// - Theme picker arrows
-// - Grid layout adjustments
 
 // 🏁 Launch the game when the DOM is ready
 window.addEventListener('DOMContentLoaded', () => {
