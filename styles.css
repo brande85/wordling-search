@@ -695,42 +695,109 @@ body[data-theme='dark'] {
   color: #eee;
 }
 
-/* Apply dark gray to the main container inside the background */
+/* Dark Mode - Book Theme */
+body.dark #book-wrapper {
+  background: #111111;
+}
+
+body.dark #left-page,
+body.dark #right-page {
+  background: #1a1a1a;
+  color: #eaeaea;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Faux spine glow */
+body.dark #book-wrapper::before {
+  background: #444;
+}
+
+/* Puzzle Fact - glowing parchment style */
+body.dark .scroll-box {
+  background: #222;
+  color: #e0ddff;
+  border: 2px dashed #666;
+  box-shadow: 0 0 6px rgba(180, 160, 255, 0.1);
+}
+
+/* Word list text */
+body.dark #word-list {
+  color: #b3e5ff;
+}
+
+/* Grid styling */
+body.dark #grid .cell {
+  background: #000;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark .selected {
+  background-color: #ffeb3b;
+  color: #000;
+  box-shadow: inset 0 0 4px #f4d06f;
+}
+
+body.dark .found {
+  background-color: #8bc34a;
+}
+
+/* Hidden word text */
+body.dark #hidden-word {
+  color: #ffddee;
+}
+
+/* Progress bar */
+body.dark #progress-bar {
+  background: #333;
+}
+
+body.dark #progress-fill {
+  background: #a2ffb5;
+}
+
+/* Theme picker highlight */
+body.dark #theme-label {
+  color: #f5aaff;
+}
+
+/*
+
 body[data-theme='dark'] #wordsearch-app {
-  background-color: #222; /* or #1e1e1e for deeper tone */
+  background-color: #222; 
   border: 2px solid #444;
   border-radius: 12px;
   padding: 20px;
 }
 
-/* Optional: Invert game elements, buttons, cells, etc. */
+
 [data-theme='dark'] .cell {
   border-color: #555;
-  background-color: #111; /* grid cell itself */
+  background-color: #111; 
   color: #fff;
 }
 
-/* Make the grid container (outside the grid) match */
+
 body[data-theme='dark'] #grid-container {
-  background-color: #222; /* match the inside container */
+  background-color: #222; 
   padding: 10px;
   border-radius: 6px;
 }
 
 body[data-theme='dark'] #hidden-word {
-  color: #e0e0e0; /* light gray for better contrast */
+  color: #e0e0e0; 
 }
 
 body[data-theme='dark'] #hidden-word-value {
-  color: #eee; /* or something themed */
+  color: #eee; 
 }
 
 body[data-theme='dark'] .hint-text {
-  color: #aaa; /* or a cozy desaturated color */
+  color: #aaa; 
 }
 
 body[data-theme='dark'] #cosplay-section h3 {
-  color: #ddb66b; /* warm gold tone or your choice */
+  color: #ddb66b; 
 }
 
 body[data-theme='dark'] #cosplay-section {
@@ -781,7 +848,7 @@ body[data-theme="dark"] .wordling-tag {
 body[data-theme="dark"] #bio-content {
   background: #222;
   color: #eee;
-}
+} */
 
 /* ================= */
 /* 📱 MEDIA QUERIES  */
