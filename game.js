@@ -465,7 +465,7 @@ function generatePuzzle() {
 
   // 🧱 Build and fill grid
   createEmptyGrid();
-  words = tryPlacingWords(wordList, maxWords);
+  words = tryPlacingWords(wordList);
   fillEmptyCells();
   renderWordList();
   renderGrid();
