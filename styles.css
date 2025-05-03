@@ -761,6 +761,10 @@ body[data-theme="dark"] #theme-label {
   color: #f5aaff;
 }
 
+body[data-theme='dark'] .hint-text {
+  color: #aaa; 
+}
+
 /*
 
 body[data-theme='dark'] #wordsearch-app {
@@ -790,10 +794,6 @@ body[data-theme='dark'] #hidden-word {
 
 body[data-theme='dark'] #hidden-word-value {
   color: #eee; 
-}
-
-body[data-theme='dark'] .hint-text {
-  color: #aaa; 
 }
 
 body[data-theme='dark'] #cosplay-section h3 {
