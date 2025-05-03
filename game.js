@@ -378,6 +378,42 @@ function renderGrid() {
 		isMouseDown = false;
 		checkSelectedWord();
 	});
+
+  setupAutoscroll();
+}
+
+// 📜 Autoscroll on drag near top/bottom of grid
+function setupAutoscroll() {
+  const container = document.getElementById('grid-shell'); // Make sure this is your scrollable wrapper
+  let scrollSpeed = 10;
+  let scrollInterval = null;
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) {
+      clearInterval(scrollInterval);
+      return;
+    }
+
+    const containerRect = container.getBoundingClientRect();
+    const topThreshold = containerRect.top + 40;
+    const bottomThreshold = containerRect.bottom - 40;
+
+    clearInterval(scrollInterval); // Clear any previous scrolling
+
+    if (e.clientY < topThreshold) {
+      scrollInterval = setInterval(() => {
+        container.scrollTop -= scrollSpeed;
+      }, 30);
+    } else if (e.clientY > bottomThreshold) {
+      scrollInterval = setInterval(() => {
+        container.scrollTop += scrollSpeed;
+      }, 30);
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    clearInterval(scrollInterval); // Stop when mouse is up
+  });
 }
 
   // Updates the word list display panel with words to find
