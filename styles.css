@@ -35,7 +35,7 @@ body {
   padding: 30px;
   position: relative;
   gap: 20px;
-  height: 1200px; /* Or whatever fits 14x14 comfortably */
+  height: 1000px; /* Or whatever fits 14x14 comfortably */
   max-height: 90vh; /* Optional for responsiveness */
   overflow: hidden;
 }
@@ -49,6 +49,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  justify-content: flex-start;
+  height: 100%;
+  overflow: hidden; /* Prevent it from pushing the book taller */
 }
 
 #right-page {
@@ -245,8 +248,10 @@ body {
   overflow-x: auto;
   padding: 8px;
   max-width: 100vw;
-  max-height: 400px; /* Adjust as needed */
+  margin-top: auto;
+  max-height: 100%;
   overflow-y: auto;
+  flex-grow: 1;
 }
 
 #grid-shell::-webkit-scrollbar {
