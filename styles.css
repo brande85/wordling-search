@@ -696,24 +696,24 @@ body[data-theme='dark'] {
 }
 
 /* Dark Mode - Book Theme */
-body.dark #book-wrapper {
+body[data-theme="dark"] #book-wrapper {
   background: #111111;
 }
 
-body.dark #left-page,
-body.dark #right-page {
+body[data-theme="dark"] #left-page,
+body[data-theme="dark"] #right-page {
   background: #1a1a1a;
   color: #eaeaea;
   box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.05);
 }
 
 /* Faux spine glow */
-body.dark #book-wrapper::before {
+body[data-theme="dark"] #book-wrapper::before {
   background: #444;
 }
 
 /* Puzzle Fact - glowing parchment style */
-body.dark .scroll-box {
+body[data-theme="dark"] .scroll-box {
   background: #222;
   color: #e0ddff;
   border: 2px dashed #666;
@@ -721,43 +721,43 @@ body.dark .scroll-box {
 }
 
 /* Word list text */
-body.dark #word-list {
+body[data-theme="dark"] #word-list {
   color: #b3e5ff;
 }
 
 /* Grid styling */
-body.dark #grid .cell {
+body[data-theme="dark"] #grid .cell {
   background: #000;
   color: #ffffff;
   border: 1px solid #444;
 }
 
-body.dark .selected {
+body[data-theme="dark"] .selected {
   background-color: #ffeb3b;
   color: #000;
   box-shadow: inset 0 0 4px #f4d06f;
 }
 
-body.dark .found {
+body[data-theme="dark"] .found {
   background-color: #8bc34a;
 }
 
 /* Hidden word text */
-body.dark #hidden-word {
+body[data-theme="dark"] #hidden-word {
   color: #ffddee;
 }
 
 /* Progress bar */
-body.dark #progress-bar {
+body[data-theme="dark"] #progress-bar {
   background: #333;
 }
 
-body.dark #progress-fill {
+body[data-theme="dark"] #progress-fill {
   background: #a2ffb5;
 }
 
 /* Theme picker highlight */
-body.dark #theme-label {
+body[data-theme="dark"] #theme-label {
   color: #f5aaff;
 }
 
