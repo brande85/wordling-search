@@ -133,88 +133,90 @@
         </div>
   
         <div id="right-page">
+          <div id="page-inner">
             <!-- ============== -->
-          <!-- 💡 PUZZLE FACT -->
-          <!-- ============== -->
-          <div id="puzzle-fact"></div>
-  
-          
-          <!-- ====================== -->
-          <!-- 🌿 WORDLINGS (Standard) -->
-          <!-- ====================== -->
-          <div id="wordling-row" style="margin-top: 20px;" class="scroll-row">
-            <p id="army-empty" class="hint-text">You haven't found any wordlings yet...</p>
-          </div>
-  
-          <!-- =============================== -->
-          <!-- ✨ COSPLAY & SPECIAL WORDLINGS -->
-          <!-- =============================== -->
-          <div id="special-section">
-            <h3>✨ Special Wordlings ✨</h3>
-            <div id="special-wordling-row" class="scroll-row">
-              <p id="special-empty" class="hint-text">Find 5 wordlings to unlock a Cosplay wordling!</p>
+            <!-- 💡 PUZZLE FACT -->
+            <!-- ============== -->
+            <div id="puzzle-fact"></div>
+    
+            
+            <!-- ====================== -->
+            <!-- 🌿 WORDLINGS (Standard) -->
+            <!-- ====================== -->
+            <div id="wordling-row" style="margin-top: 20px;" class="scroll-row">
+              <p id="army-empty" class="hint-text">You haven't found any wordlings yet...</p>
             </div>
-          </div>
-  
-          <!-- ====================== -->
-          <!-- 📊 WORDLING COUNTER -->
-          <!-- ====================== -->
-          <div id="korok-stats">
-            🌿 Wordlings found: <span id="korok-count">0</span>
-            <button id="open-gallery" title="View Wordlings">📖</button>
-          </div>
-  
-          <!-- ================== -->
-          <!-- 🖼️ GALLERY MODAL -->
-          <!-- ================== -->
-          <div id="wordling-gallery" class="modal hidden">
-            <div class="modal-content">
-              <h2>🌿 Wordling Gallery</h2>
-              <div id="gallery-grid" class="gallery-grid"></div>
-              <hr class="divider">  
-              <div id="theme-gallery"></div>
-              <hr class="divider">
-              <h3 class="cosplay-heading">✨ Special Wordlings ✨</h3>
-              <div id="special-gallery" class="gallery-grid"></div>
-              <button id="close-gallery">Close</button>
-            </div>
-          </div>
-  
-          <!-- =================== -->
-          <!-- 📖 BIO MODAL VIEW -->
-          <!-- =================== -->
-          <div id="bio-modal" class="hidden">
-            <div id="bio-content">
-              <img id="bio-img" src="" alt="Wordling Image">
-              <h3 id="bio-name"></h3>
-              <p id="bio-text"></p>
-              <button id="bio-close">Close</button>
-            </div>
-          </div>
-  
-          <!-- ========================== -->
-          <!-- 🧮 COLLECTION PROGRESS BAR -->
-          <!-- ========================== -->
-          <div id="progress-container">
-            <div id="progress-label">Unique Wordlings Found: <span id="progress-count">0</span> / <span id="progress-total">0</span></div>
-            <div id="progress-bar">
-              <div id="progress-fill"></div>
-            </div>
-          </div>
-  
-          <!-- ==================== -->
-          <!-- 🎨 THEME PICKER UI -->
-          <!-- ==================== -->
-          <div id="theme-picker" style="display: none;">
-            <div id="theme-carousel">
-              <button id="theme-left" class="theme-arrow">←</button>
-              <div id="theme-display">
-                <img id="theme-title-image" src="" alt="Theme Preview">
-                <div id="theme-label">Default</div>
+    
+            <!-- =============================== -->
+            <!-- ✨ COSPLAY & SPECIAL WORDLINGS -->
+            <!-- =============================== -->
+            <div id="special-section">
+              <h3>✨ Special Wordlings ✨</h3>
+              <div id="special-wordling-row" class="scroll-row">
+                <p id="special-empty" class="hint-text">Find 5 wordlings to unlock a Cosplay wordling!</p>
               </div>
-              <button id="theme-right" class="theme-arrow">→</button>
             </div>
-          </div>    
+    
+            <!-- ====================== -->
+            <!-- 📊 WORDLING COUNTER -->
+            <!-- ====================== -->
+            <div id="korok-stats">
+              🌿 Wordlings found: <span id="korok-count">0</span>
+              <button id="open-gallery" title="View Wordlings">📖</button>
+            </div>
+    
+            <!-- ================== -->
+            <!-- 🖼️ GALLERY MODAL -->
+            <!-- ================== -->
+            <div id="wordling-gallery" class="modal hidden">
+              <div class="modal-content">
+                <h2>🌿 Wordling Gallery</h2>
+                <div id="gallery-grid" class="gallery-grid"></div>
+                <hr class="divider">  
+                <div id="theme-gallery"></div>
+                <hr class="divider">
+                <h3 class="cosplay-heading">✨ Special Wordlings ✨</h3>
+                <div id="special-gallery" class="gallery-grid"></div>
+                <button id="close-gallery">Close</button>
+              </div>
+            </div>
+    
+            <!-- =================== -->
+            <!-- 📖 BIO MODAL VIEW -->
+            <!-- =================== -->
+            <div id="bio-modal" class="hidden">
+              <div id="bio-content">
+                <img id="bio-img" src="" alt="Wordling Image">
+                <h3 id="bio-name"></h3>
+                <p id="bio-text"></p>
+                <button id="bio-close">Close</button>
+              </div>
+            </div>
+    
+            <!-- ========================== -->
+            <!-- 🧮 COLLECTION PROGRESS BAR -->
+            <!-- ========================== -->
+            <div id="progress-container">
+              <div id="progress-label">Unique Wordlings Found: <span id="progress-count">0</span> / <span id="progress-total">0</span></div>
+              <div id="progress-bar">
+                <div id="progress-fill"></div>
+              </div>
+            </div>
+    
+            <!-- ==================== -->
+            <!-- 🎨 THEME PICKER UI -->
+            <!-- ==================== -->
+            <div id="theme-picker" style="display: none;">
+              <div id="theme-carousel">
+                <button id="theme-left" class="theme-arrow">←</button>
+                <div id="theme-display">
+                  <img id="theme-title-image" src="" alt="Theme Preview">
+                  <div id="theme-label">Default</div>
+                </div>
+                <button id="theme-right" class="theme-arrow">→</button>
+              </div>
+            </div>  
+          </div>
         </div>
           
       </div>
