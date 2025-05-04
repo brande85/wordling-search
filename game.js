@@ -585,6 +585,7 @@ function checkSelectedWord() {
     selectedCells.forEach(c => {
       c.element.style.backgroundColor = pastel;
       c.element.classList.add('found');
+      c.element.style.color = 'black';
     });
 
     if (match) {
