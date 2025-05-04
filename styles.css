@@ -233,6 +233,7 @@ body {
 
 .found {
   background-color: #90ee90;
+  color: #000; /* ✅ Add this */
 }
 
 .found-word {
@@ -366,7 +367,7 @@ body {
     user-select: none;
 }
 
-#cosplay-section {
+#special-section {
   margin-top: 20px;
   text-align: center;
   background: #f7f7ff;
@@ -377,9 +378,10 @@ body {
   box-shadow: 0 0 10px rgba(180, 180, 255, 0.2);
 }
 
-#cosplay-wordling-row {
+#special-wordling-row {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 12px;
   padding-top: 10px;
@@ -772,6 +774,7 @@ body[data-theme="dark"] .selected {
 
 body[data-theme="dark"] .found {
   background-color: #8bc34a;
+  color: #000; /* ✅ Add this */
 }
 
 /* Hidden word text */
