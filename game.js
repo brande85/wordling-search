@@ -592,7 +592,7 @@ function checkSelectedWord() {
     }
 
     if (isBonus) {
-      document.getElementById('hidden-word-value').textContent = hiddenWord.toUpperCase(); // or whatever casing you prefer
+      document.getElementById('hidden-word-value').textContent = bonusWord.toUpperCase(); // or whatever casing you prefer
       const reward = createImageWordling(64, currentListKey); // 🛠️ generate reward
       if (reward) {
         showKorok(reward.chosenId); // 🛠️ pass the Wordling ID to showKorok!
