@@ -236,18 +236,32 @@ function placeWord(word) {
     const col = Math.floor(Math.random() * gridSize);
 
     let fits = true;
-
+    let overlapCount = 0;
+    
     for (let i = 0; i < word.length; i++) {
       const r = row + dir[0] * i;
       const c = col + dir[1] * i;
-
+    
       if (
         r < 0 || r >= gridSize ||
-        c < 0 || c >= gridSize ||
-        (grid[r][c] && grid[r][c] !== word[i])
+        c < 0 || c >= gridSize
       ) {
         fits = false;
         break;
+      }
+    
+      const existing = grid[r][c];
+      if (existing) {
+        if (existing !== word[i]) {
+          fits = false;
+          break;
+        } else {
+          overlapCount++;
+          if (overlapCount > 1) {
+            fits = false;
+            break;
+          }
+        }
       }
     }
 
