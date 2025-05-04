@@ -797,7 +797,11 @@ body[data-theme="dark"] #theme-label {
 }
 
 body[data-theme='dark'] .hint-text {
-  color: #aaa; 
+  color: #e0ddff; 
+}
+
+body[data-theme='dark'] #special-section h3 {
+  color: #e0ddff; 
 }
 
 /*
