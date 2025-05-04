@@ -200,6 +200,7 @@ body {
 /* ====================== */
 /* 🔡 GRID & CELL STYLING */
 /* ====================== */
+
 #grid {
   display: grid;
   grid-gap: 2px;
@@ -262,7 +263,7 @@ body {
 }
 
 #grid-container {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   padding: 8px;
@@ -270,6 +271,7 @@ body {
   position: relative;
   width: auto;
   max-width: 100%;
+  max-height: fit-content;
   overflow-x: auto;
 }
 
@@ -359,12 +361,13 @@ body {
 }
 
 .wordling-row-img {
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     object-fit: contain;
     display: inline-block;
     animation: pop-in 0.4s ease;
     user-select: none;
+    margin: 4px;
 }
 
 #special-section {
