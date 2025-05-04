@@ -35,7 +35,7 @@ body {
   padding: 30px;
   position: relative;
   gap: 20px;
-  height: 1115px; /* Or whatever fits 14x14 comfortably */
+  height: 1120px; /* Or whatever fits 14x14 comfortably */
   max-height: 90vh; /* Optional for responsiveness */
   overflow: hidden;
 }
