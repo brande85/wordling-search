@@ -371,7 +371,7 @@ const wordLists = {
     "🧜‍♀️ Sailors once mistook manatees for mermaids — proof that magic hides in plain sight."
   ],
   wordlings: ['seahorse']
-}
+},
 
   // PALEONTOLOGY
 
