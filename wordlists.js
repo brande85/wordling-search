@@ -361,7 +361,7 @@ const wordLists = {
     wordlings: ['cozy', 'scarf']
   },
 
-  oceanTheme: {
+  ocean: {
   words: ["OCTOPUS", "CORAL", "KELP", "STARFISH", "SEAHORSE", "TIDE", "SHELL", "WAVE", "BARNACLE", "ANCHOR", "REEF", "DOLPHIN", "SQUID", "PLANKTON", "TRENCH", "LAGOON"],
   facts: [
     "🐙 Octopuses have three hearts and can regrow lost arms — true masters of regeneration.",
