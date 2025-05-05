@@ -631,6 +631,16 @@ body {
   text-shadow: 0 0 4px #00ffff44;
 }
 
+.theme-animals-font {
+  font-family: "DynaPuff", cursive;
+  color: #5b3827;
+}
+
+.theme-ocean {
+  background: url('images/bg-ocean.jpg') center center / cover no-repeat;
+  background-color: #fef8f1; /* fallback color */
+}
+
 /* =============================== */
 /* 🎭 VISUAL EFFECTS & ANIMATIONS  */
 /* =============================== */
