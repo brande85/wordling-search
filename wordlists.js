@@ -361,6 +361,18 @@ const wordLists = {
     wordlings: ['cozy', 'scarf']
   },
 
+  oceanTheme: {
+  words: ["OCTOPUS", "CORAL", "KELP", "STARFISH", "SEAHORSE", "TIDE", "SHELL", "WAVE", "BARNACLE", "ANCHOR", "REEF", "DOLPHIN", "SQUID", "PLANKTON", "TRENCH", "LAGOON"],
+  facts: [
+    "🐙 Octopuses have three hearts and can regrow lost arms — true masters of regeneration.",
+    "🌊 Kelp forests grow faster than bamboo — a leafy underwater jungle dancing with currents.",
+    "🐚 Some seashells spiral to the right, some to the left — nature’s secret signature.",
+    "🏝️ Lagoons are coastal hugs of water — quiet places where the ocean catches its breath.",
+    "🧜‍♀️ Sailors once mistook manatees for mermaids — proof that magic hides in plain sight."
+  ],
+  wordlings: ['seahorse']
+}
+
   // PALEONTOLOGY
 
   cretaceousDinosaurs: {
