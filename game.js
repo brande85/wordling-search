@@ -66,7 +66,7 @@ const wordlings = [
 	{ id: 'sailor-moon', name: 'Cosplay Sailor Moon', bio: 'Fights for love, justice, and beautifully arranged anagrams.', img: 'images/moonling.png', isCosplay: true },
 	{ id: 'sapphire', name: 'Sapphire', bio: 'Dreams of oceans, stars, and rare vocabulary.', img: 'images/gem-wordling4.png' },
 	{ id: 'scarf', name: 'Scarf', bio: 'Snuggles close when the words get chilly.', img: 'images/cozy-wordling1.png' },
-  { id: 'seahorse', name: 'Seahorse', bio: "It's a seahorse.", img: 'images/ocean-wordling1.png' },
+  { id: 'seahorse', name: 'Seahorse', bio: "It's a seahorse.", img: 'images/ocean-wordling1.png', theme: '🌊 Ocean' },
 	{ id: 'sedimentary', name: 'Sedrick', bio: 'Patiently layers letters until a word forms.', img: 'images/sedimentary-wordling.png' },
 	{ id: 'sheep', name: 'Sheep', bio: 'Loves napping between puzzles... and during puzzles.', img: 'images/tame-animal-wordling2.png', theme: '🐾 Animals' },
 	{ id: 'space-marine', name: 'Space Soldier', bio: 'Disciplined, determined, and ever-vigilant for stray vowels.', img: 'images/warhammer-40k-wordling1.png' },
