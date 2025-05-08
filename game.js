@@ -1217,23 +1217,27 @@ function renderThemePreview() {
 
 // Applies the active theme's visual styling to the grid
 function applyActiveTheme() {
-	console.log('Applying theme:', activeTheme);
+  const theme = themeRewards[activeTheme];
+  if (!theme) return;
 
-  const container = document.getElementById('grid-container');
-  container.className = ''; // Clear previous background classes
+  // Apply background class
+  document.body.className = theme.backgroundClass;
 
-  const allLetters = document.querySelectorAll('.grid-letter');
-  allLetters.forEach(l => l.className = 'grid-letter'); // Reset fonts
+  // Apply font class to grid letters
+  document.querySelectorAll('.cell').forEach(cell => {
+    cell.classList.add(theme.fontClass);
+  });
 
-  if (activeTheme && themeRewards[activeTheme]) {
-    const reward = themeRewards[activeTheme];
-    container.classList.add(reward.backgroundClass);
-
-    allLetters.forEach(l => l.classList.add(reward.fontClass));
+  // Update title image (theme carousel)
+  const themeImage = document.getElementById('theme-title-image');
+  if (themeImage && theme.titleImage) {
+    themeImage.src = theme.titleImage;
   }
 
-  if (theme.mainTitle) {
-    document.getElementById('main-title-image').src = theme.mainTitle;
+  // ✅ Update main logo title image
+  const mainTitleImage = document.getElementById('main-title-image');
+  if (mainTitleImage && theme.mainTitle) {
+    mainTitleImage.src = theme.mainTitle;
   }
 }
 
