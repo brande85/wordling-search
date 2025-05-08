@@ -608,7 +608,7 @@ body {
 
 /* REWARD THEMES */
 .theme-animals {
-  background: url('images/bg-animals.jpg') center center / cover no-repeat;
+  background: url('images/bg-animals.png') center center / cover no-repeat;
   background-color: #fef8f1; /* fallback color */
 }
 
@@ -637,7 +637,7 @@ body {
 }
 
 .theme-ocean {
-  background: url('images/bg-ocean.jpg') center center / cover no-repeat;
+  background: url('images/bg-ocean.png') center center / cover no-repeat;
   background-color: #fef8f1; /* fallback color */
 }
 
