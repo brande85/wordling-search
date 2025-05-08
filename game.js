@@ -101,17 +101,20 @@ const themeRewards = {
   '🐾 Animals': {
     titleImage: 'images/title-animals2.png',
     backgroundClass: 'theme-animals',
-    fontClass: 'theme-animals-font'
+    fontClass: 'theme-animals-font',
+    mainTitle: 'images/title-animals2.png',
   },
     '🌊 Ocean': {
     titleImage: 'images/title-ocean.png',
     backgroundClass: 'theme-ocean',
-    fontClass: 'theme-ocean-font'
+    fontClass: 'theme-ocean-font',
+    mainTitle: 'images/title-ocean.png',
   },
   '🚀 Space': {
     titleImage: 'images/title-space.png',
     backgroundClass: 'theme-space',
-    fontClass: 'theme-space-font'
+    fontClass: 'theme-space-font',
+    mainTitle: 'images/title-space.png',
   },
 };
 
@@ -1227,6 +1230,10 @@ function applyActiveTheme() {
     container.classList.add(reward.backgroundClass);
 
     allLetters.forEach(l => l.classList.add(reward.fontClass));
+  }
+
+  if (theme.mainTitle) {
+    document.getElementById('main-title-image').src = theme.mainTitle;
   }
 }
 
